@@ -1,0 +1,86 @@
+# Task ID: 19
+# Title: Implement Data Validation Tests
+# Status: pending
+# Dependencies: 14, 15, 18
+# Priority: medium
+# Description: Create data validation tests to ensure the quality and integrity of the data loaded into the bronze layer.
+# Details:
+Create data validation tests in the tests/dagster_bronze_layer directory:
+
+```python
+# tests/dagster_bronze_layer/test_data_validation.py
+import pytest
+import os
+import sys
+import duckdb
+from dagster import materialize
+
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
+from ncaa_basketball_pipeline.dagster_bronze_layer.assets import espn_bronze_assets_definition
+from ncaa_basketball_pipeline.dagster_bronze_layer.definitions import dlt_resource
+
+# Setup for accessing a test DuckDB database with data
+@pytest.fixture
+def duckdb_connection():
+    # This assumes that test_assets.py has already created and populated the test database
+    path = "test_ncaa_basketball.duckdb"
+    conn = duckdb.connect(path)
+    yield conn
+    conn.close()
+
+# Test that primary keys are not null
+def test_primary_keys_not_null(duckdb_connection):
+    # Check that the id column in the seasons table is not null
+    result = duckdb_connection.execute(
+        "SELECT COUNT(*) FROM bronze.seasons WHERE id IS NULL"
+    ).fetchone()[0]
+    assert result == 0
+    
+    # Check that the id column in the events table is not null
+    result = duckdb_connection.execute(
+        "SELECT COUNT(*) FROM bronze.events WHERE id IS NULL"
+    ).fetchone()[0]
+    assert result == 0
+    
+    # Add more checks for other tables
+
+# Test that relationships between tables are valid
+def test_relationships(duckdb_connection):
+    # Check that all event_id values in event_competitors exist in events
+    result = duckdb_connection.execute("""
+        SELECT COUNT(*) FROM bronze.event_competitors ec
+        LEFT JOIN bronze.events e ON ec.event_id = e.id
+        WHERE e.id IS NULL
+    """).fetchone()[0]
+    assert result == 0
+    
+    # Add more relationship checks
+
+# Test that data ranges are reasonable
+def test_data_ranges(duckdb_connection):
+    # Check that event dates are within a reasonable range
+    result = duckdb_connection.execute("""
+        SELECT COUNT(*) FROM bronze.events
+        WHERE date < '2000-01-01' OR date > CURRENT_DATE
+    """).fetchone()[0]
+    assert result == 0
+    
+    # Add more range checks
+
+# Test that required fields are present
+def test_required_fields(duckdb_connection):
+    # Check that all events have a name
+    result = duckdb_connection.execute(
+        "SELECT COUNT(*) FROM bronze.events WHERE name IS NULL OR name = ''"
+    ).fetchone()[0]
+    assert result == 0
+    
+    # Add more required field checks
+```
+
+These tests verify the quality and integrity of the data loaded into the bronze layer, checking for null primary keys, valid relationships between tables, reasonable data ranges, and the presence of required fields.
+
+# Test Strategy:
+Run the data validation tests with pytest to verify the quality and integrity of the data loaded into the bronze layer of the DuckDB database.

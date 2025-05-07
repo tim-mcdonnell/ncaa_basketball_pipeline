@@ -1,0 +1,46 @@
+# Task ID: 23
+# Title: Implement environment variable configuration for dlt
+# Status: pending
+# Dependencies: 1, 2
+# Priority: high
+# Description: Set up environment variable configuration for the dlt pipeline, including database connection details.
+# Details:
+1. Create a .env file at the project root (for local development):
+```
+# DuckDB destination configuration
+DESTINATION__DUCKDB__CREDENTIALS__DATABASE=ncaa_basketball.duckdb
+
+# ESPN API source configuration
+SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__BASE_URL=https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball
+
+# Optional: Configure request delays to avoid rate limiting
+SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__REQUEST_DELAY_SECONDS=0.5
+```
+2. Update the espn_api_source.py file to use these configuration values:
+```python
+@dlt.source
+def espn_ncaa_basketball_source(
+    partition_date: Optional[str] = None,
+    base_url: str = dlt.config.value(default="https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball"),
+    request_delay_seconds: float = dlt.config.value(default=0.0)
+):
+    """Source for ESPN NCAA Basketball data.
+    
+    Args:
+        partition_date: Optional date string for partitioned loads (YYYY-MM-DD)
+        base_url: Base URL for the ESPN API
+        request_delay_seconds: Delay between API requests to avoid rate limiting
+    """
+    # Update the make_api_request function to use the delay
+    def make_api_request_with_delay(url: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        if request_delay_seconds > 0:
+            time.sleep(request_delay_seconds)
+        return make_api_request(url, params)
+    
+    # Use the updated function in all resources
+    # ...
+```
+3. Add documentation about environment variables to the README.md file.
+
+# Test Strategy:
+Test that the environment variables are correctly loaded and used by the dlt pipeline. Verify that changing the environment variables affects the behavior of the pipeline as expected.

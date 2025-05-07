@@ -1,0 +1,113 @@
+# Task ID: 4
+# Title: Define ESPN API Source in dlt
+# Status: pending
+# Dependencies: 3
+# Priority: high
+# Description: Create the dlt source definition for the ESPN API in the dlt_sources module.
+# Details:
+Create the espn_api_source.py file with the main source definition:
+
+```python
+import dlt
+import requests
+from typing import Dict, List, Optional, Any
+
+@dlt.source
+def espn_ncaa_basketball_source(partition_date: Optional[str] = None):
+    """Source for ESPN NCAA Men's College Basketball data.
+    
+    Args:
+        partition_date: Optional date string in YYYY-MM-DD format for partitioned loads
+    """
+    base_url = dlt.config.value(name="base_url")
+    
+    # Define resources for different endpoints
+    @dlt.resource(
+        primary_key=["id"],
+        write_disposition="merge"
+    )
+    def seasons():
+        """Fetch available seasons"""
+        response = requests.get(f"{base_url}/seasons")
+        response.raise_for_status()
+        return response.json()["seasons"]
+    
+    @dlt.resource(
+        primary_key=["id", "season_id"],
+        write_disposition="merge"
+    )
+    def season_types(season_id: str):
+        """Fetch season types for a specific season"""
+        response = requests.get(f"{base_url}/seasons/{season_id}/types")
+        response.raise_for_status()
+        return response.json()["types"]
+    
+    @dlt.resource(
+        primary_key=["id", "season_id", "season_type"],
+        write_disposition="merge"
+    )
+    def weeks(season_id: str, season_type: str):
+        """Fetch weeks for a specific season and type"""
+        response = requests.get(f"{base_url}/seasons/{season_id}/types/{season_type}/weeks")
+        response.raise_for_status()
+        return response.json()["weeks"]
+    
+    @dlt.resource(
+        primary_key=["id"],
+        write_disposition="merge"
+    )
+    def events(date: Optional[str] = None):
+        """Fetch events/games, optionally filtered by date"""
+        url = f"{base_url}/scoreboard"
+        params = {}
+        if date:
+            params["dates"] = date.replace("-", "")
+        if partition_date:
+            params["dates"] = partition_date.replace("-", "")
+            
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        return data.get("events", [])
+    
+    @dlt.resource(
+        primary_key=["id", "event_id"],
+        write_disposition="merge"
+    )
+    def event_competitors(event_id: str, event_data: Dict):
+        """Extract competitors from event data"""
+        competitors = []
+        for competitor in event_data.get("competitions", [{}])[0].get("competitors", []):
+            competitor["event_id"] = event_id
+            competitors.append(competitor)
+        return competitors
+    
+    @dlt.resource(
+        primary_key=["id", "team_id"],
+        write_disposition="merge"
+    )
+    def teams():
+        """Fetch team information"""
+        response = requests.get(f"{base_url}/teams")
+        response.raise_for_status()
+        return response.json().get("sports", [{}])[0].get("leagues", [{}])[0].get("teams", [])
+    
+    # Add more resources for other endpoints
+    # ...
+    
+    # Return all resources
+    return {
+        "seasons": seasons,
+        "season_types": season_types,
+        "weeks": weeks,
+        "events": events,
+        "event_competitors": event_competitors,
+        "teams": teams,
+        # Add more resources
+    }
+```
+
+This is a starting point. Additional resources should be added for all the entities mentioned in the PRD's Conceptual Data Model section.
+
+# Test Strategy:
+Write unit tests that mock API responses and verify that the dlt source correctly extracts and structures the data. Test with sample responses collected during API exploration.

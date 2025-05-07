@@ -1,0 +1,100 @@
+# Task ID: 17
+# Title: Implement Unit Tests for dlt Sources
+# Status: pending
+# Dependencies: 4, 5, 6, 7, 8, 9, 10, 11, 12
+# Priority: high
+# Description: Create unit tests for the ESPN API source functions to ensure they correctly extract and structure data.
+# Details:
+Create unit tests for the ESPN API source functions in the tests/dlt_sources directory:
+
+```python
+# tests/dlt_sources/test_espn_api_source.py
+import pytest
+import json
+from unittest.mock import patch, MagicMock
+import os
+import sys
+
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
+from ncaa_basketball_pipeline.dlt_sources.espn_api_source import espn_ncaa_basketball_source
+
+# Load mock data from JSON files
+def load_mock_data(filename):
+    with open(os.path.join(os.path.dirname(__file__), 'mock_data', filename), 'r') as f:
+        return json.load(f)
+
+# Mock API responses
+@pytest.fixture
+def mock_seasons_response():
+    return load_mock_data('seasons.json')
+
+@pytest.fixture
+def mock_events_response():
+    return load_mock_data('events.json')
+
+# Test the seasons resource
+@patch('ncaa_basketball_pipeline.dlt_sources.espn_api_source.make_api_request')
+def test_seasons_resource(mock_make_api_request, mock_seasons_response):
+    # Configure the mock to return the mock data
+    mock_make_api_request.return_value = mock_seasons_response
+    
+    # Get the source
+    source = espn_ncaa_basketball_source()
+    
+    # Call the seasons resource
+    seasons = source['seasons']()
+    
+    # Verify the results
+    assert len(seasons) > 0
+    assert 'id' in seasons[0]
+    assert 'name' in seasons[0]
+    
+    # Verify the API was called correctly
+    mock_make_api_request.assert_called_once()
+
+# Test the events resource
+@patch('ncaa_basketball_pipeline.dlt_sources.espn_api_source.make_api_request')
+def test_events_resource(mock_make_api_request, mock_events_response):
+    # Configure the mock to return the mock data
+    mock_make_api_request.return_value = mock_events_response
+    
+    # Get the source
+    source = espn_ncaa_basketball_source()
+    
+    # Call the events resource
+    events = source['events']()
+    
+    # Verify the results
+    assert len(events) > 0
+    assert 'id' in events[0]
+    
+    # Verify the API was called correctly
+    mock_make_api_request.assert_called_once()
+
+# Test the events resource with a partition date
+@patch('ncaa_basketball_pipeline.dlt_sources.espn_api_source.make_api_request')
+def test_events_resource_with_partition(mock_make_api_request, mock_events_response):
+    # Configure the mock to return the mock data
+    mock_make_api_request.return_value = mock_events_response
+    
+    # Get the source with a partition date
+    source = espn_ncaa_basketball_source(partition_date='2023-11-01')
+    
+    # Call the events resource
+    events = source['events']()
+    
+    # Verify the results
+    assert len(events) > 0
+    
+    # Verify the API was called with the correct parameters
+    mock_make_api_request.assert_called_once()
+    args, kwargs = mock_make_api_request.call_args
+    assert 'dates=20231101' in args[0] or kwargs.get('params', {}).get('dates') == '20231101'
+```
+
+Create a mock_data directory in tests/dlt_sources with JSON files containing sample API responses for testing.
+
+# Test Strategy:
+Run the unit tests with pytest to verify that the ESPN API source functions correctly extract and structure data from the mock API responses.

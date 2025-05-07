@@ -1,0 +1,76 @@
+# Task ID: 7
+# Title: Implement Statistics Resources
+# Status: pending
+# Dependencies: 5
+# Priority: medium
+# Description: Extend the ESPN API source with resources for fetching team and player statistics.
+# Details:
+Add new resources to the espn_ncaa_basketball_source for fetching team and player statistics:
+
+```python
+@dlt.resource(
+    primary_key=["event_id", "team_id"],
+    write_disposition="merge"
+)
+def team_statistics(event_id: str, event_data: Dict):
+    """Extract team statistics from event data"""
+    team_stats = []
+    for competition in event_data.get("competitions", []):
+        for team in competition.get("competitors", []):
+            stats = {
+                "event_id": event_id,
+                "team_id": team.get("id"),
+                "team_name": team.get("team", {}).get("name")
+            }
+            # Extract statistics from team data
+            for stat in team.get("statistics", []):
+                stats[stat.get("name")] = stat.get("value")
+            team_stats.append(stats)
+    return team_stats
+
+@dlt.resource(
+    primary_key=["event_id", "team_id", "athlete_id"],
+    write_disposition="merge"
+)
+def player_statistics(event_id: str, event_data: Dict):
+    """Extract player statistics from event data"""
+    player_stats = []
+    for competition in event_data.get("competitions", []):
+        for team in competition.get("competitors", []):
+            team_id = team.get("id")
+            for athlete in team.get("athletes", []):
+                stats = {
+                    "event_id": event_id,
+                    "team_id": team_id,
+                    "athlete_id": athlete.get("id"),
+                    "athlete_name": athlete.get("fullName")
+                }
+                # Extract statistics from athlete data
+                for stat in athlete.get("statistics", []):
+                    stats[stat.get("name")] = stat.get("value")
+                player_stats.append(stats)
+    return player_stats
+```
+
+Then update the source function to include these resources:
+
+```python
+# Return all resources
+return {
+    "seasons": seasons,
+    "season_types": season_types,
+    "weeks": weeks,
+    "events": events,
+    "event_competitors": event_competitors,
+    "teams": teams,
+    "event_details": event_details,
+    "team_details": team_details,
+    "team_roster": team_roster,
+    "team_statistics": team_statistics,
+    "player_statistics": player_statistics,
+    # Add more resources
+}
+```
+
+# Test Strategy:
+Test the team_statistics and player_statistics resources with mock API responses. Verify that they correctly extract and structure the statistics data.

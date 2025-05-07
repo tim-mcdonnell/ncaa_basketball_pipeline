@@ -1,0 +1,54 @@
+# Task ID: 6
+# Title: Implement Team and Roster Resources
+# Status: pending
+# Dependencies: 4
+# Priority: medium
+# Description: Extend the ESPN API source with resources for fetching team details and rosters.
+# Details:
+Add new resources to the espn_ncaa_basketball_source for fetching team details and rosters:
+
+```python
+@dlt.resource(
+    primary_key=["id"],
+    write_disposition="merge"
+)
+def team_details(team_id: str):
+    """Fetch detailed information for a specific team"""
+    response = requests.get(f"{base_url}/teams/{team_id}")
+    response.raise_for_status()
+    return response.json().get("team", {})
+
+@dlt.resource(
+    primary_key=["id", "team_id"],
+    write_disposition="merge"
+)
+def team_roster(team_id: str):
+    """Fetch roster for a specific team"""
+    response = requests.get(f"{base_url}/teams/{team_id}/roster")
+    response.raise_for_status()
+    athletes = response.json().get("athletes", [])
+    for athlete in athletes:
+        athlete["team_id"] = team_id
+    return athletes
+```
+
+Then update the source function to include these resources:
+
+```python
+# Return all resources
+return {
+    "seasons": seasons,
+    "season_types": season_types,
+    "weeks": weeks,
+    "events": events,
+    "event_competitors": event_competitors,
+    "teams": teams,
+    "event_details": event_details,
+    "team_details": team_details,
+    "team_roster": team_roster,
+    # Add more resources
+}
+```
+
+# Test Strategy:
+Test the team_details and team_roster resources with mock API responses. Verify that they correctly handle the response structure and extract all relevant information.

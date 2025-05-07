@@ -1,0 +1,29 @@
+# Task ID: 13
+# Title: Define Dagster DLT Resource
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Create the Dagster DLT resource definition for integrating dlt with Dagster.
+# Details:
+Create the definitions.py file in the dagster_bronze_layer directory to define the Dagster DLT resource:
+
+```python
+from dagster import Definitions
+from dagster_embedded_elt.dlt import DagsterDltResource
+
+from .assets import espn_bronze_assets_definition, espn_bronze_partitioned_assets_definition
+
+dlt_resource = DagsterDltResource()
+
+defs = Definitions(
+    assets=[espn_bronze_assets_definition, espn_bronze_partitioned_assets_definition],
+    resources={
+        "dlt_resource": dlt_resource,
+    }
+)
+```
+
+This defines a DagsterDltResource that will be used by the assets to run dlt pipelines. The resource is added to the Dagster Definitions object along with the assets that will use it.
+
+# Test Strategy:
+Verify that the Dagster DLT resource is correctly defined and can be loaded by Dagster. Test that it can be accessed from asset definitions.

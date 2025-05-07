@@ -1,0 +1,82 @@
+# Task ID: 18
+# Title: Implement Integration Tests for Dagster Assets
+# Status: pending
+# Dependencies: 14, 15
+# Priority: high
+# Description: Create integration tests for the Dagster assets to ensure they correctly materialize data into the bronze layer.
+# Details:
+Create integration tests for the Dagster assets in the tests/dagster_bronze_layer directory:
+
+```python
+# tests/dagster_bronze_layer/test_assets.py
+import pytest
+import os
+import sys
+import duckdb
+from dagster import build_init_resource_context, materialize
+from unittest.mock import patch
+
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
+from ncaa_basketball_pipeline.dagster_bronze_layer.assets import espn_bronze_assets_definition
+from ncaa_basketball_pipeline.dagster_bronze_layer.definitions import dlt_resource
+
+# Setup and teardown for a test DuckDB database
+@pytest.fixture
+def test_duckdb_path():
+    # Use a temporary path for the test database
+    path = "test_ncaa_basketball.duckdb"
+    yield path
+    # Clean up after the test
+    if os.path.exists(path):
+        os.remove(path)
+
+# Mock the dlt source to return controlled test data
+@pytest.fixture
+def mock_dlt_source():
+    with patch('ncaa_basketball_pipeline.dlt_sources.espn_api_source.espn_ncaa_basketball_source') as mock:
+        # Configure the mock to return test data
+        # This would typically involve setting up mock resources that return test data
+        yield mock
+
+# Test that the assets can be materialized
+def test_espn_bronze_assets_materialization(test_duckdb_path, mock_dlt_source):
+    # Set the DuckDB path for the test
+    os.environ["DESTINATION__DUCKDB__CREDENTIALS__DATABASE"] = test_duckdb_path
+    
+    # Initialize the dlt resource
+    init_context = build_init_resource_context()
+    resource_instance = dlt_resource.initialize(init_context)
+    
+    # Materialize the assets
+    result = materialize(
+        [espn_bronze_assets_definition],
+        resources={"dlt_resource": resource_instance}
+    )
+    
+    # Verify that the materialization was successful
+    assert result.success
+    
+    # Verify that data was loaded into the bronze schema
+    conn = duckdb.connect(test_duckdb_path)
+    # Check that the bronze schema exists
+    schemas = conn.execute("SELECT schema_name FROM information_schema.schemata").fetchall()
+    assert ('bronze',) in schemas
+    
+    # Check that expected tables exist in the bronze schema
+    tables = conn.execute(
+        "SELECT table_name FROM information_schema.tables WHERE table_schema = 'bronze'"
+    ).fetchall()
+    expected_tables = ['seasons', 'events', 'teams']  # Add more as needed
+    for table in expected_tables:
+        assert (table,) in tables
+    
+    # Clean up
+    conn.close()
+```
+
+This test verifies that the Dagster assets can be materialized successfully and that they create the expected tables in the bronze schema of the DuckDB database.
+
+# Test Strategy:
+Run the integration tests with pytest to verify that the Dagster assets correctly materialize data into the bronze layer of the DuckDB database.

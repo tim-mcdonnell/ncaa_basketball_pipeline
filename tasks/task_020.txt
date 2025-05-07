@@ -1,0 +1,137 @@
+# Task ID: 20
+# Title: Create Documentation and README
+# Status: pending
+# Dependencies: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+# Priority: medium
+# Description: Create comprehensive documentation for the project, including a detailed README, API documentation, and usage examples.
+# Details:
+Create a comprehensive README.md file at the project root:
+
+```markdown
+# NCAA Basketball Data Pipeline - Bronze Layer
+
+This project implements a robust and scalable data pipeline for NCAA Men's College Basketball data, focusing on the Bronze layer. It uses dlt (data load tool) for data extraction and loading, deeply integrated and orchestrated as software-defined assets within the Dagster framework using the dagster-dlt library.
+
+## Architecture
+
+The pipeline follows a specific architectural approach where dlt sources are defined as Python functions and then materialized as Dagster assets via the `@dlt_assets` decorator. Data is stored in a DuckDB database named `ncaa_basketball.duckdb`, specifically within a `bronze` schema.
+
+### Key Components
+
+- **dlt Sources**: Python functions decorated with `@dlt.source` and containing one or more `@dlt.resource` functions that encapsulate the logic for fetching data from ESPN API endpoints.
+- **Dagster Assets**: Defined using the `@dlt_assets` decorator, these assets materialize the dlt sources into the DuckDB database.
+- **Partitioning**: Dagster's partitioning is used to manage historical backfills and incremental loads.
+- **Scheduling**: Dagster schedules trigger the materialization of assets according to data freshness requirements.
+
+## Project Structure
+
+```
+ncaa_basketball_pipeline/
+├── dlt_sources/         # Directory for dlt source definitions
+│   ├── __init__.py
+│   └── espn_api_source.py    # Defines @dlt.source for ESPN API
+│
+├── dagster_bronze_layer/     # Dagster-specific code for the Bronze layer
+│   ├── __init__.py
+│   ├── assets.py             # Defines @dlt_assets using sources from dlt_sources
+│   └── definitions.py        # Dagster Definitions object, including DagsterDltResource
+│
+├── notebooks/                # Jupyter notebooks for exploration
+│
+├── tests/                    # Unit and integration tests
+│   ├── dlt_sources/
+│   └── dagster_bronze_layer/
+│
+├── .env                      # Optional: For local development environment variables
+├── dagster.yaml              # Dagster instance configuration
+├── pyproject.toml            # Python project configuration
+└── README.md                 # Project overview
+```
+
+## Installation
+
+1. Clone the repository
+2. Create a virtual environment: `python -m venv venv`
+3. Activate the virtual environment: `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
+4. Install the project: `pip install -e .`
+
+## Configuration
+
+Configuration is managed via environment variables. Create a `.env` file with the following variables:
+
+```
+# DuckDB Configuration
+DESTINATION__DUCKDB__CREDENTIALS__DATABASE="ncaa_basketball.duckdb"
+
+# ESPN API Configuration
+SOURCES__ESPN_API_SOURCE__BASE_URL="https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball"
+```
+
+## Usage
+
+### Running the Pipeline
+
+Start the Dagster UI:
+
+```
+dagster dev
+```
+
+Then open http://localhost:3000 in your browser to access the Dagster UI (Dagit).
+
+### Materializing Assets
+
+In the Dagit UI, navigate to the Assets tab and select the assets you want to materialize. Click the "Materialize selected" button to run the pipeline.
+
+### Scheduling
+
+The pipeline includes two schedules:
+
+1. `weekly_full_load`: Runs every Sunday at midnight to perform a full load of all data.
+2. `daily_update`: Runs every day at 6 AM to update data for the current day.
+
+Enable these schedules in the Dagit UI to automate the pipeline runs.
+
+## Testing
+
+Run the tests with pytest:
+
+```
+pytest
+```
+
+## Data Model
+
+The Bronze layer contains tables corresponding to the main entities from the ESPN API, including:
+
+- `seasons`: Details for each basketball season
+- `season_types`: Types within a season (e.g., regular, postseason)
+- `weeks`: Weekly breakdown within a season type
+- `events`: Core game information
+- `event_competitors`: Details about teams participating in an event
+- `teams`: General team information
+- `team_details`: Detailed team information
+- `team_roster`: Player rosters for each team
+- `team_statistics`: Aggregated team statistics per game
+- `player_statistics`: Individual player statistics per game
+- `plays`: Detailed log of game events
+- `venues`: Information about game locations
+- `team_records`: Team win/loss records
+- `leaders`: Top player performances in key statistical categories
+- `linescores`: Period-by-period scores
+
+## License
+
+[MIT License](LICENSE)
+```
+
+Also create additional documentation files:
+
+1. API_ENDPOINTS.md: Detailed documentation of the ESPN API endpoints used in the project
+2. DEVELOPMENT.md: Guide for developers working on the project
+3. TESTING.md: Detailed testing strategy and instructions
+
+Add docstrings to all Python functions and classes to enable automatic API documentation generation.
+
+# Test Strategy:
+Verify that the documentation is comprehensive, accurate, and follows best practices. Ensure that all key components of the project are documented and that the README provides clear instructions for installation, configuration, and usage.

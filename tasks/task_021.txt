@@ -1,0 +1,59 @@
+# Task ID: 21
+# Title: Implement partitioned Dagster assets for ESPN API
+# Status: pending
+# Dependencies: 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+# Priority: high
+# Description: Create partitioned Dagster assets for the ESPN API source to support daily incremental loads.
+# Details:
+1. Add to dagster_bronze_layer/assets.py:
+```python
+from dagster import AssetExecutionContext, DailyPartitionsDefinition
+from dagster_embedded_elt.dlt import DagsterDltResource, dlt_assets
+import dlt
+from datetime import datetime, timedelta
+
+# Create a daily partition definition starting from a reasonable date
+# Adjust the start_date as needed based on available data
+daily_partitions = DailyPartitionsDefinition(start_date="2003-01-01")
+
+@dlt_assets(
+    dlt_pipeline=dlt.pipeline(
+        pipeline_name="espn_bronze_partitioned_pipeline",
+        dataset_name="bronze",
+        destination="duckdb",
+        progress="log"
+    ),
+    partitions_def=daily_partitions,
+    name="bronze_espn_partitioned_assets",
+    group_name="bronze_layer"
+    # dlt_source is provided in the run method for partitioned assets
+)
+def espn_bronze_partitioned_assets_definition(context: AssetExecutionContext, dlt_resource: DagsterDltResource):
+    """Partitioned Dagster assets for loading ESPN NCAA basketball data by date."""
+    partition_date = context.partition_key
+    
+    # Pass the partition date to the source function
+    yield from dlt_resource.run(
+        context=context,
+        dlt_source=espn_ncaa_basketball_source(partition_date=partition_date)
+    )
+```
+2. Update the definitions.py file to include the new partitioned assets:
+```python
+from dagster import Definitions
+from dagster_embedded_elt.dlt import DagsterDltResource
+
+from .assets import espn_bronze_assets_definition, espn_bronze_partitioned_assets_definition
+
+dlt_resource = DagsterDltResource()
+
+defs = Definitions(
+    assets=[espn_bronze_assets_definition, espn_bronze_partitioned_assets_definition],
+    resources={
+        "dlt_resource": dlt_resource,
+    }
+)
+```
+
+# Test Strategy:
+Test that the partitioned assets can be materialized for specific dates. Verify that data is loaded correctly for the specified partition date. Test backfilling multiple partitions to ensure the partitioning works as expected.
