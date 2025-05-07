@@ -1,0 +1,23 @@
+storage:
+  sqlite:
+    base_dir: .dagster # Tells Dagster to store its history and event logs in a .dagster directory in DAGSTER_HOME
+
+run_launcher:
+  module: dagster.core.launcher
+  class: DefaultRunLauncher # Launches runs in a new process locally
+
+compute_logs:
+  module: dagster.core.storage.local_compute_log_manager
+  class: LocalComputeLogManager
+  config:
+    base_dir: .dagster/logs/compute # Stores stdout/stderr for runs
+
+scheduler:
+  module: dagster.core.scheduler
+  class: DagsterDaemonScheduler
+
+run_coordinator:
+  module: dagster.core.run_coordinator
+  class: QueuedRunCoordinator
+  config:
+    max_concurrent_runs: 10
