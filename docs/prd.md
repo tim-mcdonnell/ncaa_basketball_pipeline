@@ -43,12 +43,12 @@ The architecture mandates using the `dagster-dlt` library for a tight integratio
 
 ## 4.2. Dagster Asset Definition with `@dlt_assets`
 
-- **Location:** Dagster asset definitions using dlt will be in a Dagster-specific module, e.g., `ncaa_basketball_pipeline/dagster_bronze_layer/assets.py`.
+- **Location:** Dagster asset definitions using dlt will be in a Dagster-specific module, e.g., `ncaa_basketball_pipeline/ncaa_basketball_pipeline/assets.py`.
 - **`@dlt_assets` Decorator:** This is the sole method for defining Dagster assets from dlt sources.
   - It takes a `dlt_source` parameter, which will be an imported instance of a `@dlt.source`-decorated function (e.g., `dlt_source=espn_api_source()`).
   - It takes a `dlt_pipeline` parameter, which is an instance of `dlt.pipeline(...)` configured directly in the decorator. This is where `pipeline_name`, `dataset_name` (targeting the `bronze` schema), and `destination` ("duckdb") are explicitly set.
 
-Example in `dagster_bronze_layer/assets.py`:
+Example in `ncaa_basketball_pipeline/assets.py`:
 ```python
 from dagster import AssetExecutionContext
 from dagster_embedded_elt.dlt import DagsterDltResource, dlt_assets
@@ -70,7 +70,7 @@ def espn_bronze_assets_definition(context: AssetExecutionContext, dlt_resource: 
     yield from dlt_resource.run(context=context)
 ```
 
-- **`DagsterDltResource`**: A `DagsterDltResource` instance must be defined in the Dagster `definitions.py` file (e.g., at `ncaa_basketball_pipeline/dagster_bronze_layer/definitions.py`) and provided to the `Definitions` object. This resource is then injected into the function decorated by `@dlt_assets` (e.g., `dlt_resource: DagsterDltResource` argument) and used to execute the dlt pipeline run (`yield from dlt_resource.run(...)`).
+- **`DagsterDltResource`**: A `DagsterDltResource` instance must be defined in the Dagster `definitions.py` file (e.g., at `ncaa_basketball_pipeline/ncaa_basketball_pipeline/definitions.py`) and provided to the `Definitions` object. This resource is then injected into the function decorated by `@dlt_assets` (e.g., `dlt_resource: DagsterDltResource` argument) and used to execute the dlt pipeline run (`yield from dlt_resource.run(...)`).
 
 ## 4.3. Configuration and Secrets Management (Prescriptive)
 
@@ -92,7 +92,7 @@ ncaa_basketball_pipeline/
 │   ├── __init__.py
 │   └── espn_api_source.py    # Defines @dlt.source for ESPN API
 │
-├── dagster_bronze_layer/     # Dagster-specific code for the Bronze layer
+├── ncaa_basketball_pipeline/     # Dagster-specific code for the Bronze layer
 │   ├── __init__.py
 │   ├── assets.py             # Defines @dlt_assets using sources from dlt_sources
 │   └── definitions.py        # Dagster Definitions object, including DagsterDltResource
@@ -101,7 +101,7 @@ ncaa_basketball_pipeline/
 │
 ├── tests/                    # Unit and integration tests
 │   ├── dlt_sources/
-│   └── dagster_bronze_layer/
+│   └── ncaa_basketball_pipeline/
 │
 ├── .env                      # Optional: For local development environment variables
 ├── dagster.yaml              # Dagster instance configuration
@@ -205,7 +205,7 @@ Dagster's partitioning will be applied to `@dlt_assets` to manage historical bac
 
 dlt sources will be designed to accept parameters (e.g., season, date range) from Dagster partitions to fetch specific data slices. This is achieved by passing the `context.partition_key` to the `dlt_source` function when calling `dlt_resource.run()` within the `@dlt_assets` decorated function.
 
-Example in `dagster_bronze_layer/assets.py`:
+Example in `ncaa_basketball_pipeline/assets.py`:
 ```python
 from dagster import AssetExecutionContext, DailyPartitionsDefinition, Definitions
 from dagster_embedded_elt.dlt import DagsterDltResource, dlt_assets

@@ -1,0 +1,95 @@
+[project]
+name = "ncaa-basketball-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dagster>=1.10.13",
+    "dagster-dlt>=0.26.13",
+    "dagster-webserver>=1.10.13",
+    "dlt>=1.10.0",
+    "duckdb>=1.2.2",
+    "pandas>=2.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "ruff>=0.11.8",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "ncaa_basketball_pipeline.definitions"
+code_location_name = "ncaa_basketball_pipeline"
+
+[tool.setuptools.packages.find]
+exclude=["tests"]
+
+[tool.ruff]
+# Target Python 3.12
+target-version = "py312"
+# Line length is set to be reasonable but not overly restrictive
+line-length = 100
+# Exclude common directories that shouldn't be linted
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+# Select a reasonable set of rules
+# E/F: pycodestyle and pyflakes (basic linting)
+# I: isort (import sorting)
+# N: pep8-naming (function/class naming conventions)
+# UP: pyupgrade (modernize code)
+# B: flake8-bugbear (common bugs and design problems)
+# C4: flake8-comprehensions (better list/dict comprehensions)
+# SIM: flake8-simplify (code simplification)
+# ANN: flake8-annotations (optional type annotation checks, more relaxed)
+# RUF: ruff-specific rules
+select = ["E", "F", "I", "N", "UP", "B", "C4", "SIM", "RUF"]
+
+# Ignore some rules to make the linting less strict for a personal project
+ignore = [
+    # Missing type annotations
+    "ANN001", "ANN002", "ANN003", "ANN201", "ANN202", "ANN204", "ANN401",
+
+    # Line too long (already handled by formatter)
+    "E501",
+    # No need for explicit return type annotations on classmethod (overly strict)
+    "RUF009",
+    # Ambiguous variable name
+    "E741",
+]
+
+# Enable fixing of lints where possible
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore import order violations and unused imports in __init__.py files
+"__init__.py" = ["F401", "I001"]
+# Relaxed rules for tests
+"*_tests/**/*.py" = ["ANN", "B011"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ncaa_basketball_pipeline"]
+
+[tool.ruff.format]
+# Use double quotes for consistency
+quote-style = "double"
+# Use 4 spaces for indentation
+indent-style = "space"
+line-ending = "auto"
+# Skip magic trailing commas (like in Black)
+skip-magic-trailing-comma = false

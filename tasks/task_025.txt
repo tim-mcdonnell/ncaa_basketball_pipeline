@@ -5,7 +5,7 @@
 # Priority: medium
 # Description: Create integration tests for the Dagster assets to verify end-to-end functionality.
 # Details:
-1. Create tests/dagster_bronze_layer/test_assets.py:
+1. Create tests/ncaa_basketball_pipeline/test_assets.py:
 ```python
 import pytest
 from dagster import build_asset_context, materialize_to_memory
@@ -15,11 +15,11 @@ from unittest.mock import patch
 from pathlib import Path
 
 # Import the assets and definitions
-from ncaa_basketball_pipeline.dagster_bronze_layer.assets import (
+from ncaa_basketball_pipeline.ncaa_basketball_pipeline.assets import (
     espn_bronze_assets_definition,
     espn_bronze_partitioned_assets_definition
 )
-from ncaa_basketball_pipeline.dagster_bronze_layer.definitions import dlt_resource
+from ncaa_basketball_pipeline.ncaa_basketball_pipeline.definitions import dlt_resource
 
 # Setup a test database
 @pytest.fixture
@@ -109,8 +109,8 @@ def test_espn_bronze_partitioned_assets(test_db_path):
         # ...
 ```
 2. Create a mock_data directory with JSON files containing sample API responses for testing:
-   - tests/dagster_bronze_layer/mock_data/seasons.json
-   - tests/dagster_bronze_layer/mock_data/events.json
+   - tests/ncaa_basketball_pipeline/mock_data/seasons.json
+   - tests/ncaa_basketball_pipeline/mock_data/events.json
    - etc.
 
 # Test Strategy:

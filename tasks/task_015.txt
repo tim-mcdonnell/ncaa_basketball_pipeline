@@ -5,7 +5,7 @@
 # Priority: high
 # Description: Create partitioned Dagster assets for the ESPN API source to support incremental loads and backfills.
 # Details:
-Add partitioned assets to the assets.py file in the dagster_bronze_layer directory:
+Add partitioned assets to the assets.py file in the ncaa_basketball_pipeline directory:
 
 ```python
 from dagster import AssetExecutionContext, DailyPartitionsDefinition

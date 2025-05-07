@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: ncaa-basketball-pipeline
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: <3.13,>=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: dagster>=1.10.13
+Requires-Dist: dagster-dlt>=0.26.13
+Requires-Dist: dagster-webserver>=1.10.13
+Requires-Dist: dlt>=1.10.0
+Requires-Dist: duckdb>=1.2.2
+Requires-Dist: pandas>=2.2.3
+
+# NCAA Basketball Pipeline
+
+This project implements a data pipeline for NCAA basketball data, focusing on the bronze layer using Dagster and dlt.

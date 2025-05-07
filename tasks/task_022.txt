@@ -5,7 +5,7 @@
 # Priority: medium
 # Description: Create Dagster schedules to automatically update the bronze layer data on a daily basis during the basketball season.
 # Details:
-1. Update dagster_bronze_layer/definitions.py to include schedules:
+1. Update ncaa_basketball_pipeline/definitions.py to include schedules:
 ```python
 from dagster import Definitions, ScheduleDefinition, define_asset_job
 from dagster_embedded_elt.dlt import DagsterDltResource

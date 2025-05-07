@@ -5,7 +5,7 @@
 # Priority: high
 # Description: Create Dagster assets for the ESPN API source without partitioning for full data loads.
 # Details:
-Create the assets.py file in the dagster_bronze_layer directory to define the non-partitioned Dagster assets:
+Create the assets.py file in the ncaa_basketball_pipeline directory to define the non-partitioned Dagster assets:
 
 ```python
 from dagster import AssetExecutionContext

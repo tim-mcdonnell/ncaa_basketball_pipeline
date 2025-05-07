@@ -31,7 +31,7 @@ ncaa_basketball_pipeline/
 │   ├── __init__.py
 │   └── espn_api_source.py    # Defines @dlt.source for ESPN API
 │
-├── dagster_bronze_layer/     # Dagster-specific code for the Bronze layer
+├── ncaa_basketball_pipeline/     # Dagster-specific code for the Bronze layer
 │   ├── __init__.py
 │   ├── assets.py             # Defines @dlt_assets using sources from dlt_sources
 │   └── definitions.py        # Dagster Definitions object, including DagsterDltResource
@@ -40,7 +40,7 @@ ncaa_basketball_pipeline/
 │
 ├── tests/                    # Unit and integration tests
 │   ├── dlt_sources/
-│   └── dagster_bronze_layer/
+│   └── ncaa_basketball_pipeline/
 │
 ├── .env                      # Optional: For local development environment variables
 ├── dagster.yaml              # Dagster instance configuration

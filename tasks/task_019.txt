@@ -5,10 +5,10 @@
 # Priority: medium
 # Description: Create data validation tests to ensure the quality and integrity of the data loaded into the bronze layer.
 # Details:
-Create data validation tests in the tests/dagster_bronze_layer directory:
+Create data validation tests in the tests/ncaa_basketball_pipeline directory:
 
 ```python
-# tests/dagster_bronze_layer/test_data_validation.py
+# tests/ncaa_basketball_pipeline/test_data_validation.py
 import pytest
 import os
 import sys
@@ -18,8 +18,8 @@ from dagster import materialize
 # Add the project root to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from ncaa_basketball_pipeline.dagster_bronze_layer.assets import espn_bronze_assets_definition
-from ncaa_basketball_pipeline.dagster_bronze_layer.definitions import dlt_resource
+from ncaa_basketball_pipeline.ncaa_basketball_pipeline.assets import espn_bronze_assets_definition
+from ncaa_basketball_pipeline.ncaa_basketball_pipeline.definitions import dlt_resource
 
 # Setup for accessing a test DuckDB database with data
 @pytest.fixture

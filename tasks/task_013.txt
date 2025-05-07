@@ -5,7 +5,7 @@
 # Priority: high
 # Description: Create the Dagster DLT resource definition for integrating dlt with Dagster.
 # Details:
-Create the definitions.py file in the dagster_bronze_layer directory to define the Dagster DLT resource:
+Create the definitions.py file in the ncaa_basketball_pipeline directory to define the Dagster DLT resource:
 
 ```python
 from dagster import Definitions

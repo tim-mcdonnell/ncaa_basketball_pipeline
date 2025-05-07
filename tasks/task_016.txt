@@ -5,7 +5,7 @@
 # Priority: medium
 # Description: Create Dagster schedules for automatically materializing assets based on the data freshness requirements.
 # Details:
-Update the definitions.py file in the dagster_bronze_layer directory to include schedules:
+Update the definitions.py file in the ncaa_basketball_pipeline directory to include schedules:
 
 ```python
 from dagster import Definitions, ScheduleDefinition, define_asset_job
