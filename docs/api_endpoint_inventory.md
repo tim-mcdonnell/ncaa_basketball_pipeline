@@ -148,8 +148,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 10. Score Details
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/score` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/score` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** False
 - **Response Structure:**
   - Simple top-level object with score details for one competitor.
@@ -161,8 +161,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 11. Linescores
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/linescores` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** True
 - **Response Structure:**
   - Paginated list structure (`count`, `pageIndex`, etc.).
@@ -175,8 +175,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 12. Statistics
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/statistics` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** False
 - **Response Structure:**
   - Contains statistics split by categories (defensive, general, offensive) within a `splits` object.
@@ -191,8 +191,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 12.1 Player Statistics (per Game)
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{split_id}` (Implicitly linked from competitor statistics)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id`, `athlete_id`, `split_id` (path, split_id likely '0')
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster/{athlete_id}/statistics/{split_id}` (Implicitly linked from competitor statistics)
+- **Request Parameters:** `event_id`, `event_id`, `team_id`, `athlete_id`, `split_id` (path, split_id likely '0')
 - **Paginated:** False
 - **Response Structure:**
   - Similar structure to team statistics (`/competitors/{id}/statistics`).
@@ -207,8 +207,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 13. Leaders
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/leaders` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/leaders` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** False
 - **Response Structure:**
   - Contains `categories` array (points, assists, rebounds, steals, blocks).
@@ -223,8 +223,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 14. Roster
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/roster` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** False
 - **Response Structure:**
   - Contains an `entries` array listing players on the roster for the game.
@@ -239,8 +239,8 @@ This document catalogs the ESPN API endpoints used in this project, their reques
 
 ## 15. Record
 
-- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{competitor_id}/records` (Implicitly linked)
-- **Request Parameters:** `event_id`, `event_id`, `competitor_id` (path)
+- **Endpoint Path:** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records` (Implicitly linked)
+- **Request Parameters:** `event_id`, `event_id`, `team_id` (path)
 - **Paginated:** True
 - **Response Structure:**
   - Paginated list (`count`, `pageIndex`, etc.).

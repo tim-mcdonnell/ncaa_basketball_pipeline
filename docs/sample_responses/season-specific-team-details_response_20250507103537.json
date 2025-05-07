@@ -1,0 +1,262 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us",
+    "id": "2261",
+    "guid": "29b9f60e-c51b-9185-07ff-1a995563477f",
+    "uid": "s:40~l:41~t:2261",
+    "alternateIds": {
+        "sdr": "6111"
+    },
+    "slug": "hampton-pirates",
+    "location": "Hampton",
+    "name": "Pirates",
+    "nickname": "Hampton",
+    "abbreviation": "HAMP",
+    "displayName": "Hampton Pirates",
+    "shortDisplayName": "Hampton",
+    "color": "0067AC",
+    "isActive": true,
+    "isAllStar": false,
+    "logos": [
+        {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2261.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "default"
+            ],
+            "lastUpdated": "2023-12-26T13:41Z"
+        },
+        {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2261.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "dark"
+            ],
+            "lastUpdated": "2023-12-26T13:41Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/primary_logo_on_white_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "primary_logo_on_white_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/primary_logo_on_black_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "primary_logo_on_black_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/primary_logo_on_primary_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "primary_logo_on_primary_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/primary_logo_on_secondary_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "primary_logo_on_secondary_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/secondary_logo_on_white_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "secondary_logo_on_white_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/secondary_logo_on_black_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "secondary_logo_on_black_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/secondary_logo_on_primary_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "secondary_logo_on_primary_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/29b9f60e-c51b-9185-07ff-1a995563477f/logos/secondary_logo_on_secondary_color.png",
+            "width": 4096,
+            "height": 4096,
+            "alt": "",
+            "rel": [
+                "full",
+                "secondary_logo_on_secondary_color"
+            ],
+            "lastUpdated": "2024-11-11T01:21Z"
+        }
+    ],
+    "record": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/3/teams/2261/record?lang=en&region=us"
+    },
+    "athletes": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261/athletes?lang=en&region=us"
+    },
+    "venue": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/2017?lang=en&region=us",
+        "id": "2017",
+        "fullName": "Convocation Center (VA)",
+        "address": {
+            "city": "Hampton",
+            "state": "VA"
+        },
+        "grass": false,
+        "indoor": true,
+        "images": []
+    },
+    "groups": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/3/groups/10?lang=en&region=us"
+    },
+    "ranks": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261/ranks?lang=en&region=us"
+    },
+    "statistics": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/0/teams/2261/statistics?lang=en&region=us"
+    },
+    "leaders": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/0/teams/2261/leaders?lang=en&region=us"
+    },
+    "links": [
+        {
+            "language": "en-US",
+            "rel": [
+                "clubhouse",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/team/_/id/2261/hampton-pirates",
+            "text": "Clubhouse",
+            "shortText": "Clubhouse",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "roster",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/team/roster/_/id/2261",
+            "text": "Roster",
+            "shortText": "Roster",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "stats",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/2261",
+            "text": "Statistics",
+            "shortText": "Statistics",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "schedule",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2261",
+            "text": "Schedule",
+            "shortText": "Schedule",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "photos",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/team/photos/_/id/2261",
+            "text": "photos",
+            "shortText": "photos",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "tickets",
+                "desktop",
+                "team"
+            ],
+            "href": "https://www.vividseats.com/hampton-pirates-mens-basketball-tickets--sports-ncaa-basketball/performer/3847?wsUser=717",
+            "text": "Tickets",
+            "shortText": "Tickets",
+            "isExternal": true,
+            "isPremium": false
+        }
+    ],
+    "notes": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/2261/notes?lang=en&region=us"
+    },
+    "againstTheSpreadRecords": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/3/teams/2261/ats?lang=en&region=us"
+    },
+    "awards": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261/awards?lang=en&region=us"
+    },
+    "franchise": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/2261?lang=en&region=us"
+    },
+    "events": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261/events?lang=en&region=us"
+    },
+    "coaches": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261/coaches?lang=en&region=us"
+    },
+    "college": {
+        "$ref": "http://sports.core.api.espn.com/v2/colleges/2261?lang=en&region=us"
+    }
+}

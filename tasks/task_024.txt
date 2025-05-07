@@ -49,10 +49,10 @@ def test_make_api_request():
         mock_response.json.return_value = {"test": "data"}
         mock_get.return_value = mock_response
         
-        result = make_api_request("https://test.url")
+        result = make_api_request("http://test.url")
         
         assert result == {"test": "data"}
-        mock_get.assert_called_once_with("https://test.url", params=None)
+        mock_get.assert_called_once_with("http://test.url", params=None)
 
 # Test the seasons resource
 def test_seasons_resource(mock_seasons_response):
@@ -60,7 +60,7 @@ def test_seasons_resource(mock_seasons_response):
         mock_request.return_value = mock_seasons_response
         
         # Convert generator to list to execute it
-        result = list(seasons("https://test.url"))
+        result = list(seasons("http://test.url"))
         
         # Verify the results
         assert len(result) == len(mock_seasons_response.get("seasons", []))

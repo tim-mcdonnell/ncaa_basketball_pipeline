@@ -1,13 +1,13 @@
 # Task ID: 3
 # Title: Explore ESPN API Endpoints
-# Status: pending
+# Status: done
 # Dependencies: 2
 # Priority: high
 # Description: Explore and document the ESPN API endpoints for NCAA Men's College Basketball to understand the data structure and available endpoints.
 # Details:
 Create a Jupyter notebook in the notebooks/ directory to explore the ESPN API endpoints. Document the following:
 
-1. Base URL: https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball
+1. Base URL: http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball
 2. Key endpoints to explore:
    - /seasons: List of available seasons
    - /seasons/{year}/types: Season types (regular, postseason)

@@ -1,0 +1,560 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/leaders?lang=en&region=us",
+    "id": "0",
+    "name": "Season",
+    "abbreviation": "Season",
+    "type": "season",
+    "categories": [
+        {
+            "name": "points",
+            "displayName": "Points",
+            "shortDisplayName": "Pts",
+            "abbreviation": "Pts",
+            "leaders": [
+                {
+                    "displayValue": "17",
+                    "value": 17.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592655?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592655/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "11",
+                    "value": 11.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "7",
+                    "value": 7.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106697?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5106697/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "6",
+                    "value": 6.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4593067?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4593067/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "4",
+                    "value": 4.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592710?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592710/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "3",
+                    "value": 3.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4703820?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4703820/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5174958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5174958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4433578?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4433578/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "assists",
+            "displayName": "Assists",
+            "shortDisplayName": "Ast",
+            "abbreviation": "Ast",
+            "leaders": [
+                {
+                    "displayValue": "3",
+                    "value": 3.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4703820?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4703820/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "3",
+                    "value": 3.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4433578?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4433578/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592655?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592655/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "rebounds",
+            "displayName": "Rebounds",
+            "shortDisplayName": "Reb",
+            "abbreviation": "Reb",
+            "leaders": [
+                {
+                    "displayValue": "7",
+                    "value": 7.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592655?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592655/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "6",
+                    "value": 6.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "5",
+                    "value": 5.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5174958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5174958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "4",
+                    "value": 4.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106697?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5106697/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4593067?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4593067/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592710?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592710/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4433578?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4433578/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4711303?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4711303/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "blocks",
+            "displayName": "Blocks",
+            "shortDisplayName": "Blk",
+            "abbreviation": "Blk",
+            "leaders": [
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4593067?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4593067/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "steals",
+            "displayName": "Steals",
+            "shortDisplayName": "Stl",
+            "abbreviation": "Stl",
+            "leaders": [
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106697?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5106697/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PER",
+            "displayName": "Player Efficiency Rating",
+            "shortDisplayName": "PER",
+            "abbreviation": "PER",
+            "leaders": []
+        },
+        {
+            "name": "rating",
+            "displayName": "Rating",
+            "shortDisplayName": "RAT",
+            "abbreviation": "RAT",
+            "leaders": [
+                {
+                    "displayValue": "17 PTS, 7 REB",
+                    "value": 30.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592655?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592655/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "11 PTS, 6 REB",
+                    "value": 21.600000381469727,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "6 PTS",
+                    "value": 11.899999618530273,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4593067?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4593067/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "3 PTS",
+                    "value": 7.099999904632568,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4703820?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4703820/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "4 PTS",
+                    "value": 5.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592710?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592710/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "7 PTS",
+                    "value": 4.300000190734863,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106697?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5106697/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2 PTS",
+                    "value": 4.300000190734863,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5174958?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5174958/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1 REB",
+                    "value": 0.20000000298023224,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4711303?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4711303/statistics/0?lang=en&region=us"
+                    }
+                }
+            ]
+        }
+    ]
+}

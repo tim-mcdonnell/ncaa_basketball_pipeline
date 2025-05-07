@@ -44,6 +44,8 @@ exclude = [
     "__pycache__",
     "build",
     "dist",
+    "docs/reference",
+    "*.ipynb",
 ]
 
 [tool.ruff.lint]

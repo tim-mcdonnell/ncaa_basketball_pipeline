@@ -1,0 +1,10 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/scores/1?lang=en&region=us",
+    "value": 52.0,
+    "displayValue": "52",
+    "winner": false,
+    "source": {
+        "id": "1",
+        "description": "Basic/Manual"
+    }
+}

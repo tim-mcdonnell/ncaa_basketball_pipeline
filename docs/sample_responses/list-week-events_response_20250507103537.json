@@ -1,0 +1,96 @@
+{
+    "$meta": {
+        "parameters": {
+            "season": [
+                "2024"
+            ],
+            "seasontypes": [
+                "2"
+            ],
+            "dates": [
+                "3"
+            ]
+        }
+    },
+    "count": 388,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 16,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401575875?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401575874?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401575876?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401601491?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401575873?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401577544?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401593791?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401575429?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401581539?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401581573?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401594395?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401601481?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582149?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401580107?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401581537?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401594431?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401598926?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401601482?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401593912?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401604306?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401593992?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401601490?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401581540?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401581574?lang=en&region=us"
+        }
+    ]
+}

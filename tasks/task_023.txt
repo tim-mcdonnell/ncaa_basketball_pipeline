@@ -11,7 +11,7 @@
 DESTINATION__DUCKDB__CREDENTIALS__DATABASE=ncaa_basketball.duckdb
 
 # ESPN API source configuration
-SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__BASE_URL=https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball
+SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__BASE_URL=http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball
 
 # Optional: Configure request delays to avoid rate limiting
 SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__REQUEST_DELAY_SECONDS=0.5
@@ -21,7 +21,7 @@ SOURCES__ESPN_NCAA_BASKETBALL_SOURCE__REQUEST_DELAY_SECONDS=0.5
 @dlt.source
 def espn_ncaa_basketball_source(
     partition_date: Optional[str] = None,
-    base_url: str = dlt.config.value(default="https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball"),
+    base_url: str = dlt.config.value(default="http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball"),
     request_delay_seconds: float = dlt.config.value(default=0.0)
 ):
     """Source for ESPN NCAA Basketball data.

@@ -49,7 +49,7 @@ Example .env file:
 DESTINATION__DUCKDB__CREDENTIALS__DATABASE="ncaa_basketball.duckdb"
 
 # ESPN API Configuration
-SOURCES__ESPN_API_SOURCE__BASE_URL="https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball"
+SOURCES__ESPN_API_SOURCE__BASE_URL="http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball"
 ```
 
 # Test Strategy:

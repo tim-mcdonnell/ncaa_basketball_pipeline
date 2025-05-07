@@ -1,0 +1,28 @@
+{
+    "count": 2,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/linescores/1/1?lang=en&region=us",
+            "value": 33.0,
+            "displayValue": "33",
+            "source": {
+                "id": "1",
+                "description": "Basic/Manual"
+            },
+            "period": 1
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/linescores/1/2?lang=en&region=us",
+            "value": 19.0,
+            "displayValue": "19",
+            "source": {
+                "id": "1",
+                "description": "Basic/Manual"
+            },
+            "period": 2
+        }
+    ]
+}

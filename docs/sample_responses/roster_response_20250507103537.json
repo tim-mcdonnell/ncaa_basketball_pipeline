@@ -1,0 +1,329 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster?lang=en&region=us",
+    "entries": [
+        {
+            "playerId": 5106697,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "3",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106697?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5106697/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "K. Mullen",
+            "ejected": false
+        },
+        {
+            "playerId": 4592655,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "4",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592655?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592655/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "J. Lusane",
+            "ejected": false
+        },
+        {
+            "playerId": 4897958,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "0",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897958?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4897958/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "T. Wilcox",
+            "ejected": false
+        },
+        {
+            "playerId": 4703820,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "11",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4703820?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4703820/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "A. Nesbitt",
+            "ejected": false
+        },
+        {
+            "playerId": 4433578,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "1",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4433578?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4433578/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "T. Maxwell",
+            "ejected": false
+        },
+        {
+            "playerId": 5174958,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "15",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5174958?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/5174958/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "J. Deng",
+            "ejected": false
+        },
+        {
+            "playerId": 4711303,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "5",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4711303?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4711303/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "D. Raymond",
+            "ejected": false
+        },
+        {
+            "playerId": 4593067,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "21",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4593067?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4593067/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "J. Benson",
+            "ejected": false
+        },
+        {
+            "playerId": 4592710,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "24",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592710?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592710/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "F. Cooper",
+            "ejected": false
+        },
+        {
+            "playerId": 4592670,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "23",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4592670?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150/competitors/2261/roster/4592670/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "D. Banister Jr.",
+            "ejected": false
+        },
+        {
+            "playerId": 4897633,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "34",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4897633?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "W. Henderson",
+            "ejected": false
+        },
+        {
+            "playerId": 5183014,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "25",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5183014?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "J. Hardy",
+            "ejected": false
+        },
+        {
+            "playerId": 5106699,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "13",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106699?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "T. Thomas",
+            "ejected": false
+        },
+        {
+            "playerId": 5106698,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "12",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/5106698?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "Q. Livingston",
+            "ejected": false
+        },
+        {
+            "playerId": 4714246,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "8",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4714246?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "J. Nesbitt",
+            "ejected": false
+        },
+        {
+            "playerId": 4703821,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "20",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/athletes/4703821?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "T. Chatman",
+            "ejected": false
+        }
+    ],
+    "competition": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401582150/competitions/401582150?lang=en&region=us"
+    },
+    "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/teams/2261?lang=en&region=us"
+    }
+}
