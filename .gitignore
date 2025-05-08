@@ -51,3 +51,6 @@ data/*
 
 # Reference files
 docs/reference/*
+
+# Python build artifacts
+*.egg-info/
