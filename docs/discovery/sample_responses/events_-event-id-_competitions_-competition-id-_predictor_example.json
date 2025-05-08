@@ -1,0 +1,126 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/predictor?lang=en&region=us",
+    "name": "Florida Gators at Houston Cougars",
+    "shortName": "FLA VS HOU",
+    "lastModified": "2025-04-07T07:59Z",
+    "homeTeam": {
+        "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+        },
+        "statistics": [
+            {
+                "name": "matchupquality",
+                "displayName": "MATCHUP QUALITY",
+                "description": "A measure of projected competitiveness and excitement in the game, using a 0 to 100 scale, with 100 as the most exciting",
+                "value": 96.5483,
+                "displayValue": "96.5"
+            },
+            {
+                "name": "rawgamescore",
+                "displayName": "GAME SCORE",
+                "description": "A measure of how well a team performed compared to their expected performance and the expected performance of a typical top 25 team.",
+                "displayValue": ""
+            },
+            {
+                "name": "teampredwinpct",
+                "displayName": "WIN PROB",
+                "description": "Team's predicted win percentage in this game at time of given BPI run.",
+                "value": 65.44,
+                "displayValue": "65.4%"
+            },
+            {
+                "name": "teampredmov",
+                "displayName": "PRED PT DIFF",
+                "description": "Expected margin of victory for the BPI favorite.",
+                "value": 3.9884,
+                "displayValue": "4.0"
+            },
+            {
+                "name": "opponentpredwinpct",
+                "displayName": "OPPONENT WIN PROB",
+                "description": "Opponent's predicted win percentage in this game at time of given BPI run.",
+                "value": 34.56,
+                "displayValue": "34.6%"
+            },
+            {
+                "name": "gameProjection",
+                "displayName": "WIN PROB",
+                "description": "Team's predicted win percentage in this game at time of given BPI run.",
+                "value": 65.44,
+                "displayValue": "65.4"
+            },
+            {
+                "name": "teamChanceLoss",
+                "displayName": "OPPONENT WIN PROB",
+                "description": "Opponent's predicted win percentage in this game at time of given BPI run.",
+                "value": 34.56,
+                "displayValue": "34.6"
+            },
+            {
+                "name": "teamChanceTie",
+                "value": 0.0,
+                "displayValue": "0.0"
+            }
+        ]
+    },
+    "awayTeam": {
+        "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+        },
+        "statistics": [
+            {
+                "name": "matchupquality",
+                "displayName": "MATCHUP QUALITY",
+                "description": "A measure of projected competitiveness and excitement in the game, using a 0 to 100 scale, with 100 as the most exciting",
+                "value": 96.5483,
+                "displayValue": "96.5"
+            },
+            {
+                "name": "rawgamescore",
+                "displayName": "GAME SCORE",
+                "description": "A measure of how well a team performed compared to their expected performance and the expected performance of a typical top 25 team.",
+                "displayValue": ""
+            },
+            {
+                "name": "teampredwinpct",
+                "displayName": "WIN PROB",
+                "description": "Team's predicted win percentage in this game at time of given BPI run.",
+                "value": 34.56,
+                "displayValue": "34.6%"
+            },
+            {
+                "name": "teampredmov",
+                "displayName": "PRED PT DIFF",
+                "description": "Expected margin of victory for the BPI favorite.",
+                "value": -3.9884,
+                "displayValue": "-4.0"
+            },
+            {
+                "name": "opponentpredwinpct",
+                "displayName": "OPPONENT WIN PROB",
+                "description": "Opponent's predicted win percentage in this game at time of given BPI run.",
+                "value": 65.44,
+                "displayValue": "65.4%"
+            },
+            {
+                "name": "gameProjection",
+                "displayName": "WIN PROB",
+                "description": "Team's predicted win percentage in this game at time of given BPI run.",
+                "value": 34.56,
+                "displayValue": "34.6"
+            },
+            {
+                "name": "teamChanceLoss",
+                "displayName": "OPPONENT WIN PROB",
+                "description": "Opponent's predicted win percentage in this game at time of given BPI run.",
+                "value": 65.44,
+                "displayValue": "65.4"
+            },
+            {
+                "name": "teamChanceTie",
+                "value": 0.0,
+                "displayValue": "0.0"
+            }
+        ]
+    }
+}

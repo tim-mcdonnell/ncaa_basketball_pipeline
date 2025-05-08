@@ -1,0 +1,154 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047?lang=en&region=us",
+    "id": "4906047",
+    "uid": "s:40~l:41~a:4906047",
+    "guid": "de0ef06e-5f87-3cc9-be64-b28c023b9ab3",
+    "type": "basketball",
+    "alternateIds": {
+        "sdr": "4906047"
+    },
+    "firstName": "Eric",
+    "lastName": "Panning",
+    "fullName": "Eric Panning",
+    "displayName": "Eric Panning",
+    "shortName": "E. Panning",
+    "height": 82.0,
+    "displayHeight": "6' 10\"",
+    "links": [
+        {
+            "language": "en-US",
+            "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/stats/_/id/4906047/eric-panning",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/splits/_/id/4906047/eric-panning",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/gamelog/_/id/4906047/eric-panning",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "news",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/news/_/id/4906047/eric-panning",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/bio/_/id/4906047/eric-panning",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/_/id/4906047/eric-panning",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+        }
+    ],
+    "birthPlace": {
+        "city": "Columbus",
+        "state": "OH",
+        "country": "USA"
+    },
+    "birthCountry": {
+        "alternateId": "1",
+        "abbreviation": "USA"
+    },
+    "slug": "eric-panning",
+    "jersey": "23",
+    "flag": {
+        "href": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+        "alt": "USA",
+        "rel": [
+            "country-flag"
+        ]
+    },
+    "position": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us",
+        "id": "2",
+        "name": "Forward",
+        "displayName": "Forward",
+        "abbreviation": "F",
+        "leaf": true
+    },
+    "injuries": [],
+    "linked": true,
+    "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/191?lang=en&region=us"
+    },
+    "teams": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/191?lang=en&region=us"
+        }
+    ],
+    "statistics": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/athletes/4906047/statistics?lang=en&region=us"
+    },
+    "notes": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/notes?lang=en&region=us"
+    },
+    "experience": {
+        "years": 4,
+        "displayValue": "Senior",
+        "abbreviation": "SR"
+    },
+    "active": true,
+    "eventLog": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/eventlog?lang=en&region=us"
+    },
+    "status": {
+        "id": "1",
+        "name": "Active",
+        "type": "active",
+        "abbreviation": "Active"
+    }
+}

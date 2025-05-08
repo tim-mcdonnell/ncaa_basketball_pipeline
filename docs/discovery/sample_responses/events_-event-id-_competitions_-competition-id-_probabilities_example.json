@@ -1,0 +1,633 @@
+{
+    "count": 444,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 18,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522753?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522753?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.716,
+            "awayWinPercentage": 0.28400000000000003,
+            "lastModified": "2025-04-08T04:18Z",
+            "sequenceNumber": "113522753",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522755?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522755?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.743,
+            "awayWinPercentage": 0.257,
+            "lastModified": "2025-04-08T04:14Z",
+            "sequenceNumber": "113522755",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522756?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522756?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.686,
+            "awayWinPercentage": 0.31399999999999995,
+            "lastModified": "2025-04-08T04:14Z",
+            "sequenceNumber": "113522756",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522757?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522757?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.718,
+            "awayWinPercentage": 0.28200000000000003,
+            "lastModified": "2025-04-08T04:14Z",
+            "sequenceNumber": "113522757",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522758?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522758?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.741,
+            "awayWinPercentage": 0.259,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522758",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522759?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522759?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.741,
+            "awayWinPercentage": 0.259,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522759",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522760?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522760?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.741,
+            "awayWinPercentage": 0.259,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522760",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522761?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522761?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.717,
+            "awayWinPercentage": 0.28300000000000003,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522761",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522762?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522762?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.717,
+            "awayWinPercentage": 0.28300000000000003,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522762",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522763?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522763?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.717,
+            "awayWinPercentage": 0.28300000000000003,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522763",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522764?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522764?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.717,
+            "awayWinPercentage": 0.28300000000000003,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522764",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522765?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522765?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.717,
+            "awayWinPercentage": 0.28300000000000003,
+            "lastModified": "2025-04-08T04:15Z",
+            "sequenceNumber": "113522765",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522845?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522845?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.654,
+            "awayWinPercentage": 0.346,
+            "lastModified": "2025-04-08T03:51Z",
+            "sequenceNumber": "113522845",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522846?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522846?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.665,
+            "awayWinPercentage": 0.33499999999999996,
+            "lastModified": "2025-04-08T03:51Z",
+            "sequenceNumber": "113522846",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522847?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522847?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.643,
+            "awayWinPercentage": 0.357,
+            "lastModified": "2025-04-08T03:51Z",
+            "sequenceNumber": "113522847",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522848?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522848?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.648,
+            "awayWinPercentage": 0.352,
+            "lastModified": "2025-04-08T03:52Z",
+            "sequenceNumber": "113522848",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522849?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522849?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.642,
+            "awayWinPercentage": 0.358,
+            "lastModified": "2025-04-08T03:52Z",
+            "sequenceNumber": "113522849",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522850?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522850?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.658,
+            "awayWinPercentage": 0.34199999999999997,
+            "lastModified": "2025-04-08T03:52Z",
+            "sequenceNumber": "113522850",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522851?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522851?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.664,
+            "awayWinPercentage": 0.33599999999999997,
+            "lastModified": "2025-04-08T03:52Z",
+            "sequenceNumber": "113522851",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522852?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522852?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.686,
+            "awayWinPercentage": 0.31399999999999995,
+            "lastModified": "2025-04-08T03:53Z",
+            "sequenceNumber": "113522852",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522853?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522853?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.705,
+            "awayWinPercentage": 0.29500000000000004,
+            "lastModified": "2025-04-08T03:53Z",
+            "sequenceNumber": "113522853",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522854?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522854?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.711,
+            "awayWinPercentage": 0.28900000000000003,
+            "lastModified": "2025-04-08T03:53Z",
+            "sequenceNumber": "113522854",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522855?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522855?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.69,
+            "awayWinPercentage": 0.31000000000000005,
+            "lastModified": "2025-04-08T03:54Z",
+            "sequenceNumber": "113522855",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522856?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522856?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.71,
+            "awayWinPercentage": 0.29000000000000004,
+            "lastModified": "2025-04-08T03:54Z",
+            "sequenceNumber": "113522856",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522857?lang=en&region=us",
+            "competition": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
+            },
+            "play": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522857?lang=en&region=us"
+            },
+            "homeTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "awayTeam": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "tiePercentage": 0.0,
+            "homeWinPercentage": 0.69,
+            "awayWinPercentage": 0.31000000000000005,
+            "lastModified": "2025-04-08T03:54Z",
+            "sequenceNumber": "113522857",
+            "source": {
+                "id": "2",
+                "description": "feed",
+                "state": "full"
+            }
+        }
+    ]
+}

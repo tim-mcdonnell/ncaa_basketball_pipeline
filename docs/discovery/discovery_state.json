@@ -1,0 +1,708 @@
+{
+    "discovered_patterns": [
+        "/",
+        "/awards",
+        "/awards/{award_id}",
+        "/calendar",
+        "/calendar/blacklist",
+        "/calendar/offdays",
+        "/calendar/ondays",
+        "/calendar/whitelist",
+        "/coaches/{coache_id}",
+        "/coaches/{coache_id}/record/{record_id}",
+        "/events",
+        "/events/{event_id}",
+        "/events/{event_id}/competitions/{competition_id}",
+        "/events/{event_id}/competitions/{competition_id}/broadcasts",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/leaders",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores/{linescore_id}/{1_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records/{record_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{roster_id}/statistics/{statistic_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/score",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/scores/{score_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics/{statistic_id}",
+        "/events/{event_id}/competitions/{competition_id}/odds",
+        "/events/{event_id}/competitions/{competition_id}/odds/{odd_id}",
+        "/events/{event_id}/competitions/{competition_id}/officials",
+        "/events/{event_id}/competitions/{competition_id}/officials/{official_id}",
+        "/events/{event_id}/competitions/{competition_id}/plays",
+        "/events/{event_id}/competitions/{competition_id}/plays/{play_id}",
+        "/events/{event_id}/competitions/{competition_id}/powerindex",
+        "/events/{event_id}/competitions/{competition_id}/powerindex/{powerindex_id}",
+        "/events/{event_id}/competitions/{competition_id}/predictor",
+        "/events/{event_id}/competitions/{competition_id}/probabilities",
+        "/events/{event_id}/competitions/{competition_id}/probabilities/{probabilitie_id}",
+        "/events/{event_id}/competitions/{competition_id}/situation",
+        "/events/{event_id}/competitions/{competition_id}/status",
+        "/franchises",
+        "/franchises/{franchise_id}",
+        "/media/{media_id}",
+        "/notes",
+        "/positions/{position_id}",
+        "/providers/{provider_id}",
+        "/rankings",
+        "/seasons",
+        "/seasons/powerindex",
+        "/seasons/{season_id}",
+        "/seasons/{season_id}/athletes",
+        "/seasons/{season_id}/athletes/{athlete_id}",
+        "/seasons/{season_id}/athletes/{athlete_id}/eventlog",
+        "/seasons/{season_id}/athletes/{athlete_id}/notes",
+        "/seasons/{season_id}/awards",
+        "/seasons/{season_id}/awards/{award_id}",
+        "/seasons/{season_id}/coaches/{coache_id}",
+        "/seasons/{season_id}/futures",
+        "/seasons/{season_id}/futures/{future_id}",
+        "/seasons/{season_id}/powerindex",
+        "/seasons/{season_id}/powerindex/leaders",
+        "/seasons/{season_id}/rankings",
+        "/seasons/{season_id}/rankings/{ranking_id}",
+        "/seasons/{season_id}/teams",
+        "/seasons/{season_id}/teams/{team_id}",
+        "/seasons/{season_id}/teams/{team_id}/athletes",
+        "/seasons/{season_id}/teams/{team_id}/awards",
+        "/seasons/{season_id}/teams/{team_id}/coaches",
+        "/seasons/{season_id}/teams/{team_id}/events",
+        "/seasons/{season_id}/teams/{team_id}/ranks",
+        "/seasons/{season_id}/types",
+        "/seasons/{season_id}/types/{type_id}",
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics",
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/coaches/{coache_id}/record",
+        "/seasons/{season_id}/types/{type_id}/groups",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/children",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/teams",
+        "/seasons/{season_id}/types/{type_id}/leaders",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/athletes/{athlete_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/ats",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/leaders",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/odds-records",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/record",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/records/{record_id}",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/weeks",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings/{ranking_id}",
+        "/teams/{team_id}/injuries",
+        "/teams/{team_id}/notes",
+        "/tournaments/{tournament_id}/seasons/{season_id}",
+        "/tournaments/{tournament_id}/seasons/{season_id}/bracketology",
+        "/transactions",
+        "/venues/{venue_id}"
+    ],
+    "patterns_fetched_example": [
+        "/",
+        "/awards",
+        "/awards/{award_id}",
+        "/calendar",
+        "/calendar/blacklist",
+        "/calendar/offdays",
+        "/calendar/ondays",
+        "/calendar/whitelist",
+        "/coaches/{coache_id}",
+        "/coaches/{coache_id}/record/{record_id}",
+        "/events",
+        "/events/{event_id}",
+        "/events/{event_id}/competitions/{competition_id}",
+        "/events/{event_id}/competitions/{competition_id}/broadcasts",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/leaders",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores/{linescore_id}/{1_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records/{record_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{roster_id}/statistics/{statistic_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/score",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/scores/{score_id}",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics",
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics/{statistic_id}",
+        "/events/{event_id}/competitions/{competition_id}/odds",
+        "/events/{event_id}/competitions/{competition_id}/odds/{odd_id}",
+        "/events/{event_id}/competitions/{competition_id}/officials",
+        "/events/{event_id}/competitions/{competition_id}/officials/{official_id}",
+        "/events/{event_id}/competitions/{competition_id}/plays",
+        "/events/{event_id}/competitions/{competition_id}/plays/{play_id}",
+        "/events/{event_id}/competitions/{competition_id}/powerindex",
+        "/events/{event_id}/competitions/{competition_id}/powerindex/{powerindex_id}",
+        "/events/{event_id}/competitions/{competition_id}/predictor",
+        "/events/{event_id}/competitions/{competition_id}/probabilities",
+        "/events/{event_id}/competitions/{competition_id}/probabilities/{probabilitie_id}",
+        "/events/{event_id}/competitions/{competition_id}/situation",
+        "/events/{event_id}/competitions/{competition_id}/status",
+        "/franchises/{franchise_id}",
+        "/media/{media_id}",
+        "/notes",
+        "/positions/{position_id}",
+        "/providers/{provider_id}",
+        "/rankings",
+        "/seasons",
+        "/seasons/powerindex",
+        "/seasons/{season_id}",
+        "/seasons/{season_id}/athletes/{athlete_id}",
+        "/seasons/{season_id}/athletes/{athlete_id}/eventlog",
+        "/seasons/{season_id}/athletes/{athlete_id}/notes",
+        "/seasons/{season_id}/awards",
+        "/seasons/{season_id}/awards/{award_id}",
+        "/seasons/{season_id}/coaches/{coache_id}",
+        "/seasons/{season_id}/futures",
+        "/seasons/{season_id}/futures/{future_id}",
+        "/seasons/{season_id}/powerindex",
+        "/seasons/{season_id}/powerindex/leaders",
+        "/seasons/{season_id}/rankings",
+        "/seasons/{season_id}/rankings/{ranking_id}",
+        "/seasons/{season_id}/teams",
+        "/seasons/{season_id}/teams/{team_id}",
+        "/seasons/{season_id}/teams/{team_id}/athletes",
+        "/seasons/{season_id}/teams/{team_id}/awards",
+        "/seasons/{season_id}/teams/{team_id}/coaches",
+        "/seasons/{season_id}/teams/{team_id}/events",
+        "/seasons/{season_id}/teams/{team_id}/ranks",
+        "/seasons/{season_id}/types",
+        "/seasons/{season_id}/types/{type_id}",
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics",
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/coaches/{coache_id}/record",
+        "/seasons/{season_id}/types/{type_id}/groups",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/children",
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/teams",
+        "/seasons/{season_id}/types/{type_id}/leaders",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/athletes/{athlete_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/ats",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/leaders",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/odds-records",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/record",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/records/{record_id}",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics",
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics/{statistic_id}",
+        "/seasons/{season_id}/types/{type_id}/weeks",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings",
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings/{ranking_id}",
+        "/teams/{team_id}/injuries",
+        "/teams/{team_id}/notes",
+        "/tournaments/{tournament_id}/seasons/{season_id}",
+        "/tournaments/{tournament_id}/seasons/{season_id}/bracketology",
+        "/venues/{venue_id}"
+    ],
+    "pattern_examples": {
+        "/": {},
+        "/seasons/{season_id}/types/{type_id}/weeks": {
+            "season_id": "2025",
+            "type_id": "1"
+        },
+        "/seasons/{season_id}/rankings": {
+            "season_id": "2025"
+        },
+        "/seasons/powerindex": {},
+        "/seasons/{season_id}/types/{type_id}/groups": {
+            "season_id": "2025",
+            "type_id": "1"
+        },
+        "/seasons/{season_id}/types/{type_id}/leaders": {
+            "season_id": "2025",
+            "type_id": "2"
+        },
+        "/seasons/{season_id}": {
+            "season_id": "2025"
+        },
+        "/events": {},
+        "/calendar": {},
+        "/seasons/{season_id}/types": {
+            "season_id": "2025"
+        },
+        "/seasons/{season_id}/types/{type_id}": {
+            "season_id": "2025",
+            "type_id": "3"
+        },
+        "/franchises": {},
+        "/transactions": {},
+        "/seasons/{season_id}/athletes": {
+            "season_id": "2025"
+        },
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings": {
+            "season_id": "2025",
+            "type_id": "3",
+            "week_id": "4"
+        },
+        "/seasons/{season_id}/powerindex": {
+            "season_id": "2025"
+        },
+        "/notes": {},
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}": {
+            "season_id": "2025",
+            "type_id": "4",
+            "group_id": "52"
+        },
+        "/seasons/{season_id}/powerindex/leaders": {
+            "season_id": "2025"
+        },
+        "/seasons/{season_id}/awards": {
+            "season_id": "2025"
+        },
+        "/seasons": {},
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}": {
+            "season_id": "2025",
+            "type_id": "3",
+            "week_id": "4"
+        },
+        "/seasons/{season_id}/futures": {
+            "season_id": "2025"
+        },
+        "/seasons/{season_id}/teams": {
+            "season_id": "2025"
+        },
+        "/awards": {},
+        "/rankings": {},
+        "/seasons/{season_id}/rankings/{ranking_id}": {
+            "season_id": "2025",
+            "ranking_id": "1"
+        },
+        "/seasons/{season_id}/athletes/{athlete_id}": {
+            "season_id": "2025",
+            "athlete_id": "4906047"
+        },
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics/{statistic_id}": {
+            "season_id": "2025",
+            "type_id": "2",
+            "athlete_id": "5254206",
+            "statistic_id": "0"
+        },
+        "/seasons/{season_id}/teams/{team_id}": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/events/{event_id}": {
+            "event_id": "401746082"
+        },
+        "/calendar/ondays": {},
+        "/calendar/offdays": {},
+        "/calendar/whitelist": {},
+        "/calendar/blacklist": {},
+        "/seasons/{season_id}/types/{type_id}/weeks/{week_id}/rankings/{ranking_id}": {
+            "season_id": "2025",
+            "type_id": "3",
+            "week_id": "4",
+            "ranking_id": "2"
+        },
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/teams": {
+            "season_id": "2025",
+            "type_id": "4",
+            "group_id": "52"
+        },
+        "/seasons/{season_id}/types/{type_id}/groups/{group_id}/children": {
+            "season_id": "2025",
+            "type_id": "4",
+            "group_id": "52"
+        },
+        "/seasons/{season_id}/awards/{award_id}": {
+            "season_id": "2025",
+            "award_id": "458"
+        },
+        "/seasons/{season_id}/futures/{future_id}": {
+            "season_id": "2025",
+            "future_id": "87138"
+        },
+        "/awards/{award_id}": {
+            "award_id": "6"
+        },
+        "/positions/{position_id}": {
+            "position_id": "2"
+        },
+        "/seasons/{season_id}/types/{type_id}/athletes/{athlete_id}/statistics": {
+            "season_id": "2025",
+            "type_id": "0",
+            "athlete_id": "4906047"
+        },
+        "/seasons/{season_id}/athletes/{athlete_id}/notes": {
+            "season_id": "2025",
+            "athlete_id": "4906047"
+        },
+        "/seasons/{season_id}/athletes/{athlete_id}/eventlog": {
+            "season_id": "2025",
+            "athlete_id": "4906047"
+        },
+        "/seasons/{season_id}/teams/{team_id}/coaches": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/teams/{team_id}/athletes": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics": {
+            "season_id": "2025",
+            "type_id": "0",
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/leaders": {
+            "season_id": "2025",
+            "type_id": "0",
+            "team_id": "183"
+        },
+        "/franchises/{franchise_id}": {
+            "franchise_id": "183"
+        },
+        "/seasons/{season_id}/teams/{team_id}/ranks": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/venues/{venue_id}": {
+            "venue_id": "1964"
+        },
+        "/seasons/{season_id}/teams/{team_id}/awards": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/teams/{team_id}/events": {
+            "season_id": "2025",
+            "team_id": "183"
+        },
+        "/teams/{team_id}/notes": {
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/odds-records": {
+            "season_id": "2025",
+            "type_id": "0",
+            "team_id": "183"
+        },
+        "/teams/{team_id}/injuries": {
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/ats": {
+            "season_id": "2025",
+            "type_id": "3",
+            "team_id": "183"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/record": {
+            "season_id": "2025",
+            "type_id": "3",
+            "team_id": "183"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/status": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/probabilities": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/powerindex": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/score": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/plays": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/leaders": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248"
+        },
+        "/events/{event_id}/competitions/{competition_id}/situation": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/broadcasts": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/officials": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/tournaments/{tournament_id}/seasons/{season_id}": {
+            "tournament_id": "22",
+            "season_id": "2025"
+        },
+        "/events/{event_id}/competitions/{competition_id}/odds": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/events/{event_id}/competitions/{competition_id}/predictor": {
+            "event_id": "401746082",
+            "competition_id": "401746082"
+        },
+        "/seasons/{season_id}/coaches/{coache_id}": {
+            "season_id": "2025",
+            "coache_id": "3934661"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/statistics/{statistic_id}": {
+            "season_id": "2025",
+            "type_id": "0",
+            "team_id": "183",
+            "statistic_id": "0"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/athletes/{athlete_id}/statistics/{statistic_id}": {
+            "season_id": "2025",
+            "type_id": "0",
+            "team_id": "183",
+            "athlete_id": "4683697",
+            "statistic_id": "0"
+        },
+        "/seasons/{season_id}/types/{type_id}/teams/{team_id}/records/{record_id}": {
+            "season_id": "2025",
+            "type_id": "3",
+            "team_id": "183",
+            "record_id": "9"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores/{linescore_id}/{1_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248",
+            "linescore_id": "1",
+            "1_id": "2"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records/{record_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248",
+            "record_id": "9003"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{roster_id}/statistics/{statistic_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248",
+            "roster_id": "4432902",
+            "statistic_id": "0"
+        },
+        "/events/{event_id}/competitions/{competition_id}/plays/{play_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "play_id": "401746082113522763"
+        },
+        "/events/{event_id}/competitions/{competition_id}/probabilities/{probabilitie_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "probabilitie_id": "401746082113522760"
+        },
+        "/events/{event_id}/competitions/{competition_id}/powerindex/{powerindex_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "powerindex_id": "57"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/scores/{score_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248",
+            "score_id": "1"
+        },
+        "/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics/{statistic_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "competitor_id": "248",
+            "statistic_id": "0"
+        },
+        "/media/{media_id}": {
+            "media_id": "44"
+        },
+        "/events/{event_id}/competitions/{competition_id}/officials/{official_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "official_id": "1"
+        },
+        "/tournaments/{tournament_id}/seasons/{season_id}/bracketology": {
+            "tournament_id": "22",
+            "season_id": "2025"
+        },
+        "/providers/{provider_id}": {
+            "provider_id": "58"
+        },
+        "/events/{event_id}/competitions/{competition_id}/odds/{odd_id}": {
+            "event_id": "401746082",
+            "competition_id": "401746082",
+            "odd_id": "58"
+        },
+        "/seasons/{season_id}/types/{type_id}/coaches/{coache_id}/record": {
+            "season_id": "2025",
+            "type_id": "2",
+            "coache_id": "3934661"
+        },
+        "/coaches/{coache_id}": {
+            "coache_id": "3934661"
+        },
+        "/coaches/{coache_id}/record/{record_id}": {
+            "coache_id": "3934661",
+            "record_id": "0"
+        }
+    },
+    "fetched_urls": [
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/awards/6?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/awards?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/calendar/blacklist?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/calendar/offdays?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/calendar/ondays?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/calendar/whitelist?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/calendar?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661/record/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/broadcasts?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/leaders?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores/1/2?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/9003?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/score?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/scores/1?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/statistics/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/statistics?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/odds/58?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/odds?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/officials/1?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/officials?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522763?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/powerindex/57?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/powerindex?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/predictor?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522760?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/situation?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/status?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/183?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/media/44?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/notes?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/providers/58?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/rankings?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/eventlog?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/notes?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/awards/458?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/awards?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches/3934661?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87138?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/powerindex/leaders?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/powerindex?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings/1?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/athletes?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/awards?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/coaches?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/events?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/ranks?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/athletes/4906047/statistics?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/athletes/4683697/statistics/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/leaders?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/odds-records?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/statistics/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/statistics?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/1/groups?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/1/weeks?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/athletes/4902033/statistics/0?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/coaches/3934661/record?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/leaders?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/183/ats?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/183/record?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/183/records/9?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings/2?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52/children?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52/teams?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/powerindex?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/183/injuries?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/183/notes?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2025/bracketology?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2025?lang=en&region=us",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/1964?lang=en&region=us"
+    ],
+    "to_fetch_queue": [],
+    "sample_ids": {
+        "season_id": "2024",
+        "type_id": "3",
+        "week_id": "2",
+        "group_id": "51",
+        "ranking_id": "1",
+        "athlete_id": "5247309",
+        "statistic_id": "0",
+        "team_id": "248",
+        "event_id": "401746082",
+        "award_id": "342",
+        "future_id": "47262",
+        "position_id": "2",
+        "franchise_id": "183",
+        "venue_id": "1964",
+        "competition_id": "401746082",
+        "competitor_id": "248",
+        "tournament_id": "22",
+        "coache_id": "3934661",
+        "record_id": "2",
+        "linescore_id": "1",
+        "1_id": "2",
+        "roster_id": "5174971",
+        "play_id": "401746082113523352",
+        "probabilitie_id": "401746082113522873",
+        "powerindex_id": "248",
+        "score_id": "1",
+        "media_id": "44",
+        "official_id": "3",
+        "provider_id": "58",
+        "odd_id": "58"
+    },
+    "failed_urls": {
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises?lang=en&region=us": "RequestException: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/transactions?lang=en&region=us": "RequestException: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?lang=en&region=us": "RequestException: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+        "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/athletes/5254206/statistics/0?lang=en&region=us": "RequestException: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    }
+}

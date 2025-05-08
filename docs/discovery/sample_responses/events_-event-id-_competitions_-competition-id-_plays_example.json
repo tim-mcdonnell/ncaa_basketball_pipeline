@@ -1,0 +1,1367 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays?lang=en&region=us",
+    "count": 448,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 18,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522845?lang=en&region=us",
+            "id": "401746082113522845",
+            "sequenceNumber": "113522845",
+            "type": {
+                "id": "615",
+                "text": "Jumpball"
+            },
+            "text": "Start game",
+            "shortText": "Start game",
+            "alternativeText": "Start game",
+            "shortAlternativeText": "Start game",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1200.0,
+                "displayValue": "20:00"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:51Z",
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522845?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:51:33Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522846?lang=en&region=us",
+            "id": "401746082113522846",
+            "sequenceNumber": "113522846",
+            "type": {
+                "id": "615",
+                "text": "Jumpball"
+            },
+            "text": "Jump Ball won by Houston",
+            "shortText": "Jump Ball won by Houston",
+            "alternativeText": "Jump Ball won by Houston",
+            "shortAlternativeText": "Jump Ball won by Houston",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1198.0,
+                "displayValue": "19:58"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:51Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522846?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:51:35Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522847?lang=en&region=us",
+            "id": "401746082113522847",
+            "sequenceNumber": "113522847",
+            "type": {
+                "id": "615",
+                "text": "Jumpball"
+            },
+            "text": "Jump Ball lost by Florida",
+            "shortText": "Jump Ball lost by Florida",
+            "alternativeText": "Jump Ball lost by Florida",
+            "shortAlternativeText": "Jump Ball lost by Florida",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1198.0,
+                "displayValue": "19:58"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:51Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522847?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:51:35Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522848?lang=en&region=us",
+            "id": "401746082113522848",
+            "sequenceNumber": "113522848",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "J'Wan Roberts missed Jumper.",
+            "shortText": "J. Roberts missed Jumper.",
+            "alternativeText": "J'Wan Roberts missed Jumper.",
+            "shortAlternativeText": "J. Roberts missed Jumper.",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1181.0,
+                "displayValue": "19:41"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:52Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522848?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:51:53Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 33,
+                "y": 2
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522849?lang=en&region=us",
+            "id": "401746082113522849",
+            "sequenceNumber": "113522849",
+            "type": {
+                "id": "587",
+                "text": "Defensive Rebound"
+            },
+            "text": "Alex Condon Defensive Rebound.",
+            "shortText": "A. Condon Defensive Rebound.",
+            "alternativeText": "Alex Condon Defensive Rebound.",
+            "shortAlternativeText": "A. Condon Defensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1180.0,
+                "displayValue": "19:40"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:52Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522849?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:51:56Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522850?lang=en&region=us",
+            "id": "401746082113522850",
+            "sequenceNumber": "113522850",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "Walter Clayton Jr. missed Three Point Jumper.",
+            "shortText": "W. Clayton Jr. missed Three Point Jumper.",
+            "alternativeText": "Walter Clayton Jr. missed Three Point Jumper.",
+            "shortAlternativeText": "W. Clayton Jr. missed Three Point Jumper.",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1168.0,
+                "displayValue": "19:28"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 3,
+            "modified": "2025-04-08T00:52Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522850?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:52:39Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 39,
+                "y": 25
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522851?lang=en&region=us",
+            "id": "401746082113522851",
+            "sequenceNumber": "113522851",
+            "type": {
+                "id": "587",
+                "text": "Defensive Rebound"
+            },
+            "text": "L.J. Cryer Defensive Rebound.",
+            "shortText": "L. Cryer Defensive Rebound.",
+            "alternativeText": "L.J. Cryer Defensive Rebound.",
+            "shortAlternativeText": "L. Cryer Defensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 0,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1165.0,
+                "displayValue": "19:25"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:52Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522851?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:52:41Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522852?lang=en&region=us",
+            "id": "401746082113522852",
+            "sequenceNumber": "113522852",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "Joseph Tugler made Jumper.",
+            "shortText": "J. Tugler made Jumper.",
+            "alternativeText": "Joseph Tugler made Jumper.",
+            "shortAlternativeText": "J. Tugler made Jumper.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1149.0,
+                "displayValue": "19:09"
+            },
+            "valid": true,
+            "scoringPlay": true,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:53Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522852?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:53:12Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 27,
+                "y": 9
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522853?lang=en&region=us",
+            "id": "401746082113522853",
+            "sequenceNumber": "113522853",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "Alijah Martin missed Three Point Jumper.",
+            "shortText": "A. Martin missed Three Point Jumper.",
+            "alternativeText": "Alijah Martin missed Three Point Jumper.",
+            "shortAlternativeText": "A. Martin missed Three Point Jumper.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1127.0,
+                "displayValue": "18:47"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 3,
+            "modified": "2025-04-08T00:53Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4702656/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522853?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:53:34Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 6,
+                "y": 14
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522854?lang=en&region=us",
+            "id": "401746082113522854",
+            "sequenceNumber": "113522854",
+            "type": {
+                "id": "587",
+                "text": "Defensive Rebound"
+            },
+            "text": "Milos Uzan Defensive Rebound.",
+            "shortText": "M. Uzan Defensive Rebound.",
+            "alternativeText": "Milos Uzan Defensive Rebound.",
+            "shortAlternativeText": "M. Uzan Defensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1123.0,
+                "displayValue": "18:43"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:53Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522854?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:53:37Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522855?lang=en&region=us",
+            "id": "401746082113522855",
+            "sequenceNumber": "113522855",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "Emanuel Sharp missed Three Point Jumper.",
+            "shortText": "E. Sharp missed Three Point Jumper.",
+            "alternativeText": "Emanuel Sharp missed Three Point Jumper.",
+            "shortAlternativeText": "E. Sharp missed Three Point Jumper.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1104.0,
+                "displayValue": "18:24"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 3,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522855?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:53:56Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 46,
+                "y": 17
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522856?lang=en&region=us",
+            "id": "401746082113522856",
+            "sequenceNumber": "113522856",
+            "type": {
+                "id": "586",
+                "text": "Offensive Rebound"
+            },
+            "text": "Joseph Tugler Offensive Rebound.",
+            "shortText": "J. Tugler Offensive Rebound.",
+            "alternativeText": "Joseph Tugler Offensive Rebound.",
+            "shortAlternativeText": "J. Tugler Offensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1101.0,
+                "displayValue": "18:21"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522856?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:53:59Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522857?lang=en&region=us",
+            "id": "401746082113522857",
+            "sequenceNumber": "113522857",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "L.J. Cryer missed Three Point Jumper.",
+            "shortText": "L. Cryer missed Three Point Jumper.",
+            "alternativeText": "L.J. Cryer missed Three Point Jumper.",
+            "shortAlternativeText": "L. Cryer missed Three Point Jumper.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1099.0,
+                "displayValue": "18:19"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 3,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522857?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:01Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 27,
+                "y": 28
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522858?lang=en&region=us",
+            "id": "401746082113522858",
+            "sequenceNumber": "113522858",
+            "type": {
+                "id": "586",
+                "text": "Offensive Rebound"
+            },
+            "text": "J'Wan Roberts Offensive Rebound.",
+            "shortText": "J. Roberts Offensive Rebound.",
+            "alternativeText": "J'Wan Roberts Offensive Rebound.",
+            "shortAlternativeText": "J. Roberts Offensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1095.0,
+                "displayValue": "18:15"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522858?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:05Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522859?lang=en&region=us",
+            "id": "401746082113522859",
+            "sequenceNumber": "113522859",
+            "type": {
+                "id": "572",
+                "text": "LayUpShot"
+            },
+            "text": "Emanuel Sharp missed Layup.",
+            "shortText": "E. Sharp missed Layup.",
+            "alternativeText": "Emanuel Sharp missed Layup.",
+            "shortAlternativeText": "E. Sharp missed Layup.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1092.0,
+                "displayValue": "18:12"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522859?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:08Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 26,
+                "y": 1
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522860?lang=en&region=us",
+            "id": "401746082113522860",
+            "sequenceNumber": "113522860",
+            "type": {
+                "id": "618",
+                "text": "Block Shot"
+            },
+            "text": "Rueben Chinyelu Block.",
+            "shortText": "R. Chinyelu Block.",
+            "alternativeText": "Rueben Chinyelu Block.",
+            "shortAlternativeText": "R. Chinyelu Block.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1092.0,
+                "displayValue": "18:12"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522860?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:08Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522861?lang=en&region=us",
+            "id": "401746082113522861",
+            "sequenceNumber": "113522861",
+            "type": {
+                "id": "587",
+                "text": "Defensive Rebound"
+            },
+            "text": "Rueben Chinyelu Defensive Rebound.",
+            "shortText": "R. Chinyelu Defensive Rebound.",
+            "alternativeText": "Rueben Chinyelu Defensive Rebound.",
+            "shortAlternativeText": "R. Chinyelu Defensive Rebound.",
+            "awayScore": 0,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1088.0,
+                "displayValue": "18:08"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522861?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:12Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522862?lang=en&region=us",
+            "id": "401746082113522862",
+            "sequenceNumber": "113522862",
+            "type": {
+                "id": "574",
+                "text": "DunkShot"
+            },
+            "text": "Alex Condon made Dunk. Assisted by Walter Clayton Jr..",
+            "shortText": "A. Condon made Dunk. Assisted by W. Clayton Jr..",
+            "alternativeText": "Alex Condon made Dunk. Assisted by Walter Clayton Jr..",
+            "shortAlternativeText": "A. Condon made Dunk. Assisted by W. Clayton Jr..",
+            "awayScore": 2,
+            "homeScore": 2,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1086.0,
+                "displayValue": "18:06"
+            },
+            "valid": true,
+            "scoringPlay": true,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                },
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+                    },
+                    "order": 2,
+                    "type": "assister"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522862?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:14Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 25,
+                "y": 3
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522865?lang=en&region=us",
+            "id": "401746082113522865",
+            "sequenceNumber": "113522865",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "Milos Uzan made Jumper.",
+            "shortText": "M. Uzan made Jumper.",
+            "alternativeText": "Milos Uzan made Jumper.",
+            "shortAlternativeText": "M. Uzan made Jumper.",
+            "awayScore": 2,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1058.0,
+                "displayValue": "17:38"
+            },
+            "valid": true,
+            "scoringPlay": true,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:54Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522865?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:42Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 17,
+                "y": 2
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522867?lang=en&region=us",
+            "id": "401746082113522867",
+            "sequenceNumber": "113522867",
+            "type": {
+                "id": "519",
+                "text": "PersonalFoul"
+            },
+            "text": "Foul on J'Wan Roberts.",
+            "shortText": "Foul on J. Roberts.",
+            "alternativeText": "Foul on J'Wan Roberts.",
+            "shortAlternativeText": "Foul on J. Roberts.",
+            "awayScore": 2,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1050.0,
+                "displayValue": "17:30"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:55Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522867?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:54:51Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 31,
+                "y": 83
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522869?lang=en&region=us",
+            "id": "401746082113522869",
+            "sequenceNumber": "113522869",
+            "type": {
+                "id": "540",
+                "text": "MadeFreeThrow"
+            },
+            "text": "Alex Condon made Free Throw.",
+            "shortText": "A. Condon made Free Throw.",
+            "alternativeText": "Alex Condon made Free Throw.",
+            "shortAlternativeText": "A. Condon made Free Throw.",
+            "awayScore": 3,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1050.0,
+                "displayValue": "17:30"
+            },
+            "valid": true,
+            "scoringPlay": true,
+            "priority": false,
+            "scoreValue": 1,
+            "modified": "2025-04-08T00:55Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522869?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:55:31Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522870?lang=en&region=us",
+            "id": "401746082113522870",
+            "sequenceNumber": "113522870",
+            "type": {
+                "id": "540",
+                "text": "MadeFreeThrow"
+            },
+            "text": "Alex Condon made Free Throw.",
+            "shortText": "A. Condon made Free Throw.",
+            "alternativeText": "Alex Condon made Free Throw.",
+            "shortAlternativeText": "A. Condon made Free Throw.",
+            "awayScore": 4,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1050.0,
+                "displayValue": "17:30"
+            },
+            "valid": true,
+            "scoringPlay": true,
+            "priority": false,
+            "scoreValue": 1,
+            "modified": "2025-04-08T00:56Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522870?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:55:59Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522871?lang=en&region=us",
+            "id": "401746082113522871",
+            "sequenceNumber": "113522871",
+            "type": {
+                "id": "558",
+                "text": "JumpShot"
+            },
+            "text": "J'Wan Roberts missed Jumper.",
+            "shortText": "J. Roberts missed Jumper.",
+            "alternativeText": "J'Wan Roberts missed Jumper.",
+            "shortAlternativeText": "J. Roberts missed Jumper.",
+            "awayScore": 4,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1032.0,
+                "displayValue": "17:12"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 2,
+            "modified": "2025-04-08T00:56Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1,
+                    "type": "shooter"
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522871?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:56:23Z",
+            "shootingPlay": true,
+            "coordinate": {
+                "x": 26,
+                "y": 9
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522872?lang=en&region=us",
+            "id": "401746082113522872",
+            "sequenceNumber": "113522872",
+            "type": {
+                "id": "587",
+                "text": "Defensive Rebound"
+            },
+            "text": "Will Richard Defensive Rebound.",
+            "shortText": "W. Richard Defensive Rebound.",
+            "alternativeText": "Will Richard Defensive Rebound.",
+            "shortAlternativeText": "W. Richard Defensive Rebound.",
+            "awayScore": 4,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1027.0,
+                "displayValue": "17:07"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:56Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522872?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:56:27Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 25,
+                "y": 0
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522873?lang=en&region=us",
+            "id": "401746082113522873",
+            "sequenceNumber": "113522873",
+            "type": {
+                "id": "519",
+                "text": "PersonalFoul"
+            },
+            "text": "Foul on Joseph Tugler.",
+            "shortText": "Foul on J. Tugler.",
+            "alternativeText": "Foul on Joseph Tugler.",
+            "shortAlternativeText": "Foul on J. Tugler.",
+            "awayScore": 4,
+            "homeScore": 4,
+            "period": {
+                "number": 1,
+                "displayValue": "1st Half"
+            },
+            "clock": {
+                "value": 1022.0,
+                "displayValue": "17:02"
+            },
+            "valid": true,
+            "scoringPlay": false,
+            "priority": false,
+            "scoreValue": 0,
+            "modified": "2025-04-08T00:56Z",
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "participants": [
+                {
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                    },
+                    "position": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                    },
+                    "order": 1
+                }
+            ],
+            "probability": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522873?lang=en&region=us"
+            },
+            "wallclock": "2025-04-08T00:56:35Z",
+            "shootingPlay": false,
+            "coordinate": {
+                "x": 19,
+                "y": 78
+            }
+        }
+    ]
+}

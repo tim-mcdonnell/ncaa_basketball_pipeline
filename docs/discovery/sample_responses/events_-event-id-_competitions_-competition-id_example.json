@@ -1,0 +1,352 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us",
+    "id": "401746082",
+    "guid": "1041def3-8b54-34de-a22f-f095c5969063",
+    "uid": "s:40~l:41~e:401746082~c:401746082",
+    "date": "2025-04-08T00:50Z",
+    "attendance": 66602,
+    "type": {
+        "id": "6",
+        "text": "Tournament",
+        "abbreviation": "TRNMNT",
+        "slug": "tournament",
+        "type": "tournament"
+    },
+    "timeValid": true,
+    "neutralSite": true,
+    "divisionCompetition": false,
+    "conferenceCompetition": false,
+    "previewAvailable": false,
+    "recapAvailable": true,
+    "boxscoreAvailable": true,
+    "lineupAvailable": false,
+    "gamecastAvailable": true,
+    "playByPlayAvailable": true,
+    "conversationAvailable": true,
+    "commentaryAvailable": false,
+    "pickcenterAvailable": true,
+    "summaryAvailable": true,
+    "liveAvailable": false,
+    "ticketsAvailable": false,
+    "shotChartAvailable": true,
+    "timeoutsAvailable": false,
+    "possessionArrowAvailable": false,
+    "onWatchESPN": false,
+    "recent": false,
+    "bracketAvailable": false,
+    "wallclockAvailable": true,
+    "highlightsAvailable": true,
+    "gameSource": {
+        "id": "1",
+        "description": "basic/manual",
+        "state": "basic"
+    },
+    "boxscoreSource": {
+        "id": "3",
+        "description": "scrubbed",
+        "state": "full"
+    },
+    "playByPlaySource": {
+        "id": "2",
+        "description": "feed",
+        "state": "full"
+    },
+    "linescoreSource": {
+        "id": "1",
+        "description": "basic/manual",
+        "state": "basic"
+    },
+    "statsSource": {
+        "id": "3",
+        "description": "scrubbed",
+        "state": "full"
+    },
+    "venue": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/3604?lang=en&region=us",
+        "id": "3604",
+        "fullName": "Alamodome",
+        "address": {
+            "city": "San Antonio",
+            "state": "TX",
+            "zipCode": "78203"
+        },
+        "grass": false,
+        "indoor": true,
+        "images": []
+    },
+    "competitors": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248?lang=en&region=us",
+            "id": "248",
+            "uid": "s:40~l:41~t:248",
+            "type": "team",
+            "order": 0,
+            "homeAway": "home",
+            "winner": false,
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+            },
+            "score": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/score?lang=en&region=us"
+            },
+            "linescores": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores?lang=en&region=us"
+            },
+            "roster": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/statistics?lang=en&region=us"
+            },
+            "leaders": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/leaders?lang=en&region=us"
+            },
+            "record": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records?lang=en&region=us"
+            },
+            "curatedRank": {
+                "current": 1
+            },
+            "tournamentMatchup": {
+                "position": 2,
+                "seed": "1"
+            }
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57?lang=en&region=us",
+            "id": "57",
+            "uid": "s:40~l:41~t:57",
+            "type": "team",
+            "order": 1,
+            "homeAway": "away",
+            "winner": true,
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            },
+            "score": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/score?lang=en&region=us"
+            },
+            "linescores": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/linescores?lang=en&region=us"
+            },
+            "roster": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/statistics?lang=en&region=us"
+            },
+            "leaders": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/leaders?lang=en&region=us"
+            },
+            "record": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/records?lang=en&region=us"
+            },
+            "curatedRank": {
+                "current": 1
+            },
+            "tournamentMatchup": {
+                "position": 1,
+                "seed": "1"
+            }
+        }
+    ],
+    "notes": [
+        {
+            "type": "event",
+            "headline": "Men's Basketball Championship - National Championship"
+        }
+    ],
+    "situation": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/situation?lang=en&region=us"
+    },
+    "status": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/status?lang=en&region=us"
+    },
+    "odds": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/odds?lang=en&region=us"
+    },
+    "broadcasts": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/broadcasts?lang=en&region=us"
+    },
+    "officials": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/officials?lang=en&region=us"
+    },
+    "details": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays?lang=en&region=us"
+    },
+    "links": [
+        {
+            "language": "en-US",
+            "rel": [
+                "summary",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401746082/florida-houston",
+            "text": "Gamecast",
+            "shortText": "Summary",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "summary",
+                "sportscenter",
+                "app",
+                "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401746082",
+            "text": "Gamecast",
+            "shortText": "Summary",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "teamstats",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/matchup?gameId=401746082",
+            "text": "Team Stats",
+            "shortText": "Team Stats",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "boxscore",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/boxscore/_/gameId/401746082",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "boxscore",
+                "sportscenter",
+                "app",
+                "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401746082",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "gamecast",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401746082",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "gamecast",
+                "mobile",
+                "event"
+            ],
+            "href": "https://m.espn.com/ncb/gamecast?gameId=401746082&action=summary",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "gamecast",
+                "sportscenter",
+                "app",
+                "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401746082",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "recap",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/recap?gameId=401746082",
+            "text": "Recap",
+            "shortText": "Recap",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "pbp",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/playbyplay/_/gameId/401746082",
+            "text": "Play-by-Play",
+            "shortText": "Play-by-Play",
+            "isExternal": false,
+            "isPremium": false
+        },
+        {
+            "language": "en-US",
+            "rel": [
+                "videos",
+                "desktop",
+                "event"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/video?gameId=401746082",
+            "text": "Videos",
+            "shortText": "Videos",
+            "isExternal": false,
+            "isPremium": false
+        }
+    ],
+    "predictor": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/predictor?lang=en&region=us"
+    },
+    "probabilities": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities?lang=en&region=us"
+    },
+    "powerIndexes": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/powerindex?lang=en&region=us"
+    },
+    "tournamentId": 22,
+    "tournamentMatchUpId": 322,
+    "tournamentMatchup": {
+        "id": "322",
+        "roundNumber": 6,
+        "bracketLocation": 1
+    },
+    "format": {
+        "regulation": {
+            "periods": 2,
+            "displayName": "Half",
+            "slug": "half",
+            "clock": 1200.0
+        },
+        "overtime": {
+            "clock": 300.0
+        }
+    }
+}

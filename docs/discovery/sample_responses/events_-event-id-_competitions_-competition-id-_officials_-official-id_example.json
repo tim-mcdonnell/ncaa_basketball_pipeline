@@ -1,0 +1,14 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/officials/1?lang=en&region=us",
+    "id": "69965",
+    "firstName": "Ron",
+    "lastName": "Groover",
+    "fullName": "Ron Groover",
+    "displayName": "Ron Groover",
+    "position": {
+        "name": "Referee",
+        "displayName": "Referee",
+        "id": "40"
+    },
+    "order": 1
+}

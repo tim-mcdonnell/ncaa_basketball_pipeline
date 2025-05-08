@@ -1,0 +1,33 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/awards/458?lang=en&region=us",
+    "id": "458",
+    "name": "Final Four Most Outstanding Player",
+    "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us"
+    },
+    "winners": [
+        {
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+            }
+        }
+    ],
+    "links": [
+        {
+            "language": "en-US",
+            "rel": [
+                "index",
+                "desktop",
+                "awards"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/awards/_/id/458",
+            "text": "Awards",
+            "shortText": "Awards",
+            "isExternal": false,
+            "isPremium": false
+        }
+    ]
+}

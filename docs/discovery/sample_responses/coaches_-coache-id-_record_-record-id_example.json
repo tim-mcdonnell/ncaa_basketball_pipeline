@@ -1,0 +1,38 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661/record/0?lang=en&region=us",
+    "id": "0",
+    "name": "Total",
+    "type": "Total",
+    "summary": "29-23-0",
+    "displayValue": "29-23-0",
+    "value": 0.5576923077,
+    "stats": [
+        {
+            "name": "losses",
+            "displayName": "Losses",
+            "shortDisplayName": "L",
+            "description": "Losses",
+            "abbreviation": "L",
+            "type": "losses",
+            "value": 23.0
+        },
+        {
+            "name": "ties",
+            "displayName": "Ties",
+            "shortDisplayName": "T",
+            "description": "Ties",
+            "abbreviation": "T",
+            "type": "ties",
+            "value": 0.0
+        },
+        {
+            "name": "wins",
+            "displayName": "Wins",
+            "shortDisplayName": "W",
+            "description": "Wins",
+            "abbreviation": "W",
+            "type": "wins",
+            "value": 29.0
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/media/44?lang=en&region=us",
+    "id": "44",
+    "callLetters": "CBS",
+    "name": "CBS",
+    "shortName": "CBS",
+    "slug": "cbs",
+    "logos": [
+        {
+            "href": "https://a.espncdn.com/guid/1169b9b9-7729-3ebb-8928-06743f7ceecc/logos/default.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "default"
+            ],
+            "lastUpdated": "2025-03-05T17:27Z"
+        },
+        {
+            "href": "https://a.espncdn.com/guid/1169b9b9-7729-3ebb-8928-06743f7ceecc/logos/default-dark.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "dark"
+            ],
+            "lastUpdated": "2025-03-05T17:27Z"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/9003?lang=en&region=us",
+    "id": "9003",
+    "name": "Road",
+    "displayName": "Road",
+    "shortDisplayName": "AWAY",
+    "description": "Away Record",
+    "type": "road",
+    "summary": "10-0",
+    "displayValue": "10-0",
+    "value": 1.0,
+    "stats": [
+        {
+            "name": "wins",
+            "displayName": "Wins",
+            "shortDisplayName": "W",
+            "description": "Wins",
+            "abbreviation": "W",
+            "type": "wins",
+            "value": 10.0,
+            "displayValue": "10"
+        },
+        {
+            "name": "losses",
+            "displayName": "Losses",
+            "shortDisplayName": "L",
+            "description": "Losses",
+            "abbreviation": "L",
+            "type": "losses",
+            "value": 0.0,
+            "displayValue": "0"
+        },
+        {
+            "name": "ties",
+            "displayName": "Ties",
+            "shortDisplayName": "T",
+            "description": "Ties",
+            "abbreviation": "T",
+            "type": "ties",
+            "value": 0.0,
+            "displayValue": "0"
+        },
+        {
+            "name": "winPercent",
+            "displayName": "Win Percentage",
+            "shortDisplayName": "PCT",
+            "description": "Winning Percentage",
+            "abbreviation": "PCT",
+            "type": "winpercent",
+            "value": 1.0,
+            "displayValue": "1.000"
+        },
+        {
+            "name": "OTLosses",
+            "displayName": "Overtime Losses",
+            "shortDisplayName": "OTL",
+            "description": "Number of Overtime Losses",
+            "abbreviation": "OTL",
+            "type": "otlosses",
+            "value": 0.0,
+            "displayValue": "0"
+        }
+    ]
+}

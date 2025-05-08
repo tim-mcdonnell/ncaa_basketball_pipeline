@@ -1,0 +1,2618 @@
+{
+    "count": 34,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 2,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/6099?lang=en&region=us",
+            "id": 6099,
+            "name": "NCAA(B) - West Region",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                            },
+                            "value": "-240"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2641?lang=en&region=us"
+                            },
+                            "value": "+170"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/8?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2599?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2450?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2253?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2181?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/235?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/201?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/142?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/120?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/41?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/36?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2437?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2305?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/350?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - West Region"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/6100?lang=en&region=us",
+            "id": 6100,
+            "name": "NCAA(M) - Wooden Award",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5041939?lang=en&region=us"
+                            },
+                            "value": "-160"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433569?lang=en&region=us"
+                            },
+                            "value": "+120"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5243213?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5239590?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5238230?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5124612?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106285?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106275?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105854?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105837?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105811?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105805?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105798?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105603?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5101656?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5093267?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5061585?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5037873?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5037871?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5023693?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4937074?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4917149?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4917097?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897921?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897493?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897438?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897397?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4895740?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4883573?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4869780?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4869770?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4869764?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4845361?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4837238?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4710770?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4706557?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4703530?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4703396?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702766?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702743?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702670?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702655?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702528?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702442?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702134?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4701845?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4700852?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4700818?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4700527?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4697268?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684628?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684270?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683833?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683779?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683742?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683730?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683682?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4594109?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4592184?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4590360?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4576062?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4576060?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4574710?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4565698?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433629?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433599?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433281?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433259?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433184?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433176?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433155?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433144?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433135?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432976?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432869?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432737?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432243?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432188?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432180?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4431983?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4431719?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "athlete": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4431718?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(M) - Wooden Award"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/9937?lang=en&region=us",
+            "id": 9937,
+            "name": "NCAA(B) - Midwest Region",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                            },
+                            "value": "-170"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2633?lang=en&region=us"
+                            },
+                            "value": "+130"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/328?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/26?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2752?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2653?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2509?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2377?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2250?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/356?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/96?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2747?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2565?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2272?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/251?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/228?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/61?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Midwest Region"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/13889?lang=en&region=us",
+            "id": 13889,
+            "name": "NCAA(B) - Coastal Athletic Association - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/350?lang=en&region=us"
+                            },
+                            "value": "+155"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/119?lang=en&region=us"
+                            },
+                            "value": "+200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/232?lang=en&region=us"
+                            },
+                            "value": "+210"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/48?lang=en&region=us"
+                            },
+                            "value": "+1100"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2097?lang=en&region=us"
+                            },
+                            "value": "+3000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2182?lang=en&region=us"
+                            },
+                            "value": "+6600"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2729?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2619?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2448?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2275?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2261?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2210?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/111?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Coastal Athletic Association - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/14053?lang=en&region=us",
+            "id": 14053,
+            "name": "NCAA(B) - South Region",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2?lang=en&region=us"
+                            },
+                            "value": "-130"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/127?lang=en&region=us"
+                            },
+                            "value": "-110"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2803?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/288?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/269?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/245?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/167?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/156?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/153?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/66?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2598?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2011?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/145?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/130?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/97?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/43?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/28?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/21?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - South Region"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/14054?lang=en&region=us",
+            "id": 14054,
+            "name": "NCAA(B) - East Region",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                            },
+                            "value": "-185"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/333?lang=en&region=us"
+                            },
+                            "value": "+185"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2670?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2608?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2523?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2483?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2335?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2006?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/344?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/275?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/252?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/239?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/238?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/149?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/116?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/44?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/12?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - East Region"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/46629?lang=en&region=us",
+            "id": 46629,
+            "name": "NCAA(B) - Big South Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2272?lang=en&region=us"
+                            },
+                            "value": "-200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2737?lang=en&region=us"
+                            },
+                            "value": "+550"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2515?lang=en&region=us"
+                            },
+                            "value": "+600"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2427?lang=en&region=us"
+                            },
+                            "value": "+650"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2908?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2506?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2344?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2241?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2127?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Big South Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/46630?lang=en&region=us",
+            "id": 46630,
+            "name": "NCAA(B) - Patriot League Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/44?lang=en&region=us"
+                            },
+                            "value": "-170"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2426?lang=en&region=us"
+                            },
+                            "value": "+125"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2142?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2083?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2352?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2329?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/349?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/322?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/107?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/104?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Patriot League Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/46631?lang=en&region=us",
+            "id": 46631,
+            "name": "NCAA(B) - Ohio Valley Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2546?lang=en&region=us"
+                            },
+                            "value": "+190"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2565?lang=en&region=us"
+                            },
+                            "value": "+275"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2634?lang=en&region=us"
+                            },
+                            "value": "+300"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2031?lang=en&region=us"
+                            },
+                            "value": "+320"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2815?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2635?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2630?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2413?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Ohio Valley Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/46634?lang=en&region=us",
+            "id": 46634,
+            "name": "NCAA(B) - Mid-Eastern Athletic Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2450?lang=en&region=us"
+                            },
+                            "value": "-105"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2569?lang=en&region=us"
+                            },
+                            "value": "+130"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2428?lang=en&region=us"
+                            },
+                            "value": "+900"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2415?lang=en&region=us"
+                            },
+                            "value": "+1200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/47?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2169?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2379?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2154?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Mid-Eastern Athletic Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/47111?lang=en&region=us",
+            "id": 47111,
+            "name": "NCAA(B) - Mid-American Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2006?lang=en&region=us"
+                            },
+                            "value": "-130"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2309?lang=en&region=us"
+                            },
+                            "value": "+230"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/193?lang=en&region=us"
+                            },
+                            "value": "+400"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2649?lang=en&region=us"
+                            },
+                            "value": "+1500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2711?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2199?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/195?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/189?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Mid-American Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/47113?lang=en&region=us",
+            "id": 47113,
+            "name": "NCAA(B) - Conference USA - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2335?lang=en&region=us"
+                            },
+                            "value": "-150"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2393?lang=en&region=us"
+                            },
+                            "value": "+350"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/55?lang=en&region=us"
+                            },
+                            "value": "+450"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/338?lang=en&region=us"
+                            },
+                            "value": "+550"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2638?lang=en&region=us"
+                            },
+                            "value": "+1000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2534?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/98?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2348?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2226?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/166?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Conference USA - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/47261?lang=en&region=us",
+            "id": 47261,
+            "name": "NCAA(B) - Southwestern Athletic Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2296?lang=en&region=us"
+                            },
+                            "value": "+150"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2011?lang=en&region=us"
+                            },
+                            "value": "+240"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2065?lang=en&region=us"
+                            },
+                            "value": "+360"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2755?lang=en&region=us"
+                            },
+                            "value": "+500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/50?lang=en&region=us"
+                            },
+                            "value": "+1700"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2582?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2504?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2010?lang=en&region=us"
+                            },
+                            "value": "+30000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2640?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2016?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Southwestern Athletic Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/47262?lang=en&region=us",
+            "id": 47262,
+            "name": "NCAA(B) - Maui Invitational Winner",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/41?lang=en&region=us"
+                            },
+                            "value": "+165"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2?lang=en&region=us"
+                            },
+                            "value": "+300"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/153?lang=en&region=us"
+                            },
+                            "value": "+450"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/66?lang=en&region=us"
+                            },
+                            "value": "+450"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/127?lang=en&region=us"
+                            },
+                            "value": "+1400"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/235?lang=en&region=us"
+                            },
+                            "value": "+3000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2168?lang=en&region=us"
+                            },
+                            "value": "+4000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/38?lang=en&region=us"
+                            },
+                            "value": "+6000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Maui Invitational Winner"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/47263?lang=en&region=us",
+            "id": 47263,
+            "name": "NCAA(B) - Battle 4 Atlantis Winner",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2250?lang=en&region=us"
+                            },
+                            "value": "-120"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/12?lang=en&region=us"
+                            },
+                            "value": "+285"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/84?lang=en&region=us"
+                            },
+                            "value": "+650"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/97?lang=en&region=us"
+                            },
+                            "value": "+1100"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/201?lang=en&region=us"
+                            },
+                            "value": "+2000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2507?lang=en&region=us"
+                            },
+                            "value": "+2500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/277?lang=en&region=us"
+                            },
+                            "value": "+5000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2166?lang=en&region=us"
+                            },
+                            "value": "+6000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Battle 4 Atlantis Winner"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/66739?lang=en&region=us",
+            "id": 66739,
+            "name": "NCAA(B) - Horizon League Conference - Winner",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2523?lang=en&region=us"
+                            },
+                            "value": "+165"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/325?lang=en&region=us"
+                            },
+                            "value": "+225"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2473?lang=en&region=us"
+                            },
+                            "value": "+350"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2754?lang=en&region=us"
+                            },
+                            "value": "+450"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2870?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2750?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2739?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2174?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/270?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/94?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/85?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Horizon League Conference - Winner"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/66815?lang=en&region=us",
+            "id": 66815,
+            "name": "NCAA(B) - Southern Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/236?lang=en&region=us"
+                            },
+                            "value": "+170"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2747?lang=en&region=us"
+                            },
+                            "value": "+190"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/231?lang=en&region=us"
+                            },
+                            "value": "+200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2678?lang=en&region=us"
+                            },
+                            "value": "+2500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2717?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2643?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2535?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2430?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2382?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2193?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Southern Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87055?lang=en&region=us",
+            "id": 87055,
+            "name": "NCAA(B) - Atlantic Coast Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                            },
+                            "value": "-130"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/228?lang=en&region=us"
+                            },
+                            "value": "+320"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/97?lang=en&region=us"
+                            },
+                            "value": "+320"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/153?lang=en&region=us"
+                            },
+                            "value": "+650"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/259?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/258?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/221?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/87?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/52?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/25?lang=en&region=us"
+                            },
+                            "value": "+25000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2567?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/154?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/59?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/24?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Atlantic Coast Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87138?lang=en&region=us",
+            "id": 87138,
+            "name": "NCAA(B) - Western Athletic Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2253?lang=en&region=us"
+                            },
+                            "value": "-105"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/3084?lang=en&region=us"
+                            },
+                            "value": "+210"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2547?lang=en&region=us"
+                            },
+                            "value": "+500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2856?lang=en&region=us"
+                            },
+                            "value": "+600"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/253?lang=en&region=us"
+                            },
+                            "value": "+20000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/3101?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2627?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2000?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/250?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Western Athletic Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87140?lang=en&region=us",
+            "id": 87140,
+            "name": "NCAA(B) - Sun Belt Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2032?lang=en&region=us"
+                            },
+                            "value": "+160"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2653?lang=en&region=us"
+                            },
+                            "value": "+230"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/256?lang=en&region=us"
+                            },
+                            "value": "+375"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/6?lang=en&region=us"
+                            },
+                            "value": "+375"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/276?lang=en&region=us"
+                            },
+                            "value": "+3300"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/295?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2572?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2433?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2247?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2026?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/326?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/324?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/309?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/290?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Sun Belt Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87143?lang=en&region=us",
+            "id": 87143,
+            "name": "NCAA(B) - Big West Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/28?lang=en&region=us"
+                            },
+                            "value": "-170"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/300?lang=en&region=us"
+                            },
+                            "value": "+200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2540?lang=en&region=us"
+                            },
+                            "value": "+1200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/13?lang=en&region=us"
+                            },
+                            "value": "+2000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/27?lang=en&region=us"
+                            },
+                            "value": "+2500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2463?lang=en&region=us"
+                            },
+                            "value": "+3000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2934?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2239?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/302?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/299?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/62?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Big West Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87144?lang=en&region=us",
+            "id": 87144,
+            "name": "NCAA(B) - American East Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2803?lang=en&region=us"
+                            },
+                            "value": "-260"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/311?lang=en&region=us"
+                            },
+                            "value": "+200"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/261?lang=en&region=us"
+                            },
+                            "value": "+215"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/399?lang=en&region=us"
+                            },
+                            "value": "+1800"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2378?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2349?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2066?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/160?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - American East Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/136594?lang=en&region=us",
+            "id": 136594,
+            "name": "NCAA(B) - Summit League Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2900?lang=en&region=us"
+                            },
+                            "value": "-120"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2437?lang=en&region=us"
+                            },
+                            "value": "+210"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/233?lang=en&region=us"
+                            },
+                            "value": "+525"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/155?lang=en&region=us"
+                            },
+                            "value": "+1000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2571?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2449?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2172?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/198?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/140?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Summit League Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/136595?lang=en&region=us",
+            "id": 136595,
+            "name": "NCAA(B) - Metro Atlantic Athletic Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2771?lang=en&region=us"
+                            },
+                            "value": "+160"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2514?lang=en&region=us"
+                            },
+                            "value": "+190"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/314?lang=en&region=us"
+                            },
+                            "value": "+400"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/116?lang=en&region=us"
+                            },
+                            "value": "+550"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2520?lang=en&region=us"
+                            },
+                            "value": "+2500"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2561?lang=en&region=us"
+                            },
+                            "value": "+6000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2217?lang=en&region=us"
+                            },
+                            "value": "+6000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2368?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2529?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2363?lang=en&region=us"
+                            },
+                            "value": "+500000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Metro Atlantic Athletic Conference - Winner (conf. tournament)"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/224652?lang=en&region=us",
+            "id": 224652,
+            "name": "NCAA(B) - Big 12 Conference - Winner (conf. tournament)",
+            "futures": [
+                {
+                    "provider": {
+                        "id": "58",
+                        "name": "ESPN BET",
+                        "active": 1,
+                        "priority": 1
+                    },
+                    "books": [
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                            },
+                            "value": "-135"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2641?lang=en&region=us"
+                            },
+                            "value": "+260"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/12?lang=en&region=us"
+                            },
+                            "value": "+475"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/252?lang=en&region=us"
+                            },
+                            "value": "+550"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2306?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2132?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/277?lang=en&region=us"
+                            },
+                            "value": "+10000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2628?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2305?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2116?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/254?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/239?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/197?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/66?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/38?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        },
+                        {
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/9?lang=en&region=us"
+                            },
+                            "value": "+50000"
+                        }
+                    ]
+                }
+            ],
+            "displayName": "NCAA(B) - Big 12 Conference - Winner (conf. tournament)"
+        }
+    ]
+}

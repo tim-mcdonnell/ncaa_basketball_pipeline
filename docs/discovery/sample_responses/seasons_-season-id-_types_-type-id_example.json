@@ -1,0 +1,30 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3?lang=en&region=us",
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post",
+    "year": 2025,
+    "startDate": "2025-03-18T07:00Z",
+    "endDate": "2025-04-09T06:59Z",
+    "hasGroups": false,
+    "hasStandings": true,
+    "hasLegs": false,
+    "groups": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/groups?lang=en&region=us"
+    },
+    "week": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4?lang=en&region=us",
+        "number": 4,
+        "startDate": "2025-04-07T07:00Z",
+        "endDate": "2025-04-09T06:59Z",
+        "text": "Week 4",
+        "rankings": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings?lang=en&region=us"
+        }
+    },
+    "weeks": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks?lang=en&region=us"
+    },
+    "slug": "post-season"
+}

@@ -1,0 +1,130 @@
+{
+    "count": 9,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+        {
+            "name": "bpi",
+            "displayName": "BPI Leader",
+            "leaders": [
+                {
+                    "displayValue": "24.8",
+                    "shortDisplayValue": "35-4",
+                    "value": 24.7798,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "rpirank",
+            "displayName": "NCAAM RPI Leader",
+            "leaders": [
+                {
+                    "shortDisplayValue": "35-4",
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sospast",
+            "displayName": "SOS Leader",
+            "leaders": [
+                {
+                    "displayValue": "0.2",
+                    "shortDisplayValue": "28-9",
+                    "value": 0.1714,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/333?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sor",
+            "displayName": "SOR Leader",
+            "leaders": [
+                {
+                    "displayValue": "1",
+                    "shortDisplayValue": "15-20",
+                    "value": 1.0,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2086?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "bpioffense",
+            "displayName": "BPI Off Leader",
+            "leaders": [
+                {
+                    "displayValue": "13.9",
+                    "shortDisplayValue": "35-4",
+                    "value": 13.9347,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "bpidefense",
+            "displayName": "BPI Def Leader",
+            "leaders": [
+                {
+                    "displayValue": "13.3",
+                    "shortDisplayValue": "35-5",
+                    "value": 13.2856,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "bpisevendaychangerank",
+            "displayName": "7-Day RK CHG Leader",
+            "leaders": [
+                {
+                    "displayValue": "0",
+                    "shortDisplayValue": "35-4",
+                    "value": 0.0,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "top50bpiwins",
+            "displayName": "Most Quality Wins",
+            "leaders": [
+                {
+                    "displayValue": "22",
+                    "shortDisplayValue": "32-6",
+                    "value": 22.0,
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2?lang=en&region=us"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "sosoutofconfpast",
+            "displayName": "Non-Conf SOS Leader",
+            "leaders": [
+                {
+                    "shortDisplayValue": "35-4",
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/183?lang=en&region=us",
+    "id": "183",
+    "uid": "s:40~l:41~f:183",
+    "slug": "syracuse-orange",
+    "location": "Syracuse",
+    "name": "Orange",
+    "nickname": "Syracuse",
+    "abbreviation": "SYR",
+    "displayName": "Syracuse Orange",
+    "shortDisplayName": "Syracuse",
+    "color": "ff6500",
+    "isActive": true,
+    "logos": [
+        {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "default"
+            ],
+            "lastUpdated": "2022-09-02T00:03Z"
+        },
+        {
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/183.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+                "full",
+                "dark"
+            ],
+            "lastUpdated": "2022-09-02T00:03Z"
+        }
+    ],
+    "venue": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/1964?lang=en&region=us",
+        "id": "1964",
+        "fullName": "JMA Wireless Dome",
+        "address": {
+            "city": "Syracuse",
+            "state": "NY",
+            "zipCode": "13244"
+        },
+        "grass": false,
+        "indoor": true,
+        "images": [
+            {
+                "href": "https://a.espncdn.com/i/venues/mens-college-basketball/day/1964.jpg",
+                "width": 2000,
+                "height": 1125,
+                "alt": "",
+                "rel": [
+                    "full",
+                    "day"
+                ]
+            }
+        ]
+    },
+    "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us"
+    }
+}

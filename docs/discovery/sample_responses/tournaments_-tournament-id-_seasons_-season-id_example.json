@@ -1,0 +1,13 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2025?lang=en&region=us",
+    "id": "22",
+    "displayName": "NCAA Tournament",
+    "shortDisplayName": "NCAA",
+    "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us"
+    },
+    "numberOfRounds": 7,
+    "bracketology": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2025/bracketology?lang=en&region=us"
+    }
+}

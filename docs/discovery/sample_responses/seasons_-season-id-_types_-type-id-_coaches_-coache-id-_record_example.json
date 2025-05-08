@@ -1,0 +1,38 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/coaches/3934661/record?lang=en&region=us",
+    "id": "2",
+    "name": "Regular Season",
+    "type": "Regular Season",
+    "summary": "9-11-0",
+    "displayValue": "9-11-0",
+    "value": 0.45,
+    "stats": [
+        {
+            "name": "losses",
+            "displayName": "Losses",
+            "shortDisplayName": "L",
+            "description": "Losses",
+            "abbreviation": "L",
+            "type": "losses",
+            "value": 11.0
+        },
+        {
+            "name": "ties",
+            "displayName": "Ties",
+            "shortDisplayName": "T",
+            "description": "Ties",
+            "abbreviation": "T",
+            "type": "ties",
+            "value": 0.0
+        },
+        {
+            "name": "wins",
+            "displayName": "Wins",
+            "shortDisplayName": "W",
+            "description": "Wins",
+            "abbreviation": "W",
+            "type": "wins",
+            "value": 9.0
+        }
+    ]
+}
