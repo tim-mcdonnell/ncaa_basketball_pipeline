@@ -125,7 +125,10 @@ def espn_mens_college_basketball_source(
             raise
 
     @dlt.transformer(
-        name="season_types", data_from=seasons_resource, write_disposition="merge", primary_key="id"
+        name="season_types",
+        data_from=seasons_resource,
+        write_disposition="merge",
+        primary_key=["id", "season_id_fk"],
     )
     def season_types_transformer(season_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
         """
@@ -207,7 +210,103 @@ def espn_mens_college_basketball_source(
                 f"Unexpected error listing season type refs for season_id '{season_id}': {e}"
             )
 
-    return seasons_resource, season_types_transformer
+    @dlt.transformer(
+        name="weeks",
+        data_from=season_types_transformer,
+        write_disposition="merge",
+        primary_key=["id", "type_id_fk", "season_id_fk"],
+    )
+    def weeks_transformer(season_type_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+        """
+        For a given season type detail, fetches the list of week references
+        and then fetches full details for each week.
+        Yields the full week detail objects, augmented with foreign keys.
+        """
+        type_id = season_type_detail.get("id")
+        season_id_fk = season_type_detail.get("season_id_fk")
+
+        if not type_id or not season_id_fk:
+            logger.warning(
+                f"Received season type detail object without 'id' or 'season_id_fk'. "
+                f"Skipping weeks. Object: {season_type_detail}"
+            )
+            return
+
+        logger.info(f"Processing weeks for type_id '{type_id}' and season_id_fk '{season_id_fk}'.")
+        list_weeks_endpoint_relative = f"/seasons/{season_id_fk}/types/{type_id}/weeks"
+        api_params = {"limit": API_LIMIT}
+        items_yielded_for_this_type = 0
+
+        try:
+            for page_of_refs in list_client.paginate(
+                list_weeks_endpoint_relative, params=api_params
+            ):
+                if not page_of_refs:
+                    continue
+
+                for week_ref_item in page_of_refs:
+                    detail_url = week_ref_item.get("$ref")
+                    if not detail_url:
+                        logger.warning(
+                            f"Week reference item for type_id '{type_id}', "
+                            f"season_id_fk '{season_id_fk}' missing '$ref'. "
+                            f"Item: {week_ref_item}"
+                        )
+                        continue
+
+                    try:
+                        response = detail_client.get(detail_url)
+                        response.raise_for_status()
+                        week_detail = response.json()
+
+                        # API uses 'number' for week identifier, we'll use 'id'
+                        week_id_from_api = week_detail.pop("number", None)
+
+                        if week_id_from_api is not None and str(week_id_from_api).strip() != "":
+                            week_detail["id"] = str(week_id_from_api)
+                            week_detail["type_id_fk"] = str(type_id)
+                            week_detail["season_id_fk"] = str(season_id_fk)
+                            yield week_detail
+                            items_yielded_for_this_type += 1
+                        else:
+                            logger.warning(
+                                f"Fetched week detail for type_id '{type_id}', "
+                                f"season_id_fk '{season_id_fk}' from {detail_url} "
+                                f"is MISSING 'number' (expected as 'id') or 'number' is empty. "
+                                f"Detail: {week_detail}"
+                            )
+
+                    except requests.exceptions.HTTPError as he:
+                        response_text = he.response.text if he.response else "No response body"
+                        logger.error(
+                            f"HTTPError fetching week detail from {detail_url} "
+                            f"(for type_id '{type_id}', season_id_fk '{season_id_fk}'): {he}. "
+                            f"Response: {response_text}"
+                        )
+                    except Exception as ex:
+                        logger.error(
+                            f"Unexpected error fetching week detail from {detail_url} "
+                            f"(for type_id '{type_id}', season_id_fk '{season_id_fk}'): {ex}"
+                        )
+
+            logger.info(
+                f"Finished processing weeks for type_id '{type_id}', "
+                f"season_id_fk '{season_id_fk}', yielded {items_yielded_for_this_type} items."
+            )
+
+        except requests.exceptions.HTTPError as e:
+            response_text = e.response.text if e.response else "No response body"
+            logger.error(
+                f"HTTPError listing week refs for type_id '{type_id}', "
+                f"season_id_fk '{season_id_fk}': {e}. Response: {response_text}"
+            )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error listing week refs for type_id '{type_id}', "
+                f"season_id_fk '{season_id_fk}': {e}"
+            )
+
+    return seasons_resource, season_types_transformer, weeks_transformer
 
 
 if __name__ == "__main__":
