@@ -87,15 +87,21 @@ def espn_mens_college_basketball_source(
                     try:
                         response = detail_client.get(detail_url)
                         response.raise_for_status()
-                        season_detail = response.json()
+                        season_detail_from_api = response.json()
 
-                        if season_detail.get("id") is not None:
-                            yield season_detail
+                        # The API uses 'year' as the identifier for a season.
+                        # We will map it to 'id' for consistency in our schema.
+                        api_season_year = season_detail_from_api.get("year")
+
+                        if api_season_year is not None:
+                            season_detail_to_yield = season_detail_from_api.copy()
+                            season_detail_to_yield["id"] = str(api_season_year)
+                            yield season_detail_to_yield
                             seasons_processed_count += 1
                         else:
                             logger.warning(
-                                f"Fetched season detail from {detail_url} is missing 'id'."
-                                f" Detail: {season_detail}"
+                                f"Fetched season detail from {detail_url} is missing 'year' "
+                                f"(expected as 'id'). Detail: {season_detail_from_api}"
                             )
 
                     except requests.exceptions.HTTPError as he:
@@ -318,7 +324,6 @@ if __name__ == "__main__":
         pipeline_name="espn_api_standalone_test",
         destination="duckdb",
         dataset_name="espn_standalone_data",
-        progress="enlighten",
     )
 
     source_instance = espn_mens_college_basketball_source()

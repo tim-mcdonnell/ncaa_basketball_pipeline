@@ -32,7 +32,7 @@ validate:
 
 show:
 	@echo "Fetching all tables from the database..."
-	@DB_PATH="data/ncaa_basketball.duckdb"; \
+	@DB_PATH="data/espn_data.duckdb"; \
 	duckdb "$$DB_PATH" "COPY (SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema != 'information_schema' ORDER BY table_schema, table_name) TO '/dev/stdout' WITH (FORMAT csv, HEADER);" | tail -n +2 | while IFS=',' read -r SCHEMA TABLE; do \
 		if [ -z "$$SCHEMA" ] || [ -z "$$TABLE" ]; then \
 			continue; \
@@ -42,7 +42,7 @@ show:
 		echo "=========================================================="; \
 		echo "Table: $$SCHEMA.$$TABLE"; \
 		echo "=========================================================="; \
-		duckdb "$$DB_PATH" "SELECT * FROM \\"$$SCHEMA\\".\\"$$TABLE\\" LIMIT 5;"; \
+		duckdb "$$DB_PATH" "SELECT * FROM \"$$SCHEMA\".\"$$TABLE\" LIMIT 5;"; \
 		echo ""; \
 	done
 	@echo "Finished processing all tables."
