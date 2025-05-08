@@ -66,10 +66,9 @@ ignore = [
     # Missing type annotations
     "ANN001", "ANN002", "ANN003", "ANN201", "ANN202", "ANN204", "ANN401",
 
-    # Line too long (already handled by formatter)
-    "E501",
     # No need for explicit return type annotations on classmethod (overly strict)
     "RUF009",
+
     # Ambiguous variable name
     "E741",
 ]
@@ -80,12 +79,12 @@ unfixable = []
 
 [tool.ruff.lint.per-file-ignores]
 # Ignore import order violations and unused imports in __init__.py files
-"__init__.py" = ["F401", "I001"]
+"__init__.py" = ["F401"]
 # Relaxed rules for tests
 "*_tests/**/*.py" = ["ANN", "B011"]
 
-[tool.ruff.lint.isort]
-known-first-party = ["ncaa_basketball_pipeline"]
+# [tool.ruff.lint.isort]
+# known-first-party = ["ncaa_basketball_pipeline"]
 
 [tool.ruff.format]
 # Use double quotes for consistency
