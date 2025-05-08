@@ -3,6 +3,7 @@
 
 import logging
 from collections.abc import Iterable
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 import dlt
@@ -23,6 +24,7 @@ logger = logging.getLogger(__name__)
 @dlt.source(name="espn_source", max_table_nesting=0)
 def espn_mens_college_basketball_source(
     base_url: str = dlt.config.value,
+    season_year: str | None = None,
 ) -> Iterable[DltResource]:
     """
     Defines dlt resources for fetching NCAA Men's Basketball data from the ESPN API.
@@ -31,6 +33,7 @@ def espn_mens_college_basketball_source(
 
     Args:
         base_url (str): The base URL for the API, typically sourced from config/env.
+        season_year (Optional[str]): The specific season year to fetch.
 
     Returns:
         Iterable[DltResource]: An iterable containing the dlt resources (seasons, season_types).
@@ -61,74 +64,124 @@ def espn_mens_college_basketball_source(
     @dlt.resource(name="seasons", write_disposition="merge", primary_key="id")
     def seasons_resource() -> Iterable[dict[str, Any]]:
         """
-        Fetches the list of season references and then fetches full details for each season.
+        Fetches season details.
+        If a specific 'season_year' is provided to the source, fetches only that season.
+        Otherwise, fetches the list of all season references and then their full details.
         Yields the full season detail objects.
         """
-        list_seasons_endpoint = "/seasons"
-        api_params = {"limit": API_LIMIT}  # Use constant
         seasons_processed_count = 0
-        logger.info(f"Fetching season references from {base_url}{list_seasons_endpoint}")
 
-        try:
-            # Paginate through the list of season $ref objects using list_client
-            for page_of_refs in list_client.paginate(list_seasons_endpoint, params=api_params):
-                if not page_of_refs:
-                    continue
+        if season_year:  # A specific season is requested
+            # Construct the direct URL for the specific season
+            # The ESPN API typically uses the year the season ends, e.g., 2024 for 2023-24 season.
+            # This needs to match the format of season_year being passed (which will be our
+            # partition key)
+            season_detail_url = f"{base_url}/seasons/{season_year}"
+            logger.info(f"Fetching specific season detail from {season_detail_url}")
+            try:
+                response = detail_client.get(
+                    season_detail_url
+                )  # Using detail_client as base_url is already in season_detail_url
+                response.raise_for_status()
+                season_detail_from_api = response.json()
 
-                for season_ref_item in page_of_refs:
-                    detail_url = season_ref_item.get("$ref")
-                    if not detail_url:
-                        logger.warning(
-                            f"Season reference item missing '$ref' key. Item: {season_ref_item}"
-                        )
+                api_season_identifier = season_detail_from_api.get(
+                    "year"
+                )  # Or whatever the API uses, e.g. 'id'
+                if api_season_identifier is not None:
+                    season_detail_to_yield = season_detail_from_api.copy()
+                    # Ensure 'id' field matches the partition key format if necessary,
+                    # or is consistently the year
+                    season_detail_to_yield["id"] = str(api_season_identifier)
+                    yield season_detail_to_yield
+                    seasons_processed_count += 1
+                else:
+                    logger.warning(
+                        f"Fetched season detail from {season_detail_url} is missing 'year' "
+                        f"(expected as 'id'). Detail: {season_detail_from_api}"
+                    )
+            except requests.exceptions.HTTPError as he:
+                response_text = he.response.text if he.response else "No response body"
+                logger.error(
+                    f"HTTPError fetching specific season detail from {season_detail_url}: {he}. "
+                    f"Response: {response_text}"
+                )
+            except Exception as ex:
+                logger.error(
+                    f"Unexpected error fetching specific season detail from "
+                    f"{season_detail_url}: {ex}"
+                )
+        else:  # No specific season requested, fetch all (original behavior)
+            list_seasons_endpoint = "/seasons"
+            api_params = {"limit": API_LIMIT}
+            logger.info(f"Fetching all season references from {base_url}{list_seasons_endpoint}")
+            try:
+                # Paginate through the list of season $ref objects using list_client
+                for page_of_refs in list_client.paginate(list_seasons_endpoint, params=api_params):
+                    if not page_of_refs:
                         continue
 
-                    # Fetch the actual season detail using detail_client
-                    try:
-                        response = detail_client.get(detail_url)
-                        response.raise_for_status()
-                        season_detail_from_api = response.json()
-
-                        # The API uses 'year' as the identifier for a season.
-                        # We will map it to 'id' for consistency in our schema.
-                        api_season_year = season_detail_from_api.get("year")
-
-                        if api_season_year is not None:
-                            season_detail_to_yield = season_detail_from_api.copy()
-                            season_detail_to_yield["id"] = str(api_season_year)
-                            yield season_detail_to_yield
-                            seasons_processed_count += 1
-                        else:
+                    for season_ref_item in page_of_refs:
+                        detail_url = season_ref_item.get("$ref")
+                        if not detail_url:
                             logger.warning(
-                                f"Fetched season detail from {detail_url} is missing 'year' "
-                                f"(expected as 'id'). Detail: {season_detail_from_api}"
+                                f"Season reference item missing '$ref' key. Item: {season_ref_item}"
+                            )
+                            continue
+
+                        # Fetch the actual season detail using detail_client
+                        try:
+                            response = detail_client.get(detail_url)
+                            response.raise_for_status()
+                            season_detail_from_api = response.json()
+
+                            # The API uses 'year' as the identifier for a season.
+                            # We will map it to 'id' for consistency in our schema.
+                            api_season_year = season_detail_from_api.get("year")
+
+                            if api_season_year is not None:
+                                season_detail_to_yield = season_detail_from_api.copy()
+                                season_detail_to_yield["id"] = str(api_season_year)
+                                yield season_detail_to_yield
+                                seasons_processed_count += 1
+                            else:
+                                logger.warning(
+                                    f"Fetched season detail from {detail_url} is missing 'year' "
+                                    f"(expected as 'id'). Detail: {season_detail_from_api}"
+                                )
+
+                        except requests.exceptions.HTTPError as he:
+                            response_text = he.response.text if he.response else "No response body"
+                            logger.error(
+                                f"HTTPError fetching season detail from {detail_url}: {he}. "
+                                f"Response: {response_text}"
+                            )
+                        except Exception as ex:
+                            logger.error(
+                                f"Unexpected error fetching season detail from {detail_url}: {ex}"
                             )
 
-                    except requests.exceptions.HTTPError as he:
-                        response_text = he.response.text if he.response else "No response body"
-                        logger.error(
-                            f"HTTPError fetching season detail from {detail_url}: {he}. "
-                            f"Response: {response_text}"
-                        )
-                    except Exception as ex:
-                        logger.error(
-                            f"Unexpected error fetching season detail from {detail_url}: {ex}"
-                        )
+                logger.info(
+                    f"Finished processing seasons resource, yielded details for "
+                    f"{seasons_processed_count} seasons."
+                )
+                if seasons_processed_count == 0 and season_year:
+                    logger.warning(
+                        f"No season data yielded for specified season_year: {season_year}. "
+                        f"Check if the season exists or if there was an API error."
+                    )
 
-            logger.info(
-                f"Finished processing seasons resource, yielded details for "
-                f"{seasons_processed_count} seasons."
-            )
-
-        except requests.exceptions.HTTPError as e:
-            response_text = e.response.text if e.response else "No response body"
-            logger.error(
-                f"HTTPError listing season refs from {list_seasons_endpoint}: {e}. "
-                f"Response: {response_text}"
-            )
-        except Exception as e:
-            logger.error(f"Unexpected error listing season refs from {list_seasons_endpoint}: {e}")
-            raise
+            except requests.exceptions.HTTPError as e:
+                response_text = e.response.text if e.response else "No response body"
+                logger.error(
+                    f"HTTPError listing season refs from {list_seasons_endpoint}: {e}. "
+                    f"Response: {response_text}"
+                )
+            except Exception as e:
+                logger.error(
+                    f"Unexpected error listing season refs from {list_seasons_endpoint}: {e}"
+                )
+                raise
 
     @dlt.transformer(
         name="season_types",
@@ -312,7 +365,141 @@ def espn_mens_college_basketball_source(
                 f"season_id_fk '{season_id_fk}': {e}"
             )
 
-    return seasons_resource, season_types_transformer, weeks_transformer
+    @dlt.transformer(
+        name="events",
+        data_from=weeks_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    def events_transformer(week_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+        """
+        For a given week detail, fetches the list of event references,
+        then fetches full details for each event concurrently.
+        Yields chunks of full event detail objects, augmented with foreign keys.
+        """
+        week_id = week_detail.get("id")
+        type_id_fk = week_detail.get("type_id_fk")
+        season_id_fk = week_detail.get("season_id_fk")
+
+        if not week_id or not type_id_fk or not season_id_fk:
+            logger.warning(
+                f"Received week detail object without 'id', 'type_id_fk', or 'season_id_fk'. "
+                f"Skipping events. Object: {week_detail}"
+            )
+            return
+
+        logger.info(
+            f"Processing events for week_id '{week_id}', type_id_fk '{type_id_fk}', "
+            f"season_id_fk '{season_id_fk}'."
+        )
+        list_events_endpoint_relative = (
+            f"/seasons/{season_id_fk}/types/{type_id_fk}/weeks/{week_id}/events"
+        )
+        api_params = {"limit": API_LIMIT}
+        events_yielded_for_this_week = 0
+
+        # Configuration for concurrent requests
+        # Settable via env var: SOURCES__ESPN_SOURCE__MAX_CONCURRENT_EVENT_FETCHES
+        max_concurrent_fetches = dlt.config.get(
+            "sources.espn_source.max_concurrent_event_fetches", 10
+        )
+
+        try:
+            # First, paginate through the list of event $ref objects using list_client
+            for page_of_refs in list_client.paginate(
+                list_events_endpoint_relative, params=api_params
+            ):
+                if not page_of_refs:
+                    continue
+
+                detail_urls_to_fetch = []
+                for event_ref_item in page_of_refs:
+                    detail_url = event_ref_item.get("$ref")
+                    if not detail_url:
+                        logger.warning(
+                            f"Event ref missing '$ref' for week '{week_id}', "
+                            f"type '{type_id_fk}', season '{season_id_fk}'. "
+                            f"Item: {event_ref_item}"
+                        )
+                        continue
+                    detail_urls_to_fetch.append(detail_url)
+
+                if not detail_urls_to_fetch:
+                    continue
+
+                fetched_event_details_for_page = []
+                with ThreadPoolExecutor(max_workers=max_concurrent_fetches) as executor:
+                    future_to_url = {
+                        executor.submit(detail_client.get, url): url for url in detail_urls_to_fetch
+                    }
+                    for future in as_completed(future_to_url):
+                        detail_url = future_to_url[future]
+                        try:
+                            response = future.result()  # Get response from future
+                            response.raise_for_status()
+                            event_detail = response.json()
+
+                            # Ensure the event detail has an 'id'
+                            event_api_id = event_detail.get("id")
+                            if event_api_id is None or str(event_api_id).strip() == "":
+                                logger.warning(
+                                    f"Fetched event detail from {detail_url} (for week_id "
+                                    f"'{week_id}') is MISSING 'id' or 'id' is empty. "
+                                    f"Detail: {event_detail}"
+                                )
+                                continue  # Skip if no valid ID for the event itself
+
+                            # Augment with foreign keys
+                            event_detail["id"] = str(event_api_id)  # Ensure ID is string
+                            event_detail["week_id_fk"] = str(week_id)
+                            event_detail["type_id_fk"] = str(type_id_fk)
+                            event_detail["season_id_fk"] = str(season_id_fk)
+
+                            fetched_event_details_for_page.append(event_detail)
+
+                        except requests.exceptions.HTTPError as he:
+                            response_text = he.response.text if he.response else "No response body"
+                            logger.error(
+                                f"HTTPError fetching event detail from {detail_url} "
+                                f"(for week_id '{week_id}', type_id_fk '{type_id_fk}', "
+                                f"season_id_fk '{season_id_fk}'): {he}. Response: {response_text}"
+                            )
+                        except Exception as ex:
+                            logger.error(
+                                f"Unexpected error fetching event detail from {detail_url} "
+                                f"(for week_id '{week_id}', type_id_fk '{type_id_fk}', "
+                                f"season_id_fk '{season_id_fk}'): {ex}"
+                            )
+
+                if fetched_event_details_for_page:
+                    yield fetched_event_details_for_page  # Yield a list of event details
+                    events_yielded_for_this_week += len(fetched_event_details_for_page)
+
+            logger.info(
+                f"Finished processing events for week_id '{week_id}', type_id_fk '{type_id_fk}', "
+                f"season_id_fk '{season_id_fk}', yielded {events_yielded_for_this_week} "
+                f"event details."
+            )
+
+        except requests.exceptions.HTTPError as e:
+            response_text = e.response.text if e.response else "No response body"
+            logger.error(
+                f"HTTPError listing event refs for week_id '{week_id}', "
+                f"type_id_fk '{type_id_fk}', season_id_fk '{season_id_fk}': {e}. "
+                f"Response: {response_text}"
+            )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error listing event refs for week_id '{week_id}', "
+                f"type_id_fk '{type_id_fk}', season_id_fk '{season_id_fk}': {e}"
+            )
+
+    return (
+        seasons_resource,
+        season_types_transformer,
+        weeks_transformer,
+        events_transformer,
+    )
 
 
 if __name__ == "__main__":
