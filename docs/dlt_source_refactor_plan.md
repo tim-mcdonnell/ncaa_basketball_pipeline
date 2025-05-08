@@ -60,14 +60,16 @@ The refactored source must adhere to the following architectural principles:
 * All ID fields (primary and foreign keys) should be stored as **strings**.
 * Pass down parent identifiers through the transformer chain to construct these foreign keys.
 
-### 4.4. Concurrency
-* Implement concurrency using `ThreadPoolExecutor` for fetching details for multiple items yielded by a parent resource. This is particularly important for:
-    * Fetching details for multiple events within a week.
-    * Fetching details for multiple player statistics within an event.
-    * Fetching details for other lists of `$ref`s (e.g., team rosters, plays).
-* Wrap API calls within the executor's tasks in `try...except` blocks to handle individual fetch failures gracefully without halting the entire process. Log failed URLs/IDs.
-* Alternatively, use `@dlt.defer` for simpler cases where a transformer processes one item from its parent and fetches one corresponding detail item.
-* Configure `max_workers` for `ThreadPoolExecutor` thoughtfully (e.g., via a constant or configuration) to manage load on the API and local resources.
+### 4.4. Concurrency and Configuration
+*   **Primary Concurrency Strategy:** Employ `@dlt.defer` for transformers that perform I/O-bound operations (primarily API calls for detail fetching) for each item received from a parent. This allows `dlt` to manage a global thread pool for concurrent execution.
+    *   The size of this global pool is configurable via the environment variable `DLT_RUNTIME__PARALLEL_POOL_MAX_WORKERS` (e.g., `DLT_RUNTIME__PARALLEL_POOL_MAX_WORKERS=20`) in the `.env` file.
+*   **Refactoring `events_transformer`:** The existing `events_transformer` (which uses a `ThreadPoolExecutor`) will be refactored into:
+    *   `event_refs_lister_transformer`: Lists event references for a week. Could be `@dlt.defer`-ed if listing refs for a single week is itself a slow, multi-page operation.
+    *   `event_detail_fetcher_transformer`: Fetches details for each event reference using `@dlt.defer`. The internal `ThreadPoolExecutor` in the original `events_transformer` will be removed.
+*   **Custom `ThreadPoolExecutor` (Use Sparingly):** For specific cases where a transformer needs to manage a batch of its own concurrent tasks internally *before* yielding items to a subsequent `@dlt.defer`-ed transformer (e.g., if a list endpoint itself is very slow and yields many items that then need immediate, batched pre-processing), a custom `ThreadPoolExecutor` might be considered.
+    *   If used, its `max_workers` should be configurable via an environment variable, e.g., `DLT_SOURCES__ESPN_SOURCE__MAX_SPECIFIC_WORKERS=5`, accessed in the code via `dlt.config.get("sources.espn_source.max_specific_workers", 5)`. This allows tuning specific parts of the pipeline if necessary.
+*   **Error Handling:** Wrap all I/O operations within `try...except` blocks to handle failures gracefully, log errors, and allow the pipeline to continue with other items.
+*   **Environment Variables:** All `dlt`-related concurrency configurations will be managed via environment variables in the `.env` file, which `dlt` and `python-dotenv` will pick up.
 
 ### 4.5. Pagination
 * Utilize the `PageNumberPaginator` for list endpoints that are paginated, as configured in the "List Client".
@@ -81,8 +83,10 @@ The refactored source must adhere to the following architectural principles:
 * If a detail fetch for a specific item fails after retries, log the failure and continue processing other items. Do not let a single item failure stop an entire batch.
 
 ### 4.7. Configuration and Constants
-* Define constants for `API_LIMIT`, `BASE_URL` (though `base_url` is passed into the source function from `dlt.config.value`), and potentially `MAX_WORKERS` for the thread pool.
-* Ensure the `base_url` is correctly utilized by the list client.
+*   Define constants for `API_LIMIT`.
+*   The `base_url` is passed into the source function from `dlt.config.value` (set via `DLT_BASE_URL` in `.env` if not using the default passed by `dlt.config.value` directly from a secrets/config file structure that `dlt` normally uses. For `.env` driven configuration, ensure `base_url: str = dlt.config.value` in the source function signature correctly picks up `DLT_BASE_URL` or a more specific config like `DLT_SOURCES__ESPN_SOURCE__BASE_URL`).
+*   Concurrency parameters (e.g., `DLT_RUNTIME__PARALLEL_POOL_MAX_WORKERS`, and any custom max_workers like `DLT_SOURCES__ESPN_SOURCE__MAX_CONCURRENT_EVENT_FETCHES` if still used for a specific `ThreadPoolExecutor`, or new ones like `DLT_SOURCES__ESPN_SOURCE__MAX_SPECIFIC_WORKERS`) will be managed via environment variables in the `.env` file and accessed via `dlt.config.get("path.to.setting", default_value)` or automatically used by `dlt` for its own settings.
+*   Ensure the `base_url` is correctly utilized by the list client.
 
 ### 4.8. Code Quality
 * Write clean, readable, and well-commented Python code.

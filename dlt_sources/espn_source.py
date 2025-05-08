@@ -1,519 +1,275 @@
-# dlt_sources/espn_source.py
-"""dlt source definition for the ESPN API using RESTClient and consistent detail fetching."""
+"""
+dlt source : Fetches ESPN API data starting from the league's root URL.
+Demonstrates fetching league info and then branching to seasons.
+"""
 
 import logging
 from collections.abc import Iterable
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 import dlt
+from dlt.common.typing import TDataItem
 from dlt.extract.source import DltResource
-from dlt.sources.helpers import requests
 from dlt.sources.helpers.rest_client import RESTClient
 from dlt.sources.helpers.rest_client.paginators import PageNumberPaginator
-from dotenv import load_dotenv
 
-API_LIMIT = 1000
+# --- Configuration & Constants ---
+API_LIMIT = 1000  # Max items per page for list endpoints
 
+# Configure basic logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
 
+# --- Main Source Definition ---
 @dlt.source(name="espn_source", max_table_nesting=0)
-def espn_mens_college_basketball_source(
-    base_url: str = dlt.config.value,
-    season_year: str | None = None,
+def espn_mens_college_basketball_source_(
+    base_url: str = dlt.config.value,  # e.g., http://.../leagues/mens-college-basketball
+    season_year_filter: str | None = None,  # Optional: To filter for a specific season
 ) -> Iterable[DltResource]:
     """
-    Defines dlt resources for fetching NCAA Men's Basketball data from the ESPN API.
-
-    Fetches season and season type details by listing references and then fetching details.
+    Defines dlt resources for fetching NCAA Men's Basketball data from the ESPN API,
+    starting with the league's root document.
 
     Args:
-        base_url (str): The base URL for the API, typically sourced from config/env.
-        season_year (Optional[str]): The specific season year to fetch.
+        base_url: str = dlt.config.value (str): The base URL for the specific api.
+        season_year_filter (Optional[str]): If provided, only this season will be processed.
 
     Returns:
-        Iterable[DltResource]: An iterable containing the dlt resources (seasons, season_types).
+        Iterable[DltResource]: An iterable containing the dlt resources.
     """
-    # Check if base_url was successfully loaded from config/env
-    if not base_url:
-        logger.warning("Base URL not found in config/env. Using default.")
-        # Default fallback if not provided in config
-        base_url = (
-            "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball"
-        )
-
-    logger.info(f"Initializing ESPN source with base_url: {base_url}")
 
     # Client for endpoints that list items/refs and use page number pagination
+    # This client will be used when its base_url is set to a collection endpoint
+    # (e.g., a seasons collection URL)
     list_paginator = PageNumberPaginator(
         page_param="page", total_path="pageCount", base_page=1, stop_after_empty_page=True
     )
-    list_client = RESTClient(  # Renamed client
-        base_url=base_url, paginator=list_paginator, data_selector="items", headers={}
-    )
 
-    # Client for fetching single detail objects from absolute $ref URLs
-    detail_client = RESTClient(base_url=None, headers={})  # Renamed client
+    # Detail Client: For fetching single detail objects from absolute $ref URLs.
+    # base_url=None because $ref URLs are absolute.
+    detail_client = RESTClient(base_url=None, headers={})
 
-    # --- Resources ---
-
-    @dlt.resource(name="seasons", write_disposition="merge", primary_key="id")
-    def seasons_resource() -> Iterable[dict[str, Any]]:
+    # --- League Root Information Resource ---
+    @dlt.resource(name="league_info", write_disposition="replace", primary_key="id")
+    def league_info_resource() -> Iterable[dict[str, Any]]:
         """
-        Fetches season details.
-        If a specific 'season_year' is provided to the source, fetches only that season.
-        Otherwise, fetches the list of all season references and then their full details.
-        Yields the full season detail objects.
+        Fetches the main information document for the league from the base_url.
+        This document contains links ($refs) to other top-level collections like seasons, teams, etc.
         """
-        seasons_processed_count = 0
-
-        if season_year:  # A specific season is requested
-            # Construct the direct URL for the specific season
-            # The ESPN API typically uses the year the season ends, e.g., 2024 for 2023-24 season.
-            # This needs to match the format of season_year being passed (which will be our
-            # partition key)
-            season_detail_url = f"{base_url}/seasons/{season_year}"
-            logger.info(f"Fetching specific season detail from {season_detail_url}")
-            try:
-                response = detail_client.get(
-                    season_detail_url
-                )  # Using detail_client as base_url is already in season_detail_url
-                response.raise_for_status()
-                season_detail_from_api = response.json()
-
-                api_season_identifier = season_detail_from_api.get(
-                    "year"
-                )  # Or whatever the API uses, e.g. 'id'
-                if api_season_identifier is not None:
-                    season_detail_to_yield = season_detail_from_api.copy()
-                    # Ensure 'id' field matches the partition key format if necessary,
-                    # or is consistently the year
-                    season_detail_to_yield["id"] = str(api_season_identifier)
-                    yield season_detail_to_yield
-                    seasons_processed_count += 1
-                else:
-                    logger.warning(
-                        f"Fetched season detail from {season_detail_url} is missing 'year' "
-                        f"(expected as 'id'). Detail: {season_detail_from_api}"
-                    )
-            except requests.exceptions.HTTPError as he:
-                response_text = he.response.text if he.response else "No response body"
-                logger.error(
-                    f"HTTPError fetching specific season detail from {season_detail_url}: {he}. "
-                    f"Response: {response_text}"
-                )
-            except Exception as ex:
-                logger.error(
-                    f"Unexpected error fetching specific season detail from "
-                    f"{season_detail_url}: {ex}"
-                )
-        else:  # No specific season requested, fetch all (original behavior)
-            list_seasons_endpoint = "/seasons"
-            api_params = {"limit": API_LIMIT}
-            logger.info(f"Fetching all season references from {base_url}{list_seasons_endpoint}")
-            try:
-                # Paginate through the list of season $ref objects using list_client
-                for page_of_refs in list_client.paginate(list_seasons_endpoint, params=api_params):
-                    if not page_of_refs:
-                        continue
-
-                    for season_ref_item in page_of_refs:
-                        detail_url = season_ref_item.get("$ref")
-                        if not detail_url:
-                            logger.warning(
-                                f"Season reference item missing '$ref' key. Item: {season_ref_item}"
-                            )
-                            continue
-
-                        # Fetch the actual season detail using detail_client
-                        try:
-                            response = detail_client.get(detail_url)
-                            response.raise_for_status()
-                            season_detail_from_api = response.json()
-
-                            # The API uses 'year' as the identifier for a season.
-                            # We will map it to 'id' for consistency in our schema.
-                            api_season_year = season_detail_from_api.get("year")
-
-                            if api_season_year is not None:
-                                season_detail_to_yield = season_detail_from_api.copy()
-                                season_detail_to_yield["id"] = str(api_season_year)
-                                yield season_detail_to_yield
-                                seasons_processed_count += 1
-                            else:
-                                logger.warning(
-                                    f"Fetched season detail from {detail_url} is missing 'year' "
-                                    f"(expected as 'id'). Detail: {season_detail_from_api}"
-                                )
-
-                        except requests.exceptions.HTTPError as he:
-                            response_text = he.response.text if he.response else "No response body"
-                            logger.error(
-                                f"HTTPError fetching season detail from {detail_url}: {he}. "
-                                f"Response: {response_text}"
-                            )
-                        except Exception as ex:
-                            logger.error(
-                                f"Unexpected error fetching season detail from {detail_url}: {ex}"
-                            )
-
-                logger.info(
-                    f"Finished processing seasons resource, yielded details for "
-                    f"{seasons_processed_count} seasons."
-                )
-                if seasons_processed_count == 0 and season_year:
-                    logger.warning(
-                        f"No season data yielded for specified season_year: {season_year}. "
-                        f"Check if the season exists or if there was an API error."
-                    )
-
-            except requests.exceptions.HTTPError as e:
-                response_text = e.response.text if e.response else "No response body"
-                logger.error(
-                    f"HTTPError listing season refs from {list_seasons_endpoint}: {e}. "
-                    f"Response: {response_text}"
-                )
-            except Exception as e:
-                logger.error(
-                    f"Unexpected error listing season refs from {list_seasons_endpoint}: {e}"
-                )
-                raise
-
-    @dlt.transformer(
-        name="season_types",
-        data_from=seasons_resource,
-        write_disposition="merge",
-        primary_key=["id", "season_id_fk"],
-    )
-    def season_types_transformer(season_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
-        """
-        For a given season detail object, fetches the list of season type references
-        and then fetches the full details for each season type.
-        Yields the full season type detail objects.
-        """
-        season_id = season_detail.get("id")
-        if not season_id:
-            logger.warning(
-                f"Received season detail object without 'id'. "
-                f"Skipping season types. Object: {season_detail}"
-            )
-            return
-
-        logger.info(f"Processing season types for season_id '{season_id}'.")
-        list_types_endpoint_relative = f"/seasons/{season_id}/types"
-        api_params = {"limit": API_LIMIT}  # Use constant
-        items_yielded_for_this_season = 0
-
+        logger.info(f"Fetching league root information from: {base_url}")
         try:
-            for page_of_refs in list_client.paginate(
-                list_types_endpoint_relative, params=api_params
-            ):
-                if not page_of_refs:
-                    continue
+            response = detail_client.get(base_url)  # Use detail_client as URL is absolute
+            response.raise_for_status()
+            league_data = response.json()
 
-                for type_ref_item in page_of_refs:
-                    detail_url = type_ref_item.get("$ref")
-                    if not detail_url:
-                        logger.warning(
-                            f"Season type reference item for season_id '{season_id}' "
-                            f"missing '$ref'. Item: {type_ref_item}"
-                        )
-                        continue
+            # The league data itself might have an 'id' or 'uid' that can serve as a primary key.
+            # Example: league_data['id'] = league_data.get('id', base_url) # Ensure an ID
+            if "id" not in league_data and "uid" in league_data:  # Use uid if id is missing
+                league_data["id"] = league_data["uid"]
+            elif "id" not in league_data:  # Fallback if no clear ID
+                league_data["id"] = base_url  # Not ideal, but ensures a PK
 
-                    try:
-                        response = detail_client.get(detail_url)
-                        response.raise_for_status()
-                        season_type_detail = response.json()
-                        season_type_detail["season_id_fk"] = str(season_id)
+            # Add the season_year_filter to the yielded item if it exists,
+            # so downstream transformers can use it.
+            if season_year_filter:
+                league_data["_season_year_filter"] = season_year_filter
 
-                        detail_id = season_type_detail.get("id")
-                        if detail_id is not None and str(detail_id).strip() != "":
-                            yield season_type_detail
-                            items_yielded_for_this_season += 1
-                        else:
-                            logger.warning(
-                                f"Fetched season type detail for season_id '{season_id}' "
-                                f"from {detail_url} is MISSING 'id' or 'id' is empty. "
-                                f"Detail: {season_type_detail}"
-                            )
-
-                    except requests.exceptions.HTTPError as he:
-                        response_text = he.response.text if he.response else "No response body"
-                        logger.error(
-                            f"HTTPError fetching season type detail from {detail_url} "
-                            f"(for season_id '{season_id}'): {he}. Response: {response_text}"
-                        )
-                    except Exception as ex:
-                        logger.error(
-                            f"Unexpected error fetching season type detail from {detail_url} "
-                            f"(for season_id '{season_id}'): {ex}"
-                        )
-
+            yield league_data
             logger.info(
-                f"Finished processing season types for season_id '{season_id}', "
-                f"yielded {items_yielded_for_this_season} items."
-            )
-
-        except requests.exceptions.HTTPError as e:
-            response_text = e.response.text if e.response else "No response body"
-            logger.error(
-                f"HTTPError listing season type refs for season_id '{season_id}': {e}. "
-                f"Response: {response_text}"
+                f"Successfully fetched and yielded league root information for {league_data.get('name', base_url)}."
             )
         except Exception as e:
             logger.error(
-                f"Unexpected error listing season type refs for season_id '{season_id}': {e}"
+                f"Error fetching league root information from {base_url}: {e}", exc_info=True
             )
+            # Optionally, raise to stop the pipeline or yield nothing
+            # raise
+
+    # --- Seasons Processing Chain ---
 
     @dlt.transformer(
-        name="weeks",
-        data_from=season_types_transformer,
-        write_disposition="merge",
-        primary_key=["id", "type_id_fk", "season_id_fk"],
+        name="season_refs_lister",
+        data_from=league_info_resource,  # Takes data from the league_info_resource
     )
-    def weeks_transformer(season_type_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+    def season_refs_lister_transformer(league_doc: dict[str, Any]) -> Iterable[dict[str, Any]]:
         """
-        For a given season type detail, fetches the list of week references
-        and then fetches full details for each week.
-        Yields the full week detail objects, augmented with foreign keys.
+        Extracts the $ref to the seasons collection from the league document.
+        If a season_year_filter is present, it constructs a direct $ref to that season.
+        Otherwise, it prepares to list all season $refs from the seasons collection URL.
+        Yields item(s) containing the URL to fetch season(s) and any necessary context.
         """
-        type_id = season_type_detail.get("id")
-        season_id_fk = season_type_detail.get("season_id_fk")
+        current_season_year_filter = league_doc.get("_season_year_filter")
 
-        if not type_id or not season_id_fk:
-            logger.warning(
-                f"Received season type detail object without 'id' or 'season_id_fk'. "
-                f"Skipping weeks. Object: {season_type_detail}"
-            )
-            return
+        if current_season_year_filter:
+            # If a specific season is requested, construct its direct $ref
+            # The 'seasons' $ref in the league doc might point to the collection,
+            # but we need the base for constructing a specific season URL.
+            # Assuming the league_doc.$ref or a similar field gives the league's own base URL.
+            # Or, more simply, use the original base_url to construct.
 
-        logger.info(f"Processing weeks for type_id '{type_id}' and season_id_fk '{season_id_fk}'.")
-        list_weeks_endpoint_relative = f"/seasons/{season_id_fk}/types/{type_id}/weeks"
-        api_params = {"limit": API_LIMIT}
-        items_yielded_for_this_type = 0
+            # Example: league_doc['season']['$ref'] gives current season.
+            # league_doc['seasons']['$ref'] gives collection of all seasons.
+            # We need to be careful how we get the base for /seasons/{year}
 
-        try:
-            for page_of_refs in list_client.paginate(
-                list_weeks_endpoint_relative, params=api_params
-            ):
-                if not page_of_refs:
-                    continue
-
-                for week_ref_item in page_of_refs:
-                    detail_url = week_ref_item.get("$ref")
-                    if not detail_url:
-                        logger.warning(
-                            f"Week reference item for type_id '{type_id}', "
-                            f"season_id_fk '{season_id_fk}' missing '$ref'. "
-                            f"Item: {week_ref_item}"
-                        )
-                        continue
-
-                    try:
-                        response = detail_client.get(detail_url)
-                        response.raise_for_status()
-                        week_detail = response.json()
-
-                        # API uses 'number' for week identifier, we'll use 'id'
-                        week_id_from_api = week_detail.pop("number", None)
-
-                        if week_id_from_api is not None and str(week_id_from_api).strip() != "":
-                            week_detail["id"] = str(week_id_from_api)
-                            week_detail["type_id_fk"] = str(type_id)
-                            week_detail["season_id_fk"] = str(season_id_fk)
-                            yield week_detail
-                            items_yielded_for_this_type += 1
-                        else:
-                            logger.warning(
-                                f"Fetched week detail for type_id '{type_id}', "
-                                f"season_id_fk '{season_id_fk}' from {detail_url} "
-                                f"is MISSING 'number' (expected as 'id') or 'number' is empty. "
-                                f"Detail: {week_detail}"
-                            )
-
-                    except requests.exceptions.HTTPError as he:
-                        response_text = he.response.text if he.response else "No response body"
-                        logger.error(
-                            f"HTTPError fetching week detail from {detail_url} "
-                            f"(for type_id '{type_id}', season_id_fk '{season_id_fk}'): {he}. "
-                            f"Response: {response_text}"
-                        )
-                    except Exception as ex:
-                        logger.error(
-                            f"Unexpected error fetching week detail from {detail_url} "
-                            f"(for type_id '{type_id}', season_id_fk '{season_id_fk}'): {ex}"
-                        )
+            # Let's assume the base_url is the correct base for /seasons/{year}
+            # This is a simplification; a robust solution might parse league_doc['seasons']['$ref']
+            # to get the true base of the seasons collection if it differs.
+            season_detail_url = f"{base_url}/seasons/{current_season_year_filter}"
 
             logger.info(
-                f"Finished processing weeks for type_id '{type_id}', "
-                f"season_id_fk '{season_id_fk}', yielded {items_yielded_for_this_type} items."
+                f"Specific season filter '{current_season_year_filter}' provided. Preparing to fetch: {season_detail_url}"
             )
+            yield {
+                "$ref": season_detail_url,
+                "type": "specific_season_detail",
+                # Pass along the original league ID if needed for FKs later
+                "league_id_fk": league_doc.get("id"),
+            }
+        else:
+            # No specific season, so get the $ref for the entire seasons collection
+            seasons_collection_ref = league_doc.get("seasons", {}).get("$ref")
+            if not seasons_collection_ref:
+                logger.error(
+                    f"League document for {league_doc.get('id')} is missing 'seasons.$ref'. Cannot list seasons."
+                )
+                return
 
-        except requests.exceptions.HTTPError as e:
-            response_text = e.response.text if e.response else "No response body"
-            logger.error(
-                f"HTTPError listing week refs for type_id '{type_id}', "
-                f"season_id_fk '{season_id_fk}': {e}. Response: {response_text}"
+            logger.info(
+                f"No specific season filter. Preparing to list all season refs from: {seasons_collection_ref}"
             )
-        except Exception as e:
-            logger.error(
-                f"Unexpected error listing week refs for type_id '{type_id}', "
-                f"season_id_fk '{season_id_fk}': {e}"
-            )
+            yield {
+                "$ref": seasons_collection_ref,
+                "type": "season_collection_list",
+                "league_id_fk": league_doc.get("id"),
+            }
 
     @dlt.transformer(
-        name="events",
-        data_from=weeks_transformer,
+        name="season_details",  # This will be the table name for season details
+        data_from=season_refs_lister_transformer,
         write_disposition="merge",
         primary_key="id",
     )
-    def events_transformer(week_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+    @dlt.defer
+    def season_detail_fetcher_transformer(season_ref_item: dict[str, Any]) -> TDataItem | None:
         """
-        For a given week detail, fetches the list of event references,
-        then fetches full details for each event concurrently.
-        Yields chunks of full event detail objects, augmented with foreign keys.
-        """
-        week_id = week_detail.get("id")
-        type_id_fk = week_detail.get("type_id_fk")
-        season_id_fk = week_detail.get("season_id_fk")
+        Fetches season details.
+        If item type is 'specific_season_detail', fetches that one season.
+        If item type is 'season_collection_list', it should ideally be further processed by
+        another lister that paginates through the collection.
+        For this , if it's a collection, we'll assume it's a $ref to a list that
+        detail_client can fetch (if the list isn't too large and doesn't need pagination itself).
+        A more robust version would have another lister here for the collection.
 
-        if not week_id or not type_id_fk or not season_id_fk:
+        This  simplifies: if it's a collection ref, it assumes it's the URL to list all season refs.
+        And then it would fetch each one. This part needs refinement for true pagination of season list.
+        """
+        detail_url = season_ref_item.get("$ref")
+        item_type = season_ref_item.get("type")
+        league_id_fk = season_ref_item.get("league_id_fk")
+
+        if not detail_url:
+            logger.warning(f"Season reference item missing '$ref'. Item: {season_ref_item}")
+            return None
+
+        if item_type == "specific_season_detail":
+            logger.info(f"Fetching specific season detail from: {detail_url}")
+            try:
+                response = detail_client.get(detail_url)
+                response.raise_for_status()
+                season_detail = response.json()
+
+                # Ensure 'id' (from API 'year') and add league_id_fk
+                season_api_year = season_detail.get("year")
+                if season_api_year is not None:
+                    season_detail["id"] = str(season_api_year)
+                    if league_id_fk:
+                        season_detail["league_id_fk"] = str(league_id_fk)
+                    return season_detail  # Use return for @dlt.defer with single item
+                else:
+                    logger.warning(
+                        f"Fetched season detail from {detail_url} missing 'year'. Detail: {season_detail}"
+                    )
+                    return None
+            except Exception as e:
+                logger.error(
+                    f"Error fetching specific season detail from {detail_url}: {e}", exc_info=True
+                )
+                return None
+
+        elif item_type == "season_collection_list":
+            # This is where you'd use a list_client to paginate through all season $refs
+            # For  simplicity, this part is conceptual.
+            # A real implementation would use a list_client with the detail_url as its base
+            # or pass this URL to another transformer that IS a lister.
+            logger.info(f"Concept: Would list all season refs from {detail_url} and fetch each.")
             logger.warning(
-                f"Received week detail object without 'id', 'type_id_fk', or 'season_id_fk'. "
-                f"Skipping events. Object: {week_detail}"
+                " Limitation: Full pagination of season list from collection URL not implemented here. Only specific season fetching is complete."
             )
-            return
+            # To make this work in a limited way for the , if the season_collection_ref
+            # itself was a list of $refs (which it isn't, it's a ref to a paginated endpoint),
+            # you could iterate here. But it's not.
+            # So, this path won't yield data in this simplified  unless season_year_filter is used.
 
-        logger.info(
-            f"Processing events for week_id '{week_id}', type_id_fk '{type_id_fk}', "
-            f"season_id_fk '{season_id_fk}'."
-        )
-        list_events_endpoint_relative = (
-            f"/seasons/{season_id_fk}/types/{type_id_fk}/weeks/{week_id}/events"
-        )
-        api_params = {"limit": API_LIMIT}
-        events_yielded_for_this_week = 0
+            # Correct approach:
+            # 1. season_refs_lister_transformer yields the collection URL.
+            # 2. A *new* transformer, say `all_season_refs_paginator_transformer(collection_url_item)`,
+            #    would take this, initialize a list_client with collection_url as base,
+            #    paginate through "/items" (or similar, if the collection URL is the base for items),
+            #    and yield individual season $refs.
+            # 3. `season_detail_fetcher_transformer` (this one) would then consume those individual $refs.
+            # This  skips step 2 for brevity if no season_year_filter.
+            return None  # Placeholder for full collection listing logic
 
-        # Configuration for concurrent requests
-        # Settable via env var: SOURCES__ESPN_SOURCE__MAX_CONCURRENT_EVENT_FETCHES
-        max_concurrent_fetches = dlt.config.get(
-            "sources.espn_source.max_concurrent_event_fetches", 10
-        )
+    # --- Placeholder for other top-level transformers ---
+    # Example: If league_doc contained a direct $ref to "all_teams_ever"
+    # @dlt.transformer(name="all_teams_lister", data_from=league_info_resource)
+    # def all_teams_lister_transformer(league_doc: dict[str, Any]):
+    #     teams_ref = league_doc.get("all_teams_ever", {}).get("$ref")
+    #     if teams_ref:
+    #         # yield {"$ref": teams_ref, "type": "team_collection_list", ...}
+    #         pass
 
-        try:
-            # First, paginate through the list of event $ref objects using list_client
-            for page_of_refs in list_client.paginate(
-                list_events_endpoint_relative, params=api_params
-            ):
-                if not page_of_refs:
-                    continue
+    # @dlt.transformer(name="team_details", data_from=all_teams_lister_transformer)
+    # @dlt.defer
+    # def all_team_detail_fetcher_transformer(team_ref_item: dict[str, Any]):
+    #     # fetch team details
+    #     pass
 
-                detail_urls_to_fetch = []
-                for event_ref_item in page_of_refs:
-                    detail_url = event_ref_item.get("$ref")
-                    if not detail_url:
-                        logger.warning(
-                            f"Event ref missing '$ref' for week '{week_id}', "
-                            f"type '{type_id_fk}', season '{season_id_fk}'. "
-                            f"Item: {event_ref_item}"
-                        )
-                        continue
-                    detail_urls_to_fetch.append(detail_url)
-
-                if not detail_urls_to_fetch:
-                    continue
-
-                fetched_event_details_for_page = []
-                with ThreadPoolExecutor(max_workers=max_concurrent_fetches) as executor:
-                    future_to_url = {
-                        executor.submit(detail_client.get, url): url for url in detail_urls_to_fetch
-                    }
-                    for future in as_completed(future_to_url):
-                        detail_url = future_to_url[future]
-                        try:
-                            response = future.result()  # Get response from future
-                            response.raise_for_status()
-                            event_detail = response.json()
-
-                            # Ensure the event detail has an 'id'
-                            event_api_id = event_detail.get("id")
-                            if event_api_id is None or str(event_api_id).strip() == "":
-                                logger.warning(
-                                    f"Fetched event detail from {detail_url} (for week_id "
-                                    f"'{week_id}') is MISSING 'id' or 'id' is empty. "
-                                    f"Detail: {event_detail}"
-                                )
-                                continue  # Skip if no valid ID for the event itself
-
-                            # Augment with foreign keys
-                            event_detail["id"] = str(event_api_id)  # Ensure ID is string
-                            event_detail["week_id_fk"] = str(week_id)
-                            event_detail["type_id_fk"] = str(type_id_fk)
-                            event_detail["season_id_fk"] = str(season_id_fk)
-
-                            fetched_event_details_for_page.append(event_detail)
-
-                        except requests.exceptions.HTTPError as he:
-                            response_text = he.response.text if he.response else "No response body"
-                            logger.error(
-                                f"HTTPError fetching event detail from {detail_url} "
-                                f"(for week_id '{week_id}', type_id_fk '{type_id_fk}', "
-                                f"season_id_fk '{season_id_fk}'): {he}. Response: {response_text}"
-                            )
-                        except Exception as ex:
-                            logger.error(
-                                f"Unexpected error fetching event detail from {detail_url} "
-                                f"(for week_id '{week_id}', type_id_fk '{type_id_fk}', "
-                                f"season_id_fk '{season_id_fk}'): {ex}"
-                            )
-
-                if fetched_event_details_for_page:
-                    yield fetched_event_details_for_page  # Yield a list of event details
-                    events_yielded_for_this_week += len(fetched_event_details_for_page)
-
-            logger.info(
-                f"Finished processing events for week_id '{week_id}', type_id_fk '{type_id_fk}', "
-                f"season_id_fk '{season_id_fk}', yielded {events_yielded_for_this_week} "
-                f"event details."
-            )
-
-        except requests.exceptions.HTTPError as e:
-            response_text = e.response.text if e.response else "No response body"
-            logger.error(
-                f"HTTPError listing event refs for week_id '{week_id}', "
-                f"type_id_fk '{type_id_fk}', season_id_fk '{season_id_fk}': {e}. "
-                f"Response: {response_text}"
-            )
-        except Exception as e:
-            logger.error(
-                f"Unexpected error listing event refs for week_id '{week_id}', "
-                f"type_id_fk '{type_id_fk}', season_id_fk '{season_id_fk}': {e}"
-            )
-
+    # The source yields all defined resources/transformers that dlt should run.
+    # Order matters for dependencies if not explicitly linked by data_from in transformers.
+    # Here, transformers are explicitly linked.
     return (
-        seasons_resource,
-        season_types_transformer,
-        weeks_transformer,
-        events_transformer,
+        league_info_resource,
+        season_refs_lister_transformer,
+        season_detail_fetcher_transformer,
+        # ... add other top-level listers/fetchers here, e.g., for franchises, awards_root, etc.
+        # each taking data_from=league_info_resource
     )
 
 
+# --- Main execution for local testing ---
 if __name__ == "__main__":
+    from dotenv import load_dotenv
+
     load_dotenv()
 
-    logger.info("Running dlt pipeline locally (standalone execution)...")
+    logger.info("Running dlt  pipeline (root fetch) locally...")
 
     pipeline = dlt.pipeline(
-        pipeline_name="espn_api_standalone_test",
+        pipeline_name="espn_source_pipeline",
         destination="duckdb",
-        dataset_name="espn_standalone_data",
+        dataset_name="bronze",
     )
 
-    source_instance = espn_mens_college_basketball_source()
+    # Run for a specific season
+    source_instance = espn_mens_college_basketball_source_(season_year_filter="2024")
+
+    # Run for all seasons
+    # source_instance = espn_mens_college_basketball_source_()
+
     load_info = pipeline.run(source_instance)
 
     logger.info("\n--- Load Info ---")

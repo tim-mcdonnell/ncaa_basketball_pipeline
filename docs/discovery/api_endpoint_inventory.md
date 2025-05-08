@@ -12,23 +12,52 @@
 
 Based on `espn_source.py` and API structure:
 
-1.  **`$ref` Handling:** The API extensively uses `$ref` fields containing full URLs. Parent `dlt` resources will typically list these references (often under an `"items"` key), and child transformer resources (`@dlt.transformer`) will fetch the details from these absolute URLs using a dedicated `detail_client`.
+1.  **`$ref` Handling:** The API extensively uses `$ref` fields.
+    * Parent `dlt` resources/transformers will typically list these references (often under an `"items"` key).
+    * For fetching details from these `$ref`s, a two-transformer pattern is often preferred:
+        * A "Lister" transformer: Takes a parent ID/object, makes the paginated API call to list child `$ref`s, and yields *each individual child `$ref` object* (augmented with foreign keys).
+        * A "Detail Fetcher" transformer: Takes an individual child `$ref` object from the "Lister", is decorated with `@dlt.defer`, and fetches the details from the absolute URL in the `$ref`.
 2.  **Client Configuration:**
-    * **List Client:** Use a `RESTClient` configured with the `base_url`, a `PageNumberPaginator` (page_param="page", total_path="pageCount", base_page=1, stop_after_empty_page=True), and `data_selector="items"` for endpoints that list `$ref` items.
-    * **Detail Client:** Use a separate `RESTClient` instance with `base_url=None` for fetching details from the absolute `$ref` URLs provided by list endpoints.
+    * **List Client:** `RESTClient` with `base_url`, `PageNumberPaginator`, and `data_selector="items"`.
+    * **Detail Client:** `RESTClient` with `base_url=None` for absolute `$ref` URLs.
 3.  **Primary Keys & Foreign Keys:**
-    * Many entities require composite primary keys, often derived from API path parameters or parent resource context.
-    * Establish clear foreign key relationships (`_fk` suffix) linking child resources back to their parents (e.g., `season_id_fk`, `type_id_fk`, `event_id_fk`, `team_id_fk`, `athlete_id_fk`).
-    * Store all ID fields (primary and foreign keys) as **strings** for consistency, even if they appear numeric in the API.
-4.  **Pagination:** List endpoints are paginated. Use `limit=API_LIMIT` (e.g., 1000) in list API requests to minimize the number of calls. The `PageNumberPaginator` handles iterating through pages.
-5.  **Data Structure:** Use `max_table_nesting=0` in the `@dlt.source` decorator to ensure a flat relational structure suitable for most destinations. Unnest complex objects (like stats arrays) into separate tables or use a tidy format (one row per stat).
-6.  **Concurrency:** Use `ThreadPoolExecutor` for fetching details concurrently, especially for numerous items like events or athletes, to improve performance. Handle potential rate limiting or errors gracefully within threads.
-7.  **Error Handling:** Implement robust error handling (e.g., `try...except` blocks around API calls), logging, and consider retries for transient network issues or non-404 HTTP errors. Log failed URLs for later investigation.
-8.  **Incremental Loading:**
-    * For time-sensitive data like events, utilize the `/events/{event_id}/competitions/{event_id}/status` endpoint. Checking if `type.completed` is true or `type.state == "post"` allows identifying finished games.
-    * Maintain state (e.g., last fetched date, processed event IDs) to load only new or updated data where applicable. The `dlt` state mechanism can be used for this.
-9.  **API Path Structure Anomaly:** Be aware that for many event-specific sub-resources (e.g., scores, statistics, plays), the API path uses the `event_id` where a unique `competition_id` might conventionally appear (e.g., `/events/{event_id}/competitions/{event_id}/...`). This `event_id` effectively serves as the `competition_id` in these contexts.
-10. **Resource Naming:** Use descriptive names for `dlt` resources and transformers (e.g., `seasons_resource`, `season_types_transformer`, `event_plays_transformer`).
+    * Composite primary keys are common.
+    * Establish clear foreign key relationships (`_fk` suffix).
+    * Store all ID fields as **strings**.
+4.  **Pagination:** List endpoints are paginated. Use `limit=API_LIMIT` (e.g., 1000). The "Lister" transformer (see point 1) will handle iterating through pages of `$ref`s.
+5.  **Data Structure:** Use `max_table_nesting=0` in `@dlt.source`.
+6.  **Concurrency:**
+    * **Prefer `@dlt.defer`:** For any transformer that takes a single input item (like a `$ref` object) and needs to make an API call to fetch its details, use the `@dlt.defer` decorator. This allows `dlt` to manage a thread pool for these operations.
+    * **Manual `ThreadPoolExecutor`:** May still be useful in specific, complex scenarios within a single transformer if `@dlt.defer` is not a natural fit, but aim to break down tasks to leverage `@dlt.defer` where possible.
+7.  **Error Handling:** Robust `try...except` blocks within all API call logic, especially in `@dlt.defer`-decorated functions. Log errors and allow the pipeline to continue with other items.
+8.  **Incremental Loading:** Utilize `dlt` state for incremental loads (e.g., last fetched date, processed event IDs).
+9.  **API Path Structure Anomaly:** Reminder: `event_id` often serves as `competition_id` in event sub-resource paths.
+10. **Resource Naming:** Descriptive names (e.g., `seasons_resource`, `season_types_lister_transformer`, `season_type_detail_fetcher_transformer`).
+
+---
+
+## Concurrency Management with `dlt` and Environment Variables
+
+When implementing `dlt` sources, especially those involving numerous API calls, managing concurrency is vital for performance. `dlt` provides several mechanisms for this:
+
+1.  **`@dlt.defer` Decorator:**
+    *   This is the preferred method for transformers that perform I/O operations (like an API call) for each item they process from a parent resource.
+    *   `dlt` manages a global thread pool to execute these deferred functions concurrently.
+    *   The size of this global pool can be configured using the environment variable `DLT_RUNTIME__PARALLEL_POOL_MAX_WORKERS`. For example:
+        `DLT_RUNTIME__PARALLEL_POOL_MAX_WORKERS=20`
+    *   If this is not set, `dlt` uses a default (often related to `os.cpu_count()`).
+
+2.  **Custom `ThreadPoolExecutor`:**
+    *   For more complex scenarios where a single transformer needs to manage a batch of concurrent operations internally (e.g., fetching all pages of a sub-list before yielding combined results, or processing a batch of URLs gathered within one transformer's iteration), a `ThreadPoolExecutor` can be used directly.
+    *   The `max_workers` for such custom executors should also be configurable. This can be achieved using `dlt.config.get()` within the source code, which can read from environment variables. For example, if a setting is named `sources.espn_source.max_concurrent_detail_fetches`, it can be set via the environment variable:
+        `DLT_SOURCES__ESPN_SOURCE__MAX_CONCURRENT_DETAIL_FETCHES=15`
+    *   It's generally advisable to favor `@dlt.defer` where possible to allow `dlt` to manage the overall concurrency, preventing issues like overly nested thread pools.
+
+3.  **Configuration in `.env`:**
+    *   Since this project is orchestrated by Dagster and uses a `.env` file for configuration (loaded by `python-dotenv`), all `dlt` configuration parameters should be set as environment variables in the `.env` file.
+    *   `dlt` automatically picks up environment variables prefixed with `DLT_` and structured according to its configuration hierarchy (e.g., `PIPELINES__MY_PIPELINE__DESTINATION` maps to `pipelines.my_pipeline.destination` in a config file).
+
+Careful tuning of these concurrency settings is necessary to balance performance with API rate limits and system resources.
 
 ---
 
@@ -58,11 +87,13 @@ This section follows the typical data discovery path, starting from seasons and 
 -   **Primary Key (`dlt`):** `id` (string, derived from API `year`)
 -   **Write Disposition (`dlt`):** `merge`
 -   **Sample Files:** `seasons_example.json` (list), `seasons_-season-id_example.json` (detail)
+-   **Concurrency Strategy:** If fetching *all* seasons (not a specific `season_year`), the loop fetching details for each season `$ref` is sequential. If the number of seasons is large and fetching each is slow, this resource could potentially be refactored to list all `$ref`s first, then use a separate `@dlt.defer`-ed transformer to fetch details. For now, with potentially 20-30+ seasons, it might show some slowdown but is less critical than event-level concurrency. If a single `season_year` is provided, it's a single detail fetch, so concurrency isn't a concern for that path.
 -   **Implementation Notes:**
     -   Acts as the entry point if `season_year` is not provided.
     -   Fetches the list of season `$ref`s.
     -   Yields detailed season data fetched from each `$ref`.
     -   The `year` field (e.g., 2024) is the natural primary key.
+
 
 ### 2. Season Types
 
@@ -84,6 +115,7 @@ This section follows the typical data discovery path, starting from seasons and 
 -   **Foreign Keys (`dlt`):** `season_id_fk` (references `seasons.id`)
 -   **Write Disposition (`dlt`):** `merge`
 -   **Sample Files:** `seasons_-season-id-_types_example.json` (list), `seasons_-season-id-_types_-type-id_example.json` (detail)
+-   **Concurrency Strategy:** Recommended to use `@dlt.defer`. Each call processes one season and makes a few (e.g., 2-4) API calls for type details. `@dlt.defer` will allow different seasons' type details to be fetched concurrently.
 -   **Implementation Notes:**
     -   Transforms data yielded by `seasons_resource`.
     -   Fetches the list of type `$ref`s for a season, then fetches details for each type.
@@ -108,6 +140,7 @@ This section follows the typical data discovery path, starting from seasons and 
     -   `season_id_fk` (references `seasons.id`)
 -   **Write Disposition (`dlt`):** `merge`
 -   **Sample Files:** `seasons_-season-id-_types_-type-id-_weeks_example.json` (list), `seasons_-season-id-_types_-type-id-_weeks_-week-id_example.json` (detail)
+-   **Concurrency Strategy:** Recommended to use `@dlt.defer`. Each call processes one season type and makes multiple (e.g., ~20) API calls for week details. `@dlt.defer` allows different season types' week details to be fetched concurrently.
 -   **Implementation Notes:**
     -   Transforms data yielded by `season_types_transformer`.
     -   Fetches the list of week `$ref`s for a season type, then fetches details for each week.
@@ -143,6 +176,7 @@ This section follows the typical data discovery path, starting from seasons and 
     -   `venue_id_fk` (references `venues.id`, parsed from `competitions[0].venue.$ref`)
 -   **Write Disposition (`dlt`):** `merge`
 -   **Sample Files:** `events_example.json` (list), `events_-event-id_example.json` (detail)
+-   **Concurrency Strategy:** Recommended to use `@dlt.defer`. Each call processes one week event list and makes multiple (e.g., ~300) API calls for event details. `@dlt.defer` allows different week's event details to be fetched concurrently.
 -   **Implementation Notes:**
     -   Transforms data yielded by `weeks_transformer`.
     -   Fetches the list of event `$ref`s for a week, then fetches details concurrently.
