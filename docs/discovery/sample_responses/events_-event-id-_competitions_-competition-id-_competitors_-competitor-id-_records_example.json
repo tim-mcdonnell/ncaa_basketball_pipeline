@@ -5,7 +5,7 @@
     "pageCount": 1,
     "items": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/1?lang=en&region=us",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/records/1?lang=en&region=us",
             "id": "1",
             "name": "overall",
             "abbreviation": "Game",
@@ -13,9 +13,9 @@
             "shortDisplayName": "YTD",
             "description": "Overall Record",
             "type": "total",
-            "summary": "35-5",
-            "displayValue": "35-5",
-            "value": 0.875,
+            "summary": "36-4",
+            "displayValue": "36-4",
+            "value": 0.9,
             "stats": [
                 {
                     "name": "OTLosses",
@@ -44,8 +44,8 @@
                     "description": "Opponent Points Per Game",
                     "abbreviation": "OPP PPG",
                     "type": "avgpointsagainst",
-                    "value": 65.0,
-                    "displayValue": "65.0"
+                    "value": 63.0,
+                    "displayValue": "63.0"
                 },
                 {
                     "name": "avgPointsFor",
@@ -54,8 +54,8 @@
                     "description": "Points Per Game",
                     "abbreviation": "PPG",
                     "type": "avgpointsfor",
-                    "value": 63.0,
-                    "displayValue": "63.0"
+                    "value": 65.0,
+                    "displayValue": "65.0"
                 },
                 {
                     "name": "differential",
@@ -64,8 +64,8 @@
                     "description": "Average Point Differential",
                     "abbreviation": "DIFF",
                     "type": "differential",
-                    "value": -2.0,
-                    "displayValue": "-2.0"
+                    "value": 2.0,
+                    "displayValue": "+2.0"
                 },
                 {
                     "name": "divisionWinPercent",
@@ -84,8 +84,8 @@
                     "description": "Games Back",
                     "abbreviation": "GB",
                     "type": "gamesbehind",
-                    "value": 0.0,
-                    "displayValue": "-"
+                    "value": 1.0,
+                    "displayValue": "1"
                 },
                 {
                     "name": "gamesPlayed",
@@ -104,8 +104,8 @@
                     "description": "League Winning Percentage",
                     "abbreviation": "LPCT",
                     "type": "leaguewinpercent",
-                    "value": 0.95,
-                    "displayValue": "0.950"
+                    "value": 0.7777778,
+                    "displayValue": "0.778"
                 },
                 {
                     "name": "losses",
@@ -114,8 +114,8 @@
                     "description": "Losses",
                     "abbreviation": "L",
                     "type": "losses",
-                    "value": 5.0,
-                    "displayValue": "5"
+                    "value": 4.0,
+                    "displayValue": "4"
                 },
                 {
                     "name": "playoffSeed",
@@ -124,8 +124,8 @@
                     "description": "Playoff Seed",
                     "abbreviation": "SEED",
                     "type": "playoffseed",
-                    "value": 1.0,
-                    "displayValue": "1"
+                    "value": 2.0,
+                    "displayValue": "2"
                 },
                 {
                     "name": "pointDifferential",
@@ -134,8 +134,8 @@
                     "description": "Point Differential",
                     "abbreviation": "DIFF",
                     "type": "pointdifferential",
-                    "value": -2.0,
-                    "displayValue": "-2"
+                    "value": 2.0,
+                    "displayValue": "+2"
                 },
                 {
                     "name": "points",
@@ -144,8 +144,8 @@
                     "description": "Total Points",
                     "abbreviation": "PTS",
                     "type": "points",
-                    "value": 15.0,
-                    "displayValue": "15.0"
+                    "value": 16.0,
+                    "displayValue": "16.0"
                 },
                 {
                     "name": "pointsAgainst",
@@ -154,8 +154,8 @@
                     "description": "Total Points Against",
                     "abbreviation": "PA",
                     "type": "pointsagainst",
-                    "value": 65.0,
-                    "displayValue": "65"
+                    "value": 63.0,
+                    "displayValue": "63"
                 },
                 {
                     "name": "pointsFor",
@@ -164,8 +164,8 @@
                     "description": "Total Points For",
                     "abbreviation": "PF",
                     "type": "pointsfor",
-                    "value": 63.0,
-                    "displayValue": "63"
+                    "value": 65.0,
+                    "displayValue": "65"
                 },
                 {
                     "name": "streak",
@@ -174,8 +174,8 @@
                     "description": "Current Streak",
                     "abbreviation": "STRK",
                     "type": "streak",
-                    "value": -1.0,
-                    "displayValue": "L1"
+                    "value": 12.0,
+                    "displayValue": "W12"
                 },
                 {
                     "name": "ties",
@@ -194,8 +194,8 @@
                     "description": "Winning Percentage",
                     "abbreviation": "PCT",
                     "type": "winpercent",
-                    "value": 35.0,
-                    "displayValue": "35.000"
+                    "value": 36.0,
+                    "displayValue": "36.000"
                 },
                 {
                     "name": "wins",
@@ -204,22 +204,22 @@
                     "description": "Wins",
                     "abbreviation": "W",
                     "type": "wins",
-                    "value": 35.0,
-                    "displayValue": "35"
+                    "value": 36.0,
+                    "displayValue": "36"
                 }
             ]
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/9002?lang=en&region=us",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/records/9002?lang=en&region=us",
             "id": "9002",
             "name": "Home",
             "displayName": "Home",
             "shortDisplayName": "HOME",
             "description": "Home Record",
             "type": "home",
-            "summary": "16-1",
-            "displayValue": "16-1",
-            "value": 0.9411764705882353,
+            "summary": "15-1",
+            "displayValue": "15-1",
+            "value": 0.9375,
             "stats": [
                 {
                     "name": "wins",
@@ -228,8 +228,8 @@
                     "description": "Wins",
                     "abbreviation": "W",
                     "type": "wins",
-                    "value": 16.0,
-                    "displayValue": "16"
+                    "value": 15.0,
+                    "displayValue": "15"
                 },
                 {
                     "name": "losses",
@@ -258,8 +258,8 @@
                     "description": "Winning Percentage",
                     "abbreviation": "PCT",
                     "type": "winpercent",
-                    "value": 0.9411764740943909,
-                    "displayValue": ".941"
+                    "value": 0.9375,
+                    "displayValue": ".938"
                 },
                 {
                     "name": "OTLosses",
@@ -274,16 +274,16 @@
             ]
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/9003?lang=en&region=us",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/records/9003?lang=en&region=us",
             "id": "9003",
             "name": "Road",
             "displayName": "Road",
             "shortDisplayName": "AWAY",
             "description": "Away Record",
             "type": "road",
-            "summary": "10-0",
-            "displayValue": "10-0",
-            "value": 1.0,
+            "summary": "7-3",
+            "displayValue": "7-3",
+            "value": 0.7,
             "stats": [
                 {
                     "name": "wins",
@@ -292,8 +292,8 @@
                     "description": "Wins",
                     "abbreviation": "W",
                     "type": "wins",
-                    "value": 10.0,
-                    "displayValue": "10"
+                    "value": 7.0,
+                    "displayValue": "7"
                 },
                 {
                     "name": "losses",
@@ -302,8 +302,8 @@
                     "description": "Losses",
                     "abbreviation": "L",
                     "type": "losses",
-                    "value": 0.0,
-                    "displayValue": "0"
+                    "value": 3.0,
+                    "displayValue": "3"
                 },
                 {
                     "name": "ties",
@@ -322,8 +322,8 @@
                     "description": "Winning Percentage",
                     "abbreviation": "PCT",
                     "type": "winpercent",
-                    "value": 1.0,
-                    "displayValue": "1.000"
+                    "value": 0.699999988079071,
+                    "displayValue": ".700"
                 },
                 {
                     "name": "OTLosses",
@@ -338,16 +338,16 @@
             ]
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/records/9009?lang=en&region=us",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/records/9009?lang=en&region=us",
             "id": "9009",
             "name": "vs. Conf.",
             "displayName": "CONF",
             "shortDisplayName": "CONF",
             "description": "Conference Record",
             "type": "vsconf",
-            "summary": "19-1",
-            "displayValue": "19-1",
-            "value": 0.95,
+            "summary": "14-4",
+            "displayValue": "14-4",
+            "value": 0.7777777777777778,
             "stats": [
                 {
                     "name": "wins",
@@ -356,8 +356,8 @@
                     "description": "Wins",
                     "abbreviation": "W",
                     "type": "wins",
-                    "value": 19.0,
-                    "displayValue": "19"
+                    "value": 14.0,
+                    "displayValue": "14"
                 },
                 {
                     "name": "losses",
@@ -366,8 +366,8 @@
                     "description": "Losses",
                     "abbreviation": "L",
                     "type": "losses",
-                    "value": 1.0,
-                    "displayValue": "1"
+                    "value": 4.0,
+                    "displayValue": "4"
                 },
                 {
                     "name": "ties",
@@ -386,8 +386,8 @@
                     "description": "League Winning Percentage",
                     "abbreviation": "LPCT",
                     "type": "leaguewinpercent",
-                    "value": 0.949999988079071,
-                    "displayValue": "0.950"
+                    "value": 0.7777777910232544,
+                    "displayValue": "0.778"
                 },
                 {
                     "name": "OTLosses",

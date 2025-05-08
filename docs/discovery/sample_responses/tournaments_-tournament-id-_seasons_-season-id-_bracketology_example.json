@@ -1,7 +1,80 @@
 {
-    "count": 0,
-    "pageIndex": 0,
-    "pageSize": 25,
-    "pageCount": 0,
-    "items": []
+    "count": 24,
+    "pageIndex": 1,
+    "pageSize": 100,
+    "pageCount": 1,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/231?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/227?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/224?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/220?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/217?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/213?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/210?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/206?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/203?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/199?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/196?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/192?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/189?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/182?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/175?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/168?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/161?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/154?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/147?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/140?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/99?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/41?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/28?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/14?lang=en&region=us"
+        }
+    ]
 }

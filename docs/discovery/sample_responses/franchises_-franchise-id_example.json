@@ -1,19 +1,19 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/183?lang=en&region=us",
-    "id": "183",
-    "uid": "s:40~l:41~f:183",
-    "slug": "syracuse-orange",
-    "location": "Syracuse",
-    "name": "Orange",
-    "nickname": "Syracuse",
-    "abbreviation": "SYR",
-    "displayName": "Syracuse Orange",
-    "shortDisplayName": "Syracuse",
-    "color": "ff6500",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/24?lang=en&region=us",
+    "id": "24",
+    "uid": "s:40~l:41~f:24",
+    "slug": "stanford-cardinal",
+    "location": "Stanford",
+    "name": "Cardinal",
+    "nickname": "Stanford",
+    "abbreviation": "STAN",
+    "displayName": "Stanford Cardinal",
+    "shortDisplayName": "Stanford",
+    "color": "8c1515",
     "isActive": true,
     "logos": [
         {
-            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/24.png",
             "width": 500,
             "height": 500,
             "alt": "",
@@ -21,10 +21,10 @@
                 "full",
                 "default"
             ],
-            "lastUpdated": "2022-09-02T00:03Z"
+            "lastUpdated": "2018-06-05T12:08Z"
         },
         {
-            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/183.png",
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/24.png",
             "width": 500,
             "height": 500,
             "alt": "",
@@ -32,23 +32,22 @@
                 "full",
                 "dark"
             ],
-            "lastUpdated": "2022-09-02T00:03Z"
+            "lastUpdated": "2018-06-05T12:08Z"
         }
     ],
     "venue": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/1964?lang=en&region=us",
-        "id": "1964",
-        "fullName": "JMA Wireless Dome",
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/820?lang=en&region=us",
+        "id": "820",
+        "fullName": "Maples Pavilion",
         "address": {
-            "city": "Syracuse",
-            "state": "NY",
-            "zipCode": "13244"
+            "city": "Stanford",
+            "state": "CA"
         },
         "grass": false,
         "indoor": true,
         "images": [
             {
-                "href": "https://a.espncdn.com/i/venues/mens-college-basketball/day/1964.jpg",
+                "href": "https://a.espncdn.com/i/venues/mens-college-basketball/day/820.jpg",
                 "width": 2000,
                 "height": 1125,
                 "alt": "",
@@ -60,6 +59,6 @@
         ]
     },
     "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/24?lang=en&region=us"
     }
 }

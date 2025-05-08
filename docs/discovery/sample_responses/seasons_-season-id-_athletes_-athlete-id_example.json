@@ -1,20 +1,37 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047?lang=en&region=us",
-    "id": "4906047",
-    "uid": "s:40~l:41~a:4906047",
-    "guid": "de0ef06e-5f87-3cc9-be64-b28c023b9ab3",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432158?lang=en&region=us",
+    "id": "4432158",
+    "uid": "s:40~l:41~a:4432158",
+    "guid": "27839f34-323e-31ce-9bfb-3708571bef5a",
     "type": "basketball",
     "alternateIds": {
-        "sdr": "4906047"
+        "sdr": "4432158"
     },
-    "firstName": "Eric",
-    "lastName": "Panning",
-    "fullName": "Eric Panning",
-    "displayName": "Eric Panning",
-    "shortName": "E. Panning",
-    "height": 82.0,
-    "displayHeight": "6' 10\"",
+    "firstName": "Evan",
+    "lastName": "Mobley",
+    "fullName": "Evan Mobley",
+    "displayName": "Evan Mobley",
+    "shortName": "E. Mobley",
+    "weight": 215.0,
+    "displayWeight": "215 lbs",
+    "height": 83.0,
+    "displayHeight": "6' 11\"",
+    "age": 23,
+    "dateOfBirth": "2001-06-18T07:00Z",
     "links": [
+        {
+            "language": "en-US",
+            "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+            ],
+            "href": "https://www.espn.com/mens-college-basketball/player/_/id/4432158/evan-mobley",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+        },
         {
             "language": "en-US",
             "rel": [
@@ -22,7 +39,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/stats/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/stats/_/id/4432158/evan-mobley",
             "text": "Stats",
             "shortText": "Stats",
             "isExternal": false,
@@ -35,7 +52,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/splits/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/splits/_/id/4432158/evan-mobley",
             "text": "Splits",
             "shortText": "Splits",
             "isExternal": false,
@@ -48,7 +65,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/gamelog/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/gamelog/_/id/4432158/evan-mobley",
             "text": "Game Log",
             "shortText": "Game Log",
             "isExternal": false,
@@ -61,7 +78,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/news/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/news/_/id/4432158/evan-mobley",
             "text": "News",
             "shortText": "News",
             "isExternal": false,
@@ -74,7 +91,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/bio/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/bio/_/id/4432158/evan-mobley",
             "text": "Bio",
             "shortText": "Bio",
             "isExternal": false,
@@ -87,7 +104,7 @@
                 "desktop",
                 "athlete"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/player/_/id/4906047/eric-panning",
+            "href": "https://www.espn.com/mens-college-basketball/player/_/id/4432158/evan-mobley",
             "text": "Overview",
             "shortText": "Overview",
             "isExternal": false,
@@ -95,16 +112,23 @@
         }
     ],
     "birthPlace": {
-        "city": "Columbus",
-        "state": "OH",
+        "city": "Murrieta",
+        "state": "CA",
         "country": "USA"
     },
     "birthCountry": {
         "alternateId": "1",
         "abbreviation": "USA"
     },
-    "slug": "eric-panning",
-    "jersey": "23",
+    "college": {
+        "$ref": "http://sports.core.api.espn.com/v2/colleges/30?lang=en&region=us"
+    },
+    "slug": "evan-mobley",
+    "headshot": {
+        "href": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4432158.png",
+        "alt": "Evan Mobley"
+    },
+    "jersey": "4",
     "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
         "alt": "USA",
@@ -123,32 +147,41 @@
     "injuries": [],
     "linked": true,
     "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/191?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/30?lang=en&region=us"
     },
     "teams": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/191?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/30?lang=en&region=us"
         }
     ],
     "statistics": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/athletes/4906047/statistics?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/0/athletes/4432158/statistics?lang=en&region=us"
     },
     "notes": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/notes?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432158/notes?lang=en&region=us"
     },
     "experience": {
-        "years": 4,
-        "displayValue": "Senior",
-        "abbreviation": "SR"
+        "years": 1,
+        "displayValue": "Freshman",
+        "abbreviation": "FR"
     },
-    "active": true,
+    "proAthlete": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/4432158?lang=en&region=us"
+    },
+    "active": false,
     "eventLog": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047/eventlog?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432158/eventlog?lang=en&region=us"
+    },
+    "draft": {
+        "displayText": "Year: 2021 Round: 1 Pick: 3",
+        "round": 1,
+        "year": 2021,
+        "selection": 3
     },
     "status": {
-        "id": "1",
-        "name": "Active",
-        "type": "active",
-        "abbreviation": "Active"
+        "id": "2",
+        "name": "Inactive",
+        "type": "inactive",
+        "abbreviation": "Inactive"
     }
 }

@@ -1,11 +1,11 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/coaches/3934661/record?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/coaches/3026797/record?lang=en&region=us",
     "id": "2",
     "name": "Regular Season",
     "type": "Regular Season",
-    "summary": "9-11-0",
-    "displayValue": "9-11-0",
-    "value": 0.45,
+    "summary": "10-13-0",
+    "displayValue": "10-13-0",
+    "value": 0.4347826087,
     "stats": [
         {
             "name": "losses",
@@ -14,7 +14,7 @@
             "description": "Losses",
             "abbreviation": "L",
             "type": "losses",
-            "value": 11.0
+            "value": 13.0
         },
         {
             "name": "ties",
@@ -32,7 +32,7 @@
             "description": "Wins",
             "abbreviation": "W",
             "type": "wins",
-            "value": 9.0
+            "value": 10.0
         }
     ]
 }

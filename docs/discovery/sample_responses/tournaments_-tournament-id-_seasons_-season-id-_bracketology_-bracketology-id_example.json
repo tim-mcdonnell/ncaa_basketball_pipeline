@@ -1,0 +1,795 @@
+{
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/2021/bracketology/196?lang=en&region=us",
+    "id": "22",
+    "displayName": "NCAA Tournament",
+    "shortDisplayName": "NCAA",
+    "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021?lang=en&region=us"
+    },
+    "groups": [
+        {
+            "id": "1",
+            "displayName": "REGION 1",
+            "matchups": [
+                {
+                    "competitors": [
+                        {
+                            "id": "21",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/21?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "52",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/52?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/2?lang=en&region=us"
+                        }
+                    ],
+                    "id": "2",
+                    "bracketLocation": 8
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "127",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/127?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "258",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/258?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/7?lang=en&region=us"
+                        }
+                    ],
+                    "id": "7",
+                    "bracketLocation": 10
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "139",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/139?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "153",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/153?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "201",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/201?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/5?lang=en&region=us"
+                        }
+                    ],
+                    "id": "5",
+                    "bracketLocation": 6
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "142",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/142?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2649",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2649?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/3?lang=en&region=us"
+                        }
+                    ],
+                    "id": "3",
+                    "bracketLocation": 5
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "231",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/231?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "277",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/277?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/4?lang=en&region=us"
+                        }
+                    ],
+                    "id": "4",
+                    "bracketLocation": 13
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "356",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/356?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2253",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2253?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/6?lang=en&region=us"
+                        }
+                    ],
+                    "id": "6",
+                    "bracketLocation": 3
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "2029",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2029?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2250",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2448",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2448?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/1?lang=en&region=us"
+                        }
+                    ],
+                    "id": "1",
+                    "bracketLocation": 16
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "2426",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2426?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2633",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2633?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/8?lang=en&region=us"
+                        }
+                    ],
+                    "id": "8",
+                    "bracketLocation": 15
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "displayName": "REGION 4",
+            "matchups": [
+                {
+                    "competitors": [
+                        {
+                            "id": "24",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/24?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "183",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/183?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "333",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/333?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/13?lang=en&region=us"
+                        }
+                    ],
+                    "id": "13",
+                    "bracketLocation": 11
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "30",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/30?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2752",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2752?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/10?lang=en&region=us"
+                        }
+                    ],
+                    "id": "10",
+                    "bracketLocation": 8
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "68",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/68?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "194",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/194?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/11?lang=en&region=us"
+                        }
+                    ],
+                    "id": "11",
+                    "bracketLocation": 12
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "97",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/97?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2335",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2335?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/12?lang=en&region=us"
+                        }
+                    ],
+                    "id": "12",
+                    "bracketLocation": 4
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "130",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/130?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "325",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/325?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/16?lang=en&region=us"
+                        }
+                    ],
+                    "id": "16",
+                    "bracketLocation": 2
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "156",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/156?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2561",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2561?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/14?lang=en&region=us"
+                        }
+                    ],
+                    "id": "14",
+                    "bracketLocation": 3
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "197",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/197?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "259",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/259?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/15?lang=en&region=us"
+                        }
+                    ],
+                    "id": "15",
+                    "bracketLocation": 10
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "251",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/251?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "253",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/253?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/9?lang=en&region=us"
+                        }
+                    ],
+                    "id": "9",
+                    "bracketLocation": 1
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "displayName": "REGION 2",
+            "matchups": [
+                {
+                    "competitors": [
+                        {
+                            "id": "5",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/5?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "228",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/228?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/20?lang=en&region=us"
+                        }
+                    ],
+                    "id": "20",
+                    "bracketLocation": 13
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "38",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/38?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2509",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2509?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/21?lang=en&region=us"
+                        }
+                    ],
+                    "id": "21",
+                    "bracketLocation": 6
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "41",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/41?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "150",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/150?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/23?lang=en&region=us"
+                        }
+                    ],
+                    "id": "23",
+                    "bracketLocation": 7
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "99",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/99?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2550",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2550?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/18?lang=en&region=us"
+                        }
+                    ],
+                    "id": "18",
+                    "bracketLocation": 8
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "239",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/239?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2534",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2534?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2619",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2619?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/17?lang=en&region=us"
+                        }
+                    ],
+                    "id": "17",
+                    "bracketLocation": 1
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "248",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/248?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2803",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2803?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/22?lang=en&region=us"
+                        }
+                    ],
+                    "id": "22",
+                    "bracketLocation": 3
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "2031",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2031?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2294",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2294?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/24?lang=en&region=us"
+                        }
+                    ],
+                    "id": "24",
+                    "bracketLocation": 15
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "2483",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2483?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2737",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2737?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/19?lang=en&region=us"
+                        }
+                    ],
+                    "id": "19",
+                    "bracketLocation": 5
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "displayName": "REGION 3",
+            "matchups": [
+                {
+                    "competitors": [
+                        {
+                            "id": "8",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/8?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "84",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/84?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/26?lang=en&region=us"
+                        }
+                    ],
+                    "id": "26",
+                    "bracketLocation": 8
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "26",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/26?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2181",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2181?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/29?lang=en&region=us"
+                        }
+                    ],
+                    "id": "29",
+                    "bracketLocation": 6
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "57",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/57?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "164",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/164?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/31?lang=en&region=us"
+                        }
+                    ],
+                    "id": "31",
+                    "bracketLocation": 10
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "111",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/111?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2305",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2305?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/32?lang=en&region=us"
+                        }
+                    ],
+                    "id": "32",
+                    "bracketLocation": 15
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "135",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/135?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "257",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/257?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/27?lang=en&region=us"
+                        }
+                    ],
+                    "id": "27",
+                    "bracketLocation": 5
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "222",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/222?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2449",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2449?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/25?lang=en&region=us"
+                        }
+                    ],
+                    "id": "25",
+                    "bracketLocation": 1
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "275",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/275?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "300",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/300?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/30?lang=en&region=us"
+                        }
+                    ],
+                    "id": "30",
+                    "bracketLocation": 3
+                },
+                {
+                    "competitors": [
+                        {
+                            "id": "2057",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2057?lang=en&region=us"
+                            }
+                        },
+                        {
+                            "id": "2641",
+                            "team": {
+                                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2641?lang=en&region=us"
+                            }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/28?lang=en&region=us"
+                        }
+                    ],
+                    "id": "28",
+                    "bracketLocation": 13
+                }
+            ]
+        }
+    ]
+}

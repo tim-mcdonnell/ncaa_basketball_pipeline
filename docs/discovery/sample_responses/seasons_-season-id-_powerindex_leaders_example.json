@@ -9,11 +9,11 @@
             "displayName": "BPI Leader",
             "leaders": [
                 {
-                    "displayValue": "24.8",
-                    "shortDisplayValue": "35-4",
-                    "value": 24.7798,
+                    "displayValue": "21.3",
+                    "shortDisplayValue": "31-1",
+                    "value": 21.2859715834,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
                     }
                 }
             ]
@@ -23,9 +23,9 @@
             "displayName": "NCAAM RPI Leader",
             "leaders": [
                 {
-                    "shortDisplayValue": "35-4",
+                    "shortDisplayValue": "31-1",
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
                     }
                 }
             ]
@@ -35,11 +35,11 @@
             "displayName": "SOS Leader",
             "leaders": [
                 {
-                    "displayValue": "0.2",
-                    "shortDisplayValue": "28-9",
-                    "value": 0.1714,
+                    "displayValue": "0.4",
+                    "shortDisplayValue": "11-14",
+                    "value": 0.4293217035,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/333?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/213?lang=en&region=us"
                     }
                 }
             ]
@@ -49,11 +49,11 @@
             "displayName": "SOR Leader",
             "leaders": [
                 {
-                    "displayValue": "1",
-                    "shortDisplayValue": "15-20",
-                    "value": 1.0,
+                    "displayValue": "100",
+                    "shortDisplayValue": "28-2",
+                    "value": 99.9880354279,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2086?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/239?lang=en&region=us"
                     }
                 }
             ]
@@ -63,11 +63,11 @@
             "displayName": "BPI Off Leader",
             "leaders": [
                 {
-                    "displayValue": "13.9",
-                    "shortDisplayValue": "35-4",
-                    "value": 13.9347,
+                    "displayValue": "15",
+                    "shortDisplayValue": "31-1",
+                    "value": 15.0356354451,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
                     }
                 }
             ]
@@ -77,11 +77,11 @@
             "displayName": "BPI Def Leader",
             "leaders": [
                 {
-                    "displayValue": "13.3",
-                    "shortDisplayValue": "35-5",
-                    "value": 13.2856,
+                    "displayValue": "9.2",
+                    "shortDisplayValue": "20-8",
+                    "value": 9.2381467727,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/235?lang=en&region=us"
                     }
                 }
             ]
@@ -91,11 +91,11 @@
             "displayName": "7-Day RK CHG Leader",
             "leaders": [
                 {
-                    "displayValue": "0",
-                    "shortDisplayValue": "35-4",
-                    "value": 0.0,
+                    "displayValue": "5",
+                    "shortDisplayValue": "7-12",
+                    "value": 5.0,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2885?lang=en&region=us"
                     }
                 }
             ]
@@ -105,11 +105,11 @@
             "displayName": "Most Quality Wins",
             "leaders": [
                 {
-                    "displayValue": "22",
-                    "shortDisplayValue": "32-6",
-                    "value": 22.0,
+                    "displayValue": "14",
+                    "shortDisplayValue": "28-2",
+                    "value": 14.0,
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/239?lang=en&region=us"
                     }
                 }
             ]
@@ -119,9 +119,9 @@
             "displayName": "Non-Conf SOS Leader",
             "leaders": [
                 {
-                    "shortDisplayValue": "35-4",
+                    "shortDisplayValue": "31-1",
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
                     }
                 }
             ]

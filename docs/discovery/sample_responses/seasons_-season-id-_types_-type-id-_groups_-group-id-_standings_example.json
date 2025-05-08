@@ -1,0 +1,28 @@
+{
+    "count": 1,
+    "pageIndex": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups/52/standings/0?lang=en&region=us",
+            "id": "0",
+            "name": "overall",
+            "displayName": "Standings",
+            "links": [
+                {
+                    "language": "en-US",
+                    "rel": [
+                        "standings",
+                        "desktop"
+                    ],
+                    "href": "https://www.espn.com/mens-college-basketball/standings/_/group/52",
+                    "text": "Table",
+                    "shortText": "Standings",
+                    "isExternal": false,
+                    "isPremium": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/leaders?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/leaders?lang=en&region=us",
     "id": "0",
     "name": "Season",
     "abbreviation": "Season",
@@ -12,99 +12,83 @@
             "abbreviation": "Pts",
             "leaders": [
                 {
-                    "displayValue": "19",
-                    "value": 19.0,
+                    "displayValue": "18",
+                    "value": 18.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "9",
-                    "value": 9.0,
+                    "displayValue": "12",
+                    "value": 12.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "8",
-                    "value": 8.0,
+                    "displayValue": "11",
+                    "value": 11.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "8",
-                    "value": 8.0,
+                    "displayValue": "7",
+                    "value": 7.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684301?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105527?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4684301/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5105527/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "8",
-                    "value": 8.0,
+                    "displayValue": "7",
+                    "value": 7.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "6",
-                    "value": 6.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4702656/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -114,13 +98,45 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "3",
+                    "value": 3.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "2",
+                    "value": 2.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
                     }
                 }
             ]
@@ -132,67 +148,67 @@
             "abbreviation": "Ast",
             "leaders": [
                 {
+                    "displayValue": "7",
+                    "value": 7.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "3",
+                    "value": 3.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
                     "displayValue": "2",
                     "value": 2.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "1",
-                    "value": 1.0,
+                    "displayValue": "2",
+                    "value": 2.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "1",
-                    "value": 1.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "1",
-                    "value": 1.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
                     }
                 }
             ]
@@ -210,45 +226,29 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "6",
-                    "value": 6.0,
+                    "displayValue": "7",
+                    "value": 7.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "6",
-                    "value": 6.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684301?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4684301/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -258,13 +258,45 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "5",
+                    "value": 5.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "5",
+                    "value": 5.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -274,29 +306,13 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "3",
-                    "value": 3.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -306,13 +322,13 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105527?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5105527/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -322,13 +338,13 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106059?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106059/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4702656/statistics/0?lang=en&region=us"
                     }
                 }
             ]
@@ -340,35 +356,19 @@
             "abbreviation": "Blk",
             "leaders": [
                 {
-                    "displayValue": "3",
-                    "value": 3.0,
+                    "displayValue": "1",
+                    "value": 1.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "2",
-                    "value": 2.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684301?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4684301/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -378,13 +378,61 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "1",
+                    "value": 1.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
                     }
                 }
             ]
@@ -396,19 +444,35 @@
             "abbreviation": "Stl",
             "leaders": [
                 {
+                    "displayValue": "4",
+                    "value": 4.0,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
                     "displayValue": "2",
                     "value": 2.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
@@ -418,45 +482,13 @@
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "1",
-                    "value": 1.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "1",
-                    "value": 1.0,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106059?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106059/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
                     }
                 }
             ]
@@ -475,131 +507,131 @@
             "abbreviation": "RAT",
             "leaders": [
                 {
-                    "displayValue": "19 PTS, 6 REB",
-                    "value": 25.049999237060547,
+                    "displayValue": "18 PTS, 8 REB",
+                    "value": 34.79999923706055,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "8 PTS, 6 REB",
-                    "value": 20.0,
+                    "displayValue": "11 PTS, 7 AST",
+                    "value": 25.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684301?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4684301/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "9 PTS",
-                    "value": 15.300000190734863,
+                    "displayValue": "12 PTS, 7 REB, 4 STL",
+                    "value": 22.5,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
-                    }
-                },
-                {
-                    "displayValue": "8 PTS, 8 REB, 3 BLK",
-                    "value": 14.100000381469727,
-                    "rel": [
-                        "athlete"
-                    ],
-                    "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
-                    },
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
-                    },
-                    "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
                     }
                 },
                 {
                     "displayValue": "5 PTS",
-                    "value": 10.949999809265137,
+                    "value": 14.75,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "6 PTS",
-                    "value": 8.600000381469727,
+                    "displayValue": "3 PTS",
+                    "value": 9.050000190734863,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "8 PTS",
-                    "value": 7.550000190734863,
+                    "displayValue": "7 PTS",
+                    "value": 8.649999618530273,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105527?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5105527/statistics/0?lang=en&region=us"
                     }
                 },
                 {
-                    "displayValue": "1 REB",
-                    "value": 0.5,
+                    "displayValue": "2 PTS",
+                    "value": 8.0,
                     "rel": [
                         "athlete"
                     ],
                     "athlete": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106059?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
                     },
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
                     },
                     "statistics": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106059/statistics/0?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
+                    }
+                },
+                {
+                    "displayValue": "7 PTS",
+                    "value": 3.9000000953674316,
+                    "rel": [
+                        "athlete"
+                    ],
+                    "athlete": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
+                    },
+                    "team": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                    },
+                    "statistics": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4702656/statistics/0?lang=en&region=us"
                     }
                 }
             ]

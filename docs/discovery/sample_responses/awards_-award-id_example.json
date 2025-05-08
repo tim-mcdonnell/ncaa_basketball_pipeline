@@ -1,7 +1,83 @@
 {
-    "count": 0,
-    "pageIndex": 0,
+    "count": 49,
+    "pageIndex": 1,
     "pageSize": 25,
-    "pageCount": 0,
-    "items": []
+    "pageCount": 2,
+    "items": [
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2023/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2022/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2018/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2017/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2016/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2015/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2014/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2013/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2012/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2011/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2010/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2009/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2008/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2007/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2006/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2005/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2004/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2003/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2002/awards/339?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2001/awards/339?lang=en&region=us"
+        }
+    ]
 }

@@ -1,10 +1,10 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/athletes/4906047/statistics/0?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/athletes/4432158/statistics/0?lang=en&region=us",
     "season": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021?lang=en&region=us"
     },
     "athlete": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4906047?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432158?lang=en&region=us"
     },
     "splits": {
         "id": "0",
@@ -25,8 +25,10 @@
                         "shortDisplayName": "BLK",
                         "description": "Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player.",
                         "abbreviation": "BLK",
-                        "value": 1.0,
-                        "displayValue": "1"
+                        "value": 87.0,
+                        "displayValue": "87",
+                        "rank": 3,
+                        "rankDisplayValue": "3rd"
                     },
                     {
                         "name": "defensiveRebounds",
@@ -34,8 +36,10 @@
                         "shortDisplayName": "DREB",
                         "description": "The number of times when the defense obtains the possession of the ball after a missed shot by the offense.",
                         "abbreviation": "DR",
-                        "value": 2.0,
-                        "displayValue": "2"
+                        "value": 172.0,
+                        "displayValue": "172",
+                        "rank": 18,
+                        "rankDisplayValue": "18th"
                     },
                     {
                         "name": "steals",
@@ -43,8 +47,10 @@
                         "shortDisplayName": "STL",
                         "description": "The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player.",
                         "abbreviation": "STL",
-                        "value": 2.0,
-                        "displayValue": "2"
+                        "value": 25.0,
+                        "displayValue": "25",
+                        "rank": 539,
+                        "rankDisplayValue": "Tied-539th"
                     },
                     {
                         "name": "turnoverPoints",
@@ -61,8 +67,10 @@
                         "shortDisplayName": "DRPG",
                         "description": "The average defensive rebounds per game.",
                         "abbreviation": "DR",
-                        "value": 2.0,
-                        "displayValue": "2.0"
+                        "value": 5.9310346,
+                        "displayValue": "5.9",
+                        "rank": 119,
+                        "rankDisplayValue": "119th"
                     },
                     {
                         "name": "avgBlocks",
@@ -70,8 +78,10 @@
                         "shortDisplayName": "BPG",
                         "description": "The average blocks per game.",
                         "abbreviation": "BLK",
-                        "value": 1.0,
-                        "displayValue": "1.0"
+                        "value": 3.0,
+                        "displayValue": "3.0",
+                        "rank": 7,
+                        "rankDisplayValue": "Tied-7th"
                     },
                     {
                         "name": "avgSteals",
@@ -79,8 +89,10 @@
                         "shortDisplayName": "SPG",
                         "description": "The average steals per game.",
                         "abbreviation": "STL",
-                        "value": 2.0,
-                        "displayValue": "2.0"
+                        "value": 0.86206895,
+                        "displayValue": "0.9",
+                        "rank": 1461,
+                        "rankDisplayValue": "Tied-1,461st"
                     }
                 ]
             },
@@ -115,8 +127,10 @@
                         "shortDisplayName": "PF",
                         "description": "The number of times a player had illegal contact with the opponent.",
                         "abbreviation": "PF",
-                        "value": 3.0,
-                        "displayValue": "3"
+                        "value": 53.0,
+                        "displayValue": "53",
+                        "rank": 706,
+                        "rankDisplayValue": "Tied-706th"
                     },
                     {
                         "name": "PER",
@@ -124,8 +138,10 @@
                         "shortDisplayName": "PER",
                         "description": "A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season.",
                         "abbreviation": "PER",
-                        "value": -7608.728,
-                        "displayValue": "-7608.73"
+                        "value": -1.0,
+                        "displayValue": "-1.00",
+                        "rank": 14,
+                        "rankDisplayValue": "14th"
                     },
                     {
                         "name": "ejections",
@@ -142,8 +158,10 @@
                         "shortDisplayName": "TECH",
                         "description": "The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations).",
                         "abbreviation": "TECH",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 1.0,
+                        "displayValue": "1",
+                        "rank": 215,
+                        "rankDisplayValue": "Tied-215th"
                     },
                     {
                         "name": "rebounds",
@@ -151,8 +169,10 @@
                         "shortDisplayName": "REB",
                         "description": "The total number of rebounds (offensive and defensive).",
                         "abbreviation": "REB",
-                        "value": 7.0,
-                        "displayValue": "7"
+                        "value": 249.0,
+                        "displayValue": "249",
+                        "rank": 17,
+                        "rankDisplayValue": "Tied-17th"
                     },
                     {
                         "name": "minutes",
@@ -160,8 +180,8 @@
                         "shortDisplayName": "MIN",
                         "description": "The total number of minutes played.",
                         "abbreviation": "MIN",
-                        "value": 33.0,
-                        "displayValue": "33"
+                        "value": 984.0,
+                        "displayValue": "984"
                     },
                     {
                         "name": "avgMinutes",
@@ -169,8 +189,8 @@
                         "shortDisplayName": "MPG",
                         "description": "The average number of minutes per game.",
                         "abbreviation": "MIN",
-                        "value": 33.0,
-                        "displayValue": "33.0"
+                        "value": 33.931034,
+                        "displayValue": "33.9"
                     },
                     {
                         "name": "fantasyRating",
@@ -188,7 +208,9 @@
                         "description": "A player's estimated on-court impact on team performance measured in point differential per 100 possessions.",
                         "abbreviation": "+/-",
                         "value": -1.0,
-                        "displayValue": "-1"
+                        "displayValue": "-1",
+                        "rank": 1,
+                        "rankDisplayValue": "Tied-1st"
                     },
                     {
                         "name": "avgRebounds",
@@ -196,8 +218,10 @@
                         "shortDisplayName": "RPG",
                         "description": "The average rebounds per game.",
                         "abbreviation": "REB",
-                        "value": 7.0,
-                        "displayValue": "7.0"
+                        "value": 8.586206,
+                        "displayValue": "8.6",
+                        "rank": 84,
+                        "rankDisplayValue": "84th"
                     },
                     {
                         "name": "avgFouls",
@@ -205,8 +229,10 @@
                         "shortDisplayName": "PFPG",
                         "description": "The average fouls committed per game.",
                         "abbreviation": "PF",
-                        "value": 3.0,
-                        "displayValue": "3.0"
+                        "value": 1.8275862,
+                        "displayValue": "1.8",
+                        "rank": 2235,
+                        "rankDisplayValue": "Tied-2,235th"
                     },
                     {
                         "name": "avgFlagrantFouls",
@@ -223,8 +249,10 @@
                         "shortDisplayName": "TECHPG",
                         "description": "The average number of technical fouls per game.",
                         "abbreviation": "TECHPG",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 0.03448276,
+                        "displayValue": "0.0",
+                        "rank": 681,
+                        "rankDisplayValue": "Tied-681st"
                     },
                     {
                         "name": "avgEjections",
@@ -250,8 +278,10 @@
                         "shortDisplayName": "AST/TO",
                         "description": "The average number of assists a player or team records per turnover",
                         "abbreviation": "AST/TO",
-                        "value": 0.0,
-                        "displayValue": "INF"
+                        "value": 0.9130435,
+                        "displayValue": "0.9",
+                        "rank": 4,
+                        "rankDisplayValue": "4th"
                     },
                     {
                         "name": "stealFoulRatio",
@@ -259,8 +289,8 @@
                         "shortDisplayName": "STL/PF",
                         "description": "The average number of steals a player or team records per foul committed.",
                         "abbreviation": "STL/PF",
-                        "value": 0.6666667,
-                        "displayValue": "0.7"
+                        "value": 0.4716981,
+                        "displayValue": "0.5"
                     },
                     {
                         "name": "blockFoulRatio",
@@ -268,8 +298,8 @@
                         "shortDisplayName": "BLK/PF",
                         "description": "The average number of blocks a player or record per foul committed.",
                         "abbreviation": "BLK/PF",
-                        "value": 0.33333334,
-                        "displayValue": "0.3"
+                        "value": 1.6415094,
+                        "displayValue": "1.6"
                     },
                     {
                         "name": "avgTeamRebounds",
@@ -286,8 +316,10 @@
                         "shortDisplayName": "REB",
                         "description": "The total number of rebounds for a team or player",
                         "abbreviation": "REB",
-                        "value": 7.0,
-                        "displayValue": "7"
+                        "value": 249.0,
+                        "displayValue": "249",
+                        "rank": 17,
+                        "rankDisplayValue": "Tied-17th"
                     },
                     {
                         "name": "totalTechnicalFouls",
@@ -295,8 +327,10 @@
                         "shortDisplayName": "TECH",
                         "description": "The total number of technical fouls for a team or player",
                         "abbreviation": "TECH",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 1.0,
+                        "displayValue": "1",
+                        "rank": 215,
+                        "rankDisplayValue": "Tied-215th"
                     },
                     {
                         "name": "stealTurnoverRatio",
@@ -304,8 +338,10 @@
                         "shortDisplayName": "STL/TO",
                         "description": "The number of steals per turnover",
                         "abbreviation": "STL/TO",
-                        "value": 0.0,
-                        "displayValue": "INF"
+                        "value": 0.36231884,
+                        "displayValue": "0.4",
+                        "rank": 5,
+                        "rankDisplayValue": "5th"
                     },
                     {
                         "name": "gamesPlayed",
@@ -313,8 +349,10 @@
                         "shortDisplayName": "GP",
                         "description": "Games Played",
                         "abbreviation": "GP",
-                        "value": 1.0,
-                        "displayValue": "1"
+                        "value": 29.0,
+                        "displayValue": "29",
+                        "rank": 24,
+                        "rankDisplayValue": "Tied-24th"
                     },
                     {
                         "name": "gamesStarted",
@@ -322,8 +360,10 @@
                         "shortDisplayName": "GS",
                         "description": "The number of games started by an athlete.",
                         "abbreviation": "GS",
-                        "value": 1.0,
-                        "displayValue": "1"
+                        "value": 29.0,
+                        "displayValue": "29",
+                        "rank": 24,
+                        "rankDisplayValue": "Tied-24th"
                     },
                     {
                         "name": "doubleDouble",
@@ -331,8 +371,8 @@
                         "shortDisplayName": "DBLDBL",
                         "description": "The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots",
                         "abbreviation": "DD2",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 10.0,
+                        "displayValue": "10"
                     },
                     {
                         "name": "tripleDouble",
@@ -358,8 +398,10 @@
                         "shortDisplayName": "AST",
                         "description": "The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was \"assisting\" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist.",
                         "abbreviation": "AST",
-                        "value": 2.0,
-                        "displayValue": "2"
+                        "value": 63.0,
+                        "displayValue": "63",
+                        "rank": 418,
+                        "rankDisplayValue": "Tied-418th"
                     },
                     {
                         "name": "fieldGoals",
@@ -367,8 +409,8 @@
                         "shortDisplayName": "FG",
                         "description": "Field Goal makes and attempts.",
                         "abbreviation": "FG",
-                        "value": 0.538462,
-                        "displayValue": "7/13"
+                        "value": 0.584158,
+                        "displayValue": "177/303"
                     },
                     {
                         "name": "fieldGoalsAttempted",
@@ -376,8 +418,10 @@
                         "shortDisplayName": "FGA",
                         "description": "The number of times a 2pt field goal was attempted.",
                         "abbreviation": "FGA",
-                        "value": 13.0,
-                        "displayValue": "13"
+                        "value": 303.0,
+                        "displayValue": "303",
+                        "rank": 136,
+                        "rankDisplayValue": "Tied-136th"
                     },
                     {
                         "name": "fieldGoalsMade",
@@ -385,8 +429,10 @@
                         "shortDisplayName": "FGM",
                         "description": "The number of times a 2pt field goal was made.",
                         "abbreviation": "FGM",
-                        "value": 7.0,
-                        "displayValue": "7"
+                        "value": 177.0,
+                        "displayValue": "177",
+                        "rank": 19,
+                        "rankDisplayValue": "19th"
                     },
                     {
                         "name": "fieldGoalPct",
@@ -394,8 +440,10 @@
                         "shortDisplayName": "FG%",
                         "description": "The ratio of field goals made to field goals attempted: FGM / FGA",
                         "abbreviation": "FG%",
-                        "value": 53.84615659713745,
-                        "displayValue": "53.8"
+                        "value": 58.415842056274414,
+                        "displayValue": "58.4",
+                        "rank": 362,
+                        "rankDisplayValue": "Tied-362nd"
                     },
                     {
                         "name": "freeThrows",
@@ -403,8 +451,8 @@
                         "shortDisplayName": "FT",
                         "description": "Free Throw makes and attempts.",
                         "abbreviation": "FT",
-                        "value": 1.0,
-                        "displayValue": "4/4"
+                        "value": 0.695402,
+                        "displayValue": "121/174"
                     },
                     {
                         "name": "freeThrowPct",
@@ -412,8 +460,10 @@
                         "shortDisplayName": "FT%",
                         "description": "The ratio of free throws made to free throws attempted: FTM / FTA",
                         "abbreviation": "FT%",
-                        "value": 100.0,
-                        "displayValue": "100.0"
+                        "value": 69.54023241996765,
+                        "displayValue": "69.5",
+                        "rank": 1978,
+                        "rankDisplayValue": "Tied-1,978th"
                     },
                     {
                         "name": "freeThrowsAttempted",
@@ -421,8 +471,10 @@
                         "shortDisplayName": "FTA",
                         "description": "The number of times a free throw was attempted.",
                         "abbreviation": "FTA",
-                        "value": 4.0,
-                        "displayValue": "4"
+                        "value": 174.0,
+                        "displayValue": "174",
+                        "rank": 9,
+                        "rankDisplayValue": "9th"
                     },
                     {
                         "name": "freeThrowsMade",
@@ -430,8 +482,10 @@
                         "shortDisplayName": "FTM",
                         "description": "The number of times a free throw was made.",
                         "abbreviation": "FTM",
-                        "value": 4.0,
-                        "displayValue": "4"
+                        "value": 121.0,
+                        "displayValue": "121",
+                        "rank": 21,
+                        "rankDisplayValue": "21st"
                     },
                     {
                         "name": "offensiveRebounds",
@@ -439,8 +493,10 @@
                         "shortDisplayName": "OREB",
                         "description": "The number of times when the offense obtains the possession of the ball after a missed shot.",
                         "abbreviation": "OR",
-                        "value": 5.0,
-                        "displayValue": "5"
+                        "value": 77.0,
+                        "displayValue": "77",
+                        "rank": 35,
+                        "rankDisplayValue": "Tied-35th"
                     },
                     {
                         "name": "points",
@@ -448,8 +504,10 @@
                         "shortDisplayName": "PTS",
                         "description": "The number of points scored.",
                         "abbreviation": "PTS",
-                        "value": 18.0,
-                        "displayValue": "18"
+                        "value": 486.0,
+                        "displayValue": "486",
+                        "rank": 24,
+                        "rankDisplayValue": "Tied-24th"
                     },
                     {
                         "name": "turnovers",
@@ -457,8 +515,10 @@
                         "shortDisplayName": "TO",
                         "description": "The number of times a player loses possession to the other team.",
                         "abbreviation": "TO",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 69.0,
+                        "displayValue": "69",
+                        "rank": 97,
+                        "rankDisplayValue": "Tied-97th"
                     },
                     {
                         "name": "threePointFieldGoalsAttempted",
@@ -466,8 +526,10 @@
                         "shortDisplayName": "3PA",
                         "description": "The number of times a 3pt field goal was attempted.",
                         "abbreviation": "3PA",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 35.0,
+                        "displayValue": "35",
+                        "rank": 1821,
+                        "rankDisplayValue": "Tied-1,821st"
                     },
                     {
                         "name": "threePointFieldGoalsMade",
@@ -475,8 +537,10 @@
                         "shortDisplayName": "3PM",
                         "description": "The number of times a 3pt field goal was made.",
                         "abbreviation": "3PM",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 11.0,
+                        "displayValue": "11",
+                        "rank": 1798,
+                        "rankDisplayValue": "Tied-1,798th"
                     },
                     {
                         "name": "totalTurnovers",
@@ -484,8 +548,8 @@
                         "shortDisplayName": "ToTO",
                         "description": "The number of turnovers plus team turnovers for the team.",
                         "abbreviation": "ToTO",
-                        "value": 0.0,
-                        "displayValue": "0"
+                        "value": 69.0,
+                        "displayValue": "69"
                     },
                     {
                         "name": "pointsInPaint",
@@ -494,7 +558,9 @@
                         "description": "The amount of points scored in the area known as \"the Paint\"(the rectangle between the foul line and the baseline).",
                         "abbreviation": "PIP",
                         "value": -1.0,
-                        "displayValue": "-1"
+                        "displayValue": "-1",
+                        "rank": 1,
+                        "rankDisplayValue": "Tied-1st"
                     },
                     {
                         "name": "secondChancePoints",
@@ -520,8 +586,10 @@
                         "shortDisplayName": "AFGM",
                         "description": "The average field goals made per game.",
                         "abbreviation": "FGM",
-                        "value": 7.0,
-                        "displayValue": "7.0"
+                        "value": 6.1034484,
+                        "displayValue": "6.1",
+                        "rank": 155,
+                        "rankDisplayValue": "155th"
                     },
                     {
                         "name": "avgFieldGoalsAttempted",
@@ -529,8 +597,10 @@
                         "shortDisplayName": "AFGA",
                         "description": "The average field goals attempted per game.",
                         "abbreviation": "FGA",
-                        "value": 13.0,
-                        "displayValue": "13.0"
+                        "value": 10.448276,
+                        "displayValue": "10.4",
+                        "rank": 611,
+                        "rankDisplayValue": "Tied-611th"
                     },
                     {
                         "name": "avgThreePointFieldGoalsMade",
@@ -538,8 +608,10 @@
                         "shortDisplayName": "A3PM",
                         "description": "The average three point field goals made per game.",
                         "abbreviation": "3PM",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 0.37931034,
+                        "displayValue": "0.4",
+                        "rank": 2576,
+                        "rankDisplayValue": "2,576th"
                     },
                     {
                         "name": "avgThreePointFieldGoalsAttempted",
@@ -547,8 +619,10 @@
                         "shortDisplayName": "A3PA",
                         "description": "The average three point field goals attempted per game.",
                         "abbreviation": "3PA",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 1.2068965,
+                        "displayValue": "1.2",
+                        "rank": 2763,
+                        "rankDisplayValue": "2,763rd"
                     },
                     {
                         "name": "avgFreeThrowsMade",
@@ -556,8 +630,10 @@
                         "shortDisplayName": "AFTM",
                         "description": "The average free throw shots made per game.",
                         "abbreviation": "FTM",
-                        "value": 4.0,
-                        "displayValue": "4.0"
+                        "value": 4.172414,
+                        "displayValue": "4.2",
+                        "rank": 110,
+                        "rankDisplayValue": "110th"
                     },
                     {
                         "name": "avgFreeThrowsAttempted",
@@ -565,8 +641,10 @@
                         "shortDisplayName": "AFTA",
                         "description": "The average free throw shots attempted per game.",
                         "abbreviation": "FTA",
-                        "value": 4.0,
-                        "displayValue": "4.0"
+                        "value": 6.0,
+                        "displayValue": "6.0",
+                        "rank": 75,
+                        "rankDisplayValue": "Tied-75th"
                     },
                     {
                         "name": "avgPoints",
@@ -574,8 +652,10 @@
                         "shortDisplayName": "PPG",
                         "description": "The average number of points scored per game.",
                         "abbreviation": "PTS",
-                        "value": 18.0,
-                        "displayValue": "18.0"
+                        "value": 16.758621,
+                        "displayValue": "16.8",
+                        "rank": 183,
+                        "rankDisplayValue": "183rd"
                     },
                     {
                         "name": "avgOffensiveRebounds",
@@ -583,8 +663,10 @@
                         "shortDisplayName": "ORPG",
                         "description": "The average offensive rebounds per game.",
                         "abbreviation": "OR",
-                        "value": 5.0,
-                        "displayValue": "5.0"
+                        "value": 2.6551723,
+                        "displayValue": "2.7",
+                        "rank": 154,
+                        "rankDisplayValue": "154th"
                     },
                     {
                         "name": "avgAssists",
@@ -592,8 +674,10 @@
                         "shortDisplayName": "APG",
                         "description": "The average assists per game.",
                         "abbreviation": "AST",
-                        "value": 2.0,
-                        "displayValue": "2.0"
+                        "value": 2.1724138,
+                        "displayValue": "2.2",
+                        "rank": 856,
+                        "rankDisplayValue": "856th"
                     },
                     {
                         "name": "avgTurnovers",
@@ -601,8 +685,10 @@
                         "shortDisplayName": "TOPG",
                         "description": "The average turnovers committed per game.",
                         "abbreviation": "TO",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 2.3793104,
+                        "displayValue": "2.4",
+                        "rank": 667,
+                        "rankDisplayValue": "Tied-667th"
                     },
                     {
                         "name": "offensiveReboundPct",
@@ -610,8 +696,8 @@
                         "shortDisplayName": "OR%",
                         "description": "The percentage of the number of times they obtain the possession of the ball after a missed shot.",
                         "abbreviation": "OR%",
-                        "value": 0.8333333,
-                        "displayValue": "0.8"
+                        "value": 0.6111111,
+                        "displayValue": "0.6"
                     },
                     {
                         "name": "estimatedPossessions",
@@ -619,8 +705,10 @@
                         "shortDisplayName": "EP",
                         "description": "An estimation of the number of possessions for a team or player.",
                         "abbreviation": "EP",
-                        "value": 9.6,
-                        "displayValue": "9.6"
+                        "value": 364.6,
+                        "displayValue": "364.6",
+                        "rank": 194,
+                        "rankDisplayValue": "Tied-194th"
                     },
                     {
                         "name": "avgEstimatedPossessions",
@@ -628,8 +716,10 @@
                         "shortDisplayName": "AEP",
                         "description": "The average number of estimated possessions per game for a team or player.",
                         "abbreviation": "EP",
-                        "value": 9.6,
-                        "displayValue": "9.6"
+                        "value": 12.572414,
+                        "displayValue": "12.6",
+                        "rank": 8,
+                        "rankDisplayValue": "8th"
                     },
                     {
                         "name": "pointsPerEstimatedPossessions",
@@ -637,8 +727,8 @@
                         "shortDisplayName": "PPEP",
                         "description": "The number of points per estimated possession for a team or player",
                         "abbreviation": "PPEP",
-                        "value": 1.8749999,
-                        "displayValue": "1.9"
+                        "value": 1.3329676,
+                        "displayValue": "1.3"
                     },
                     {
                         "name": "avgTeamTurnovers",
@@ -655,8 +745,8 @@
                         "shortDisplayName": "AToTO",
                         "description": "The average number of total turnovers for a team per game.",
                         "abbreviation": "ToTO",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 2.379310369491577,
+                        "displayValue": "2.4"
                     },
                     {
                         "name": "threePointFieldGoalPct",
@@ -664,8 +754,10 @@
                         "shortDisplayName": "3P%",
                         "description": "The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.",
                         "abbreviation": "3P%",
-                        "value": 0.0,
-                        "displayValue": "0.0"
+                        "value": 31.42857253551483,
+                        "displayValue": "31.4",
+                        "rank": 1973,
+                        "rankDisplayValue": "Tied-1,973rd"
                     },
                     {
                         "name": "twoPointFieldGoalsMade",
@@ -673,8 +765,10 @@
                         "shortDisplayName": "2PM",
                         "description": "The number of 2-point field goals made for a team or player.",
                         "abbreviation": "2PM",
-                        "value": 7.0,
-                        "displayValue": "7.0"
+                        "value": 166.0,
+                        "displayValue": "166.0",
+                        "rank": 1817,
+                        "rankDisplayValue": "1,817th"
                     },
                     {
                         "name": "twoPointFieldGoalsAttempted",
@@ -682,8 +776,10 @@
                         "shortDisplayName": "2PA",
                         "description": "The number of 2-point field goals attempted for a team or player.",
                         "abbreviation": "2PA",
-                        "value": 13.0,
-                        "displayValue": "13.0"
+                        "value": 268.0,
+                        "displayValue": "268.0",
+                        "rank": 1685,
+                        "rankDisplayValue": "1,685th"
                     },
                     {
                         "name": "avgTwoPointFieldGoalsMade",
@@ -691,8 +787,10 @@
                         "shortDisplayName": "2PM",
                         "description": "The number of 2-point field goals made per game for a team or player.",
                         "abbreviation": "2PM",
-                        "value": 7.0,
-                        "displayValue": "7.0"
+                        "value": 5.724138,
+                        "displayValue": "5.7",
+                        "rank": 75,
+                        "rankDisplayValue": "Tied-75th"
                     },
                     {
                         "name": "avgTwoPointFieldGoalsAttempted",
@@ -700,8 +798,10 @@
                         "shortDisplayName": "2PA",
                         "description": "The number of 2-point field goals attempted per game for a team or player.",
                         "abbreviation": "2PA",
-                        "value": 13.0,
-                        "displayValue": "13.0"
+                        "value": 9.24138,
+                        "displayValue": "9.2",
+                        "rank": 70,
+                        "rankDisplayValue": "Tied-70th"
                     },
                     {
                         "name": "twoPointFieldGoalPct",
@@ -709,8 +809,10 @@
                         "shortDisplayName": "2P%",
                         "description": "The percentage of 2-points fields goals made by a team or player.",
                         "abbreviation": "2P%",
-                        "value": 53.84615659713745,
-                        "displayValue": "53.8"
+                        "value": 61.94030046463013,
+                        "displayValue": "61.9",
+                        "rank": 362,
+                        "rankDisplayValue": "Tied-362nd"
                     },
                     {
                         "name": "shootingEfficiency",
@@ -718,8 +820,8 @@
                         "shortDisplayName": "SH-EFF",
                         "description": "The efficiency with which a team or player shoots the basketball.",
                         "abbreviation": "SH-EFF",
-                        "value": 0.53846157,
-                        "displayValue": "0.54"
+                        "value": 0.60231024,
+                        "displayValue": "0.60"
                     },
                     {
                         "name": "scoringEfficiency",
@@ -727,14 +829,14 @@
                         "shortDisplayName": "SC-EFF",
                         "description": "The efficiency with which a team or player scores the basketball.",
                         "abbreviation": "SC-EFF",
-                        "value": 1.3846154,
-                        "displayValue": "1.385"
+                        "value": 1.6039604,
+                        "displayValue": "1.604"
                     }
                 ]
             }
         ]
     },
     "seasonType": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2?lang=en&region=us"
     }
 }

@@ -1,25 +1,25 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us",
-    "id": "183",
-    "guid": "df8689b0-feaf-e055-1f49-b38677b45c1a",
-    "uid": "s:40~l:41~t:183",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050?lang=en&region=us",
+    "id": "2050",
+    "guid": "da337310-0aed-0978-8264-0284f767a3a6",
+    "uid": "s:40~l:41~t:2050",
     "alternateIds": {
-        "sdr": "7577"
+        "sdr": "5315"
     },
-    "slug": "syracuse-orange",
-    "location": "Syracuse",
-    "name": "Orange",
-    "nickname": "Syracuse",
-    "abbreviation": "SYR",
-    "displayName": "Syracuse Orange",
-    "shortDisplayName": "Syracuse",
-    "color": "ff6500",
-    "alternateColor": "000e54",
+    "slug": "ball-state-cardinals",
+    "location": "Ball State",
+    "name": "Cardinals",
+    "nickname": "Ball State",
+    "abbreviation": "BALL",
+    "displayName": "Ball State Cardinals",
+    "shortDisplayName": "Ball State",
+    "color": "DA0000",
+    "alternateColor": "ffffff",
     "isActive": true,
     "isAllStar": false,
     "logos": [
         {
-            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2050.png",
             "width": 500,
             "height": 500,
             "alt": "",
@@ -27,10 +27,10 @@
                 "full",
                 "default"
             ],
-            "lastUpdated": "2022-09-02T00:03Z"
+            "lastUpdated": "2018-06-05T12:08Z"
         },
         {
-            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/183.png",
+            "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2050.png",
             "width": 500,
             "height": 500,
             "alt": "",
@@ -38,10 +38,10 @@
                 "full",
                 "dark"
             ],
-            "lastUpdated": "2022-09-02T00:03Z"
+            "lastUpdated": "2018-06-05T12:08Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/primary_logo_on_white_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/primary_logo_on_white_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -49,10 +49,10 @@
                 "full",
                 "primary_logo_on_white_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/primary_logo_on_black_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/primary_logo_on_black_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -60,10 +60,10 @@
                 "full",
                 "primary_logo_on_black_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/primary_logo_on_primary_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/primary_logo_on_primary_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -71,10 +71,10 @@
                 "full",
                 "primary_logo_on_primary_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/primary_logo_on_secondary_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/primary_logo_on_secondary_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -82,10 +82,10 @@
                 "full",
                 "primary_logo_on_secondary_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/secondary_logo_on_white_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/secondary_logo_on_white_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -93,10 +93,10 @@
                 "full",
                 "secondary_logo_on_white_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/secondary_logo_on_black_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/secondary_logo_on_black_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -104,10 +104,10 @@
                 "full",
                 "secondary_logo_on_black_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/secondary_logo_on_primary_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/secondary_logo_on_primary_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -115,10 +115,10 @@
                 "full",
                 "secondary_logo_on_primary_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         },
         {
-            "href": "https://a.espncdn.com/guid/df8689b0-feaf-e055-1f49-b38677b45c1a/logos/secondary_logo_on_secondary_color.png",
+            "href": "https://a.espncdn.com/guid/da337310-0aed-0978-8264-0284f767a3a6/logos/secondary_logo_on_secondary_color.png",
             "width": 4096,
             "height": 4096,
             "alt": "",
@@ -126,53 +126,38 @@
                 "full",
                 "secondary_logo_on_secondary_color"
             ],
-            "lastUpdated": "2024-11-11T01:11Z"
+            "lastUpdated": "2024-11-11T01:16Z"
         }
     ],
     "record": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/183/record?lang=en&region=us"
-    },
-    "oddsRecords": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/odds-records?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/teams/2050/record?lang=en&region=us"
     },
     "athletes": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/athletes?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050/athletes?lang=en&region=us"
     },
     "venue": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/1964?lang=en&region=us",
-        "id": "1964",
-        "fullName": "JMA Wireless Dome",
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues/299?lang=en&region=us",
+        "id": "299",
+        "fullName": "Worthen Arena",
         "address": {
-            "city": "Syracuse",
-            "state": "NY",
-            "zipCode": "13244"
+            "city": "Muncie",
+            "state": "IN"
         },
         "grass": false,
         "indoor": true,
-        "images": [
-            {
-                "href": "https://a.espncdn.com/i/venues/mens-college-basketball/day/1964.jpg",
-                "width": 2000,
-                "height": 1125,
-                "alt": "",
-                "rel": [
-                    "full",
-                    "day"
-                ]
-            }
-        ]
+        "images": []
     },
     "groups": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/groups/2?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/groups/14?lang=en&region=us"
     },
     "ranks": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/ranks?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050/ranks?lang=en&region=us"
     },
     "statistics": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/statistics?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/0/teams/2050/statistics?lang=en&region=us"
     },
     "leaders": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/0/teams/183/leaders?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/0/teams/2050/leaders?lang=en&region=us"
     },
     "links": [
         {
@@ -182,7 +167,7 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/team/_/id/183/syracuse-orange",
+            "href": "https://www.espn.com/mens-college-basketball/team/_/id/2050/ball-state-cardinals",
             "text": "Clubhouse",
             "shortText": "Clubhouse",
             "isExternal": false,
@@ -195,7 +180,7 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/team/roster/_/id/183",
+            "href": "https://www.espn.com/mens-college-basketball/team/roster/_/id/2050",
             "text": "Roster",
             "shortText": "Roster",
             "isExternal": false,
@@ -208,7 +193,7 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/183",
+            "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/2050",
             "text": "Statistics",
             "shortText": "Statistics",
             "isExternal": false,
@@ -221,7 +206,7 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/183",
+            "href": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2050",
             "text": "Schedule",
             "shortText": "Schedule",
             "isExternal": false,
@@ -234,7 +219,7 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.espn.com/mens-college-basketball/team/photos/_/id/183",
+            "href": "https://www.espn.com/mens-college-basketball/team/photos/_/id/2050",
             "text": "photos",
             "shortText": "photos",
             "isExternal": false,
@@ -247,35 +232,32 @@
                 "desktop",
                 "team"
             ],
-            "href": "https://www.vividseats.com/syracuse-orange-mens-basketball-tickets--sports-ncaa-basketball/performer/3333?wsUser=717",
+            "href": "https://www.vividseats.com/ball-state-cardinals-mens-basketball-tickets--sports-ncaa-basketball/performer/3111?wsUser=717",
             "text": "Tickets",
             "shortText": "Tickets",
             "isExternal": true,
             "isPremium": false
         }
     ],
-    "injuries": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/183/injuries?lang=en&region=us"
-    },
     "notes": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/183/notes?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/teams/2050/notes?lang=en&region=us"
     },
     "againstTheSpreadRecords": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/183/ats?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/teams/2050/ats?lang=en&region=us"
     },
     "awards": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/awards?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050/awards?lang=en&region=us"
     },
     "franchise": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/183?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/2050?lang=en&region=us"
     },
     "events": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/events?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050/events?lang=en&region=us"
     },
     "coaches": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183/coaches?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2050/coaches?lang=en&region=us"
     },
     "college": {
-        "$ref": "http://sports.core.api.espn.com/v2/colleges/183?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/colleges/2050?lang=en&region=us"
     }
 }

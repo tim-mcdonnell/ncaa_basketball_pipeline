@@ -1,72 +1,60 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings/1?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/rankings/1?lang=en&region=us",
     "id": "1",
     "name": "AP Top 25",
     "shortName": "AP Poll",
     "type": "ap",
     "rankings": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/1/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/1/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/2/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/2/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/3/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/3/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/4/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/4/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/5/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/5/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/6/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/6/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/7/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/7/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/8/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/8/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/9/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/9/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/10/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/10/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/11/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/11/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/12/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/12/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/13/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/13/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/14/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/14/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/15/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/15/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/16/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/16/rankings/1?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/17/rankings/1?lang=en&region=us"
-        },
-        {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/18/rankings/1?lang=en&region=us"
-        },
-        {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/19/rankings/1?lang=en&region=us"
-        },
-        {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/20/rankings/1?lang=en&region=us"
-        },
-        {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings/1?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/17/rankings/1?lang=en&region=us"
         }
     ]
 }

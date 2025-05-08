@@ -1,5 +1,5 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups/52?lang=en&region=us",
     "uid": "s:40~l:41~g:52",
     "id": "52",
     "name": "NCAA Basketball",
@@ -7,14 +7,17 @@
     "shortName": "NCAA Basketball",
     "midsizeName": "NCAA Basketball",
     "season": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021?lang=en&region=us"
     },
     "children": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52/children?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups/52/children?lang=en&region=us"
+    },
+    "standings": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups/52/standings?lang=en&region=us"
     },
     "isConference": false,
     "slug": "ncaa-basketball",
     "teams": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups/52/teams?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups/52/teams?lang=en&region=us"
     }
 }

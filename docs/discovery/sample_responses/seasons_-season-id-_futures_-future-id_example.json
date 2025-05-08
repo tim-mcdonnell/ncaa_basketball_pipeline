@@ -1,72 +1,24 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures/87138?lang=en&region=us",
-    "id": 87138,
-    "name": "NCAA(B) - Western Athletic Conference - Winner (conf. tournament)",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/futures/201100?lang=en&region=us",
+    "id": 201100,
+    "name": "NCAA(B) - To Make The Final 4",
     "futures": [
         {
             "provider": {
-                "id": "58",
-                "name": "ESPN BET",
+                "id": "50",
+                "name": "BetfairSportsbook",
                 "active": 1,
-                "priority": 1
+                "priority": 0
             },
             "books": [
                 {
                     "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2253?lang=en&region=us"
-                    },
-                    "value": "-105"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/3084?lang=en&region=us"
-                    },
-                    "value": "+210"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2547?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/245?lang=en&region=us"
                     },
                     "value": "+500"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2856?lang=en&region=us"
-                    },
-                    "value": "+600"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/253?lang=en&region=us"
-                    },
-                    "value": "+20000"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/3101?lang=en&region=us"
-                    },
-                    "value": "+500000"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2627?lang=en&region=us"
-                    },
-                    "value": "+500000"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2000?lang=en&region=us"
-                    },
-                    "value": "+500000"
-                },
-                {
-                    "team": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/250?lang=en&region=us"
-                    },
-                    "value": "+500000"
                 }
             ]
         }
     ],
-    "displayName": "NCAA(B) - Western Athletic Conference - Winner (conf. tournament)"
+    "displayName": "NCAA(B) - To Make The Final 4"
 }

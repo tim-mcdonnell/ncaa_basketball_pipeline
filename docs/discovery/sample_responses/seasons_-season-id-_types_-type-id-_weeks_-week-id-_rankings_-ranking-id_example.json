@@ -1,189 +1,175 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings/2?lang=en&region=us",
-    "id": "2",
-    "name": "Coaches Poll",
-    "shortName": "Coaches Poll",
-    "type": "usa",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/1/rankings/1?lang=en&region=us",
+    "id": "1",
+    "name": "AP Top 25",
+    "shortName": "AP Poll",
+    "type": "ap",
     "occurrence": {
-        "number": 21,
+        "number": 1,
         "type": "week",
         "last": false,
-        "value": "4",
-        "displayValue": "Week 4"
+        "value": "1",
+        "displayValue": "Preseason"
     },
-    "date": "2025-04-08T07:00Z",
-    "headline": "2025 NCAA Basketball Rankings - Coaches Poll Week 4",
-    "shortHeadline": "2025 : Week 4",
+    "date": "2020-11-09T08:00Z",
+    "headline": "2021 NCAA Basketball Rankings - AP Top 25 Preseason",
+    "shortHeadline": "2021 : Preseason",
     "season": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025?lang=en&region=us",
-        "year": 2025,
-        "startDate": "2024-07-13T07:00Z",
-        "endDate": "2025-04-09T06:59Z",
-        "displayName": "2024-25",
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021?lang=en&region=us",
+        "year": 2021,
+        "startDate": "2020-07-01T07:00Z",
+        "endDate": "2021-04-07T06:59Z",
+        "displayName": "2020-21",
         "type": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3?lang=en&region=us",
-            "id": "3",
-            "type": 3,
-            "name": "Postseason",
-            "abbreviation": "post",
-            "year": 2025,
-            "startDate": "2025-03-18T07:00Z",
-            "endDate": "2025-04-09T06:59Z",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2?lang=en&region=us",
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg",
+            "year": 2021,
+            "startDate": "2020-10-17T07:00Z",
+            "endDate": "2021-03-15T06:59Z",
             "hasGroups": false,
             "hasStandings": true,
             "hasLegs": false,
             "groups": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/groups?lang=en&region=us"
-            },
-            "week": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4?lang=en&region=us",
-                "number": 4,
-                "startDate": "2025-04-07T07:00Z",
-                "endDate": "2025-04-09T06:59Z",
-                "text": "Week 4",
-                "rankings": {
-                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings?lang=en&region=us"
-                }
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups?lang=en&region=us"
             },
             "weeks": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks?lang=en&region=us"
             },
-            "slug": "post-season"
+            "leaders": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/leaders?lang=en&region=us"
+            },
+            "slug": "regular-season"
         },
         "types": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types?lang=en&region=us",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types?lang=en&region=us",
             "count": 4,
             "pageIndex": 1,
             "pageSize": 4,
             "pageCount": 1,
             "items": [
                 {
-                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/1?lang=en&region=us",
+                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/1?lang=en&region=us",
                     "id": "1",
                     "type": 1,
                     "name": "Preseason",
                     "abbreviation": "pre",
-                    "year": 2025,
-                    "startDate": "2024-07-13T07:00Z",
-                    "endDate": "2024-11-04T07:59Z",
+                    "year": 2021,
+                    "startDate": "2020-07-01T07:00Z",
+                    "endDate": "2020-10-17T06:59Z",
                     "hasGroups": false,
                     "hasStandings": false,
                     "hasLegs": false,
                     "groups": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/1/groups?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/1/groups?lang=en&region=us"
                     },
                     "weeks": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/1/weeks?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/1/weeks?lang=en&region=us"
                     },
                     "slug": "preseason"
                 },
                 {
-                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2?lang=en&region=us",
+                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2?lang=en&region=us",
                     "id": "2",
                     "type": 2,
                     "name": "Regular Season",
                     "abbreviation": "reg",
-                    "year": 2025,
-                    "startDate": "2024-11-04T08:00Z",
-                    "endDate": "2025-03-18T06:59Z",
+                    "year": 2021,
+                    "startDate": "2020-10-17T07:00Z",
+                    "endDate": "2021-03-15T06:59Z",
                     "hasGroups": false,
                     "hasStandings": true,
                     "hasLegs": false,
                     "groups": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/groups?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/groups?lang=en&region=us"
                     },
                     "weeks": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks?lang=en&region=us"
                     },
                     "leaders": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/leaders?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/leaders?lang=en&region=us"
                     },
                     "slug": "regular-season"
                 },
                 {
-                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3?lang=en&region=us",
+                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3?lang=en&region=us",
                     "id": "3",
                     "type": 3,
                     "name": "Postseason",
                     "abbreviation": "post",
-                    "year": 2025,
-                    "startDate": "2025-03-18T07:00Z",
-                    "endDate": "2025-04-09T06:59Z",
+                    "year": 2021,
+                    "startDate": "2021-03-15T07:00Z",
+                    "endDate": "2021-04-07T06:59Z",
                     "hasGroups": false,
                     "hasStandings": true,
                     "hasLegs": false,
                     "groups": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/groups?lang=en&region=us"
-                    },
-                    "week": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4?lang=en&region=us",
-                        "number": 4,
-                        "startDate": "2025-04-07T07:00Z",
-                        "endDate": "2025-04-09T06:59Z",
-                        "text": "Week 4",
-                        "rankings": {
-                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings?lang=en&region=us"
-                        }
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/groups?lang=en&region=us"
                     },
                     "weeks": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/weeks?lang=en&region=us"
+                    },
+                    "leaders": {
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/3/leaders?lang=en&region=us"
                     },
                     "slug": "post-season"
                 },
                 {
-                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4?lang=en&region=us",
+                    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/4?lang=en&region=us",
                     "id": "4",
                     "type": 4,
                     "name": "Off Season",
                     "abbreviation": "off",
-                    "year": 2025,
-                    "startDate": "2025-04-09T07:00Z",
-                    "endDate": "2025-07-13T06:59Z",
+                    "year": 2021,
+                    "startDate": "2021-04-07T07:00Z",
+                    "endDate": "2021-07-06T06:59Z",
                     "hasGroups": false,
                     "hasStandings": false,
                     "hasLegs": false,
                     "groups": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/groups?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/4/groups?lang=en&region=us"
                     },
                     "weeks": {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/4/weeks?lang=en&region=us"
+                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/4/weeks?lang=en&region=us"
                     },
                     "slug": "off-season"
                 }
             ]
         },
         "rankings": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/rankings?lang=en&region=us"
         },
         "powerIndexes": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/powerindex?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/powerindex?lang=en&region=us"
         },
         "powerIndexLeaders": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/powerindex/leaders?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/powerindex/leaders?lang=en&region=us"
         },
         "athletes": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes?lang=en&region=us"
         },
         "awards": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/awards?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/awards?lang=en&region=us"
         },
         "futures": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/futures?lang=en&region=us"
         },
         "leaders": {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/leaders?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/leaders?lang=en&region=us"
         }
     },
-    "lastUpdated": "2025-04-08T20:17Z",
+    "lastUpdated": "2020-11-28T08:03Z",
     "ranks": [
         {
             "current": 1,
-            "previous": 3,
-            "points": 775.0,
-            "firstPlaceVotes": 31,
-            "trend": "+2",
+            "previous": 0,
+            "points": 1541.0,
+            "firstPlaceVotes": 28,
+            "trend": "-",
             "record": {
-                "summary": "36-4",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -192,8 +178,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 36.0,
-                        "displayValue": "36"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -202,25 +188,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 4.0,
-                        "displayValue": "4"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2250?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 2,
-            "previous": 2,
-            "points": 744.0,
-            "firstPlaceVotes": 0,
+            "previous": 0,
+            "points": 1540.0,
+            "firstPlaceVotes": 24,
             "trend": "-",
             "record": {
-                "summary": "35-5",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -229,8 +215,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 35.0,
-                        "displayValue": "35"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -239,25 +225,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 5.0,
-                        "displayValue": "5"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/239?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 3,
-            "previous": 1,
-            "points": 706.0,
-            "firstPlaceVotes": 0,
-            "trend": "-2",
+            "previous": 0,
+            "points": 1501.0,
+            "firstPlaceVotes": 11,
+            "trend": "-",
             "record": {
-                "summary": "35-4",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -266,8 +252,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 35.0,
-                        "displayValue": "35"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -276,25 +262,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 4.0,
-                        "displayValue": "4"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/222?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 4,
-            "previous": 4,
-            "points": 689.0,
-            "firstPlaceVotes": 0,
+            "previous": 0,
+            "points": 1364.0,
+            "firstPlaceVotes": 1,
             "trend": "-",
             "record": {
-                "summary": "32-6",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -303,8 +289,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 32.0,
-                        "displayValue": "32"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -313,99 +299,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 6.0,
-                        "displayValue": "6"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/258?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 5,
-            "previous": 6,
-            "points": 621.0,
-            "firstPlaceVotes": 0,
-            "trend": "+1",
-            "record": {
-                "summary": "30-8",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 30.0,
-                        "displayValue": "30"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 8.0,
-                        "displayValue": "8"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2633?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
-        },
-        {
-            "current": 6,
-            "previous": 8,
-            "points": 610.0,
-            "firstPlaceVotes": 0,
-            "trend": "+2",
-            "record": {
-                "summary": "28-9",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 28.0,
-                        "displayValue": "28"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 9.0,
-                        "displayValue": "9"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/333?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
-        },
-        {
-            "current": 7,
-            "previous": 7,
-            "points": 593.0,
+            "previous": 0,
+            "points": 1273.0,
             "firstPlaceVotes": 0,
             "trend": "-",
             "record": {
-                "summary": "30-7",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -414,8 +326,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 30.0,
-                        "displayValue": "30"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -424,25 +336,99 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 7.0,
-                        "displayValue": "7"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/127?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2294?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 6,
+            "previous": 0,
+            "points": 1221.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2305?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 7,
+            "previous": 0,
+            "points": 1150.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/275?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 8,
-            "previous": 9,
-            "points": 582.0,
+            "previous": 0,
+            "points": 1105.0,
             "firstPlaceVotes": 0,
-            "trend": "+1",
+            "trend": "-",
             "record": {
-                "summary": "28-9",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -451,8 +437,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 28.0,
-                        "displayValue": "28"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -461,25 +447,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 9.0,
-                        "displayValue": "9"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2641?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/356?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 9,
-            "previous": 12,
-            "points": 469.0,
+            "previous": 0,
+            "points": 1073.0,
             "firstPlaceVotes": 0,
-            "trend": "+3",
+            "trend": "-",
             "record": {
-                "summary": "27-9",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -488,8 +474,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 27.0,
-                        "displayValue": "27"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -498,25 +484,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 9.0,
-                        "displayValue": "9"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/120?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/150?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 10,
-            "previous": 5,
-            "points": 436.0,
+            "previous": 0,
+            "points": 1038.0,
             "firstPlaceVotes": 0,
-            "trend": "-5",
+            "trend": "-",
             "record": {
-                "summary": "31-5",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -525,8 +511,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 31.0,
-                        "displayValue": "31"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -535,25 +521,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 5.0,
-                        "displayValue": "5"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2599?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/96?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 11,
-            "previous": 15,
-            "points": 427.0,
+            "previous": 0,
+            "points": 922.0,
             "firstPlaceVotes": 0,
-            "trend": "+4",
+            "trend": "-",
             "record": {
-                "summary": "27-10",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -562,8 +548,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 27.0,
-                        "displayValue": "27"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -572,25 +558,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 10.0,
-                        "displayValue": "10"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/130?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/156?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 12,
-            "previous": 22,
-            "points": 384.0,
+            "previous": 0,
+            "points": 919.0,
             "firstPlaceVotes": 0,
-            "trend": "+10",
+            "trend": "-",
             "record": {
-                "summary": "24-12",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -599,8 +585,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 24.0,
-                        "displayValue": "24"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -609,25 +595,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 12.0,
-                        "displayValue": "12"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2509?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2633?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 13,
-            "previous": 20,
-            "points": 353.0,
+            "previous": 0,
+            "points": 820.0,
             "firstPlaceVotes": 0,
-            "trend": "+7",
+            "trend": "-",
             "record": {
-                "summary": "24-13",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -636,8 +622,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 24.0,
-                        "displayValue": "24"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -646,25 +632,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 13.0,
-                        "displayValue": "13"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/12?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/127?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 14,
-            "previous": 21,
-            "points": 330.0,
+            "previous": 0,
+            "points": 790.0,
             "firstPlaceVotes": 0,
-            "trend": "+7",
+            "trend": "-",
             "record": {
-                "summary": "24-12",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -673,8 +659,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 24.0,
-                        "displayValue": "24"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -683,25 +669,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 12.0,
-                        "displayValue": "12"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/96?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2641?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 15,
-            "previous": 17,
-            "points": 316.0,
+            "previous": 0,
+            "points": 651.0,
             "firstPlaceVotes": 0,
-            "trend": "+2",
+            "trend": "-",
             "record": {
-                "summary": "26-10",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -710,8 +696,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 26.0,
-                        "displayValue": "26"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -720,25 +706,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 10.0,
-                        "displayValue": "10"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/252?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/277?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 16,
-            "previous": 10,
-            "points": 315.0,
+            "previous": 0,
+            "points": 465.0,
             "firstPlaceVotes": 0,
-            "trend": "-6",
+            "trend": "-",
             "record": {
-                "summary": "27-10",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -747,8 +733,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 27.0,
-                        "displayValue": "27"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -757,25 +743,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 10.0,
-                        "displayValue": "10"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/275?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/153?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 17,
-            "previous": 14,
-            "points": 280.0,
+            "previous": 0,
+            "points": 438.0,
             "firstPlaceVotes": 0,
-            "trend": "-3",
+            "trend": "-",
             "record": {
-                "summary": "25-10",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -784,8 +770,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 25.0,
-                        "displayValue": "25"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -794,25 +780,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 10.0,
-                        "displayValue": "10"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/66?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/248?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 18,
             "previous": 0,
-            "points": 214.0,
+            "points": 402.0,
             "firstPlaceVotes": 0,
-            "trend": "+8",
+            "trend": "-",
             "record": {
-                "summary": "24-12",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -821,8 +807,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 24.0,
-                        "displayValue": "24"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -831,25 +817,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 12.0,
-                        "displayValue": "12"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/145?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/9?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:17Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 19,
-            "previous": 18,
-            "points": 195.0,
+            "previous": 0,
+            "points": 380.0,
             "firstPlaceVotes": 0,
-            "trend": "-1",
+            "trend": "-",
             "record": {
-                "summary": "23-11",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -858,8 +844,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 23.0,
-                        "displayValue": "23"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -868,25 +854,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 11.0,
-                        "displayValue": "11"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/245?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/251?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 20,
-            "previous": 23,
-            "points": 155.0,
+            "previous": 0,
+            "points": 375.0,
             "firstPlaceVotes": 0,
-            "trend": "+3",
+            "trend": "-",
             "record": {
-                "summary": "26-9",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -895,8 +881,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 26.0,
-                        "displayValue": "26"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -905,25 +891,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 9.0,
-                        "displayValue": "9"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2250?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2483?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 21,
-            "previous": 11,
-            "points": 146.0,
+            "previous": 0,
+            "points": 351.0,
             "firstPlaceVotes": 0,
-            "trend": "-10",
+            "trend": "-",
             "record": {
-                "summary": "27-8",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -932,8 +918,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 27.0,
-                        "displayValue": "27"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -942,25 +928,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 8.0,
-                        "displayValue": "8"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/97?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/52?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 22,
-            "previous": 19,
-            "points": 97.0,
+            "previous": 0,
+            "points": 336.0,
             "firstPlaceVotes": 0,
-            "trend": "-3",
+            "trend": "-",
             "record": {
-                "summary": "29-6",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -969,8 +955,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 29.0,
-                        "displayValue": "29"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -979,25 +965,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 6.0,
-                        "displayValue": "6"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2608?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/26?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 23,
-            "previous": 13,
-            "points": 95.0,
+            "previous": 0,
+            "points": 270.0,
             "firstPlaceVotes": 0,
-            "trend": "-10",
+            "trend": "-",
             "record": {
-                "summary": "27-7",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -1006,8 +992,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 27.0,
-                        "displayValue": "27"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -1016,25 +1002,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 7.0,
-                        "displayValue": "7"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/228?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/194?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 24,
             "previous": 0,
-            "points": 90.0,
+            "points": 190.0,
             "firstPlaceVotes": 0,
-            "trend": "+2",
+            "trend": "-",
             "record": {
-                "summary": "25-11",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -1043,8 +1029,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 25.0,
-                        "displayValue": "25"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -1053,25 +1039,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 11.0,
-                        "displayValue": "11"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/156?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/164?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 25,
             "previous": 0,
-            "points": 84.0,
+            "points": 160.0,
             "firstPlaceVotes": 0,
-            "trend": "+1",
+            "trend": "-",
             "record": {
-                "summary": "22-14",
+                "summary": "0-0",
                 "stats": [
                     {
                         "name": "wins",
@@ -1080,8 +1066,8 @@
                         "description": "Wins",
                         "abbreviation": "W",
                         "type": "wins",
-                        "value": 22.0,
-                        "displayValue": "22"
+                        "value": 0.0,
+                        "displayValue": "0"
                     },
                     {
                         "name": "losses",
@@ -1090,25 +1076,25 @@
                         "description": "Losses",
                         "abbreviation": "L",
                         "type": "losses",
-                        "value": 14.0,
-                        "displayValue": "14"
+                        "value": 0.0,
+                        "displayValue": "0"
                     }
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/8?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/130?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         }
     ],
     "others": [
         {
             "current": 0,
-            "previous": 16,
-            "points": 63.0,
+            "previous": 0,
+            "points": 146.0,
             "firstPlaceVotes": 0,
-            "trend": "+16",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1135,17 +1121,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/235?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/99?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
-            "points": 52.0,
+            "points": 69.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1172,17 +1158,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2181?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/235?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
-            "points": 49.0,
+            "points": 69.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1209,17 +1195,91 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/356?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/57?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 50.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/333?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 48.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/84?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 41.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1246,17 +1306,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/41?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/97?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 40.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1283,54 +1343,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2483?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/257?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
-        },
-        {
-            "current": 0,
-            "previous": 24,
-            "points": 33.0,
-            "firstPlaceVotes": 0,
-            "trend": "+24",
-            "record": {
-                "summary": "0-0",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/142?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
-            "points": 33.0,
+            "points": 14.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1357,91 +1380,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/26?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/24?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
-        },
-        {
-            "current": 0,
-            "previous": 25,
-            "points": 18.0,
-            "firstPlaceVotes": 0,
-            "trend": "+25",
-            "record": {
-                "summary": "0-0",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/269?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
-        },
-        {
-            "current": 0,
-            "previous": 0,
-            "points": 11.0,
-            "firstPlaceVotes": 0,
-            "trend": "+26",
-            "record": {
-                "summary": "0-0",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/167?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 9.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1468,17 +1417,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/36?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2507?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
-            "points": 7.0,
+            "points": 8.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1505,17 +1454,54 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/28?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/139?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 8.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 6.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1542,17 +1528,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2305?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/41?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 6.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1579,17 +1565,128 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/239?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/21?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 4.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/252?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 3.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2350?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
+        },
+        {
+            "current": 0,
+            "previous": 0,
+            "points": 2.0,
+            "firstPlaceVotes": 0,
+            "trend": "-",
+            "record": {
+                "summary": "0-0",
+                "stats": [
+                    {
+                        "name": "wins",
+                        "displayName": "Wins",
+                        "shortDisplayName": "W",
+                        "description": "Wins",
+                        "abbreviation": "W",
+                        "type": "wins",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    },
+                    {
+                        "name": "losses",
+                        "displayName": "Losses",
+                        "shortDisplayName": "L",
+                        "description": "Losses",
+                        "abbreviation": "L",
+                        "type": "losses",
+                        "value": 0.0,
+                        "displayValue": "0"
+                    }
+                ]
+            },
+            "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2550?lang=en&region=us"
+            },
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
             "previous": 0,
             "points": 1.0,
             "firstPlaceVotes": 0,
-            "trend": "+26",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1616,56 +1713,17 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/2377?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2460?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:20Z"
-        }
-    ],
-    "droppedOut": [
-        {
-            "current": 0,
-            "previous": 16,
-            "points": 63.0,
-            "firstPlaceVotes": 0,
-            "trend": "+16",
-            "record": {
-                "summary": "0-0",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/235?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         },
         {
             "current": 0,
-            "previous": 24,
-            "points": 33.0,
+            "previous": 0,
+            "points": 1.0,
             "firstPlaceVotes": 0,
-            "trend": "+24",
+            "trend": "-",
             "record": {
                 "summary": "0-0",
                 "stats": [
@@ -1692,47 +1750,10 @@
                 ]
             },
             "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/142?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/2430?lang=en&region=us"
             },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
-        },
-        {
-            "current": 0,
-            "previous": 25,
-            "points": 18.0,
-            "firstPlaceVotes": 0,
-            "trend": "+25",
-            "record": {
-                "summary": "0-0",
-                "stats": [
-                    {
-                        "name": "wins",
-                        "displayName": "Wins",
-                        "shortDisplayName": "W",
-                        "description": "Wins",
-                        "abbreviation": "W",
-                        "type": "wins",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    },
-                    {
-                        "name": "losses",
-                        "displayName": "Losses",
-                        "shortDisplayName": "L",
-                        "description": "Losses",
-                        "abbreviation": "L",
-                        "type": "losses",
-                        "value": 0.0,
-                        "displayValue": "0"
-                    }
-                ]
-            },
-            "team": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/269?lang=en&region=us"
-            },
-            "date": "2025-04-08T07:00Z",
-            "lastUpdated": "2025-04-08T20:21Z"
+            "date": "2020-11-09T08:00Z",
+            "lastUpdated": "2020-11-28T08:03Z"
         }
     ],
     "availability": {}

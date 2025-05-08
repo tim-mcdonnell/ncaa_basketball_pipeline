@@ -1,10 +1,10 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores/1/2?lang=en&region=us",
-    "value": 32.0,
-    "displayValue": "32",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/linescores/1/1?lang=en&region=us",
+    "value": 28.0,
+    "displayValue": "28",
     "source": {
         "id": "1",
         "description": "Basic/Manual"
     },
-    "period": 2
+    "period": 1
 }

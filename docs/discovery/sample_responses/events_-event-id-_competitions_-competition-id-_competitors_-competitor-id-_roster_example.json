@@ -1,71 +1,8 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster?lang=en&region=us",
     "entries": [
         {
-            "playerId": 5060700,
-            "period": 0,
-            "active": false,
-            "starter": true,
-            "forPlayerId": 0,
-            "jersey": "11",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5060700?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5060700/statistics/0?lang=en&region=us"
-            },
-            "didNotPlay": false,
-            "displayName": "J. Tugler",
-            "ejected": false
-        },
-        {
-            "playerId": 4433068,
-            "period": 0,
-            "active": false,
-            "starter": true,
-            "forPlayerId": 0,
-            "jersey": "13",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433068?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433068/statistics/0?lang=en&region=us"
-            },
-            "didNotPlay": false,
-            "displayName": "J. Roberts",
-            "ejected": false
-        },
-        {
-            "playerId": 5106272,
-            "period": 0,
-            "active": false,
-            "starter": true,
-            "forPlayerId": 0,
-            "jersey": "7",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106272?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106272/statistics/0?lang=en&region=us"
-            },
-            "didNotPlay": false,
-            "displayName": "M. Uzan",
-            "ejected": false
-        },
-        {
-            "playerId": 5106058,
+            "playerId": 5174657,
             "period": 0,
             "active": false,
             "starter": true,
@@ -73,194 +10,125 @@
             "jersey": "21",
             "valid": false,
             "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106058?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174657?lang=en&region=us"
             },
             "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
             },
             "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106058/statistics/0?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174657/statistics/0?lang=en&region=us"
             },
             "didNotPlay": false,
-            "displayName": "E. Sharp",
+            "displayName": "A. Condon",
             "ejected": false
         },
         {
-            "playerId": 4433149,
+            "playerId": 5174971,
             "period": 0,
             "active": false,
             "starter": true,
             "forPlayerId": 0,
-            "jersey": "4",
+            "jersey": "9",
             "valid": false,
             "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4433149?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174971?lang=en&region=us"
             },
             "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
             },
             "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4433149/statistics/0?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5174971/statistics/0?lang=en&region=us"
             },
             "didNotPlay": false,
-            "displayName": "L.J. Cryer",
+            "displayName": "R. Chinyelu",
             "ejected": false
         },
         {
-            "playerId": 4684301,
+            "playerId": 4897262,
             "period": 0,
             "active": false,
-            "starter": false,
+            "starter": true,
             "forPlayerId": 0,
             "jersey": "5",
             "valid": false,
             "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4684301?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4897262?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4897262/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "W. Richard",
+            "ejected": false
+        },
+        {
+            "playerId": 4896372,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "1",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4896372?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4896372/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "W. Clayton Jr.",
+            "ejected": false
+        },
+        {
+            "playerId": 4702656,
+            "period": 0,
+            "active": false,
+            "starter": true,
+            "forPlayerId": 0,
+            "jersey": "15",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4702656?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/4702656/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "A. Martin",
+            "ejected": false
+        },
+        {
+            "playerId": 5080489,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "10",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5080489?lang=en&region=us"
             },
             "position": {
                 "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
             },
             "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4684301/statistics/0?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5080489/statistics/0?lang=en&region=us"
             },
             "didNotPlay": false,
-            "displayName": "J. Francis",
+            "displayName": "T. Haugh",
             "ejected": false
         },
         {
-            "playerId": 5106059,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "23",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5106059?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/5106059/statistics/0?lang=en&region=us"
-            },
-            "didNotPlay": false,
-            "displayName": "T. Arceneaux",
-            "ejected": false
-        },
-        {
-            "playerId": 4432902,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "8",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4432902?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/roster/4432902/statistics/0?lang=en&region=us"
-            },
-            "didNotPlay": false,
-            "displayName": "M. Wilson",
-            "ejected": false
-        },
-        {
-            "playerId": 5101660,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "24",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5101660?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
-            },
-            "didNotPlay": true,
-            "displayName": "C. McCarty",
-            "ejected": false
-        },
-        {
-            "playerId": 5117524,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "2",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5117524?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
-            },
-            "didNotPlay": true,
-            "displayName": "C. Lath",
-            "ejected": false
-        },
-        {
-            "playerId": 5095062,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "12",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5095062?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
-            },
-            "didNotPlay": true,
-            "displayName": "J. McFarland",
-            "ejected": false
-        },
-        {
-            "playerId": 5070506,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "0",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5070506?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
-            },
-            "didNotPlay": true,
-            "displayName": "K. Jefferson",
-            "ejected": false
-        },
-        {
-            "playerId": 4873086,
-            "period": 0,
-            "active": false,
-            "starter": false,
-            "forPlayerId": 0,
-            "jersey": "25",
-            "valid": false,
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4873086?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
-            },
-            "didNotPlay": true,
-            "displayName": "M. Miller",
-            "ejected": false
-        },
-        {
-            "playerId": 4708176,
+            "playerId": 5108992,
             "period": 0,
             "active": false,
             "starter": false,
@@ -268,13 +136,199 @@
             "jersey": "3",
             "valid": false,
             "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4708176?lang=en&region=us"
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "M. Handlogten",
+            "ejected": false
+        },
+        {
+            "playerId": 5105527,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "11",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5105527?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "statistics": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5105527/statistics/0?lang=en&region=us"
+            },
+            "didNotPlay": false,
+            "displayName": "D. Aberdeen",
+            "ejected": false
+        },
+        {
+            "playerId": 5107375,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "4",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5107375?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/2?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "S. Alexis",
+            "ejected": false
+        },
+        {
+            "playerId": 5238201,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "12",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5238201?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "V. Mikic",
+            "ejected": false
+        },
+        {
+            "playerId": 5184753,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "32",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5184753?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "O. Rioux",
+            "ejected": false
+        },
+        {
+            "playerId": 5238200,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "7",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5238200?lang=en&region=us"
             },
             "position": {
                 "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
             },
             "didNotPlay": true,
-            "displayName": "R. Walker Jr.",
+            "displayName": "U. Klavzar",
+            "ejected": false
+        },
+        {
+            "playerId": 5238199,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "2",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5238199?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "K. Pazmino",
+            "ejected": false
+        },
+        {
+            "playerId": 5174660,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "33",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174660?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "C. Josefsberg",
+            "ejected": false
+        },
+        {
+            "playerId": 5174659,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "30",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174659?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "K. Kublickas",
+            "ejected": false
+        },
+        {
+            "playerId": 5174658,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "22",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5174658?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "B. Andersen",
+            "ejected": false
+        },
+        {
+            "playerId": 5144372,
+            "period": 0,
+            "active": false,
+            "starter": false,
+            "forPlayerId": 0,
+            "jersey": "20",
+            "valid": false,
+            "athlete": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5144372?lang=en&region=us"
+            },
+            "position": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/3?lang=en&region=us"
+            },
+            "didNotPlay": true,
+            "displayName": "I. Brown",
             "ejected": false
         }
     ],
@@ -282,6 +336,6 @@
         "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082?lang=en&region=us"
     },
     "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/248?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
     }
 }

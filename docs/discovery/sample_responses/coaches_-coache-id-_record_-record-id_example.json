@@ -1,11 +1,11 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661/record/0?lang=en&region=us",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3026797/record/0?lang=en&region=us",
     "id": "0",
     "name": "Total",
     "type": "Total",
-    "summary": "29-23-0",
-    "displayValue": "29-23-0",
-    "value": 0.5576923077,
+    "summary": "131-148-0",
+    "displayValue": "131-148-0",
+    "value": 0.4695340502,
     "stats": [
         {
             "name": "losses",
@@ -14,7 +14,7 @@
             "description": "Losses",
             "abbreviation": "L",
             "type": "losses",
-            "value": 23.0
+            "value": 148.0
         },
         {
             "name": "ties",
@@ -32,7 +32,7 @@
             "description": "Wins",
             "abbreviation": "W",
             "type": "wins",
-            "value": 29.0
+            "value": 131.0
         }
     ]
 }

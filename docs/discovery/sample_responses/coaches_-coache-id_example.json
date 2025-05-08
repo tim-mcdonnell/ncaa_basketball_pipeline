@@ -1,32 +1,45 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661?lang=en&region=us",
-    "id": "3934661",
-    "uid": "s:40~l:41~co:3934661",
-    "firstName": "Adrian",
-    "lastName": "Autry",
-    "birthPlace": {
-        "city": "Jamesville",
-        "state": "NY",
-        "country": "USA"
-    },
-    "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/183?lang=en&region=us"
-    },
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3026797?lang=en&region=us",
+    "id": "3026797",
+    "uid": "s:40~l:41~co:3026797",
+    "firstName": "James",
+    "lastName": "Whitford",
     "experience": 0,
     "careerRecords": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661/record/0?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3026797/record/0?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3934661/record/2?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/3026797/record/2?lang=en&region=us"
         }
     ],
     "coachSeasons": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/coaches/3934661?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2014/coaches/3026797?lang=en&region=us"
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches/3934661?lang=en&region=us"
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2015/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2016/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2017/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2018/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/coaches/3026797?lang=en&region=us"
+        },
+        {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2022/coaches/3026797?lang=en&region=us"
         }
     ]
 }

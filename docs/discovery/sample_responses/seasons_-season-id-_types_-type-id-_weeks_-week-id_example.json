@@ -1,10 +1,10 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4?lang=en&region=us",
-    "number": 4,
-    "startDate": "2025-04-07T07:00Z",
-    "endDate": "2025-04-09T06:59Z",
-    "text": "Week 4",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/1?lang=en&region=us",
+    "number": 1,
+    "startDate": "2020-10-17T07:00Z",
+    "endDate": "2020-11-30T07:59Z",
+    "text": "Week 1",
     "rankings": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks/4/rankings?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/weeks/1/rankings?lang=en&region=us"
     }
 }

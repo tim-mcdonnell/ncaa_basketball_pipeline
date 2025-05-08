@@ -1,52 +1,34 @@
 {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113522763?lang=en&region=us",
-    "id": "401746082113522763",
-    "sequenceNumber": "113522763",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/plays/401746082113523352?lang=en&region=us",
+    "id": "401746082113523352",
+    "sequenceNumber": "113523352",
     "type": {
-        "id": "584",
-        "text": "Substitution"
+        "id": "402",
+        "text": "End Game"
     },
-    "text": "Micah Handlogten subbing in for Florida",
-    "shortText": "M. Handlogten subbing in for Florida",
-    "alternativeText": "Micah Handlogten subbing in for Florida",
-    "shortAlternativeText": "M. Handlogten subbing in for Florida",
-    "awayScore": 16,
-    "homeScore": 20,
+    "text": "End of Game",
+    "shortText": "End of Game",
+    "alternativeText": "End of Game",
+    "shortAlternativeText": "End of Game",
+    "awayScore": 65,
+    "homeScore": 63,
     "period": {
-        "number": 1,
-        "displayValue": "1st Half"
+        "number": 2,
+        "displayValue": "2nd Half"
     },
     "clock": {
-        "value": 488.0,
-        "displayValue": "8:08"
+        "value": 0.0,
+        "displayValue": "0:00"
     },
     "valid": true,
     "scoringPlay": false,
     "priority": false,
     "scoreValue": 0,
-    "modified": "2025-04-08T01:15Z",
-    "team": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/57?lang=en&region=us"
-    },
-    "participants": [
-        {
-            "athlete": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/5108992?lang=en&region=us"
-            },
-            "position": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us"
-            },
-            "statistics": {
-                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/roster/5108992/statistics/0?lang=en&region=us"
-            },
-            "order": 1,
-            "type": "subin"
-        }
-    ],
+    "modified": "2025-04-08T03:12Z",
     "probability": {
-        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113522763?lang=en&region=us"
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/probabilities/401746082113523352?lang=en&region=us"
     },
-    "wallclock": "2025-04-08T01:15:31Z",
+    "wallclock": "2025-04-08T03:10:04Z",
     "shootingPlay": false,
     "coordinate": {
         "x": 25,

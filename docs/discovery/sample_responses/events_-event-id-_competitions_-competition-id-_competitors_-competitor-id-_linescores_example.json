@@ -5,9 +5,9 @@
     "pageCount": 1,
     "items": [
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores/1/1?lang=en&region=us",
-            "value": 31.0,
-            "displayValue": "31",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/linescores/1/1?lang=en&region=us",
+            "value": 28.0,
+            "displayValue": "28",
             "source": {
                 "id": "1",
                 "description": "Basic/Manual"
@@ -15,9 +15,9 @@
             "period": 1
         },
         {
-            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/248/linescores/1/2?lang=en&region=us",
-            "value": 32.0,
-            "displayValue": "32",
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401746082/competitions/401746082/competitors/57/linescores/1/2?lang=en&region=us",
+            "value": 37.0,
+            "displayValue": "37",
             "source": {
                 "id": "1",
                 "description": "Basic/Manual"
