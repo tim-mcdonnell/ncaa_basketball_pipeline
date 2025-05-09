@@ -465,72 +465,73 @@ Fetching details for master data from their respective `$ref` URLs should also u
 ### 26. Coaches (Master & Seasonal)
 
 - **Description:** Fetches coach details and records.
-- **Status:** TODO
-- **`dlt` Table Name:** `coaches` (and potentially `coach_records_seasonal`)
-- **Key Transformer(s):** `coach_refs_lister_transformer` (e.g., per team/season), `coach_detail_fetcher_transformer`,
-  `coach_record_detail_fetcher_transformer` (To be implemented)
+- **Status:** DONE
+- **`dlt` Table Name:** `coach_team_assignments`, `coaches`
+- **Key Transformer(s):** `coach_team_assignments_resource`, `coach_master_ref_extractor_transformer`,
+  `coaches_resource`
 - **Data Validated:** No
 - **Endpoint Paths:** `/coaches/{id}`, `/seasons/{s}/coaches/{id}`, `/seasons/{s}/teams/{t}/coaches` (list of refs).
 - **Implementation Notes:**
-  - Use "Lister" + "Detail Fetcher with `@dlt.defer`" for `/seasons/{s}/teams/{t}/coaches`.
-  - Individual coach details/records from specific IDs/refs would use a "Detail Fetcher with `@dlt.defer`".
+  - `coach_team_assignments_resource`: Consumes `team_detail`, lists seasonal coach assignments for a team.
+  - `coach_master_ref_extractor_transformer`: Extracts master coach `$ref` from assignments.
+  - `coaches_resource` (using `@dlt.defer`): Fetches master coach details.
 
 ### 27. Awards (Master & Seasonal)
 
 - **Description:** Fetches award details.
-- **Status:** TODO
+- **Status:** DONE
 - **`dlt` Table Name:** `awards_master`, `awards_seasonal`
-- **Key Transformer(s):** `awards_master_lister_transformer`, `award_master_detail_fetcher_transformer`,
-  `season_award_refs_lister_transformer`, `season_award_detail_fetcher_transformer` (To be implemented)
+- **Key Transformer(s):** `award_master_refs_lister_transformer`, `award_master_detail_fetcher_transformer`,
+  `season_award_instance_refs_lister_transformer`, `season_award_instance_detail_fetcher_transformer`
 - **Data Validated:** No
 - **Endpoint Paths:** `/awards` (list master award refs), `/awards/{id}` (detail), `/seasons/{s}/awards` (list season
   award refs), `/seasons/{s}/awards/{id}` (detail).
-- **Implementation Notes:** Apply "Lister" + "Detail Fetcher with `@dlt.defer`" pattern.
+- **Implementation Notes:**
+  - Master awards fetched via `award_master_refs_lister_transformer` and `award_master_detail_fetcher_transformer`.
+  - Seasonal awards fetched via `season_award_instance_refs_lister_transformer` (from `season_detail`) and
+    `season_award_instance_detail_fetcher_transformer`.
 
 ### 28. Franchises (Master)
 
 - **Description:** Fetches franchise details.
-- **Status:** TODO
+- **Status:** DONE
 - **`dlt` Table Name:** `franchises`
-- **Key Transformer(s):** `franchise_refs_lister_transformer`, `franchise_detail_fetcher_transformer` (To be
-  implemented)
+- **Key Transformer(s):** `franchise_refs_lister_transformer`, `franchises_resource`
 - **Data Validated:** No
-- **Endpoint Path (List of Refs):** `/franchises`
+- **Endpoint Path (List of Refs):** `/franchises` (or constructed relative to `league_base_url`)
 - **Endpoint Path (Detail):** `/franchises/{franchise_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - `franchise_refs_lister_transformer`: Lists all franchise `$ref`s.
-  - `franchise_detail_fetcher_transformer` (using `@dlt.defer`): Fetches details.
+  - `franchise_refs_lister_transformer`: Lists all franchise `$ref`s from a potentially constructed general endpoint or
+    from `league_doc`.
+  - `franchises_resource` (using `@dlt.defer`): Fetches details.
 
 ### 29. Providers (Master - Odds)
 
 - **Parent Resource:** `event_odds_transformer` (which yields items containing `provider.$ref`)
 - **Description:** Fetches details of odds providers.
-- **Status:** TODO
+- **Status:** DONE
 - **`dlt` Table Name:** `providers`
-- **Key Transformer(s):** `odds_provider_ref_extractor_transformer`, `provider_detail_fetcher_transformer` (To be
-  implemented)
+- **Key Transformer(s):** `odds_provider_ref_extractor_transformer`, `provider_detail_fetcher_transformer`
 - **Data Validated:** No
 - **Endpoint Path (Detail):** `/providers/{provider_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - `event_odds_transformer` currently yields `provider_id_fk`. A new ref extractor would take `event_odds` items.
+  - `odds_provider_ref_extractor_transformer`: Consumes from `event_odds_transformer` to get provider `$ref`s.
   - `provider_detail_fetcher_transformer` (using `@dlt.defer`) to fetch provider details.
 
 ### 30. Media (Master - Broadcasts)
 
 - **Parent Resource:** `event_broadcasts_transformer` (which yields items containing `media.$ref`)
 - **Description:** Fetches details of media outlets.
-- **Status:** TODO
+- **Status:** DONE
 - **`dlt` Table Name:** `media`
-- **Key Transformer(s):** `broadcast_media_ref_extractor_transformer`, `media_detail_fetcher_transformer` (To be
-  implemented)
+- **Key Transformer(s):** `broadcast_media_ref_extractor_transformer`, `media_detail_fetcher_transformer`
 - **Data Validated:** No
 - **Endpoint Path (Detail):** `/media/{media_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - `event_broadcasts_transformer` currently yields `media_id_fk`. A new ref extractor would take `event_broadcasts`
-    items.
+  - `broadcast_media_ref_extractor_transformer`: Consumes from `event_broadcasts_transformer` to get media `$ref`s.
   - `media_detail_fetcher_transformer` (using `@dlt.defer`) to fetch media details.
 
 ---

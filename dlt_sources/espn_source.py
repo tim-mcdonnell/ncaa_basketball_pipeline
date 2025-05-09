@@ -2250,7 +2250,7 @@ def espn_source(
                     official_id
                 )  # Use extracted/normalized ID for PK
 
-                # If original 'id' was at top level and we used it, ensure no conflict if official.id also exists.
+                # If original 'id' was at top level and we used it, ensure no conflict if 'official_id' is the PK column.
                 # Or, structure it carefully. For now, this should be okay if 'official_id' is the PK column.
 
                 yield official_record
@@ -2767,50 +2767,818 @@ def espn_source(
             )
             return None
 
+    # --- Opportunistic Master Data: Provider Refs Extractor (from Event Odds) ---
+    @dlt.transformer(name="odds_provider_ref_extractor", data_from=event_odds_transformer)
+    def odds_provider_ref_extractor_transformer(
+        odds_record: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """Extracts provider $ref from an odds_record if present."""
+        provider_obj = odds_record.get("provider", {})
+        provider_ref_url = provider_obj.get("$ref") if isinstance(provider_obj, dict) else None
+        event_id_fk = odds_record.get("event_id_fk")  # For logging
+        provider_id_fk = odds_record.get("provider_id_fk")  # For logging
+
+        if provider_ref_url:
+            logger.debug(
+                f"Event odds record for event '{event_id_fk}', provider '{provider_id_fk}' has provider detail ref: {provider_ref_url}"
+            )
+            yield {
+                "provider_ref_url": provider_ref_url,
+                "_source_discovery": f"event_odds_ev{event_id_fk}_p{provider_id_fk}",
+            }
+        elif provider_id_fk:
+            logger.debug(
+                f"Event odds record for event '{event_id_fk}', provider '{provider_id_fk}' missing 'provider.$ref'. Cannot extract provider detail."
+            )
+        # No yield if not found
+
+    # --- Opportunistic Master Data: Media Refs Extractor (from Event Broadcasts) ---
+    @dlt.transformer(name="broadcast_media_ref_extractor", data_from=event_broadcasts_transformer)
+    def broadcast_media_ref_extractor_transformer(
+        broadcast_record: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """Extracts media $ref from a broadcast_record if present."""
+        media_obj = broadcast_record.get("media", {})
+        media_ref_url = media_obj.get("$ref") if isinstance(media_obj, dict) else None
+        event_id_fk = broadcast_record.get("event_id_fk")  # For logging
+        media_id_fk = broadcast_record.get("media_id_fk")  # For logging
+
+        if media_ref_url:
+            logger.debug(
+                f"Event broadcast record for event '{event_id_fk}', media '{media_id_fk}' has media detail ref: {media_ref_url}"
+            )
+            yield {
+                "media_ref_url": media_ref_url,
+                "_source_discovery": f"event_broadcast_ev{event_id_fk}_m{media_id_fk}",
+            }
+        elif media_id_fk:
+            logger.debug(
+                f"Event broadcast record for event '{event_id_fk}', media '{media_id_fk}' missing 'media.$ref'. Cannot extract media detail."
+            )
+        # No yield if not found
+
+    # --- Master Data Detail Fetchers (Continued) ---
+
+    @dlt.transformer(
+        name="providers",  # Master table for odds providers
+        data_from=odds_provider_ref_extractor_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def provider_detail_fetcher_transformer(
+        provider_ref_container: dict[str, Any],
+    ) -> TDataItem | None:
+        """Fetches odds provider details from a $ref URL."""
+        detail_url = provider_ref_container.get("provider_ref_url")
+        source_discovery_info = provider_ref_container.get(
+            "_source_discovery", "unknown_odds_event"
+        )
+
+        if not detail_url:
+            logger.warning(
+                f"Provider ref container missing 'provider_ref_url'. Item: {provider_ref_container}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching provider detail (discovered via '{source_discovery_info}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            provider_detail = response.json()
+
+            api_provider_id = provider_detail.get("id")
+            if api_provider_id is not None:
+                provider_detail["id"] = str(api_provider_id)
+                return provider_detail
+            else:
+                logger.warning(
+                    f"Fetched provider detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {provider_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for provider detail from {detail_url} (source: {source_discovery_info}). "
+                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching provider detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching provider detail from {detail_url} (source: {source_discovery_info}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="media",  # Master table for broadcast media outlets
+        data_from=broadcast_media_ref_extractor_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def media_detail_fetcher_transformer(media_ref_container: dict[str, Any]) -> TDataItem | None:
+        """Fetches media outlet details from a $ref URL."""
+        detail_url = media_ref_container.get("media_ref_url")
+        source_discovery_info = media_ref_container.get(
+            "_source_discovery", "unknown_broadcast_event"
+        )
+
+        if not detail_url:
+            logger.warning(
+                f"Media ref container missing 'media_ref_url'. Item: {media_ref_container}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching media detail (discovered via '{source_discovery_info}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            media_detail = response.json()
+
+            api_media_id = media_detail.get("id")
+            if api_media_id is not None:
+                media_detail["id"] = str(api_media_id)
+                return media_detail
+            else:
+                logger.warning(
+                    f"Fetched media detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {media_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for media detail from {detail_url} (source: {source_discovery_info}). "
+                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching media detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching media detail from {detail_url} (source: {source_discovery_info}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    # --- Coaches (Master & Seasonal Assignments) ---
+
+    @dlt.transformer(  # This resource yields data for the 'coach_team_assignments' table
+        name="coach_team_assignments",
+        data_from=team_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=[
+            "id",
+            "team_id_fk",
+            "season_id_fk",
+        ],  # 'id' here is the coach's id for the assignment
+    )
+    def coach_team_assignments_resource(team_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Lists coach assignments for a given team and season.
+        Each yielded item represents a coach's role for that team/season and includes a ref to master coach data.
+        """
+        team_id_fk = team_detail.get("id")
+        season_id_fk = team_detail.get("season_id_fk")
+        coaches_collection_url = team_detail.get("coaches", {}).get("$ref")
+
+        if not all([team_id_fk, season_id_fk]):
+            logger.warning(
+                f"Team detail missing 'id' (team_id_fk) or 'season_id_fk'. Cannot list coach assignments. Detail: {team_detail}"
+            )
+            yield from []
+            return
+
+        if not coaches_collection_url:
+            logger.info(
+                f"Team detail for team '{team_id_fk}', season '{season_id_fk}' missing 'coaches.$ref'. No coach assignments to list."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Listing coach assignments for team '{team_id_fk}', season '{season_id_fk}' from: {coaches_collection_url}"
+        )
+        try:
+            for coach_assignment_page in list_client.paginate(
+                coaches_collection_url,
+                params={"limit": API_LIMIT},  # Usually very few coaches per team
+            ):
+                for item in coach_assignment_page:
+                    if (
+                        not isinstance(item, dict) or "id" not in item
+                    ):  # 'id' here is the coach's id
+                        logger.warning(
+                            f"Malformed coach assignment item for team '{team_id_fk}', season '{season_id_fk}'. Item: {item}"
+                        )
+                        continue
+
+                    assignment_record = item.copy()
+                    assignment_record["id"] = str(item["id"])  # Ensure coach's ID is string for PK
+                    assignment_record["team_id_fk"] = str(team_id_fk)
+                    assignment_record["season_id_fk"] = str(season_id_fk)
+
+                    # The 'coach' field with its '$ref' to master data is already in 'item'
+                    # Example: item = {'$ref': 'seasonal_coach_url', 'id': 'coach123', 'type': 'HC', 'coach': {'$ref': 'master_coach_url'}}
+                    yield assignment_record
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for coach assignments list for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}. "
+                    f"Assuming no assignments. Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing coach assignments for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}: "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error listing coach assignments for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}: {e}",
+                exc_info=True,
+            )
+        # Implicitly yields nothing if loop doesn't run or error
+
+    @dlt.transformer(
+        name="coach_master_ref_extractor",  # Intermediate step, does not create a dlt table itself
+        data_from=coach_team_assignments_resource,  # Consumes items from the assignments resource
+    )
+    def coach_master_ref_extractor_transformer(
+        coach_assignment_record: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """
+        Extracts the master coach $ref URL and coach ID from a coach_assignment_record.
+        """
+        master_coach_ref_url = coach_assignment_record.get("coach", {}).get("$ref")
+        # 'id' of coach_assignment_record is the coach's ID for that assignment
+        coach_id_for_master = coach_assignment_record.get("id")
+
+        team_id_fk = coach_assignment_record.get("team_id_fk", "unknown_team")
+        season_id_fk = coach_assignment_record.get("season_id_fk", "unknown_season")
+
+        if master_coach_ref_url and coach_id_for_master:
+            logger.debug(
+                f"Extracted master coach ref '{master_coach_ref_url}' for coach '{coach_id_for_master}' "
+                f"(from assignment team '{team_id_fk}', season '{season_id_fk}')"
+            )
+            yield {
+                "coach_ref_url": master_coach_ref_url,
+                "coach_id_for_master": str(coach_id_for_master),  # Ensure it's a string
+                "_source_discovery_assignment": f"team_{team_id_fk}_season_{season_id_fk}_coach_{coach_id_for_master}",
+            }
+        else:
+            logger.debug(
+                f"Coach assignment record for coach '{coach_id_for_master}' (team '{team_id_fk}', season '{season_id_fk}') "
+                f"missing 'coach.$ref' or its own 'id'. Record: {coach_assignment_record}"
+            )
+        # No yield if refs/IDs are missing
+
+    @dlt.transformer(  # This resource yields data for the 'coaches' master table
+        name="coaches",
+        data_from=coach_master_ref_extractor_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def coaches_resource(coach_master_ref_item: dict[str, Any]) -> TDataItem | None:
+        """
+        Fetches master coach details using the $ref URL.
+        The 'id' for the coaches table comes from 'coach_id_for_master' in the input item.
+        """
+        detail_url = coach_master_ref_item.get("coach_ref_url")
+        # This ID should be used as the PK for the master coaches table
+        expected_coach_id = coach_master_ref_item.get("coach_id_for_master")
+        source_discovery_info = coach_master_ref_item.get(
+            "_source_discovery_assignment", "unknown_assignment"
+        )
+
+        if not detail_url or not expected_coach_id:
+            logger.warning(
+                f"Coach master ref item missing 'coach_ref_url' or 'coach_id_for_master'. Item: {coach_master_ref_item}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching master coach detail for ID '{expected_coach_id}' (discovered via '{source_discovery_info}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            coach_master_detail = response.json()
+
+            api_coach_id = coach_master_detail.get("id")
+            if api_coach_id is not None:
+                # Ensure the ID from the API matches the one we expect and use it for the record.
+                # The `expected_coach_id` is derived from the assignment data, which should be authoritative for linking.
+                coach_master_detail["id"] = str(expected_coach_id)
+                if str(api_coach_id) != str(expected_coach_id):
+                    logger.warning(
+                        f"Mismatch between expected coach ID ('{expected_coach_id}') and API coach ID ('{api_coach_id}') "
+                        f"from {detail_url}. Using expected ID for master record."
+                    )
+                return coach_master_detail
+            else:
+                logger.warning(
+                    f"Fetched master coach detail from {detail_url} (expected ID '{expected_coach_id}', source: {source_discovery_info}) missing 'id' in response. Detail: {coach_master_detail}"
+                )
+                # Still try to save it using the expected_coach_id if the rest of the data is valuable
+                coach_master_detail["id"] = str(expected_coach_id)
+                return coach_master_detail
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}). "
+                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    # --- Franchises (Master) ---
+
+    @dlt.transformer(
+        name="franchise_refs_lister",
+        data_from=league_info_resource,  # Depends on league_info to ensure league_base_url is resolved
+    )
+    def franchise_refs_lister_transformer(league_doc: dict[str, Any]) -> Iterable[dict[str, Any]]:
+        """
+        Lists all franchise $ref objects from the /franchises endpoint relative to the league_base_url.
+        The league_base_url is passed implicitly via the espn_source function's scope.
+        """
+        # league_base_url is available from the espn_source function's scope
+        # Ensure it doesn't end with a slash if we are appending one.
+        # Or, more robustly, get it from league_doc if it was passed through,
+        # but for this API, direct construction from league_base_url is likely fine.
+
+        # The root league_base_url itself might already point to the base for franchises,
+        # or franchises might be a sub-path. For this API, it's typically:
+        # http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises
+        # is NOT standard. The /franchises endpoint is usually at the sports level or a global level.
+        # Let's assume /franchises is a top-level path that might need to be constructed
+        # relative to a more general API root if league_base_url is too specific.
+        # However, the example indicates a direct /franchises. Let's assume it's relative to the provided league_base_url
+        # or that all $refs are absolute anyway.
+        # For now, the current setup assumes that $refs provided by the API are absolute.
+        # This lister will list from a collection endpoint under league_doc if one exists,
+        # OR if there's a known global /franchises endpoint.
+        # The API Endpoint Inventory points to /franchises as a top level ref list.
+        # This implies it might be listed under the main league doc, or as a known fixed path.
+
+        # A common pattern would be league_doc["franchises"]["$ref"]
+        # Let's check if the league_doc even has a franchise ref.
+        # If not, we'll assume a constructed path based on league_base_url.
+
+        franchises_collection_url = league_doc.get("franchises", {}).get("$ref")
+
+        if not franchises_collection_url:
+            # Fallback: try to construct it if the API pattern is known and consistent
+            # For ESPN, franchise data might be linked from team data or other entities,
+            # or listed globally. The inventory just says "/franchises".
+            # Let's assume for this API, it's relative to the *sports root*, not the league root.
+            # e.g. http://sports.core.api.espn.com/v2/sports/basketball/franchises
+            # This is a tricky one without an explicit $ref in the league doc or a clear example.
+            # For now, let's make it simpler and assume it's available from league_base_url + "/franchises"
+            # if not directly referenced in league_doc.
+            # However, the typical pattern for this API is that such lists are linked.
+            # If `league_doc["franchises"]["$ref"]` isn't there, this resource might not be discoverable this way.
+
+            # For NCAA basketball, "franchises" might not be a primary concept like in pro sports.
+            # Let's assume the inventory means a general franchises endpoint if accessible from the base.
+            # The API inventory says: Endpoint Path (List of Refs): /franchises
+            # This implies either league_base_url + /franchises or that they are absolute in some other listing.
+            # Given our current structure starts from league_base_url, appending /franchises is the most direct.
+
+            # If franchises are discovered opportunistically (e.g. from team details),
+            # then we would have ref_extractors similar to venues/positions.
+            # Since the API inventory lists it as a direct discoverable list, we'll try that.
+
+            # Using the main league_base_url that was passed into espn_source()
+            constructed_franchises_url = f"{league_base_url.rstrip('/')}/franchises"
+            logger.info(
+                f"League doc for '{league_doc.get('id')}' did not directly reference a franchises collection. "
+                f"Attempting to list franchises from constructed URL: {constructed_franchises_url}"
+            )
+            franchises_collection_url = constructed_franchises_url  # Use the constructed one
+
+        if not franchises_collection_url:
+            logger.error(
+                f"Could not determine franchise collection URL. League doc: {league_doc.get('id')}"
+            )
+            return
+
+        logger.debug(f"Listing all franchise refs from collection: {franchises_collection_url}")
+        try:
+            for franchise_ref_page in list_client.paginate(
+                franchises_collection_url, params={"limit": API_LIMIT}
+            ):
+                for franchise_ref_item in franchise_ref_page:
+                    if "$ref" in franchise_ref_item:
+                        # No specific FK needed from league_doc for master franchises
+                        yield franchise_ref_item
+                    else:
+                        logger.warning(
+                            f"Franchise ref item missing '$ref' key in page "
+                            f"from {franchises_collection_url}. Item: {franchise_ref_item}"
+                        )
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found when listing franchises from {franchises_collection_url}. "
+                    f"Assuming no franchises list at this path or it's not applicable. Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing franchise refs from {franchises_collection_url}: {he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Error listing franchise refs from {franchises_collection_url}: {e}", exc_info=True
+            )
+
+    @dlt.transformer(
+        name="franchises",
+        data_from=franchise_refs_lister_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def franchises_resource(franchise_ref_item: dict[str, Any]) -> TDataItem | None:
+        """
+        Fetches full franchise details for an individual franchise $ref object.
+        """
+        detail_url = franchise_ref_item.get("$ref")
+
+        if not detail_url:
+            logger.warning(f"Franchise ref item missing '$ref'. Item: {franchise_ref_item}")
+            return None
+
+        logger.debug(f"Fetching franchise detail from: {detail_url}")
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            franchise_detail = response.json()
+
+            api_franchise_id = franchise_detail.get("id")
+            if api_franchise_id is not None:
+                franchise_detail["id"] = str(api_franchise_id)  # Ensure ID is string for PK
+                return franchise_detail
+            else:
+                logger.warning(
+                    f"Fetched franchise detail from {detail_url} missing 'id'. Detail: {franchise_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for franchise detail from {detail_url}. Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching franchise detail from {detail_url}: {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching franchise detail from {detail_url}: {e}", exc_info=True
+            )
+            return None
+
+    # --- Awards (Master & Seasonal) ---
+
+    # Part 1: Master Award Definitions
+    @dlt.transformer(name="award_master_refs_lister", data_from=league_info_resource)
+    def award_master_refs_lister_transformer(
+        league_doc: dict[str, Any],
+    ) -> Iterable[dict[str, Any]]:
+        """
+        Lists all master award definition $ref objects from the /awards endpoint
+        relative to the league_base_url.
+        """
+        # league_base_url is available from the espn_source function's scope
+        master_awards_collection_url = league_doc.get("awards", {}).get("$ref")
+
+        if not master_awards_collection_url:
+            # Attempt to construct if not directly in league_doc (less common for global master lists)
+            # For this API, /awards is usually a top-level endpoint for the sport.
+            # We might need a more robust way to get the true "sports" base URL if league_base_url is too deep.
+            # For now, assume it might be at league_base_url + /awards or absolute in the $ref.
+            # If the $ref itself in league_doc is absolute, this construction is not needed.
+            # Given inventory says "/awards", it suggests it might be relative to the league or sports root.
+            logger.info(
+                f"League doc '{league_doc.get('id')}' did not contain 'awards.$ref'. "
+                f"Attempting general awards list from league_base_url: {league_base_url.rstrip('/')}/awards"
+            )
+            master_awards_collection_url = f"{league_base_url.rstrip('/')}/awards"
+            # This might still 404 if awards are only listed seasonally or not at all for this league.
+
+        if not master_awards_collection_url:  # Still no URL
+            logger.warning(
+                "Could not determine master awards collection URL. Skipping master awards."
+            )
+            return
+
+        logger.debug(
+            f"Listing all master award refs from collection: {master_awards_collection_url}"
+        )
+        try:
+            for award_ref_page in list_client.paginate(
+                master_awards_collection_url, params={"limit": API_LIMIT}
+            ):
+                for award_ref_item in award_ref_page:
+                    if "$ref" in award_ref_item:
+                        yield award_ref_item
+                    else:
+                        logger.warning(
+                            f"Master award ref item missing '$ref' key in page "
+                            f"from {master_awards_collection_url}. Item: {award_ref_item}"
+                        )
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found when listing master awards from {master_awards_collection_url}. "
+                    f"Assuming no global awards list at this path. Seasonal awards might still be found. Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing master award refs from {master_awards_collection_url}: {he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Error listing master award refs from {master_awards_collection_url}: {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="awards_master",
+        data_from=award_master_refs_lister_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def award_master_detail_fetcher_transformer(
+        award_master_ref_item: dict[str, Any],
+    ) -> TDataItem | None:
+        """
+        Fetches full master award details for an individual award $ref object.
+        """
+        detail_url = award_master_ref_item.get("$ref")
+
+        if not detail_url:
+            logger.warning(f"Master award ref item missing '$ref'. Item: {award_master_ref_item}")
+            return None
+
+        logger.debug(f"Fetching master award detail from: {detail_url}")
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            award_master_detail = response.json()
+
+            api_award_id = award_master_detail.get("id")
+            if api_award_id is not None:
+                award_master_detail["id"] = str(api_award_id)
+                return award_master_detail
+            else:
+                logger.warning(
+                    f"Fetched master award detail from {detail_url} missing 'id'. Detail: {award_master_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching master award detail from {detail_url}: {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching master award detail from {detail_url}: {e}",
+                exc_info=True,
+            )
+            return None
+
+    # Part 2: Seasonal Award Instances
+    @dlt.transformer(
+        name="season_award_instance_refs_lister", data_from=season_detail_fetcher_transformer
+    )
+    def season_award_instance_refs_lister_transformer(
+        season_detail: dict[str, Any],
+    ) -> Iterable[dict[str, Any]]:
+        """
+        Lists seasonal award instance $ref objects from season_detail.awards.$ref,
+        augmented with season_id_fk.
+        """
+        season_id_fk = season_detail.get("id")
+        seasonal_awards_collection_url = season_detail.get("awards", {}).get("$ref")
+
+        if not season_id_fk:
+            logger.warning(
+                f"Season detail missing 'id'. Skipping seasonal awards. Detail: {season_detail}"
+            )
+            return
+
+        if not seasonal_awards_collection_url:
+            logger.info(
+                f"Season detail for season '{season_id_fk}' missing 'awards.$ref'. No seasonal awards to list."
+            )
+            return
+
+        logger.debug(
+            f"Listing seasonal award instance refs for season '{season_id_fk}' from: {seasonal_awards_collection_url}"
+        )
+        try:
+            for award_instance_ref_page in list_client.paginate(
+                seasonal_awards_collection_url, params={"limit": API_LIMIT}
+            ):
+                for item in award_instance_ref_page:
+                    if "$ref" in item:
+                        ref_item_augmented = item.copy()
+                        ref_item_augmented["season_id_fk"] = str(season_id_fk)
+                        yield ref_item_augmented
+                    else:
+                        logger.warning(
+                            f"Seasonal award instance ref item missing '$ref' key for season '{season_id_fk}'. Item: {item}"
+                        )
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for seasonal awards for season '{season_id_fk}' from {seasonal_awards_collection_url}. "
+                    f"Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing seasonal award instance refs for season '{season_id_fk}': {he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Error listing seasonal award instance refs for season '{season_id_fk}': {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="awards_seasonal",
+        data_from=season_award_instance_refs_lister_transformer,
+        write_disposition="merge",
+        primary_key=["id", "season_id_fk"],
+    )
+    @dlt.defer
+    def season_award_instance_detail_fetcher_transformer(
+        seasonal_award_ref_item: dict[str, Any],
+    ) -> TDataItem | None:
+        """
+        Fetches full seasonal award instance details.
+        Extracts recipient and master award type if available.
+        """
+        detail_url = seasonal_award_ref_item.get("$ref")
+        season_id_fk = seasonal_award_ref_item.get("season_id_fk")
+
+        if not detail_url or not season_id_fk:
+            logger.warning(
+                f"Seasonal award ref item missing '$ref' or 'season_id_fk'. Item: {seasonal_award_ref_item}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching seasonal award instance detail for season '{season_id_fk}' from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            seasonal_award_detail = response.json()
+
+            instance_id = seasonal_award_detail.get("id")
+            if instance_id is None:
+                logger.warning(
+                    f"Fetched seasonal award instance from {detail_url} (season '{season_id_fk}') missing 'id'. Detail: {seasonal_award_detail}"
+                )
+                return None  # Instance ID is crucial for PK
+
+            processed_detail = seasonal_award_detail.copy()
+            processed_detail["id"] = str(instance_id)
+            processed_detail["season_id_fk"] = str(season_id_fk)
+
+            # Extract master award ID
+            award_type_obj = seasonal_award_detail.get("type", {})
+            if isinstance(award_type_obj, dict) and "id" in award_type_obj:
+                processed_detail["award_master_id_fk"] = str(award_type_obj["id"])
+            elif isinstance(award_type_obj, dict) and "$ref" in award_type_obj:
+                # Try to parse ID from $ref if direct ID is not there
+                try:
+                    processed_detail["award_master_id_fk"] = (
+                        award_type_obj["$ref"].split("/")[-1].split("?")[0]
+                    )
+                except Exception:
+                    logger.warning(
+                        f"Could not parse award_master_id_fk from type.$ref: {award_type_obj['$ref']}"
+                    )
+
+            # Extract recipient ID (can be athlete or team)
+            recipient_obj = seasonal_award_detail.get("recipient", {})
+            if isinstance(recipient_obj, dict):
+                athlete_recipient_obj = recipient_obj.get("athlete", {})
+                if isinstance(athlete_recipient_obj, dict) and "id" in athlete_recipient_obj:
+                    processed_detail["recipient_athlete_id_fk"] = str(athlete_recipient_obj["id"])
+
+                team_recipient_obj = recipient_obj.get("team", {})
+                if isinstance(team_recipient_obj, dict) and "id" in team_recipient_obj:
+                    processed_detail["recipient_team_id_fk"] = str(team_recipient_obj["id"])
+
+            return processed_detail
+
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching seasonal award instance from {detail_url} (season '{season_id_fk}'): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching seasonal award instance from {detail_url} (season '{season_id_fk}'): {e}",
+                exc_info=True,
+            )
+            return None
+
     # Define other resources and transformers here following the
     # "Lister + Detail Fetcher with @dlt.defer" pattern.
 
     return (
         league_info_resource,
-        season_refs_lister_transformer,
         season_detail_fetcher_transformer,
-        season_type_refs_lister_transformer,
-        season_type_detail_fetcher_transformer,
-        week_refs_lister_transformer,
-        week_detail_fetcher_transformer,
         event_refs_lister_transformer,
         event_detail_fetcher_transformer,
         event_competitors_transformer,
         event_scores_detail_fetcher_transformer,
         event_linescores_transformer,
-        event_team_stats_raw_fetcher_transformer,
         event_team_stats_processor_transformer,
         event_player_stats_refs_lister_transformer,
         event_player_stats_detail_fetcher_transformer,
-        event_leaders_detail_fetcher_transformer,  # New fetcher for event leaders
-        event_roster_detail_fetcher_transformer,  # New fetcher for event roster
-        event_pregame_records_transformer,  # New transformer for pre-game records
+        event_leaders_detail_fetcher_transformer,
+        event_roster_detail_fetcher_transformer,
+        event_pregame_records_transformer,
         event_status_detail_fetcher_transformer,
         event_situation_detail_fetcher_transformer,
-        event_predictor_detail_fetcher_transformer,
         event_odds_transformer,
         event_broadcasts_transformer,
+        event_predictor_detail_fetcher_transformer,
         event_probabilities_transformer,
         event_powerindex_transformer,
         event_officials_transformer,
         event_plays_lister_transformer,
-        # Master table resources
+        # Master / Dimension Tables
         team_refs_lister_transformer,
         team_detail_fetcher_transformer,
         athlete_refs_lister_transformer,
         athlete_detail_fetcher_transformer,
-        # Venue ref extractors & detail fetcher
+        # Opportunistic Master Data
         team_venue_ref_extractor_transformer,
         event_venue_ref_extractor_transformer,
         venue_detail_fetcher_transformer,
-        # Position ref extractor & detail fetcher
         athlete_position_ref_extractor_transformer,
         position_detail_fetcher_transformer,
+        # Provider ref extractor & detail fetcher (from event_odds)
+        odds_provider_ref_extractor_transformer,
+        provider_detail_fetcher_transformer,
+        # Media ref extractor & detail fetcher (from event_broadcasts)
+        broadcast_media_ref_extractor_transformer,
+        media_detail_fetcher_transformer,
+        # Coaches (Assignments & Master)
+        coach_team_assignments_resource,
+        coach_master_ref_extractor_transformer,
+        coaches_resource,
+        # Franchises
+        franchise_refs_lister_transformer,
+        franchises_resource,
+        # Awards (Master & Seasonal)
+        award_master_refs_lister_transformer,
+        award_master_detail_fetcher_transformer,
+        season_award_instance_refs_lister_transformer,
+        season_award_instance_detail_fetcher_transformer,
         # ... add other listers/fetchers for Event sub-resources, etc.
     )
 
