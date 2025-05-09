@@ -1282,6 +1282,1491 @@ def espn_source(
             )
         # If nothing yielded, dlt handles it.
 
+    @dlt.transformer(
+        name="event_roster",
+        data_from=event_competitors_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "team_id_fk", "athlete_id_fk"],
+    )
+    @dlt.defer
+    def event_roster_detail_fetcher_transformer(
+        competitor_record: dict[str, Any],
+    ) -> Iterable[TDataItem] | None:
+        """
+        Fetches the roster of players for a team in a specific game using the competitor_record.roster.$ref.
+        Yields one record per player on the game roster.
+        """
+        event_id_fk = competitor_record.get("event_id_fk")
+        team_id_fk = competitor_record.get("id")  # competitor's 'id' is team_id for the event
+        roster_ref_url = competitor_record.get("roster", {}).get("$ref")
+
+        if not all([event_id_fk, team_id_fk]):
+            logger.warning(
+                f"Competitor record missing 'event_id_fk' or 'id' (team_id_fk). "
+                f"Cannot fetch event roster. Record: {competitor_record}"
+            )
+            yield from []
+            return
+
+        if not roster_ref_url:
+            logger.info(
+                f"Competitor record for event '{event_id_fk}', team '{team_id_fk}' missing 'roster.$ref'. "
+                f"No event roster to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event roster for event '{event_id_fk}', team '{team_id_fk}' from: {roster_ref_url}"
+        )
+        try:
+            response = detail_client.get(roster_ref_url)
+            response.raise_for_status()
+            roster_data_response = response.json()
+
+            # Rosters are often a list of entries, sometimes nested under 'entries' or 'items'
+            roster_entries = []
+            if isinstance(roster_data_response, list):
+                roster_entries = roster_data_response
+            elif isinstance(roster_data_response, dict):
+                if "entries" in roster_data_response and isinstance(
+                    roster_data_response["entries"], list
+                ):
+                    roster_entries = roster_data_response["entries"]
+                elif "items" in roster_data_response and isinstance(
+                    roster_data_response["items"], list
+                ):  # Another common key
+                    roster_entries = roster_data_response["items"]
+                # Add other potential keys if discovered
+                else:
+                    logger.warning(
+                        f"Roster data from {roster_ref_url} for event '{event_id_fk}', team '{team_id_fk}' "
+                        f"is a dict but does not contain a recognized list key ('entries', 'items'). Data: {roster_data_response}"
+                    )
+            else:
+                logger.warning(
+                    f"Unexpected roster_data_response format from {roster_ref_url} for event '{event_id_fk}', "
+                    f"team '{team_id_fk}'. Expected list or dict. Data: {roster_data_response}"
+                )
+                yield from []
+                return
+
+            processed_any_player = False
+            for player_entry in roster_entries:
+                if not isinstance(player_entry, dict):
+                    logger.warning(f"Malformed player entry in roster: {player_entry}. Skipping.")
+                    continue
+
+                athlete_obj = player_entry.get("athlete", {})
+                # The athlete ID is usually under athlete.$ref or athlete.id within the roster entry
+                athlete_id_fk = None
+                if isinstance(athlete_obj, dict):
+                    athlete_id_fk = athlete_obj.get("id")
+                    if (
+                        not athlete_id_fk and "$ref" in athlete_obj
+                    ):  # Fallback to parsing from athlete ref if ID not direct
+                        try:
+                            athlete_id_fk = athlete_obj["$ref"].split("/")[-1].split("?")[0]
+                        except Exception:
+                            logger.warning(
+                                f"Could not parse athlete ID from $ref: {athlete_obj['$ref']}"
+                            )
+
+                if not athlete_id_fk:
+                    logger.warning(
+                        f"Player entry for event '{event_id_fk}', team '{team_id_fk}' missing 'athlete.id' or valid 'athlete.$ref'. "
+                        f"Entry: {player_entry}"
+                    )
+                    continue
+
+                roster_player_record = (
+                    player_entry.copy()
+                )  # Keep all original fields from the player entry
+                roster_player_record["event_id_fk"] = str(event_id_fk)
+                roster_player_record["team_id_fk"] = str(team_id_fk)
+                roster_player_record["athlete_id_fk"] = str(athlete_id_fk)
+
+                # Remove the original athlete object if we've extracted the ID, to avoid redundant nested dict.
+                # Or, dlt can flatten it, but explicit removal can be cleaner.
+                # if "athlete" in roster_player_record:
+                #     del roster_player_record["athlete"]
+
+                yield roster_player_record
+                processed_any_player = True
+
+            if not processed_any_player and not roster_entries:
+                logger.debug(
+                    f"No player entries found in the roster response from {roster_ref_url} "
+                    f"for event '{event_id_fk}', team '{team_id_fk}'. API returned empty list or no parsable entries."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching event roster from {roster_ref_url} "
+                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event roster from {roster_ref_url} "
+                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): {e}",
+                exc_info=True,
+            )
+        # If nothing yielded, dlt handles it.
+
+    @dlt.transformer(
+        name="event_pregame_records",
+        data_from=event_competitors_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "team_id_fk", "record_type", "stat_name"],
+    )
+    @dlt.defer
+    def event_pregame_records_transformer(
+        competitor_record: dict[str, Any],
+    ) -> Iterable[TDataItem] | None:
+        """
+        Fetches and unnests pre-game team records (overall, home, away, etc.) for an event.
+        Yields one record per statistic per record type (e.g., overall wins, overall losses).
+        """
+        event_id_fk = competitor_record.get("event_id_fk")
+        team_id_fk = competitor_record.get("id")  # competitor's 'id' is team_id for the event
+        records_ref_url = competitor_record.get("records", {}).get("$ref")
+
+        if not all([event_id_fk, team_id_fk]):
+            logger.warning(
+                f"Competitor record missing 'event_id_fk' or 'id' (team_id_fk). "
+                f"Cannot fetch pre-game records. Record: {competitor_record}"
+            )
+            yield from []
+            return
+
+        if not records_ref_url:
+            logger.info(
+                f"Competitor record for event '{event_id_fk}', team '{team_id_fk}' missing 'records.$ref'. "
+                f"No pre-game records to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching pre-game records for event '{event_id_fk}', team '{team_id_fk}' from: {records_ref_url}"
+        )
+        try:
+            response = detail_client.get(records_ref_url)
+            response.raise_for_status()
+            records_summary_list = (
+                response.json()
+            )  # Expected to be a list of record summary objects
+
+            if not isinstance(records_summary_list, list):
+                # Sometimes the API might return a dict with 'items' or 'entries'
+                if isinstance(records_summary_list, dict):
+                    if "items" in records_summary_list and isinstance(
+                        records_summary_list.get("items"), list
+                    ):
+                        records_summary_list = records_summary_list["items"]
+                    elif "entries" in records_summary_list and isinstance(
+                        records_summary_list.get("entries"), list
+                    ):
+                        records_summary_list = records_summary_list["entries"]
+                    else:
+                        logger.warning(
+                            f"Unexpected pre-game records data format from {records_ref_url} for event '{event_id_fk}', "
+                            f"team '{team_id_fk}'. Expected list or dict with 'items'/'entries'. Data: {records_summary_list}"
+                        )
+                        yield from []
+                        return
+                else:
+                    logger.warning(
+                        f"Unexpected pre-game records data format from {records_ref_url} for event '{event_id_fk}', "
+                        f"team '{team_id_fk}'. Expected list. Data: {records_summary_list}"
+                    )
+                    yield from []
+                    return
+
+            processed_any_record_stat = False
+            for record_summary_item in records_summary_list:
+                if not isinstance(record_summary_item, dict):
+                    logger.warning(
+                        f"Malformed record summary item: {record_summary_item}. Skipping."
+                    )
+                    continue
+
+                record_type = record_summary_item.get(
+                    "type", record_summary_item.get("name", "unknown_type")
+                )
+                record_summary_display = record_summary_item.get(
+                    "summary", record_summary_item.get("displayValue")
+                )
+
+                stats_list = record_summary_item.get("stats")
+                if not stats_list or not isinstance(stats_list, list):
+                    logger.debug(
+                        f"No 'stats' list in record summary for type '{record_type}', event '{event_id_fk}', "
+                        f"team '{team_id_fk}'. Summary item: {record_summary_item}"
+                    )
+                    continue
+
+                for stat_detail in stats_list:
+                    if not isinstance(stat_detail, dict) or "name" not in stat_detail:
+                        logger.warning(
+                            f"Malformed stat detail in pre-game records: {stat_detail}. "
+                            f"Type '{record_type}', event '{event_id_fk}', team '{team_id_fk}'. Skipping."
+                        )
+                        continue
+
+                    stat_name = stat_detail.get("name")
+                    # Value can be integer (e.g. wins) or float (e.g. win %)
+                    stat_value = stat_detail.get("value", stat_detail.get("displayValue"))
+
+                    record_stat_entry = {
+                        "event_id_fk": str(event_id_fk),
+                        "team_id_fk": str(team_id_fk),
+                        "record_type": str(record_type),
+                        "stat_name": str(stat_name),
+                        "stat_value": str(stat_value)
+                        if stat_value is not None
+                        else None,  # Store as string for consistency
+                        "record_summary_display": str(record_summary_display)
+                        if record_summary_display is not None
+                        else None,
+                        # Optional: include original summary values if needed
+                        # "original_summary": record_summary_item.get("summary"),
+                        # "original_type_description": record_summary_item.get("description"),
+                    }
+                    yield record_stat_entry
+                    processed_any_record_stat = True
+
+            if not processed_any_record_stat and not records_summary_list:
+                logger.debug(
+                    f"No pre-game record stats found or processed for event '{event_id_fk}', team '{team_id_fk}' from {records_ref_url}. "
+                    f"API might have returned empty list or all items were malformed."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching pre-game records from {records_ref_url} "
+                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing pre-game records from {records_ref_url} "
+                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): {e}",
+                exc_info=True,
+            )
+        # If nothing yielded, dlt handles it.
+
+    @dlt.transformer(
+        name="event_status",
+        data_from=event_detail_fetcher_transformer,  # Takes directly from event_detail
+        write_disposition="merge",
+        primary_key="event_id_fk",
+    )
+    @dlt.defer
+    def event_status_detail_fetcher_transformer(event_detail: dict[str, Any]) -> TDataItem | None:
+        """
+        Fetches the current status for a game using event_detail.competitions[0].status.$ref.
+        """
+        event_id_fk = event_detail.get("id")
+        status_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            status_ref_url = competitions[0].get("status", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch status. Detail: {event_detail}"
+            )
+            return None
+
+        if not status_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].status.$ref'. No status to fetch."
+            )
+            return None
+
+        logger.debug(f"Fetching event status for event '{event_id_fk}' from: {status_ref_url}")
+        try:
+            response = detail_client.get(status_ref_url)
+            response.raise_for_status()
+            status_data = response.json()
+
+            status_data_augmented = status_data.copy()
+            status_data_augmented["event_id_fk"] = str(event_id_fk)
+            return status_data_augmented
+
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching event status from {status_ref_url} (event_id_fk: {event_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching event status from {status_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="event_situation",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key="event_id_fk",
+    )
+    @dlt.defer
+    def event_situation_detail_fetcher_transformer(
+        event_detail: dict[str, Any],
+    ) -> TDataItem | None:
+        """
+        Fetches live game situation details using event_detail.competitions[0].situation.$ref.
+        """
+        event_id_fk = event_detail.get("id")
+        situation_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            situation_ref_url = competitions[0].get("situation", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch situation. Detail: {event_detail}"
+            )
+            return None
+
+        if not situation_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].situation.$ref'. No situation to fetch."
+            )
+            return None
+
+        logger.debug(
+            f"Fetching event situation for event '{event_id_fk}' from: {situation_ref_url}"
+        )
+        try:
+            response = detail_client.get(situation_ref_url)
+            response.raise_for_status()
+            situation_data = response.json()
+
+            situation_data_augmented = situation_data.copy()
+            situation_data_augmented["event_id_fk"] = str(event_id_fk)
+            return situation_data_augmented
+
+        except requests.exceptions.HTTPError as he:
+            # The situation endpoint might 404 if the game is not live or has no situation data.
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for event situation for event_id '{event_id_fk}' from {situation_ref_url}. "
+                    f"Assuming no situation data. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None  # No data to yield
+            logger.error(
+                f"HTTPError fetching event situation from {situation_ref_url} (event_id_fk: {event_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching event situation from {situation_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="event_predictor",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key="event_id_fk",
+    )
+    @dlt.defer
+    def event_predictor_detail_fetcher_transformer(
+        event_detail: dict[str, Any],
+    ) -> TDataItem | None:
+        """
+        Fetches ESPN's win probability and predicted score using event_detail.competitions[0].predictor.$ref.
+        """
+        event_id_fk = event_detail.get("id")
+        predictor_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            predictor_ref_url = competitions[0].get("predictor", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch predictor. Detail: {event_detail}"
+            )
+            return None
+
+        if not predictor_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].predictor.$ref'. No predictor data to fetch."
+            )
+            return None
+
+        logger.debug(
+            f"Fetching event predictor data for event '{event_id_fk}' from: {predictor_ref_url}"
+        )
+        try:
+            response = detail_client.get(predictor_ref_url)
+            response.raise_for_status()
+            predictor_data = response.json()
+
+            predictor_data_augmented = predictor_data.copy()
+            predictor_data_augmented["event_id_fk"] = str(event_id_fk)
+            return predictor_data_augmented
+
+        except requests.exceptions.HTTPError as he:
+            if (
+                he.response and he.response.status_code == 404
+            ):  # Predictor might not exist for all games
+                logger.info(
+                    f"Received 404 Not Found for event predictor data for event_id '{event_id_fk}' from {predictor_ref_url}. "
+                    f"Assuming no predictor data. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching event predictor data from {predictor_ref_url} (event_id_fk: {event_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching event predictor_data from {predictor_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="event_odds",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "provider_id_fk"],
+    )
+    @dlt.defer
+    def event_odds_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches betting odds for a game from event_detail.competitions[0].odds.$ref.
+        Yields one record per odds provider.
+        """
+        event_id_fk = event_detail.get("id")
+        odds_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            odds_ref_url = competitions[0].get("odds", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(f"Event detail missing 'id'. Cannot fetch odds. Detail: {event_detail}")
+            yield from []
+            return
+
+        if not odds_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].odds.$ref'. No odds to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(f"Fetching event odds for event '{event_id_fk}' from: {odds_ref_url}")
+        try:
+            response = detail_client.get(odds_ref_url)
+            response.raise_for_status()
+            odds_data_list = response.json()
+
+            if not isinstance(odds_data_list, list):
+                # Check for common wrapper keys if not a direct list
+                if isinstance(odds_data_list, dict):
+                    if "items" in odds_data_list and isinstance(odds_data_list.get("items"), list):
+                        odds_data_list = odds_data_list["items"]
+                    elif "providers" in odds_data_list and isinstance(
+                        odds_data_list.get("providers"), list
+                    ):  # another possible key
+                        odds_data_list = odds_data_list["providers"]
+                    else:
+                        logger.warning(
+                            f"Unexpected odds data format from {odds_ref_url} for event '{event_id_fk}'. "
+                            f"Expected list or dict with 'items'/'providers'. Data: {odds_data_list}"
+                        )
+                        yield from []
+                        return
+                else:
+                    logger.warning(
+                        f"Unexpected odds data format from {odds_ref_url} for event '{event_id_fk}'. Expected list. Data: {odds_data_list}"
+                    )
+                    yield from []
+                    return
+
+            processed_any = False
+            for odds_item in odds_data_list:
+                if not isinstance(odds_item, dict):
+                    logger.warning(f"Malformed odds item: {odds_item}. Skipping.")
+                    continue
+
+                provider_obj = odds_item.get("provider", {})
+                provider_id_fk = provider_obj.get("id") if isinstance(provider_obj, dict) else None
+
+                if not provider_id_fk:
+                    logger.warning(
+                        f"Odds item for event '{event_id_fk}' missing 'provider.id'. Item: {odds_item}"
+                    )
+                    continue
+
+                odds_record = odds_item.copy()
+                odds_record["event_id_fk"] = str(event_id_fk)
+                odds_record["provider_id_fk"] = str(provider_id_fk)
+
+                # Potential TODO: Unnest 'details', 'overUnder', etc., or ensure dlt handles them appropriately.
+                # For Bronze, keeping them as is, or as JSON strings if too nested, is acceptable.
+                yield odds_record
+                processed_any = True
+
+            if not processed_any and not odds_data_list:
+                logger.debug(f"No odds items found for event '{event_id_fk}' from {odds_ref_url}.")
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for event odds for event '{event_id_fk}' from {odds_ref_url}. Assuming no odds."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event odds from {odds_ref_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event odds from {odds_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="event_broadcasts",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=[
+            "event_id_fk",
+            "media_id_fk",
+            "type",
+        ],  # Using 'type' as part of PK for market/lang type
+    )
+    @dlt.defer
+    def event_broadcasts_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches broadcast information for a game from event_detail.competitions[0].broadcasts.$ref.
+        Yields one record per broadcast entry.
+        """
+        event_id_fk = event_detail.get("id")
+        broadcasts_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            broadcasts_ref_url = competitions[0].get("broadcasts", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch broadcasts. Detail: {event_detail}"
+            )
+            yield from []
+            return
+
+        if not broadcasts_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].broadcasts.$ref'. No broadcasts to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event broadcasts for event '{event_id_fk}' from: {broadcasts_ref_url}"
+        )
+        try:
+            response = detail_client.get(broadcasts_ref_url)
+            response.raise_for_status()
+            broadcast_data_list = response.json()
+
+            if not isinstance(broadcast_data_list, list):
+                # Check for common wrapper keys if not a direct list
+                if (
+                    isinstance(broadcast_data_list, dict)
+                    and "items" in broadcast_data_list
+                    and isinstance(broadcast_data_list.get("items"), list)
+                ):
+                    broadcast_data_list = broadcast_data_list["items"]
+                else:
+                    logger.warning(
+                        f"Unexpected broadcast data format from {broadcasts_ref_url} for event '{event_id_fk}'. "
+                        f"Expected list. Data: {broadcast_data_list}"
+                    )
+                    yield from []
+                    return
+
+            processed_any = False
+            for broadcast_item in broadcast_data_list:
+                if not isinstance(broadcast_item, dict):
+                    logger.warning(f"Malformed broadcast item: {broadcast_item}. Skipping.")
+                    continue
+
+                media_obj = broadcast_item.get("media", {})
+                media_id_fk = media_obj.get("id") if isinstance(media_obj, dict) else None
+
+                # 'type' could be 'market.type' or 'type' or 'lang' - need to normalize for PK
+                broadcast_type = broadcast_item.get("type", "unknown")  # Default type
+                if isinstance(broadcast_item.get("market"), dict):  # More specific market type
+                    broadcast_type = broadcast_item["market"].get("type", broadcast_type)
+
+                if not media_id_fk:
+                    logger.warning(
+                        f"Broadcast item for event '{event_id_fk}' missing 'media.id'. Item: {broadcast_item}"
+                    )
+                    continue
+
+                broadcast_record = broadcast_item.copy()
+                broadcast_record["event_id_fk"] = str(event_id_fk)
+                broadcast_record["media_id_fk"] = str(media_id_fk)
+                broadcast_record["type"] = str(broadcast_type)  # Ensure type is string for PK
+
+                yield broadcast_record
+                processed_any = True
+
+            if not processed_any and not broadcast_data_list:
+                logger.debug(
+                    f"No broadcast items found for event '{event_id_fk}' from {broadcasts_ref_url}."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for event broadcasts for event '{event_id_fk}' from {broadcasts_ref_url}. Assuming no broadcasts."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event broadcasts from {broadcasts_ref_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event broadcasts from {broadcasts_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="event_probabilities",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=[
+            "event_id_fk",
+            "play_id",
+        ],  # Using play_id as suggested, ensure it stringifies playId from API
+    )
+    @dlt.defer
+    def event_probabilities_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches time-series win probability data from event_detail.competitions[0].probabilities.$ref.
+        Yields one record per probability entry.
+        """
+        event_id_fk = event_detail.get("id")
+        probabilities_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            probabilities_ref_url = competitions[0].get("probabilities", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch probabilities. Detail: {event_detail}"
+            )
+            yield from []
+            return
+
+        if not probabilities_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].probabilities.$ref'. No probabilities to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event probabilities for event '{event_id_fk}' from: {probabilities_ref_url}"
+        )
+        try:
+            response = detail_client.get(probabilities_ref_url)
+            response.raise_for_status()
+            probabilities_data_list = response.json()
+
+            if not isinstance(probabilities_data_list, list):
+                # Check for common wrapper keys if not a direct list
+                if (
+                    isinstance(probabilities_data_list, dict)
+                    and "items" in probabilities_data_list
+                    and isinstance(probabilities_data_list.get("items"), list)
+                ):
+                    probabilities_data_list = probabilities_data_list["items"]
+                else:
+                    logger.warning(
+                        f"Unexpected probabilities data format from {probabilities_ref_url} for event '{event_id_fk}'. "
+                        f"Expected list. Data: {probabilities_data_list}"
+                    )
+                    yield from []
+                    return
+
+            processed_any = False
+            for prob_item in probabilities_data_list:
+                if (
+                    not isinstance(prob_item, dict) or "playId" not in prob_item
+                ):  # playId is often the key element
+                    logger.warning(
+                        f"Malformed probability item or missing 'playId': {prob_item}. Skipping."
+                    )
+                    continue
+
+                prob_record = prob_item.copy()
+                prob_record["event_id_fk"] = str(event_id_fk)
+                # Ensure the playId used for PK is a string
+                prob_record["play_id"] = str(
+                    prob_item["playId"]
+                )  # Rename for dlt schema, use as PK part
+
+                # Remove original playId if renamed, to avoid confusion, or let dlt handle it.
+                # if "playId" in prob_record and "play_id" in prob_record:
+                #    del prob_record["playId"]
+
+                yield prob_record
+                processed_any = True
+
+            if not processed_any and not probabilities_data_list:
+                logger.debug(
+                    f"No probability items found for event '{event_id_fk}' from {probabilities_ref_url}."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for event probabilities for event '{event_id_fk}' from {probabilities_ref_url}. Assuming no data."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event probabilities from {probabilities_ref_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event probabilities from {probabilities_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="event_powerindex_stats",  # Tidy format
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "team_id_fk", "stat_name"],
+    )
+    @dlt.defer
+    def event_powerindex_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches team power index ratings (BPI/FPI) for the game from event_detail.competitions[0].powerindex.$ref.
+        Yields tidy stats (one row per stat per team).
+        """
+        event_id_fk = event_detail.get("id")
+        powerindex_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            powerindex_ref_url = competitions[0].get("powerindex", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch power index. Detail: {event_detail}"
+            )
+            yield from []
+            return
+
+        if not powerindex_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].powerindex.$ref'. No power index to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event power index for event '{event_id_fk}' from: {powerindex_ref_url}"
+        )
+        try:
+            response = detail_client.get(powerindex_ref_url)
+            response.raise_for_status()
+            powerindex_data_list = response.json()  # Usually a list of 2 items (one per team)
+
+            if not isinstance(powerindex_data_list, list):
+                logger.warning(
+                    f"Unexpected power index data format from {powerindex_ref_url} for event '{event_id_fk}'. "
+                    f"Expected list. Data: {powerindex_data_list}"
+                )
+                yield from []
+                return
+
+            processed_any_stat = False
+            for team_pi_data in powerindex_data_list:
+                if not isinstance(team_pi_data, dict):
+                    logger.warning(f"Malformed team power index data: {team_pi_data}. Skipping.")
+                    continue
+
+                team_obj = team_pi_data.get("team", {})
+                team_id_fk = team_obj.get("id") if isinstance(team_obj, dict) else None
+
+                if not team_id_fk:
+                    logger.warning(
+                        f"Team power index data for event '{event_id_fk}' missing 'team.id'. Data: {team_pi_data}"
+                    )
+                    continue
+
+                stats_list = team_pi_data.get("stats")
+                if not stats_list or not isinstance(stats_list, list):
+                    logger.debug(
+                        f"No 'stats' list in power index data for team '{team_id_fk}', event '{event_id_fk}'. Item: {team_pi_data}"
+                    )
+                    continue
+
+                for stat_item in stats_list:
+                    if not isinstance(stat_item, dict) or "name" not in stat_item:
+                        logger.warning(f"Malformed power index stat item: {stat_item}. Skipping.")
+                        continue
+
+                    stat_name = stat_item.get("name")
+                    stat_value = stat_item.get("value", stat_item.get("displayValue"))
+
+                    pi_stat_record = {
+                        "event_id_fk": str(event_id_fk),
+                        "team_id_fk": str(team_id_fk),
+                        "stat_name": str(stat_name),
+                        "stat_value": str(stat_value) if stat_value is not None else None,
+                    }
+                    yield pi_stat_record
+                    processed_any_stat = True
+
+            if not processed_any_stat and not powerindex_data_list:
+                logger.debug(
+                    f"No power index stats found for event '{event_id_fk}' from {powerindex_ref_url}."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            if (
+                he.response and he.response.status_code == 404
+            ):  # Power index might not exist for all games
+                logger.info(
+                    f"Received 404 for event power index for event '{event_id_fk}' from {powerindex_ref_url}. Assuming no data."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event power index from {powerindex_ref_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event power index from {powerindex_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="event_officials",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "official_id"],
+    )
+    @dlt.defer
+    def event_officials_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches officials assigned to the game from event_detail.competitions[0].officials.$ref.
+        Yields one record per official.
+        """
+        event_id_fk = event_detail.get("id")
+        officials_ref_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            officials_ref_url = competitions[0].get("officials", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(
+                f"Event detail missing 'id'. Cannot fetch officials. Detail: {event_detail}"
+            )
+            yield from []
+            return
+
+        if not officials_ref_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].officials.$ref'. No officials to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event officials for event '{event_id_fk}' from: {officials_ref_url}"
+        )
+        try:
+            response = detail_client.get(officials_ref_url)
+            response.raise_for_status()
+            officials_data_list = response.json()
+
+            if not isinstance(officials_data_list, list):
+                if (
+                    isinstance(officials_data_list, dict)
+                    and "items" in officials_data_list
+                    and isinstance(officials_data_list.get("items"), list)
+                ):
+                    officials_data_list = officials_data_list["items"]
+                else:
+                    logger.warning(
+                        f"Unexpected officials data format from {officials_ref_url} for event '{event_id_fk}'. "
+                        f"Expected list. Data: {officials_data_list}"
+                    )
+                    yield from []
+                    return
+
+            processed_any = False
+            for official_item in officials_data_list:
+                if not isinstance(official_item, dict):
+                    logger.warning(f"Malformed official item: {official_item}. Skipping.")
+                    continue
+
+                # Official ID might be directly in 'id' or nested under 'official.id'
+                official_id = official_item.get("id")
+                if not official_id:
+                    official_obj = official_item.get("official", {})
+                    if isinstance(official_obj, dict):
+                        official_id = official_obj.get("id")
+
+                if not official_id:
+                    logger.warning(
+                        f"Official item for event '{event_id_fk}' missing 'id' or 'official.id'. Item: {official_item}"
+                    )
+                    continue
+
+                official_record = official_item.copy()
+                official_record["event_id_fk"] = str(event_id_fk)
+                official_record["official_id"] = str(
+                    official_id
+                )  # Use extracted/normalized ID for PK
+
+                # If original 'id' was at top level and we used it, ensure no conflict if official.id also exists.
+                # Or, structure it carefully. For now, this should be okay if 'official_id' is the PK column.
+
+                yield official_record
+                processed_any = True
+
+            if not processed_any and not officials_data_list:
+                logger.debug(
+                    f"No official items found for event '{event_id_fk}' from {officials_ref_url}."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for event officials for event '{event_id_fk}' from {officials_ref_url}. Assuming no officials."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event officials from {officials_ref_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event officials from {officials_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="event_plays",
+        data_from=event_detail_fetcher_transformer,
+        write_disposition="merge",
+        primary_key=["event_id_fk", "id"],
+    )
+    @dlt.defer
+    def event_plays_lister_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
+        """
+        Fetches paginated play-by-play data for an event from event_detail.competitions[0].plays.$ref.
+        Uses list_client to handle pagination.
+        Yields one record per play.
+        """
+        event_id_fk = event_detail.get("id")
+        plays_collection_url = None
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            plays_collection_url = competitions[0].get("plays", {}).get("$ref")
+
+        if not event_id_fk:
+            logger.warning(f"Event detail missing 'id'. Cannot fetch plays. Detail: {event_detail}")
+            yield from []
+            return
+
+        if not plays_collection_url:
+            logger.info(
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].plays.$ref'. No plays to fetch."
+            )
+            yield from []
+            return
+
+        logger.debug(
+            f"Fetching event plays for event '{event_id_fk}' from paginated URL: {plays_collection_url}"
+        )
+        try:
+            processed_any_play = False
+            # list_client.paginate will handle iterating through all pages
+            for play_page in list_client.paginate(
+                plays_collection_url, params={"limit": API_LIMIT}
+            ):
+                # play_page is already the list of items due to data_selector="items" in list_client
+                for play_item in play_page:
+                    if not isinstance(play_item, dict) or "id" not in play_item:
+                        logger.warning(
+                            f"Malformed play item or missing 'id' for event '{event_id_fk}'. Item: {play_item}. Skipping."
+                        )
+                        continue
+
+                    play_record = play_item.copy()
+                    play_record["event_id_fk"] = str(event_id_fk)
+                    play_record["id"] = str(
+                        play_item["id"]
+                    )  # Ensure play's own ID is string for PK
+
+                    # Complex fields like 'participants' will be handled by dlt (e.g., as JSON strings or nested tables if max_nesting was > 0)
+                    # For Bronze layer with max_table_nesting=0, they'll likely be JSON strings.
+                    yield play_record
+                    processed_any_play = True
+
+            if (
+                not processed_any_play
+            ):  # This check might be redundant if paginate yields nothing on empty list
+                logger.debug(
+                    f"No play-by-play items found or processed for event '{event_id_fk}' from {plays_collection_url}. "
+                    f"API might have returned empty list or all items were malformed."
+                )
+
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 for event plays for event '{event_id_fk}' from {plays_collection_url}. Assuming no plays."
+                )
+            else:
+                logger.error(
+                    f"HTTPError fetching event plays from {plays_collection_url} (event_id_fk: {event_id_fk}): "
+                    f"{he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching/processing event plays from {plays_collection_url} (event_id_fk: {event_id_fk}): {e}",
+                exc_info=True,
+            )
+        # If nothing yielded, dlt handles it.
+
+    # --- Master / Dimension Tables ---
+
+    @dlt.transformer(name="team_refs_lister", data_from=season_detail_fetcher_transformer)
+    def team_refs_lister_transformer(season_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+        """
+        Extracts the 'teams.$ref' (collection URL for teams) from a season_detail object,
+        paginates through it, and yields individual team $ref objects, augmented with season_id_fk.
+        """
+        season_id = season_detail.get("id")  # This is the season year, e.g., "2024"
+        teams_collection_url = season_detail.get("teams", {}).get("$ref")
+
+        if not season_id:
+            logger.warning(
+                f"Season detail missing 'id'. Skipping team refs listing. Detail: {season_detail}"
+            )
+            return  # yield from []
+
+        if not teams_collection_url:
+            logger.info(
+                f"Season detail for season '{season_id}' missing 'teams.$ref'. No teams to list for this season."
+            )
+            return  # yield from []
+
+        logger.debug(
+            f"Listing team refs for season '{season_id}' from collection: {teams_collection_url}"
+        )
+        try:
+            for team_ref_page in list_client.paginate(
+                teams_collection_url, params={"limit": API_LIMIT}
+            ):
+                for team_ref_item in team_ref_page:
+                    if "$ref" in team_ref_item:
+                        team_ref_item_augmented = team_ref_item.copy()
+                        team_ref_item_augmented["season_id_fk"] = str(season_id)
+                        yield team_ref_item_augmented
+                    else:
+                        logger.warning(
+                            f"Team ref item missing '$ref' key in page "
+                            f"from {teams_collection_url} for season '{season_id}'. Item: {team_ref_item}"
+                        )
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found when listing team refs for season '{season_id}' from {teams_collection_url}. "
+                    f"Assuming no teams defined for this season directly under this endpoint. Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing team refs for season '{season_id}' from {teams_collection_url}: {he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Error listing team refs for season '{season_id}' from {teams_collection_url}: {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="teams",  # This will be the table name for team details
+        data_from=team_refs_lister_transformer,
+        write_disposition="merge",
+        primary_key=["id", "season_id_fk"],  # Team data is specific to a season in this context
+    )
+    @dlt.defer
+    def team_detail_fetcher_transformer(team_ref_item: dict[str, Any]) -> TDataItem | None:
+        """
+        Fetches full team details for an individual team $ref object, augmenting with season_id_fk.
+        """
+        detail_url = team_ref_item.get("$ref")
+        season_id_fk = team_ref_item.get("season_id_fk")
+
+        if not detail_url:
+            logger.warning(f"Team ref item missing '$ref'. Item: {team_ref_item}")
+            return None
+        if not season_id_fk:  # Should always be present from lister
+            logger.warning(f"Team ref item missing 'season_id_fk'. Item: {team_ref_item}")
+            # Could try to parse from URL, but safer to expect it from lister
+            return None
+
+        logger.debug(f"Fetching team detail for season '{season_id_fk}' from: {detail_url}")
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            team_detail = response.json()
+
+            api_team_id = team_detail.get("id")
+            if api_team_id is not None:
+                team_detail["id"] = str(api_team_id)  # Ensure team's own ID is string
+                team_detail["season_id_fk"] = str(
+                    season_id_fk
+                )  # Add/ensure FK is present and string
+
+                # Potential: If team detail contains $refs to venue, coach, etc.,
+                # those refs could be yielded here for separate "master detail fetch_transformerners"
+                # For now, just yielding the team_detail.
+
+                return team_detail
+            else:
+                logger.warning(
+                    f"Fetched team detail from {detail_url} (season '{season_id_fk}') missing 'id'. Detail: {team_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching team detail from {detail_url} (season_id_fk: {season_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching team detail from {detail_url} (season_id_fk: {season_id_fk}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="athlete_refs_lister",
+        data_from=season_detail_fetcher_transformer,  # Lister takes from season details
+    )
+    def athlete_refs_lister_transformer(season_detail: dict[str, Any]) -> Iterable[dict[str, Any]]:
+        """
+        Extracts 'athletes.$ref' from season_detail, paginates, and yields athlete $ref objects,
+        augmented with season_id_fk (for discovery context).
+        """
+        season_id = season_detail.get("id")  # Season year
+        athletes_collection_url = season_detail.get("athletes", {}).get("$ref")
+
+        if not season_id:
+            logger.warning(
+                f"Season detail missing 'id'. Skipping athlete refs listing. Detail: {season_detail}"
+            )
+            return  # yield from []
+
+        if not athletes_collection_url:
+            logger.info(
+                f"Season detail for season '{season_id}' missing 'athletes.$ref'. No athletes to list for this season."
+            )
+            return  # yield from []
+
+        logger.debug(
+            f"Listing athlete refs for season '{season_id}' from collection: {athletes_collection_url}"
+        )
+        try:
+            for athlete_ref_page in list_client.paginate(
+                athletes_collection_url, params={"limit": API_LIMIT}
+            ):
+                for athlete_ref_item in athlete_ref_page:
+                    if "$ref" in athlete_ref_item:
+                        athlete_ref_item_augmented = athlete_ref_item.copy()
+                        # This season_id_fk is for context of *where* this athlete ref was found
+                        athlete_ref_item_augmented["discovery_season_id_fk"] = str(season_id)
+                        yield athlete_ref_item_augmented
+                    else:
+                        logger.warning(
+                            f"Athlete ref item missing '$ref' key in page "
+                            f"from {athletes_collection_url} for season '{season_id}'. Item: {athlete_ref_item}"
+                        )
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found when listing athlete refs for season '{season_id}' from {athletes_collection_url}. "
+                    f"Assuming no athletes for this season via this endpoint. Error: {he.response.text if he.response else str(he)}"
+                )
+            else:
+                logger.error(
+                    f"HTTPError listing athlete refs for season '{season_id}' from {athletes_collection_url}: {he.response.text if he.response else str(he)}",
+                    exc_info=True,
+                )
+        except Exception as e:
+            logger.error(
+                f"Error listing athlete refs for season '{season_id}' from {athletes_collection_url}: {e}",
+                exc_info=True,
+            )
+
+    @dlt.transformer(
+        name="athletes",  # Table for master athlete details
+        data_from=athlete_refs_lister_transformer,
+        write_disposition="merge",
+        primary_key="id",  # Assuming athlete 'id' is globally unique for master data
+    )
+    @dlt.defer
+    def athlete_detail_fetcher_transformer(athlete_ref_item: dict[str, Any]) -> TDataItem | None:
+        """
+        Fetches full athlete details for an individual athlete $ref object.
+        Augments with discovery_season_id_fk.
+        """
+        detail_url = athlete_ref_item.get("$ref")
+        # This FK indicates the season context in which this athlete record was found/fetched.
+        # Not part of the athlete's own master PK unless IDs are not globally unique.
+        discovery_season_id_fk = athlete_ref_item.get("discovery_season_id_fk")
+
+        if not detail_url:
+            logger.warning(f"Athlete ref item missing '$ref'. Item: {athlete_ref_item}")
+            return None
+
+        # discovery_season_id_fk is good for context but not strictly essential for fetching if URL is absolute
+        # if not discovery_season_id_fk:
+        #     logger.warning(f"Athlete ref item missing 'discovery_season_id_fk'. Item: {athlete_ref_item}")
+        # Decide if this is critical enough to return None
+
+        logger.debug(
+            f"Fetching athlete detail (discovery season '{discovery_season_id_fk}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            athlete_detail = response.json()
+
+            api_athlete_id = athlete_detail.get("id")
+            if api_athlete_id is not None:
+                athlete_detail["id"] = str(
+                    api_athlete_id
+                )  # Ensure athlete's own ID is string for PK
+
+                if discovery_season_id_fk:  # Add the discovery context FK
+                    athlete_detail["discovery_season_id_fk"] = str(discovery_season_id_fk)
+
+                # Athlete detail might contain $refs for position, possibly headshot, etc.
+                # These could be new sources for other master tables or detail fetchers.
+                # e.g., athlete_detail.get("position", {}).get("$ref") -> position_detail_fetcher
+
+                return athlete_detail
+            else:
+                logger.warning(
+                    f"Fetched athlete detail from {detail_url} (discovery season '{discovery_season_id_fk}') missing 'id'. Detail: {athlete_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            logger.error(
+                f"HTTPError fetching athlete detail from {detail_url} (discovery_season_id_fk: {discovery_season_id_fk}): "
+                f"{he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching athlete detail from {detail_url} (discovery_season_id_fk: {discovery_season_id_fk}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    # --- Opportunistic Master Data: Venue Refs Extractors ---
+    @dlt.transformer(name="team_venue_ref_extractor", data_from=team_detail_fetcher_transformer)
+    def team_venue_ref_extractor_transformer(
+        team_detail: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """Extracts venue $ref from team_detail if present."""
+        venue_ref_url = team_detail.get("venue", {}).get("$ref")
+        team_id = team_detail.get("id")  # For logging context
+
+        if venue_ref_url:
+            logger.debug(f"Team '{team_id}' has venue ref: {venue_ref_url}")
+            yield {"venue_ref_url": venue_ref_url, "_source_discovery": f"team_{team_id}"}
+        # No yield if not found
+
+    @dlt.transformer(name="event_venue_ref_extractor", data_from=event_detail_fetcher_transformer)
+    def event_venue_ref_extractor_transformer(
+        event_detail: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """Extracts venue $ref from event_detail if present."""
+        venue_ref_url = None
+        event_id = event_detail.get("id")  # For logging context
+        competitions = event_detail.get("competitions")
+        if competitions and isinstance(competitions, list) and competitions[0]:
+            venue_ref_url = competitions[0].get("venue", {}).get("$ref")
+
+        if venue_ref_url:
+            logger.debug(f"Event '{event_id}' has venue ref: {venue_ref_url}")
+            yield {"venue_ref_url": venue_ref_url, "_source_discovery": f"event_{event_id}"}
+        # No yield if not found
+
+    # --- Opportunistic Master Data: Position Refs Extractor ---
+    @dlt.transformer(
+        name="athlete_position_ref_extractor", data_from=athlete_detail_fetcher_transformer
+    )
+    def athlete_position_ref_extractor_transformer(
+        athlete_detail: dict[str, Any],
+    ) -> Iterable[dict[str, Any]] | None:
+        """Extracts position $ref from athlete_detail if present."""
+        position_ref_url = athlete_detail.get("position", {}).get("$ref")
+        athlete_id = athlete_detail.get("id")  # For logging context
+
+        if position_ref_url:
+            logger.debug(f"Athlete '{athlete_id}' has position ref: {position_ref_url}")
+            yield {
+                "position_ref_url": position_ref_url,
+                "_source_discovery": f"athlete_{athlete_id}",
+            }
+        # No yield if not found
+
+    # --- Master Data Detail Fetchers ---
+
+    @dlt.transformer(
+        name="venues",
+        data_from=[team_venue_ref_extractor_transformer, event_venue_ref_extractor_transformer],
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def venue_detail_fetcher_transformer(venue_ref_container: dict[str, Any]) -> TDataItem | None:
+        """Fetches venue details from a $ref URL."""
+        detail_url = venue_ref_container.get("venue_ref_url")
+        source_discovery_info = venue_ref_container.get("_source_discovery", "unknown")
+
+        if not detail_url:
+            logger.warning(
+                f"Venue ref container missing 'venue_ref_url'. Item: {venue_ref_container}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching venue detail (discovered via '{source_discovery_info}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            venue_detail = response.json()
+
+            api_venue_id = venue_detail.get("id")
+            if api_venue_id is not None:
+                venue_detail["id"] = str(api_venue_id)
+                return venue_detail
+            else:
+                logger.warning(
+                    f"Fetched venue detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {venue_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            # Venues might 404 if the ref is stale or data is incomplete.
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for venue detail from {detail_url} (source: {source_discovery_info}). "
+                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching venue detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching venue detail from {detail_url} (source: {source_discovery_info}): {e}",
+                exc_info=True,
+            )
+            return None
+
+    @dlt.transformer(
+        name="positions",
+        data_from=athlete_position_ref_extractor_transformer,
+        write_disposition="merge",
+        primary_key="id",
+    )
+    @dlt.defer
+    def position_detail_fetcher_transformer(
+        position_ref_container: dict[str, Any],
+    ) -> TDataItem | None:
+        """Fetches position details from a $ref URL."""
+        detail_url = position_ref_container.get("position_ref_url")
+        source_discovery_info = position_ref_container.get("_source_discovery", "unknown")
+
+        if not detail_url:
+            logger.warning(
+                f"Position ref container missing 'position_ref_url'. Item: {position_ref_container}"
+            )
+            return None
+
+        logger.debug(
+            f"Fetching position detail (discovered via '{source_discovery_info}') from: {detail_url}"
+        )
+        try:
+            response = detail_client.get(detail_url)
+            response.raise_for_status()
+            position_detail = response.json()
+
+            api_position_id = position_detail.get("id")
+            if api_position_id is not None:
+                position_detail["id"] = str(api_position_id)
+                return position_detail
+            else:
+                logger.warning(
+                    f"Fetched position detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {position_detail}"
+                )
+                return None
+        except requests.exceptions.HTTPError as he:
+            if he.response and he.response.status_code == 404:
+                logger.info(
+                    f"Received 404 Not Found for position detail from {detail_url} (source: {source_discovery_info}). "
+                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
+                )
+                return None
+            logger.error(
+                f"HTTPError fetching position detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
+                exc_info=True,
+            )
+            return None
+        except Exception as e:
+            logger.error(
+                f"Unexpected error fetching position detail from {detail_url} (source: {source_discovery_info}): {e}",
+                exc_info=True,
+            )
+            return None
+
     # Define other resources and transformers here following the
     # "Lister + Detail Fetcher with @dlt.defer" pattern.
 
@@ -1303,6 +2788,29 @@ def espn_source(
         event_player_stats_refs_lister_transformer,
         event_player_stats_detail_fetcher_transformer,
         event_leaders_detail_fetcher_transformer,  # New fetcher for event leaders
+        event_roster_detail_fetcher_transformer,  # New fetcher for event roster
+        event_pregame_records_transformer,  # New transformer for pre-game records
+        event_status_detail_fetcher_transformer,
+        event_situation_detail_fetcher_transformer,
+        event_predictor_detail_fetcher_transformer,
+        event_odds_transformer,
+        event_broadcasts_transformer,
+        event_probabilities_transformer,
+        event_powerindex_transformer,
+        event_officials_transformer,
+        event_plays_lister_transformer,
+        # Master table resources
+        team_refs_lister_transformer,
+        team_detail_fetcher_transformer,
+        athlete_refs_lister_transformer,
+        athlete_detail_fetcher_transformer,
+        # Venue ref extractors & detail fetcher
+        team_venue_ref_extractor_transformer,
+        event_venue_ref_extractor_transformer,
+        venue_detail_fetcher_transformer,
+        # Position ref extractor & detail fetcher
+        athlete_position_ref_extractor_transformer,
+        position_detail_fetcher_transformer,
         # ... add other listers/fetchers for Event sub-resources, etc.
     )
 
