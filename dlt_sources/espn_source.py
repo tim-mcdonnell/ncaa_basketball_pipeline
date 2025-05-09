@@ -12,7 +12,6 @@ from typing import Any
 import dlt
 from dlt.common.typing import TDataItem
 from dlt.extract.source import DltResource
-from dlt.sources.helpers import requests  # For exception handling
 from dlt.sources.helpers.rest_client import RESTClient
 from dlt.sources.helpers.rest_client.paginators import PageNumberPaginator
 
@@ -184,17 +183,8 @@ def espn_source(
                     f"Detail: {season_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching season detail from {detail_url}: "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
-            logger.error(
-                f"Unexpected error fetching season detail from {detail_url}: {e}", exc_info=True
-            )
+            logger.error(f"Error during API operation for {detail_url}: {e}", exc_info=True)
             return None
 
     # --- Season Types Processing Chain (dependent on season_details) ---
@@ -288,17 +278,9 @@ def espn_source(
                     f"Detail: {type_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching season type detail from {detail_url} "
-                f"(season_id_fk: {season_id_fk}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching season type detail from {detail_url} "
-                f"(season_id_fk: {season_id_fk}): {e}",
+                f"Error during API operation for {detail_url} (season_id_fk: {season_id_fk}): {e}",
                 exc_info=True,
             )
             return None
@@ -405,18 +387,9 @@ def espn_source(
                     f"Fetched week detail from {detail_url} missing 'number'. Detail: {week_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching week detail from {detail_url} "
-                f"(type_id_fk: {type_id_fk}, season_id_fk: {season_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching week detail from {detail_url} "
-                f"(type_id_fk: {type_id_fk}, season_id_fk: {season_id_fk}): {e}",
+                f"Error during API operation for {detail_url} (type_id_fk: {type_id_fk}, season_id_fk: {season_id_fk}): {e}",
                 exc_info=True,
             )
             return None
@@ -469,21 +442,6 @@ def espn_source(
                             f"Event ref item missing '$ref' key in page "
                             f"from {events_collection_url}. Item: {event_ref_item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            # Check for 404 specifically, as some weeks might legitimately have no events
-            # and the API might return 404 for an empty events collection.
-            if he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found when listing events for week '{week_id_fk}' "
-                    f"(type '{type_id_fk}', season '{season_id_fk}') from {events_collection_url}. "
-                    f"Assuming no events for this week. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing event refs for week '{week_id_fk}' (type '{type_id_fk}', season '{season_id_fk}') "
-                    f"from {events_collection_url}: {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Error listing event refs for week '{week_id_fk}' (type '{type_id_fk}', season '{season_id_fk}') "
@@ -542,14 +500,6 @@ def espn_source(
                     f"Fetched event detail from {detail_url} missing 'id'. Detail: {event_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event detail from {detail_url} "
-                f"(week_id_fk: {week_id_fk}, type_id_fk: {type_id_fk}, season_id_fk: {season_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event detail from {detail_url} "
@@ -680,14 +630,6 @@ def espn_source(
             # We rely on the composite primary key in dlt for merging.
             return score_detail_augmented
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event score from {score_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event score from {score_ref_url} "
@@ -781,14 +723,6 @@ def espn_source(
                     f"for event '{event_id_fk}', team '{team_id_fk}'. API returned empty list."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event linescores from {linescores_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            # yield from [] # or return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event linescores from {linescores_ref_url} "
@@ -846,14 +780,6 @@ def espn_source(
             }
             return raw_stats_data_augmented
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event team stats raw data from {stats_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event team stats raw data from {stats_ref_url} "
@@ -1143,14 +1069,6 @@ def espn_source(
                     f"athlete '{athlete_id_fk}' from {detail_url}. Data might have been empty or malformed."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching player stats from {detail_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}, athlete_id_fk: {athlete_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            # yield from [] # Implicitly returns None, dlt handles this
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing player stats from {detail_url} "
@@ -1267,13 +1185,6 @@ def espn_source(
                     f"Data might have been empty or all items malformed."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event leaders from {leaders_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event leaders from {leaders_ref_url} "
@@ -1400,13 +1311,6 @@ def espn_source(
                     f"for event '{event_id_fk}', team '{team_id_fk}'. API returned empty list or no parsable entries."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event roster from {roster_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event roster from {roster_ref_url} "
@@ -1544,13 +1448,6 @@ def espn_source(
                     f"API might have returned empty list or all items were malformed."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching pre-game records from {records_ref_url} "
-                f"(event_id_fk: {event_id_fk}, team_id_fk: {team_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing pre-game records from {records_ref_url} "
@@ -1598,13 +1495,6 @@ def espn_source(
             status_data_augmented["event_id_fk"] = str(event_id_fk)
             return status_data_augmented
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching event status from {status_ref_url} (event_id_fk: {event_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event status from {status_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -1655,20 +1545,6 @@ def espn_source(
             situation_data_augmented["event_id_fk"] = str(event_id_fk)
             return situation_data_augmented
 
-        except requests.exceptions.HTTPError as he:
-            # The situation endpoint might 404 if the game is not live or has no situation data.
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for event situation for event_id '{event_id_fk}' from {situation_ref_url}. "
-                    f"Assuming no situation data. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None  # No data to yield
-            logger.error(
-                f"HTTPError fetching event situation from {situation_ref_url} (event_id_fk: {event_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event situation from {situation_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -1719,21 +1595,6 @@ def espn_source(
             predictor_data_augmented["event_id_fk"] = str(event_id_fk)
             return predictor_data_augmented
 
-        except requests.exceptions.HTTPError as he:
-            if (
-                he.response and he.response.status_code == 404
-            ):  # Predictor might not exist for all games
-                logger.info(
-                    f"Received 404 Not Found for event predictor data for event_id '{event_id_fk}' from {predictor_ref_url}. "
-                    f"Assuming no predictor data. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching event predictor data from {predictor_ref_url} (event_id_fk: {event_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching event predictor_data from {predictor_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -1827,17 +1688,6 @@ def espn_source(
             if not processed_any and not odds_data_list:
                 logger.debug(f"No odds items found for event '{event_id_fk}' from {odds_ref_url}.")
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for event odds for event '{event_id_fk}' from {odds_ref_url}. Assuming no odds."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event odds from {odds_ref_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event odds from {odds_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -1937,17 +1787,6 @@ def espn_source(
                     f"No broadcast items found for event '{event_id_fk}' from {broadcasts_ref_url}."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for event broadcasts for event '{event_id_fk}' from {broadcasts_ref_url}. Assuming no broadcasts."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event broadcasts from {broadcasts_ref_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event broadcasts from {broadcasts_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -2042,17 +1881,6 @@ def espn_source(
                     f"No probability items found for event '{event_id_fk}' from {probabilities_ref_url}."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for event probabilities for event '{event_id_fk}' from {probabilities_ref_url}. Assuming no data."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event probabilities from {probabilities_ref_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event probabilities from {probabilities_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -2151,19 +1979,6 @@ def espn_source(
                     f"No power index stats found for event '{event_id_fk}' from {powerindex_ref_url}."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            if (
-                he.response and he.response.status_code == 404
-            ):  # Power index might not exist for all games
-                logger.info(
-                    f"Received 404 for event power index for event '{event_id_fk}' from {powerindex_ref_url}. Assuming no data."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event power index from {powerindex_ref_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event power index from {powerindex_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -2261,17 +2076,6 @@ def espn_source(
                     f"No official items found for event '{event_id_fk}' from {officials_ref_url}."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for event officials for event '{event_id_fk}' from {officials_ref_url}. Assuming no officials."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event officials from {officials_ref_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event officials from {officials_ref_url} (event_id_fk: {event_id_fk}): {e}",
@@ -2345,17 +2149,6 @@ def espn_source(
                     f"API might have returned empty list or all items were malformed."
                 )
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for event plays for event '{event_id_fk}' from {plays_collection_url}. Assuming no plays."
-                )
-            else:
-                logger.error(
-                    f"HTTPError fetching event plays from {plays_collection_url} (event_id_fk: {event_id_fk}): "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching/processing event plays from {plays_collection_url} (event_id_fk: {event_id_fk}): {e}",
@@ -2403,17 +2196,7 @@ def espn_source(
                             f"Team ref item missing '$ref' key in page "
                             f"from {teams_collection_url} for season '{season_id}'. Item: {team_ref_item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found when listing team refs for season '{season_id}' from {teams_collection_url}. "
-                    f"Assuming no teams defined for this season directly under this endpoint. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing team refs for season '{season_id}' from {teams_collection_url}: {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
+
         except Exception as e:
             logger.error(
                 f"Error listing team refs for season '{season_id}' from {teams_collection_url}: {e}",
@@ -2465,13 +2248,7 @@ def espn_source(
                     f"Fetched team detail from {detail_url} (season '{season_id_fk}') missing 'id'. Detail: {team_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching team detail from {detail_url} (season_id_fk: {season_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching team detail from {detail_url} (season_id_fk: {season_id_fk}): {e}",
@@ -2521,17 +2298,7 @@ def espn_source(
                             f"Athlete ref item missing '$ref' key in page "
                             f"from {athletes_collection_url} for season '{season_id}'. Item: {athlete_ref_item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found when listing athlete refs for season '{season_id}' from {athletes_collection_url}. "
-                    f"Assuming no athletes for this season via this endpoint. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing athlete refs for season '{season_id}' from {athletes_collection_url}: {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
+
         except Exception as e:
             logger.error(
                 f"Error listing athlete refs for season '{season_id}' from {athletes_collection_url}: {e}",
@@ -2591,13 +2358,7 @@ def espn_source(
                     f"Fetched athlete detail from {detail_url} (discovery season '{discovery_season_id_fk}') missing 'id'. Detail: {athlete_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching athlete detail from {detail_url} (discovery_season_id_fk: {discovery_season_id_fk}): "
-                f"{he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching athlete detail from {detail_url} (discovery_season_id_fk: {discovery_season_id_fk}): {e}",
@@ -2658,7 +2419,7 @@ def espn_source(
 
     @dlt.transformer(
         name="venues",
-        data_from=[team_venue_ref_extractor_transformer, event_venue_ref_extractor_transformer],
+        data_from=team_venue_ref_extractor_transformer | event_venue_ref_extractor_transformer,
         write_disposition="merge",
         primary_key="id",
     )
@@ -2691,19 +2452,7 @@ def espn_source(
                     f"Fetched venue detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {venue_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            # Venues might 404 if the ref is stale or data is incomplete.
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for venue detail from {detail_url} (source: {source_discovery_info}). "
-                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching venue detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching venue detail from {detail_url} (source: {source_discovery_info}): {e}",
@@ -2748,18 +2497,7 @@ def espn_source(
                     f"Fetched position detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {position_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for position detail from {detail_url} (source: {source_discovery_info}). "
-                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching position detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching position detail from {detail_url} (source: {source_discovery_info}): {e}",
@@ -2858,18 +2596,7 @@ def espn_source(
                     f"Fetched provider detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {provider_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for provider detail from {detail_url} (source: {source_discovery_info}). "
-                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching provider detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching provider detail from {detail_url} (source: {source_discovery_info}): {e}",
@@ -2914,18 +2641,7 @@ def espn_source(
                     f"Fetched media detail from {detail_url} (source: {source_discovery_info}) missing 'id'. Detail: {media_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for media detail from {detail_url} (source: {source_discovery_info}). "
-                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching media detail from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
+
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching media detail from {detail_url} (source: {source_discovery_info}): {e}",
@@ -2994,18 +2710,6 @@ def espn_source(
                     # Example: item = {'$ref': 'seasonal_coach_url', 'id': 'coach123', 'type': 'HC', 'coach': {'$ref': 'master_coach_url'}}
                     yield assignment_record
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for coach assignments list for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}. "
-                    f"Assuming no assignments. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing coach assignments for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}: "
-                    f"{he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Unexpected error listing coach assignments for team '{team_id_fk}', season '{season_id_fk}' from {coaches_collection_url}: {e}",
@@ -3099,21 +2803,9 @@ def espn_source(
                 coach_master_detail["id"] = str(expected_coach_id)
                 return coach_master_detail
 
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}). "
-                    f"Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching master coach detail (ID '{expected_coach_id}') from {detail_url} (source: {source_discovery_info}): {e}",
+                f"Error during API operation for {detail_url} (master coach ID '{expected_coach_id}', source: {source_discovery_info}): {e}",
                 exc_info=True,
             )
             return None
@@ -3204,17 +2896,6 @@ def espn_source(
                             f"Franchise ref item missing '$ref' key in page "
                             f"from {franchises_collection_url}. Item: {franchise_ref_item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found when listing franchises from {franchises_collection_url}. "
-                    f"Assuming no franchises list at this path or it's not applicable. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing franchise refs from {franchises_collection_url}: {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Error listing franchise refs from {franchises_collection_url}: {e}", exc_info=True
@@ -3252,17 +2933,6 @@ def espn_source(
                     f"Fetched franchise detail from {detail_url} missing 'id'. Detail: {franchise_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found for franchise detail from {detail_url}. Skipping. Error: {he.response.text if he.response else str(he)}"
-                )
-                return None
-            logger.error(
-                f"HTTPError fetching franchise detail from {detail_url}: {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching franchise detail from {detail_url}: {e}", exc_info=True
@@ -3318,17 +2988,6 @@ def espn_source(
                             f"Master award ref item missing '$ref' key in page "
                             f"from {master_awards_collection_url}. Item: {award_ref_item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 Not Found when listing master awards from {master_awards_collection_url}. "
-                    f"Assuming no global awards list at this path. Seasonal awards might still be found. Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing master award refs from {master_awards_collection_url}: {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Error listing master award refs from {master_awards_collection_url}: {e}",
@@ -3369,12 +3028,6 @@ def espn_source(
                     f"Fetched master award detail from {detail_url} missing 'id'. Detail: {award_master_detail}"
                 )
                 return None
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching master award detail from {detail_url}: {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching master award detail from {detail_url}: {e}",
@@ -3424,17 +3077,6 @@ def espn_source(
                         logger.warning(
                             f"Seasonal award instance ref item missing '$ref' key for season '{season_id_fk}'. Item: {item}"
                         )
-        except requests.exceptions.HTTPError as he:
-            if he.response and he.response.status_code == 404:
-                logger.info(
-                    f"Received 404 for seasonal awards for season '{season_id_fk}' from {seasonal_awards_collection_url}. "
-                    f"Error: {he.response.text if he.response else str(he)}"
-                )
-            else:
-                logger.error(
-                    f"HTTPError listing seasonal award instance refs for season '{season_id_fk}': {he.response.text if he.response else str(he)}",
-                    exc_info=True,
-                )
         except Exception as e:
             logger.error(
                 f"Error listing seasonal award instance refs for season '{season_id_fk}': {e}",
@@ -3511,12 +3153,6 @@ def espn_source(
 
             return processed_detail
 
-        except requests.exceptions.HTTPError as he:
-            logger.error(
-                f"HTTPError fetching seasonal award instance from {detail_url} (season '{season_id_fk}'): {he.response.text if he.response else str(he)}",
-                exc_info=True,
-            )
-            return None
         except Exception as e:
             logger.error(
                 f"Unexpected error fetching seasonal award instance from {detail_url} (season '{season_id_fk}'): {e}",
