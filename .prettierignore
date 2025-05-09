@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Virtual environments
+.venv
+
+# Build files
+dist
+build
+
+# Git and GitHub files
+.git
+.github
+
+# Docs reference folder (excluded from formatting)
+docs/reference/** 

@@ -1,0 +1,30 @@
+config:
+  # Default state for all rules
+  default: true
+  # MD013/line-length - Line length
+  MD013:
+    # Number of characters
+    line_length: 120
+    # Allow long code blocks
+    code_blocks: false
+    # Allow long tables
+    tables: false
+  # MD033/no-inline-html - Inline HTML
+  MD033: false
+  # MD025/single-title - Allow multiple top-level headings
+  MD025: false
+
+# Include all files with these extensions
+globs:
+  - "**/*.md"
+  - "**/*.markdown"
+
+# Ignore the following patterns
+ignores:
+  - "node_modules"
+  - ".git"
+  - ".github"
+  - ".venv"
+  - "**/*.yml"
+  - "**/*.yaml"
+  - "docs/reference/**" 
