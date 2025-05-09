@@ -1,8 +1,9 @@
 # ESPN API Endpoint Inventory for `dlt` Source (v2) - Revised Concurrency
 
-**Version:** 2.1 **Date:** 2025-05-08 **Purpose:** This document catalogs the ESPN API endpoints for the NCAA Men's
+**Version:** 2.2 **Date:** 2025-05-08 **Purpose:** This document catalogs the ESPN API endpoints for the NCAA Men's
 College Basketball league (`mens-college-basketball`) and provides detailed guidance for implementing a `dlt` (Data Load
-Tool) source. This version includes revised recommendations for concurrency, favoring `@dlt.defer` for detail fetching.
+Tool) source. This version includes revised recommendations for concurrency, favoring `@dlt.defer`, and tracks
+implementation progress.
 
 **Base URL:** `http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball`
 
@@ -48,23 +49,29 @@ Based on `espn_source.py` and API structure:
 
 ### 1. Seasons
 
-- **`dlt` Resource Name:** `seasons_resource`
 - **Description:** Fetches season details. If `season_year` is given, fetches that specific season. Otherwise, lists all
   season `$ref`s and then fetches details.
+- **Status:** DONE
+- **`dlt` Table Name:** `seasons` (also `league_info` for the root)
+- **Key Transformer(s):** `league_info_resource`, `season_refs_lister_transformer`, `season_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/seasons`
 - **Endpoint Path (Detail):** `/seasons/{season_id}` (from `$ref` or constructed if `season_year` is given)
 - **Primary Key (`dlt`):** `id` (string, from API `year`)
 - **Implementation Notes:**
   - If listing all seasons:
-    - `seasons_resource` (or a `season_refs_lister_transformer`): Lists `$ref`s.
+    - `season_refs_lister_transformer`: Lists `$ref`s.
     - `season_detail_fetcher_transformer` (using `@dlt.defer`): Fetches details for each `$ref`.
   - If `season_year` is provided, `seasons_resource` can directly fetch that season's detail.
 
 ### 2. Season Types
 
-- **`dlt` Resource Names:** `season_type_refs_lister_transformer`, `season_type_detail_fetcher_transformer`
-- **Parent Resource:** `seasons_resource` (or `season_detail_fetcher_transformer` if seasons are fetched one by one)
+- **Parent Resource:** `season_detail_fetcher_transformer`
 - **Description:** For each season, lists season type `$ref`s, then fetches details for each.
+- **Status:** DONE
+- **`dlt` Table Name:** `season_types`
+- **Key Transformer(s):** `season_type_refs_lister_transformer`, `season_type_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/seasons/{season_id}/types`
 - **Endpoint Path (Detail):** (from `$ref` in the list response)
 - **Primary Key (`dlt`):** `id`, `season_id_fk`
@@ -75,9 +82,12 @@ Based on `espn_source.py` and API structure:
 
 ### 3. Weeks
 
-- **`dlt` Resource Names:** `week_refs_lister_transformer`, `week_detail_fetcher_transformer`
 - **Parent Resource:** `season_type_detail_fetcher_transformer`
 - **Description:** For each season type, lists week `$ref`s, then fetches details for each.
+- **Status:** DONE
+- **`dlt` Table Name:** `weeks`
+- **Key Transformer(s):** `week_refs_lister_transformer`, `week_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/seasons/{season_id}/types/{type_id}/weeks`
 - **Endpoint Path (Detail):** (from `$ref` in the list response)
 - **Primary Key (`dlt`):** `id`, `type_id_fk`, `season_id_fk`
@@ -89,9 +99,12 @@ Based on `espn_source.py` and API structure:
 
 ### 4. Events (Games)
 
-- **`dlt` Resource Names:** `event_refs_lister_transformer`, `event_detail_fetcher_transformer`
 - **Parent Resource:** `week_detail_fetcher_transformer`
 - **Description:** For each week, lists event `$ref`s, then fetches details for each.
+- **Status:** DONE
+- **`dlt` Table Name:** `events`
+- **Key Transformer(s):** `event_refs_lister_transformer`, `event_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/seasons/{season_id}/types/{type_id}/weeks/{week_id}/events`
 - **Endpoint Path (Detail):** `/events/{event_id}` (from `$ref` in list response)
 - **Primary Key (`dlt` - in `events` table from detail fetcher):** `id`
@@ -112,19 +125,25 @@ or fetch further details using `$ref`s found within it.
 
 ### 5. Event Competitors
 
-- **`dlt` Resource Name:** `event_competitors_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Extracts competitor details _directly_ from the `event_detail.competitions[0].competitors` array. No
   new API call needed by this transformer itself.
-- **Primary Key (`dlt`):** `event_id_fk`, `team_id`
+- **Status:** DONE
+- **`dlt` Table Name:** `event_competitors`
+- **Key Transformer(s):** `event_competitors_transformer`
+- **Data Validated:** No
+- **Primary Key (`dlt`):** `event_id_fk`, `team_id` (Note: `team_id` is called `id` in the transformer's PK definition)
 - **Implementation Notes:** Iterates the `competitors` array in the parent event detail. Yields one record per
   competitor, including their various `$ref` URLs for subsequent detail transformers.
 
 ### 6. Event Scores (Final Score per Team)
 
-- **`dlt` Resource Name:** `event_scores_detail_fetcher_transformer`
 - **Parent Resource:** `event_competitors_transformer` (which yields competitor objects containing `score.$ref`)
 - **Description:** Fetches the final score for each team in an event.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_scores`
+- **Key Transformer(s):** `event_scores_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/score` (from
   `competitor.score.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`
@@ -134,59 +153,67 @@ or fetch further details using `$ref`s found within it.
 
 ### 7. Event Linescores (Score per Period)
 
-- **`dlt` Resource Names:** `event_linescores_refs_lister_transformer`, `event_linescore_detail_fetcher_transformer` (if
-  detail needed beyond list) OR simply `event_linescores_lister_transformer` if list provides all data.
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the score for each team for each period (half) of the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_linescores`
+- **Key Transformer(s):** `event_linescores_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores` (from
   `competitor.linescores.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `period`
 - **Implementation Notes:**
-  - `event_linescores_lister_transformer`: Takes `competitor_detail`, fetches the list of linescore items. If items are
+  - `event_linescores_transformer`: Takes `competitor_detail`, fetches the list of linescore items. If items are
     complete, yields them.
-  - If linescore items are `$ref`s themselves (unlikely based on samples but possible), then:
-    - `event_linescores_refs_lister_transformer`: Lists `$ref`s.
-    - `event_linescore_detail_fetcher_transformer` (using `@dlt.defer`): Fetches details.
   - Yields one record per team per period.
 
 ### 8. Event Team Statistics (Aggregates)
 
-- **`dlt` Resource Name:** `event_team_statistics_detail_fetcher_transformer`
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches aggregated team statistics for the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_team_stats` (also intermediate `event_team_stats_raw_data`)
+- **Key Transformer(s):** `event_team_stats_raw_fetcher_transformer`, `event_team_stats_processor_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics` (from
   `competitor.statistics.$ref`)
 - **Table Structure (`dlt` - Tidy Format Recommended):** `event_team_stats`
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `stat_name`
 - **Implementation Notes:**
-  - Takes `competitor_detail` (with `statistics_ref`).
-  - Uses `@dlt.defer` to fetch the single JSON object containing all team stats categories.
-  - Unnests `categories` and `stats` arrays into a tidy format.
+  - `event_team_stats_raw_fetcher_transformer`: Takes `competitor_detail`, fetches raw JSON containing team and player
+    stat refs.
+  - `event_team_stats_processor_transformer`: Consumes raw data, unnests team stats into tidy format.
   - **Crucially, yields the `$ref` URLs for each player's statistics** found in `splits.athletes` for the
     `event_player_statistics_refs_lister_transformer` to consume.
 
 ### 9. Event Player Statistics
 
-- **`dlt` Resource Names:** `event_player_statistics_refs_lister_transformer`,
-  `event_player_statistics_detail_fetcher_transformer`
-- **Parent Resource:** `event_team_statistics_detail_fetcher_transformer` (yielding player stat `$ref` URLs)
+- **Parent Resource:** `event_team_stats_raw_fetcher_transformer` (yielding player stat `$ref` URLs via
+  `event_player_stats_refs_lister_transformer`)
 - **Description:** Fetches detailed game statistics for each individual player.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_player_stats`
+- **Key Transformer(s):** `event_player_stats_refs_lister_transformer`, `event_player_stats_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):**
   `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster/{athlete_id}/statistics/{split_id}` (from
   `$ref`)
 - **Table Structure (`dlt` - Tidy Format Recommended):** `event_player_stats`
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `athlete_id_fk`, `stat_name`
 - **Implementation Notes:**
-  - `event_player_statistics_refs_lister_transformer`: Takes the list of player stat `$ref`s (and necessary FKs like
+  - `event_player_stats_refs_lister_transformer`: Takes the list of player stat `$ref`s (and necessary FKs like
     `event_id`, `team_id`) from the parent. Yields individual player stat `$ref` objects (augmented with FKs).
-  - `event_player_statistics_detail_fetcher_transformer` (using `@dlt.defer`): Fetches details for each player stat
-    `$ref`. Parses `athlete_id` from the URL or ref object. Unnests categories and stats.
+  - `event_player_stats_detail_fetcher_transformer` (using `@dlt.defer`): Fetches details for each player stat `$ref`.
+    Parses `athlete_id` from the URL or ref object. Unnests categories and stats.
 
 ### 10. Event Team Leaders
 
-- **`dlt` Resource Name:** `event_leaders_detail_fetcher_transformer`
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the leading players for each team in key statistical categories for the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_leaders`
+- **Key Transformer(s):** `event_leaders_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/leaders` (from
   `competitor.leaders.$ref`)
 - **Table Structure (`dlt` - Tidy Format Recommended):** `event_leaders`
@@ -197,9 +224,12 @@ or fetch further details using `$ref`s found within it.
 
 ### 11. Event Roster
 
-- **`dlt` Resource Name:** `event_roster_detail_fetcher_transformer`
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the roster of players for a team in a specific game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_roster`
+- **Key Transformer(s):** `event_roster_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster` (from
   `competitor.roster.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `athlete_id_fk`
@@ -209,23 +239,28 @@ or fetch further details using `$ref`s found within it.
 
 ### 12. Event Team Records (Pre-Game)
 
-- **`dlt` Resource Names:** `event_records_lister_transformer`
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the team's record (overall, home, away, vs conf.) _before_ the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_pregame_records`
+- **Key Transformer(s):** `event_pregame_records_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records` (from
   `competitor.records.$ref`)
 - **Table Structure (`dlt` - Tidy Format Recommended):** `event_pregame_records`
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `record_type`, `stat_name`
 - **Implementation Notes:**
-  - `event_records_lister_transformer`: Takes `competitor_detail` (with `records_ref`). Fetches the list of pre-game
-    record items. Unnests `stats` array. (This is a list endpoint, so `@dlt.defer` might not be directly on this one,
-    but on a subsequent detail fetcher if the list items were refs themselves, which they don't appear to be).
+  - `event_pregame_records_transformer`: Takes `competitor_detail` (with `records_ref`). Fetches the list of pre-game
+    record items. Unnests `stats` array.
 
 ### 13. Event Status
 
-- **`dlt` Resource Name:** `event_status_detail_fetcher_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches current status for a game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_status`
+- **Key Transformer(s):** `event_status_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/status` (from
   `event_detail.competitions[0].status.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`
@@ -235,9 +270,12 @@ or fetch further details using `$ref`s found within it.
 
 ### 14. Event Situation
 
-- **`dlt` Resource Name:** `event_situation_detail_fetcher_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches live game situation details.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_situation`
+- **Key Transformer(s):** `event_situation_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/situation` (from
   `event_detail.competitions[0].situation.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`
@@ -247,50 +285,59 @@ or fetch further details using `$ref`s found within it.
 
 ### 15. Event Odds
 
-- **`dlt` Resource Names:** `event_odds_lister_transformer` (or `event_odds_refs_lister_transformer` +
-  `event_odd_detail_fetcher_transformer` if list items are refs)
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches betting odds for a game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_odds`
+- **Key Transformer(s):** `event_odds_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/odds` (from
   `event_detail.competitions[0].odds.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `provider_id_fk`
 - **Implementation Notes:**
-  - `event_odds_lister_transformer`: Takes `event_detail` (with `odds.$ref`). Fetches list of odds items (one per
-    provider). Unnest complex odds structures.
-  - Requires a `providers` master table.
+  - `event_odds_transformer`: Takes `event_detail` (with `odds.$ref`). Fetches list of odds items (one per provider).
+    Unnest complex odds structures.
+  - Requires a `providers` master table (Item 29 - currently TODO for providers master).
 
 ### 16. Event Broadcasts
 
-- **`dlt` Resource Names:** `event_broadcasts_lister_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches broadcast information for a game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_broadcasts`
+- **Key Transformer(s):** `event_broadcasts_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/broadcasts` (from
   `event_detail.competitions[0].broadcasts.$ref`)
-- **Primary Key (`dlt`):** `event_id_fk`, `media_id_fk`, `market_type`
+- **Primary Key (`dlt`):** `event_id_fk`, `media_id_fk`, `type`
 - **Implementation Notes:**
-  - `event_broadcasts_lister_transformer`: Takes `event_detail` (with `broadcasts.$ref`). Fetches list of broadcast
-    items.
-  - Requires a `media` master table.
+  - `event_broadcasts_transformer`: Takes `event_detail` (with `broadcasts.$ref`). Fetches list of broadcast items.
+  - Requires a `media` master table (Item 30 - currently TODO for media master).
 
 ### 17. Event Plays (Play-by-Play)
 
-- **`dlt` Resource Names:** `event_plays_lister_transformer` (or `event_play_refs_lister_transformer` +
-  `event_play_detail_fetcher_transformer` if list items are refs)
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches detailed play-by-play sequence.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_plays`
+- **Key Transformer(s):** `event_plays_lister_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/plays` (from
   `event_detail.competitions[0].plays.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `id` (play's own ID)
 - **Implementation Notes:**
   - `event_plays_lister_transformer`: Takes `event_detail` (with `plays.$ref`). Fetches pages of play items. Handle
     `participants` array.
-  - This can be a large resource.
+  - This can be a large resource. Current implementation uses `@dlt.defer` on the lister itself and paginates within.
 
 ### 18. Event Predictor
 
-- **`dlt` Resource Name:** `event_predictor_detail_fetcher_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches ESPN's win probability and predicted score.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_predictor`
+- **Key Transformer(s):** `event_predictor_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/events/{event_id}/competitions/{event_id}/predictor` (from
   `event_detail.competitions[0].predictor.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`
@@ -300,39 +347,48 @@ or fetch further details using `$ref`s found within it.
 
 ### 19. Event Probabilities
 
-- **`dlt` Resource Names:** `event_probabilities_lister_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches time-series win probability data.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_probabilities`
+- **Key Transformer(s):** `event_probabilities_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/probabilities` (from
   `event_detail.competitions[0].probabilities.$ref`)
-- **Primary Key (`dlt`):** `event_id_fk`, `play_id_fk`
+- **Primary Key (`dlt`):** `event_id_fk`, `play_id`
 - **Implementation Notes:**
-  - `event_probabilities_lister_transformer`: Takes `event_detail` (with `probabilities.$ref`). Fetches list of
-    probability items.
+  - `event_probabilities_transformer`: Takes `event_detail` (with `probabilities.$ref`). Fetches list of probability
+    items.
 
 ### 20. Event Power Index
 
-- **`dlt` Resource Names:** `event_powerindex_lister_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches team power index ratings (BPI/FPI) for the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_powerindex_stats`
+- **Key Transformer(s):** `event_powerindex_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/powerindex` (from
   `event_detail.competitions[0].powerindex.$ref`)
 - **Table Structure (`dlt` - Tidy Format Recommended):** `event_powerindex_stats`
 - **Primary Key (`dlt`):** `event_id_fk`, `team_id_fk`, `stat_name`
 - **Implementation Notes:**
-  - `event_powerindex_lister_transformer`: Takes `event_detail` (with `powerindex.$ref`). Fetches list of power index
-    items (usually 2). Unnest `stats`.
+  - `event_powerindex_transformer`: Takes `event_detail` (with `powerindex.$ref`). Fetches list of power index items
+    (usually 2). Unnest `stats`.
 
 ### 21. Event Officials
 
-- **`dlt` Resource Names:** `event_officials_lister_transformer`
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches officials assigned to the game.
+- **Status:** DONE
+- **`dlt` Table Name:** `event_officials`
+- **Key Transformer(s):** `event_officials_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List):** `/events/{event_id}/competitions/{event_id}/officials` (from
   `event_detail.competitions[0].officials.$ref`)
 - **Primary Key (`dlt`):** `event_id_fk`, `official_id`
 - **Implementation Notes:**
-  - `event_officials_lister_transformer`: Takes `event_detail` (with `officials.$ref`). Fetches list of official items.
+  - `event_officials_transformer`: Takes `event_detail` (with `officials.$ref`). Fetches list of official items.
 
 ---
 
@@ -344,9 +400,12 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 ### 22. Teams (Master)
 
-- **`dlt` Resource Names:** `team_refs_lister_transformer` (e.g., per season), `team_detail_fetcher_transformer`
-- **Parent Resource:** `seasons_resource` (or `season_detail_fetcher_transformer`)
+- **Parent Resource:** `season_detail_fetcher_transformer`
 - **Description:** Fetches details for all teams, typically discovered per season.
+- **Status:** DONE
+- **`dlt` Table Name:** `teams`
+- **Key Transformer(s):** `team_refs_lister_transformer`, `team_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/seasons/{season_id}/teams`
 - **Endpoint Path (Detail):** `/seasons/{season_id}/teams/{team_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`, `season_id_fk`
@@ -357,45 +416,60 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 ### 23. Athletes (Master)
 
-- **`dlt` Resource Names:** `athlete_refs_lister_transformer` (e.g., per season or per team/season),
-  `athlete_detail_fetcher_transformer`
-- **Parent Resource:** `seasons_resource` or `team_detail_fetcher_transformer`
+- **Parent Resource:** `season_detail_fetcher_transformer` or `team_detail_fetcher_transformer`
 - **Description:** Fetches details for athletes.
+- **Status:** DONE
+- **`dlt` Table Name:** `athletes`
+- **Key Transformer(s):** `athlete_refs_lister_transformer`, `athlete_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/seasons/{season_id}/athletes` OR `/seasons/{season_id}/teams/{team_id}/athletes`
 - **Endpoint Path (Detail):** `/seasons/{season_id}/athletes/{athlete_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id` (assuming global uniqueness). If contextually seasonal, use `id`, `season_id_fk`.
 - **Implementation Notes:**
-  - `athlete_refs_lister_transformer`: Takes `season_detail` or `team_detail`, lists athlete `$ref`s. Yields individual
-    athlete `$ref` objects (augmented with FKs).
+  - `athlete_refs_lister_transformer`: Takes `season_detail` lists athlete `$ref`s. Yields individual athlete `$ref`
+    objects (augmented with `discovery_season_id_fk`).
   - `athlete_detail_fetcher_transformer` (using `@dlt.defer`): Takes an athlete `$ref` object, fetches details.
 
 ### 24. Venues (Master)
 
-- **`dlt` Resource Name:** `venue_detail_fetcher_transformer`
 - **Parent Resource:** Various (e.g., `team_detail_fetcher_transformer`, `event_detail_fetcher_transformer` that yield
   venue `$ref`s)
 - **Description:** Fetches details for venues.
+- **Status:** DONE
+- **`dlt` Table Name:** `venues`
+- **Key Transformer(s):** `team_venue_ref_extractor_transformer`, `event_venue_ref_extractor_transformer`,
+  `venue_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/venues/{venue_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - This would typically be a "Detail Fetcher" transformer using `@dlt.defer`.
-  - It would consume venue `$ref`s yielded by other resources (like teams or events). A separate "lister" for all venues
-    might not exist or be practical. Discovery is opportunistic.
+  - Ref extractors (`team_venue_ref_extractor_transformer`, `event_venue_ref_extractor_transformer`) yield venue
+    `$ref`s.
+  - `venue_detail_fetcher_transformer` (using `@dlt.defer`) consumes these refs and fetches details. Discovery is
+    opportunistic.
 
 ### 25. Positions (Master)
 
-- **`dlt` Resource Name:** `position_detail_fetcher_transformer`
 - **Parent Resource:** Various (e.g., `athlete_detail_fetcher_transformer` that yields position `$ref`s)
 - **Description:** Fetches details for player positions.
+- **Status:** DONE
+- **`dlt` Table Name:** `positions`
+- **Key Transformer(s):** `athlete_position_ref_extractor_transformer`, `position_detail_fetcher_transformer`
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/positions/{position_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - Similar to Venues, a "Detail Fetcher" using `@dlt.defer` consuming `$ref`s from athlete data.
+  - `athlete_position_ref_extractor_transformer` yields position `$ref` from athlete data.
+  - `position_detail_fetcher_transformer` (using `@dlt.defer`) consumes `$ref`s.
 
 ### 26. Coaches (Master & Seasonal)
 
-- **`dlt` Resource Names:** `coach_refs_lister_transformer` (e.g., per team/season), `coach_detail_fetcher_transformer`,
-  `coach_record_detail_fetcher_transformer`
+- **Description:** Fetches coach details and records.
+- **Status:** TODO
+- **`dlt` Table Name:** `coaches` (and potentially `coach_records_seasonal`)
+- **Key Transformer(s):** `coach_refs_lister_transformer` (e.g., per team/season), `coach_detail_fetcher_transformer`,
+  `coach_record_detail_fetcher_transformer` (To be implemented)
+- **Data Validated:** No
 - **Endpoint Paths:** `/coaches/{id}`, `/seasons/{s}/coaches/{id}`, `/seasons/{s}/teams/{t}/coaches` (list of refs).
 - **Implementation Notes:**
   - Use "Lister" + "Detail Fetcher with `@dlt.defer`" for `/seasons/{s}/teams/{t}/coaches`.
@@ -403,15 +477,24 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 ### 27. Awards (Master & Seasonal)
 
-- **`dlt` Resource Names:** `awards_master_lister_transformer`, `award_master_detail_fetcher_transformer`,
-  `season_award_refs_lister_transformer`, `season_award_detail_fetcher_transformer`
+- **Description:** Fetches award details.
+- **Status:** TODO
+- **`dlt` Table Name:** `awards_master`, `awards_seasonal`
+- **Key Transformer(s):** `awards_master_lister_transformer`, `award_master_detail_fetcher_transformer`,
+  `season_award_refs_lister_transformer`, `season_award_detail_fetcher_transformer` (To be implemented)
+- **Data Validated:** No
 - **Endpoint Paths:** `/awards` (list master award refs), `/awards/{id}` (detail), `/seasons/{s}/awards` (list season
   award refs), `/seasons/{s}/awards/{id}` (detail).
 - **Implementation Notes:** Apply "Lister" + "Detail Fetcher with `@dlt.defer`" pattern.
 
 ### 28. Franchises (Master)
 
-- **`dlt` Resource Names:** `franchise_refs_lister_transformer`, `franchise_detail_fetcher_transformer`
+- **Description:** Fetches franchise details.
+- **Status:** TODO
+- **`dlt` Table Name:** `franchises`
+- **Key Transformer(s):** `franchise_refs_lister_transformer`, `franchise_detail_fetcher_transformer` (To be
+  implemented)
+- **Data Validated:** No
 - **Endpoint Path (List of Refs):** `/franchises`
 - **Endpoint Path (Detail):** `/franchises/{franchise_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
@@ -421,25 +504,34 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 ### 29. Providers (Master - Odds)
 
-- **`dlt` Resource Name:** `provider_detail_fetcher_transformer`
-- **Parent Resource:** `event_odds_lister_transformer` (which yields items containing `provider.$ref`)
+- **Parent Resource:** `event_odds_transformer` (which yields items containing `provider.$ref`)
 - **Description:** Fetches details of odds providers.
+- **Status:** TODO
+- **`dlt` Table Name:** `providers`
+- **Key Transformer(s):** `odds_provider_ref_extractor_transformer`, `provider_detail_fetcher_transformer` (To be
+  implemented)
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/providers/{provider_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - Takes provider `$ref` from odds data.
-  - Uses `@dlt.defer` to fetch details.
+  - `event_odds_transformer` currently yields `provider_id_fk`. A new ref extractor would take `event_odds` items.
+  - `provider_detail_fetcher_transformer` (using `@dlt.defer`) to fetch provider details.
 
 ### 30. Media (Master - Broadcasts)
 
-- **`dlt` Resource Name:** `media_detail_fetcher_transformer`
-- **Parent Resource:** `event_broadcasts_lister_transformer` (which yields items containing `media.$ref`)
+- **Parent Resource:** `event_broadcasts_transformer` (which yields items containing `media.$ref`)
 - **Description:** Fetches details of media outlets.
+- **Status:** TODO
+- **`dlt` Table Name:** `media`
+- **Key Transformer(s):** `broadcast_media_ref_extractor_transformer`, `media_detail_fetcher_transformer` (To be
+  implemented)
+- **Data Validated:** No
 - **Endpoint Path (Detail):** `/media/{media_id}` (from `$ref`)
 - **Primary Key (`dlt`):** `id`
 - **Implementation Notes:**
-  - Takes media `$ref` from broadcast data.
-  - Uses `@dlt.defer` to fetch details.
+  - `event_broadcasts_transformer` currently yields `media_id_fk`. A new ref extractor would take `event_broadcasts`
+    items.
+  - `media_detail_fetcher_transformer` (using `@dlt.defer`) to fetch media details.
 
 ---
 
@@ -447,26 +539,46 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 These endpoints had samples in the discovery but may be lower priority or require further investigation for their
 integration strategy. The "Lister" + "Detail Fetcher with `@dlt.defer`" pattern should be considered if they follow
-similar `$ref` structures.
+similar `$ref` structures. All are **Status: TODO** and **Data Validated: No**.
 
 - **Transactions:** `/transactions` (Sample `transactions_example.json` is empty)
+  - **`dlt` Table Name:** `transactions`
+  - **Key Transformer(s):** (To be defined)
 - **Notes:** `/notes`, `/teams/{id}/notes`, `/seasons/{s}/athletes/{id}/notes` (Samples empty)
+  - **`dlt` Table Name:** `notes`
+  - **Key Transformer(s):** (To be defined)
 - **Injuries:** `/teams/{id}/injuries` (Sample empty)
-- **Calendar:** `/calendar/*` (Samples exist, use depends on logic needed)
-  - E.g., `/calendar/buyseason`, `/calendar/ondays`
-- **Futures:** `/seasons/{s}/futures/*` (Samples exist, for betting futures)
-  - E.g., `/seasons/{s}/futures`, `/seasons/{s}/futures/{id}`
-- **Power Index (Season):** `/seasons/{s}/powerindex/*` (Samples exist, season-level BPI)
-  - E.g., `/seasons/{s}/powerindex`, `/seasons/{s}/powerindex/{id}`
-- **Rankings (Season/Overall):** `/rankings`, `/seasons/{s}/rankings/*` (Samples exist, overview of poll types)
-  - E.g., `/rankings`, `/rankings/{id}`, `/seasons/{s}/rankings`, `/seasons/{s}/types/{t}/weeks/{w}/rankings`,
-    `/seasons/{s}/types/{t}/weeks/{w}/rankings/{id}`
-- **Groups/Conferences:** `/seasons/{s}/types/{t}/groups/*` (Samples exist, defines conference structure)
-  - E.g., `/seasons/{s}/types/{t}/groups`, `/seasons/{s}/types/{t}/groups/{id}`
-- **Standings:** `/seasons/{s}/types/{t}/groups/{g}/standings/*` (Samples exist, detailed standings data)
-  - E.g., `/seasons/{s}/types/{t}/groups/{g}/standings`, `/seasons/{s}/types/{t}/groups/{g}/standings/{id}` (standings
-    are usually by season, not specific ID for the "standings" entity itself).
-- **Tournaments/Bracketology:** `/tournaments/*` (Samples exist, for tournament-specific views)
-  - E.g., `/tournaments`, `/tournaments/{id}`
+  - **`dlt` Table Name:** `injuries`
+  - **Key Transformer(s):** (To be defined)
+- **Calendar:** `/calendar/*` (Samples exist, use depends on logic needed) E.g., `/calendar/buyseason`,
+  `/calendar/ondays`
+  - **`dlt` Table Name:** `calendar_entries` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Futures:** `/seasons/{s}/futures/*` (Samples exist, for betting futures) E.g., `/seasons/{s}/futures`,
+  `/seasons/{s}/futures/{id}`
+  - **`dlt` Table Name:** `futures_odds` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Power Index (Season):** `/seasons/{s}/powerindex/*` (Samples exist, season-level BPI) E.g.,
+  `/seasons/{s}/powerindex`, `/seasons/{s}/powerindex/{id}`
+  - **`dlt` Table Name:** `season_power_index` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Rankings (Season/Overall):** `/rankings`, `/seasons/{s}/rankings/*` (Samples exist, overview of poll types) E.g.,
+  `/rankings`, `/rankings/{id}`, `/seasons/{s}/rankings`, `/seasons/{s}/types/{t}/weeks/{w}/rankings`,
+  `/seasons/{s}/types/{t}/weeks/{w}/rankings/{id}`
+  - **`dlt` Table Name:** `rankings`, `seasonal_rankings` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Groups/Conferences:** `/seasons/{s}/types/{t}/groups/*` (Samples exist, defines conference structure) E.g.,
+  `/seasons/{s}/types/{t}/groups`, `/seasons/{s}/types/{t}/groups/{id}`
+  - **`dlt` Table Name:** `groups_conferences` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Standings:** `/seasons/{s}/types/{t}/groups/{g}/standings/*` (Samples exist, detailed standings data) E.g.,
+  `/seasons/{s}/types/{t}/groups/{g}/standings`, `/seasons/{s}/types/{t}/groups/{g}/standings/{id}` (standings are
+  usually by season, not specific ID for the "standings" entity itself).
+  - **`dlt` Table Name:** `standings` (example)
+  - **Key Transformer(s):** (To be defined)
+- **Tournaments/Bracketology:** `/tournaments/*` (Samples exist, for tournament-specific views) E.g., `/tournaments`,
+  `/tournaments/{id}`
+  - **`dlt` Table Name:** `tournaments`, `tournament_brackets` (example)
+  - **Key Transformer(s):** (To be defined)
 
 ---
