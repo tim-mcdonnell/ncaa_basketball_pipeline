@@ -1976,12 +1976,14 @@ def espn_source(
 
             if not processed_any_stat and not powerindex_data_list:
                 logger.debug(
-                    f"No power index stats found for event '{event_id_fk}' from {powerindex_ref_url}."
+                    f"No power index stats found for event '{event_id_fk}' "
+                    f"from {powerindex_ref_url}."
                 )
 
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching/processing event power index from {powerindex_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                f"Unexpected error fetching/processing event power index "
+                f"from {powerindex_ref_url} (event_id_fk: {event_id_fk}): {e}",
                 exc_info=True,
             )
 
@@ -2012,7 +2014,8 @@ def espn_source(
 
         if not officials_ref_url:
             logger.info(
-                f"Event detail for '{event_id_fk}' missing 'competitions[0].officials.$ref'. No officials to fetch."
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].officials.$ref'. "
+                f"No officials to fetch."
             )
             yield from []
             return
@@ -2034,7 +2037,8 @@ def espn_source(
                     officials_data_list = officials_data_list["items"]
                 else:
                     logger.warning(
-                        f"Unexpected officials data format from {officials_ref_url} for event '{event_id_fk}'. "
+                        f"Unexpected officials data format from {officials_ref_url} "
+                        f"for event '{event_id_fk}'. "
                         f"Expected list. Data: {officials_data_list}"
                     )
                     yield from []
@@ -2055,7 +2059,8 @@ def espn_source(
 
                 if not official_id:
                     logger.warning(
-                        f"Official item for event '{event_id_fk}' missing 'id' or 'official.id'. Item: {official_item}"
+                        f"Official item for event '{event_id_fk}' missing 'id' or 'official.id'. "
+                        f"Item: {official_item}"
                     )
                     continue
 
@@ -2065,8 +2070,10 @@ def espn_source(
                     official_id
                 )  # Use extracted/normalized ID for PK
 
-                # If original 'id' was at top level and we used it, ensure no conflict if 'official_id' is the PK column.
-                # Or, structure it carefully. For now, this should be okay if 'official_id' is the PK column.
+                # If original 'id' was at top level and we used it, ensure no conflict
+                # if 'official_id' is the PK column.
+                # Or, structure it carefully. For now, this should be okay
+                # if 'official_id' is the PK column.
 
                 yield official_record
                 processed_any = True
@@ -2078,7 +2085,8 @@ def espn_source(
 
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching/processing event officials from {officials_ref_url} (event_id_fk: {event_id_fk}): {e}",
+                f"Unexpected error fetching/processing event officials from {officials_ref_url} "
+                f"(event_id_fk: {event_id_fk}): {e}",
                 exc_info=True,
             )
 
@@ -2091,7 +2099,8 @@ def espn_source(
     @dlt.defer
     def event_plays_lister_transformer(event_detail: dict[str, Any]) -> Iterable[TDataItem] | None:
         """
-        Fetches paginated play-by-play data for an event from event_detail.competitions[0].plays.$ref.
+        Fetches paginated play-by-play data for an event from
+        event_detail.competitions[0].plays.$ref.
         Uses list_client to handle pagination.
         Yields one record per play.
         """
@@ -2108,13 +2117,15 @@ def espn_source(
 
         if not plays_collection_url:
             logger.info(
-                f"Event detail for '{event_id_fk}' missing 'competitions[0].plays.$ref'. No plays to fetch."
+                f"Event detail for '{event_id_fk}' missing 'competitions[0].plays.$ref'. "
+                f"No plays to fetch."
             )
             yield from []
             return
 
         logger.debug(
-            f"Fetching event plays for event '{event_id_fk}' from paginated URL: {plays_collection_url}"
+            f"Fetching event plays for event '{event_id_fk}' from paginated URL: "
+            f"{plays_collection_url}"
         )
         try:
             processed_any_play = False
@@ -2126,7 +2137,8 @@ def espn_source(
                 for play_item in play_page:
                     if not isinstance(play_item, dict) or "id" not in play_item:
                         logger.warning(
-                            f"Malformed play item or missing 'id' for event '{event_id_fk}'. Item: {play_item}. Skipping."
+                            f"Malformed play item or missing 'id' for event '{event_id_fk}'. "
+                            f"Item: {play_item}. Skipping."
                         )
                         continue
 
@@ -2136,7 +2148,8 @@ def espn_source(
                         play_item["id"]
                     )  # Ensure play's own ID is string for PK
 
-                    # Complex fields like 'participants' will be handled by dlt (e.g., as JSON strings or nested tables if max_nesting was > 0)
+                    # Complex fields like 'participants' will be handled by dlt
+                    # (e.g., as JSON strings or nested tables if max_nesting was > 0)
                     # For Bronze layer with max_table_nesting=0, they'll likely be JSON strings.
                     yield play_record
                     processed_any_play = True
@@ -2145,13 +2158,15 @@ def espn_source(
                 not processed_any_play
             ):  # This check might be redundant if paginate yields nothing on empty list
                 logger.debug(
-                    f"No play-by-play items found or processed for event '{event_id_fk}' from {plays_collection_url}. "
+                    f"No play-by-play items found or processed for event '{event_id_fk}' "
+                    f"from {plays_collection_url}. "
                     f"API might have returned empty list or all items were malformed."
                 )
 
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching/processing event plays from {plays_collection_url} (event_id_fk: {event_id_fk}): {e}",
+                f"Unexpected error fetching/processing event plays from {plays_collection_url} "
+                f"(event_id_fk: {event_id_fk}): {e}",
                 exc_info=True,
             )
         # If nothing yielded, dlt handles it.
@@ -2245,13 +2260,15 @@ def espn_source(
                 return team_detail
             else:
                 logger.warning(
-                    f"Fetched team detail from {detail_url} (season '{season_id_fk}') missing 'id'. Detail: {team_detail}"
+                    f"Fetched team detail from {detail_url} (season '{season_id_fk}') "
+                    f"missing 'id'. Detail: {team_detail}"
                 )
                 return None
 
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching team detail from {detail_url} (season_id_fk: {season_id_fk}): {e}",
+                f"Unexpected error fetching team detail from {detail_url} "
+                f"(season_id_fk: {season_id_fk}): {e}",
                 exc_info=True,
             )
             return None
@@ -2270,18 +2287,21 @@ def espn_source(
 
         if not season_id:
             logger.warning(
-                f"Season detail missing 'id'. Skipping athlete refs listing. Detail: {season_detail}"
+                f"Season detail missing 'id'. Skipping athlete refs listing. "
+                f"Detail: {season_detail}"
             )
             return  # yield from []
 
         if not athletes_collection_url:
             logger.info(
-                f"Season detail for season '{season_id}' missing 'athletes.$ref'. No athletes to list for this season."
+                f"Season detail for season '{season_id}' missing 'athletes.$ref'. "
+                f"No athletes to list for this season."
             )
             return  # yield from []
 
         logger.debug(
-            f"Listing athlete refs for season '{season_id}' from collection: {athletes_collection_url}"
+            f"Listing athlete refs for season '{season_id}' from collection: "
+            f"{athletes_collection_url}"
         )
         try:
             for athlete_ref_page in list_client.paginate(
@@ -2296,12 +2316,14 @@ def espn_source(
                     else:
                         logger.warning(
                             f"Athlete ref item missing '$ref' key in page "
-                            f"from {athletes_collection_url} for season '{season_id}'. Item: {athlete_ref_item}"
+                            f"from {athletes_collection_url} for season '{season_id}'. "
+                            f"Item: {athlete_ref_item}"
                         )
 
         except Exception as e:
             logger.error(
-                f"Error listing athlete refs for season '{season_id}' from {athletes_collection_url}: {e}",
+                f"Error listing athlete refs for season '{season_id}' "
+                f"from {athletes_collection_url}: {e}",
                 exc_info=True,
             )
 
@@ -2326,13 +2348,16 @@ def espn_source(
             logger.warning(f"Athlete ref item missing '$ref'. Item: {athlete_ref_item}")
             return None
 
-        # discovery_season_id_fk is good for context but not strictly essential for fetching if URL is absolute
+        # discovery_season_id_fk is good for context but not strictly essential for fetching
+        # if URL is absolute
         # if not discovery_season_id_fk:
-        #     logger.warning(f"Athlete ref item missing 'discovery_season_id_fk'. Item: {athlete_ref_item}")
+        #     logger.warning(f"Athlete ref item missing 'discovery_season_id_fk'.
+        #     Item: {athlete_ref_item}")
         # Decide if this is critical enough to return None
 
         logger.debug(
-            f"Fetching athlete detail (discovery season '{discovery_season_id_fk}') from: {detail_url}"
+            f"Fetching athlete detail (discovery season '{discovery_season_id_fk}') "
+            f"from: {detail_url}"
         )
         try:
             response = detail_client.get(detail_url)
@@ -2355,13 +2380,16 @@ def espn_source(
                 return athlete_detail
             else:
                 logger.warning(
-                    f"Fetched athlete detail from {detail_url} (discovery season '{discovery_season_id_fk}') missing 'id'. Detail: {athlete_detail}"
+                    f"Fetched athlete detail from {detail_url} "
+                    f"(discovery season '{discovery_season_id_fk}') missing 'id'. "
+                    f"Detail: {athlete_detail}"
                 )
                 return None
 
         except Exception as e:
             logger.error(
-                f"Unexpected error fetching athlete detail from {detail_url} (discovery_season_id_fk: {discovery_season_id_fk}): {e}",
+                f"Unexpected error fetching athlete detail from {detail_url} "
+                f"(discovery_season_id_fk: {discovery_season_id_fk}): {e}",
                 exc_info=True,
             )
             return None
