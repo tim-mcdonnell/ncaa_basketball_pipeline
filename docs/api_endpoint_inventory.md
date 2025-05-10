@@ -51,7 +51,7 @@ Based on `espn_source.py` and API structure:
 
 - **Description:** Fetches season details. If `season_year` is given, fetches that specific season. Otherwise, lists all
   season `$ref`s and then fetches details.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `seasons` (also `league_info` for the root)
 - **Key Transformer(s):** `league_info_resource`, `season_refs_lister_transformer`, `season_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -68,7 +68,7 @@ Based on `espn_source.py` and API structure:
 
 - **Parent Resource:** `season_detail_fetcher_transformer`
 - **Description:** For each season, lists season type `$ref`s, then fetches details for each.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `season_types`
 - **Key Transformer(s):** `season_type_refs_lister_transformer`, `season_type_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -84,7 +84,7 @@ Based on `espn_source.py` and API structure:
 
 - **Parent Resource:** `season_type_detail_fetcher_transformer`
 - **Description:** For each season type, lists week `$ref`s, then fetches details for each.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `weeks`
 - **Key Transformer(s):** `week_refs_lister_transformer`, `week_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -101,7 +101,7 @@ Based on `espn_source.py` and API structure:
 
 - **Parent Resource:** `week_detail_fetcher_transformer`
 - **Description:** For each week, lists event `$ref`s, then fetches details for each.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `events`
 - **Key Transformer(s):** `event_refs_lister_transformer`, `event_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -128,7 +128,7 @@ or fetch further details using `$ref`s found within it.
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Extracts competitor details _directly_ from the `event_detail.competitions[0].competitors` array. No
   new API call needed by this transformer itself.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_competitors`
 - **Key Transformer(s):** `event_competitors_transformer`
 - **Data Validated:** No
@@ -140,7 +140,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer` (which yields competitor objects containing `score.$ref`)
 - **Description:** Fetches the final score for each team in an event.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_scores`
 - **Key Transformer(s):** `event_scores_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -155,7 +155,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the score for each team for each period (half) of the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_linescores`
 - **Key Transformer(s):** `event_linescores_transformer`
 - **Data Validated:** No
@@ -171,7 +171,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches aggregated team statistics for the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_team_stats` (also intermediate `event_team_stats_raw_data`)
 - **Key Transformer(s):** `event_team_stats_raw_fetcher_transformer`, `event_team_stats_processor_transformer`
 - **Data Validated:** No
@@ -191,7 +191,7 @@ or fetch further details using `$ref`s found within it.
 - **Parent Resource:** `event_team_stats_raw_fetcher_transformer` (yielding player stat `$ref` URLs via
   `event_player_stats_refs_lister_transformer`)
 - **Description:** Fetches detailed game statistics for each individual player.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_player_stats`
 - **Key Transformer(s):** `event_player_stats_refs_lister_transformer`, `event_player_stats_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -210,7 +210,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the leading players for each team in key statistical categories for the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_leaders`
 - **Key Transformer(s):** `event_leaders_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -226,7 +226,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the roster of players for a team in a specific game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_roster`
 - **Key Transformer(s):** `event_roster_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -241,7 +241,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_competitors_transformer`
 - **Description:** Fetches the team's record (overall, home, away, vs conf.) _before_ the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_pregame_records`
 - **Key Transformer(s):** `event_pregame_records_transformer`
 - **Data Validated:** No
@@ -257,7 +257,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches current status for a game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_status`
 - **Key Transformer(s):** `event_status_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -272,7 +272,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches live game situation details.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_situation`
 - **Key Transformer(s):** `event_situation_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -287,7 +287,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches betting odds for a game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_odds`
 - **Key Transformer(s):** `event_odds_transformer`
 - **Data Validated:** No
@@ -303,7 +303,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches broadcast information for a game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_broadcasts`
 - **Key Transformer(s):** `event_broadcasts_transformer`
 - **Data Validated:** No
@@ -318,7 +318,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches detailed play-by-play sequence.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_plays`
 - **Key Transformer(s):** `event_plays_lister_transformer`
 - **Data Validated:** No
@@ -334,7 +334,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches ESPN's win probability and predicted score.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_predictor`
 - **Key Transformer(s):** `event_predictor_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -349,7 +349,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches time-series win probability data.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_probabilities`
 - **Key Transformer(s):** `event_probabilities_transformer`
 - **Data Validated:** No
@@ -364,7 +364,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches team power index ratings (BPI/FPI) for the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_powerindex_stats`
 - **Key Transformer(s):** `event_powerindex_transformer`
 - **Data Validated:** No
@@ -380,7 +380,7 @@ or fetch further details using `$ref`s found within it.
 
 - **Parent Resource:** `event_detail_fetcher_transformer`
 - **Description:** Fetches officials assigned to the game.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `event_officials`
 - **Key Transformer(s):** `event_officials_transformer`
 - **Data Validated:** No
@@ -402,7 +402,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 - **Parent Resource:** `season_detail_fetcher_transformer`
 - **Description:** Fetches details for all teams, typically discovered per season.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `teams`
 - **Key Transformer(s):** `team_refs_lister_transformer`, `team_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -418,7 +418,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 - **Parent Resource:** `season_detail_fetcher_transformer` or `team_detail_fetcher_transformer`
 - **Description:** Fetches details for athletes.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `athletes`
 - **Key Transformer(s):** `athlete_refs_lister_transformer`, `athlete_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -435,7 +435,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 - **Parent Resource:** Various (e.g., `team_detail_fetcher_transformer`, `event_detail_fetcher_transformer` that yield
   venue `$ref`s)
 - **Description:** Fetches details for venues.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `venues`
 - **Key Transformer(s):** `team_venue_ref_extractor_transformer`, `event_venue_ref_extractor_transformer`,
   `venue_detail_fetcher_transformer`
@@ -452,7 +452,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 - **Parent Resource:** Various (e.g., `athlete_detail_fetcher_transformer` that yields position `$ref`s)
 - **Description:** Fetches details for player positions.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `positions`
 - **Key Transformer(s):** `athlete_position_ref_extractor_transformer`, `position_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -465,7 +465,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 ### 26. Coaches (Master & Seasonal)
 
 - **Description:** Fetches coach details and records.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `coach_team_assignments`, `coaches`
 - **Key Transformer(s):** `coach_team_assignments_resource`, `coach_master_ref_extractor_transformer`,
   `coaches_resource`
@@ -479,7 +479,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 ### 27. Awards (Master & Seasonal)
 
 - **Description:** Fetches award details.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `awards_master`, `awards_seasonal`
 - **Key Transformer(s):** `award_master_refs_lister_transformer`, `award_master_detail_fetcher_transformer`,
   `season_award_instance_refs_lister_transformer`, `season_award_instance_detail_fetcher_transformer`
@@ -494,7 +494,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 ### 28. Franchises (Master)
 
 - **Description:** Fetches franchise details.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `franchises`
 - **Key Transformer(s):** `franchise_refs_lister_transformer`, `franchises_resource`
 - **Data Validated:** No
@@ -510,7 +510,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 - **Parent Resource:** `event_odds_transformer` (which yields items containing `provider.$ref`)
 - **Description:** Fetches details of odds providers.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `providers`
 - **Key Transformer(s):** `odds_provider_ref_extractor_transformer`, `provider_detail_fetcher_transformer`
 - **Data Validated:** No
@@ -524,7 +524,7 @@ Fetching details for master data from their respective `$ref` URLs should also u
 
 - **Parent Resource:** `event_broadcasts_transformer` (which yields items containing `media.$ref`)
 - **Description:** Fetches details of media outlets.
-- **Status:** DONE
+- **Status:** TODO
 - **`dlt` Table Name:** `media`
 - **Key Transformer(s):** `broadcast_media_ref_extractor_transformer`, `media_detail_fetcher_transformer`
 - **Data Validated:** No
