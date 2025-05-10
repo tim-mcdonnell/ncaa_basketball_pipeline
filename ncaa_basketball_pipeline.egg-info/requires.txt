@@ -1,6 +1,0 @@
-dagster>=1.10.13
-dagster-dlt>=0.26.13
-dagster-webserver>=1.10.13
-dlt>=1.10.0
-duckdb>=1.2.2
-pandas>=2.2.3
